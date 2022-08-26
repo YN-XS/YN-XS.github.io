@@ -1,603 +1,444 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.7.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.7.0" type="image/png" sizes="32x32"><meta property="og:type" content="website">
-<meta property="og:title" content="心释的茶社">
-<meta property="og:url" content="https://yn-xs.github.io/index.html">
-<meta property="og:site_name" content="心释的茶社">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:author" content="ZiJun">
-<meta name="twitter:card" content="summary"><title>心释的茶社</title><link ref="canonical" href="https://yn-xs.github.io/index.html"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.7.0"><script src="/live2d-widget/autoload.js"></script><script>var Stun = window.Stun || {};
-var CONFIG = {
-  root: '/',
-  algolia: undefined,
-  assistSearch: undefined,
-  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
-  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
-  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
-  postWidget: {"endText":true},
-  nightMode: {"enable":true},
-  back2top: {"enable":true},
-  codeblock: {"style":"default","highlight":"light","wordWrap":false},
-  reward: false,
-  fancybox: false,
-  zoomImage: {"gapAside":"20px"},
-  galleryWaterfall: undefined,
-  lazyload: false,
-  pjax: undefined,
-  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
-  shortcuts: undefined,
-  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
-  sourcePath: {"js":"js","css":"css","images":"images"},
-};
 
-window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">心释的茶社</div><div class="header-banner-info__subtitle">大家好，我是心释</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/08/25/c-yu-yan-ji-chu-yi/">C语言基础一</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-08-25</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-08-25</span></span></div></header><div class="post-body"><div class="post-excerpt"><p><img src="https://raw.githubusercontent.com/YN-XS/images/master/202208252332362.png" alt="7_clear"></p>
 
-        <h4 id="第一个C语言程序：Hello，World"   >
-          <a href="#第一个C语言程序：Hello，World" class="heading-link"><i class="fas fa-link"></i></a><a href="#第一个C语言程序：Hello，World" class="headerlink" title="第一个C语言程序：Hello，World"></a>第一个C语言程序：Hello，World</h4>
-      <pre class=" language-c"><code class="language-c"><span class="token macro property"># <span class="token directive keyword">include</span> <span class="token string">"stdio.h"</span></span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"hello world\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
-<pre class=" language-c"><code class="language-c"># 头文件
-返回值类型 函数名<span class="token punctuation">(</span>输入参数值<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    相关操作
-    <span class="token keyword">return</span> 函数返回值
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
-<ol>
-<li>记得先导入include——&gt;头文件<strong>stdio.h</strong></li>
-<li>头文件中声明了printf函数（定义在更深层）</li>
-<li>每个程序有且仅有一个主函数：<strong>main函数</strong></li>
-<li>函数名前面是函数的<strong>返回值类型</strong>，与<strong>return</strong>中的<strong>函数返回值</strong>的类型相对应</li>
-<li>C语言不同于脚本语言的python：每行代码末尾都要加<strong>分号;<strong>并且输出</strong>默认不换行</strong>需要自行加入**”\n”转义符**</li>
-</ol>
 
-        <h4 id="两数之和函数"   >
-          <a href="#两数之和函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#两数之和函数" class="headerlink" title="两数之和函数"></a>两数之和函数</h4>
-      <pre class=" language-c"><code class="language-c"><span class="token macro property"># <span class="token directive keyword">include</span> <span class="token string">"stdio.h"</span></span>
-<span class="token keyword">int</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token keyword">int</span> b<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> result<span class="token punctuation">;</span>
-    result <span class="token operator">=</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> result<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
-<ol>
-<li><p>先定义add函数，在调用add函数</p>
-</li>
-<li><p>add函数被主函数main调用，而<strong>main函数</strong>会被<strong>自动调用</strong></p>
-</li>
-<li><p>C语言标准规定：主函数有返回值切必须为int类型</p>
-<ul>
-<li><p>主函数main的返回值会返回给调用该程序的程序</p>
-</li>
-<li><p>若程序正常结束，一般将主函数的返回值设置为0</p>
-</li>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="心释的茶社" href="https://yn-xs.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="心释的茶社" href="https://yn-xs.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="心释的茶社" href="https://yn-xs.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+
+<link rel="canonical" href="https://yn-xs.github.io/">
+
+
+
+  <title>Tea House = 心释的茶社 = 大家好，我是心释</title>
+<meta name="generator" content="Hexo 6.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+            <a href="/" class="logo" rel="start"><p class="artboard">Tea House</p>
+              <h1 itemprop="name headline" class="title">心释的茶社</h1>
+            </a>
+            <p class="meta" itemprop="description">= 大家好，我是心释 =</p>
+          
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Tea House</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclhpw3lwj20zk0m8gvw.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclhfehz7j20zk0m8u0x.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giciundwu5j20zk0m8n9e.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclize41wj20zk0m87gk.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicitzannuj20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicm0fdw5cj20zk0m8hdt.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="index wrap">
+      <h2 class="divider">置顶文章</h2>
+      <div class="segments sticky">
+          
+<article class="item">
+  <div class="cover">
+    <a href="/2022/08/22/hello-world/" itemprop="url" title="Hello World"><img data-src="https://tva4.sinaimg.cn/mw690/6833939bly1gipeudstjqj20zk0m8k3r.jpg"></a>
+  </div>
+  <div class="info">
+    
+<div class="meta">
+  <span class="item" title="创建时间：2022-08-22 03:40:48">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <time itemprop="dateCreated datePublished" datetime="2022-08-22T03:40:48+08:00">2022-08-22</time>
+  </span>
+</div>
+
+    <h3><a href="/2022/08/22/hello-world/" itemprop="url" title="Hello World">Hello World</a></h3>
+    <div class="excerpt">
+        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+# Quick Start
+# Create a new post
+$ hexo new &quot;My New Post&quot;
+
+More info: Writing
+# Run server
+$...
+    </div>
+    <div class="meta footer">
+      <span>
+        <a href="/categories/C/" itemprop="url" title="个人随笔"><i class="ic i-flag"></i>个人随笔</a>
+      </span>
+    </div>
+    <a href="/2022/08/22/hello-world/" itemprop="url" title="Hello World" class="btn">more...</a>
+  </div>
+</article>
+
+      </div>
+      <h2 class="divider">精选分类</h2>
+      <div class="cards">
+          
+<section class="item">
+  <div class="cover" data-background-image="/C/cover.jpg">
+    <h2 class="title">个人随笔</h2>
+  </div>
+  <div class="info">
+    <div class="ribbon"><a href="/categories/C/" itemprop="url" title="个人随笔">个人随笔</a></div>
+    <div class="inner">
+        <ul class="posts">
+            <li><a title="Hello World" href="/2022/08/22/hello-world/">Hello World</a></li>
+        </ul>
+        <div class="meta footer">
+          <span>
+            <i class="ic i-file"></i>1 篇文章
+          </span>
+        </div>
+        <a href="/categories/C/" itemprop="url" title="个人随笔" class="btn">more...</a>
+    </div>
+  </div>
+</section>
+
+          
+<section class="item">
+  <div class="cover" data-background-image="/B/cover.jpg">
+    <h2 class="title">高级编程语言</h2>
+  </div>
+  <div class="info">
+    <div class="ribbon"><a href="/categories/B/" itemprop="url" title="高级编程语言">高级编程语言</a></div>
+    <div class="inner">
+        <ul class="posts">
+            <li><a title="C语言基础一" href="/2022/08/25/c-yu-yan-ji-chu-yi/">C语言基础一</a></li>
+        </ul>
+        <div class="meta footer">
+          <span>
+            <i class="ic i-file"></i>1 篇文章
+          </span>
+        </div>
+        <a href="/categories/B/" itemprop="url" title="高级编程语言" class="btn">more...</a>
+    </div>
+  </div>
+</section>
+
+      </div>
+    <h2 class="divider">文章列表</h2>
+    <div class="segments posts">
+        
+<article class="item">
+  <div class="cover">
+    <a href="/2022/08/25/c-yu-yan-ji-chu-yi/" itemprop="url" title="C语言基础一"><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208252332362.png"></a>
+  </div>
+  <div class="info">
+    
+<div class="meta">
+  <span class="item" title="创建时间：2022-08-25 23:18:21">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <time itemprop="dateCreated datePublished" datetime="2022-08-25T23:18:21+08:00">2022-08-25</time>
+  </span>
+</div>
+
+    <h3><a href="/2022/08/25/c-yu-yan-ji-chu-yi/" itemprop="url" title="C语言基础一">C语言基础一</a></h3>
+    <div class="excerpt">
+        # 第一个 C 语言程序：Hello，World
+# include &quot;stdio.h&quot;
+int main()&amp;#123;
+printf(&quot;hello world\n&quot;);
+return 0;
+&amp;#125;
+
+# 头文件
+返回值类型 函数名(输入参数值)&amp;#123;
+相关操作
+return 函数返回值
+&amp;#125;
+
+记得先导入 include——&amp;gt; 头文件 stdio.h
+头文件中声明了 printf 函数（定义在更深层）
+每个程序有且仅有一个主函数：main 函数
+函数名前面是函数的返回值类型，与...
+    </div>
+    <div class="meta footer">
+      <span>
+        <a href="/categories/B/" itemprop="url" title="高级编程语言"><i class="ic i-flag"></i>高级编程语言</a>
+      </span>
+    </div>
+    <a href="/2022/08/25/c-yu-yan-ji-chu-yi/" itemprop="url" title="C语言基础一" class="btn">more...</a>
+  </div>
+</article>
+
+    </div>
+
+  </div>
+
+  
+
+
+
+        </div>
+        <div id="sidebar">
+          
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="ZiJun"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">ZiJun</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">2</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">2</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">1</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+
 </ul>
-</li>
-<li><p>C语言不同于脚本语言的python，所有变量都需要先声明才能使用</p>
-<ul>
-<li><p>标识符是变量、函数或其他实体的名称（字母、数字、下划线，<strong>数字不能开头</strong>）</p>
-</li>
-<li><p>变量可以被赋值，常量不可以被赋值，直接给常量赋值是错误的</p>
-</li>
-</ul>
-</li>
-<li><p>printf函数是系统自带函数，将<strong>字符串</strong>输出到控制台</p>
-</li>
-<li><p>printf &#x3D; print + format ——&gt; 格式化打印</p>
-</li>
-<li><p>printf函数是将<strong>字符串</strong>打印到控制台：</p>
-<ul>
-<li>只有<strong>字符串类型</strong>可以被直接打印，其他类型需要特定的占位符(%d,%f,%c)</li>
-<li>在引号内除了包含<strong>字符</strong>，还包含<strong>占位符</strong>，打印时会<strong>按顺序</strong>用<strong>变量</strong>的值<strong>代替</strong>占位符</li>
-<li>例如：printf(“占位1, 占位2, 占位3”, 变量1, 变量2, 变量3);</li>
-</ul>
-</li>
-</ol>
 
-        <h4 id="整形数据类型"   >
-          <a href="#整形数据类型" class="heading-link"><i class="fas fa-link"></i></a><a href="#整形数据类型" class="headerlink" title="整形数据类型"></a>整形数据类型</h4>
-      <ol>
-<li><p>占位符：%d</p>
-</li>
-<li><p>不同整形数据类型的<strong>占用内存</strong>大小不同，表示的<strong>数据范围</strong>也不同</p>
-</li>
-<li><p>计算机通过<strong>晶体管</strong>的开关状态记录数据</p>
-<ul>
-<li><p>通常8个晶体管一组，称为字节</p>
-</li>
-<li><p>每个晶体管又开关两种状态(0,1)，<strong>二进制</strong>：一共256种状态<br>$$<br>2^8 &#x3D; 256<br>$$</p>
-</li>
-</ul>
-</li>
-<li><p>sizeof关键词：测量实体占用<strong>字节</strong>大小</p>
-</li>
-</ol>
-<pre class=" language-c"><code class="language-c"><span class="token macro property"># <span class="token directive keyword">include</span> <span class="token string">"stdio.h"</span></span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"sizeof char = %d\n"</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">char</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"sizeof short = %d\n"</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">short</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"sizeof int = %d\n"</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"sizeof long = %d\n"</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">long</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"sizeof long long = %d\n"</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">long</span> <span class="token keyword">long</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> a<span class="token punctuation">;</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"sizeof a = %d\n"</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"sizeof 100 = %d\n"</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
-<p><img src="https://raw.githubusercontent.com/YN-XS/images/master/202208231300001.png"></p>
-<ul>
-<li>最高位为符号位：2的七次方、2的十五次方…</li>
-<li>当确定数值为正数时，不需要最高位当作符号位使用unsigned</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/YN-XS/images/master/202208231306582.png"></p>
+      </div>
+    </div>
+  </div>
 
-        <h4 id="浮点数据类型"   >
-          <a href="#浮点数据类型" class="heading-link"><i class="fas fa-link"></i></a><a href="#浮点数据类型" class="headerlink" title="浮点数据类型"></a>浮点数据类型</h4>
-      <ol>
-<li><p>占位符：%f、%lf</p>
-</li>
-<li><p>单精度浮点类型：float（4个字节）</p>
-</li>
-</ol>
-<pre class=" language-c"><code class="language-c"><span class="token macro property"># <span class="token directive keyword">include</span><span class="token string">"stdio.h"</span></span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">float</span> a <span class="token operator">=</span> <span class="token number">1.234567</span><span class="token punctuation">;</span>
-    <span class="token keyword">float</span> b <span class="token operator">=</span> <span class="token number">0.00001</span><span class="token punctuation">;</span>
-    <span class="token keyword">float</span> c <span class="token operator">=</span> <span class="token number">3.141592385</span><span class="token punctuation">;</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"a = %f\n, b = %f\n, c = %f\n"</span><span class="token punctuation">,</span> a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
-<ul>
-<li>尾数较长的浮点数会产生<strong>误差</strong>，并不能表示无限精确</li>
-<li>C语言标准规定float类型至少能表示<strong>6位有效数字</strong>：一般前六位数字准确，后面的数则会有误差</li>
-</ul>
-<ol start="3">
-<li>双精度浮点类型：double（8个字节）</li>
-</ol>
-<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"stdio.h"</span></span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>｛
-    <span class="token keyword">double</span> A <span class="token operator">=</span> <span class="token number">1.234567</span><span class="token punctuation">;</span>
-    <span class="token keyword">double</span> B <span class="token operator">=</span> <span class="token number">0.00001</span><span class="token punctuation">;</span>
-    <span class="token keyword">double</span> C <span class="token operator">=</span> <span class="token number">3.141592385</span><span class="token punctuation">;</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"A = %f\n B = %f\n C = %f\n"</span><span class="token punctuation">,</span> A<span class="token punctuation">,</span> B<span class="token punctuation">,</span> C<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
 
-        <h4 id="变量与常量"   >
-          <a href="#变量与常量" class="heading-link"><i class="fas fa-link"></i></a><a href="#变量与常量" class="headerlink" title="变量与常量"></a>变量与常量</h4>
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
       
-        <h5 id="数字类型"   >
-          <a href="#数字类型" class="heading-link"><i class="fas fa-link"></i></a><a href="#数字类型" class="headerlink" title="数字类型"></a><strong>数字类型</strong></h5>
-      <p><strong>变量</strong></p>
-<ol>
-<li>标识符：自己命名，表示变量、函数或其他实体的名称，使用前需要<strong>声明</strong><ul>
-<li>字母、数字、下划线，<strong>数字不能开头</strong></li>
-<li>数据类型 标识符名称;</li>
-<li>int a;</li>
-</ul>
-</li>
-<li>关键词：C语言标准规定词汇，可以直接使用</li>
-<li>变量<strong>可以</strong>被多次<strong>赋值</strong><ul>
-<li>下列代码可以<strong>正确运行</strong></li>
-<li>允许变量被多次<strong>赋值</strong></li>
-</ul>
-</li>
-</ol>
-<pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> a<span class="token punctuation">;</span>
-a <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
-a <span class="token operator">=</span> <span class="token number">200</span><span class="token punctuation">;</span>	
-</code></pre>
-<ol start="4">
-<li>变量<strong>不可以</strong>被多次<strong>初始化</strong><ul>
-<li>下列代码运行<strong>报错</strong>(<strong>重复声明</strong>)</li>
-<li>不允许变量被多次<strong>初始化</strong></li>
-</ul>
-</li>
-</ol>
-<pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">200</span><span class="token punctuation">;</span>
-</code></pre>
-<p><strong>常量</strong></p>
-<ul>
-<li><p>常量一开始就写死，无法修改</p>
-</li>
-<li><p>字面常量：100,3.14，”hello world”</p>
-</li>
-<li><p>字面常量无需声明，编译器可判断类型</p>
-</li>
-<li><p>符号常量：#<strong>define</strong> <strong>符号常量名</strong> <strong>值</strong></p>
-</li>
-<li><p>出现频率较高且需要修改的值，修改时只需在常量定义处修改即可</p>
-</li>
-<li><p>打印字符串时，可以直接打印字符串常量或者使用**%s占位符**，然后用字符串实体替换</p>
-</li>
-</ul>
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/C/" title="分类于 个人随笔">个人随笔</a>
+</div>
 
-        <h5 id="字符类型"   >
-          <a href="#字符类型" class="heading-link"><i class="fas fa-link"></i></a><a href="#字符类型" class="headerlink" title="字符类型"></a><strong>字符类型</strong></h5>
-      <p><strong>变量</strong></p>
-<ol>
-<li><strong>字符变量</strong>常用<strong>char</strong>类型来表示</li>
-<li><strong>字符变量</strong>只占用1个字节的内存</li>
-</ol>
-<p><strong>常量</strong></p>
-<ol>
-<li>字符常量由<strong>单引号</strong>包括：’a’,’1’,’字’</li>
-<li>printf函数<strong>只能</strong>输出<strong>字符串</strong>，所以输出单个字符时同样需要在字符串中使用<strong>占位符</strong>：%c</li>
-</ol>
-<pre class=" language-c"><code class="language-c"><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%c%c"</span><span class="token punctuation">,</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'z'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<ol start="3">
-<li>字符<strong>常量</strong>内存大小<ul>
-<li>使用<strong>C编译器</strong>的.c文件中，<strong>字符常量</strong>占4个字节</li>
-<li>使用<strong>C++编译器</strong>的.cpp文件中，<strong>字符常量</strong>占1个字节</li>
-</ul>
-</li>
-</ol>
+    <span><a href="/2022/08/22/hello-world/" title="Hello World">Hello World</a></span>
+  </li>
 
-        <h4 id="整数与字符的关系ASCII"   >
-          <a href="#整数与字符的关系ASCII" class="heading-link"><i class="fas fa-link"></i></a><a href="#整数与字符的关系ASCII" class="headerlink" title="整数与字符的关系ASCII"></a>整数与字符的关系ASCII</h4>
-      <ol>
-<li><strong>字符类本质型就是整形类型</strong><ul>
-<li>将字符类型命名为char，只占1个字节，既能用于整形，又能用于字符类型</li>
-<li>字符类型char同样可以使用+-*&#x2F;，会对应到其所表示的ASCII码</li>
-<li>使用**”%c”<strong>占位符——&gt;输出</strong>字符类型**</li>
-<li>使用**”%d”<strong>占位符——&gt;输出对应</strong>整形**</li>
-</ul>
-</li>
-<li>当使用整形占位符输出字符类型时</li>
-</ol>
-<pre class=" language-c"><code class="language-c"><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d %d %d"</span><span class="token punctuation">,</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">,</span><span class="token string">'c'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p><img src="https://raw.githubusercontent.com/YN-XS/images/master/202208231310357.png" alt="image-20220823131046292"></p>
-<ol start="3">
-<li><p>所以字符和数字存在一对一的映射关系（美国信息交换标准代码ASCII）</p>
-</li>
-<li><p><strong>ACSII编码：</strong></p>
-</li>
-<li><p>CHAR：数值对应字符</p>
-</li>
-<li><p>HEX：十六进制</p>
-</li>
-<li><p>OCT：八进制</p>
-</li>
-<li><p>DEC：十进制</p>
-</li>
-<li><p>转换大小写</p>
-</li>
-</ol>
-<pre class=" language-c"><code class="language-c"><span class="token keyword">char</span> letter <span class="token operator">=</span> <span class="token string">'A'</span><span class="token punctuation">;</span>
-<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%c"</span><span class="token punctuation">,</span> letter <span class="token operator">+</span> <span class="token number">32</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<ol start="6">
-<li><p><strong>字符串的字节长度 &#x3D; 字符个数 + 1</strong></p>
-<ol>
-<li>字符串末尾会默认添加一个结束符</li>
-<li>每个字符占一个字节 + <strong>末尾的結束字符</strong>(标记字符串结束)</li>
-<li><strong>数值0</strong>：用于表示字符串结束，注意是<strong>数值0</strong>，而不是<strong>字符0</strong></li>
-</ol>
-</li>
-<li><p><strong>\数值：转移字符</strong></p>
-<ol>
-<li><strong>转义字符</strong>只占ASCII中的<strong>一个字符</strong></li>
-<li>直接在字符串中写<strong>0</strong>——&gt;<strong>字符0</strong></li>
-<li>在字符串中使用转移字符<strong>\0</strong>——&gt;<strong>数值0(字符串结束标识符)</strong></li>
-<li><strong>结束符：\0</strong></li>
-</ol>
-</li>
-<li><p><strong>转义字符斜杠后的数值是用八进制表示：\数值(八进制)</strong></p>
-<ul>
-<li><strong>OCT(‘H’)&#x3D;110、OCT(‘e’)&#x3D;145、OCT(‘l’)&#x3D;154、OCT(‘o’)&#x3D;157</strong></li>
-<li>printf(“\110\145\154\154\157”);——&gt;”Hello”</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/YN-XS/images/master/202208231306290.png"></p>
-<ul>
-<li><strong>不可见字符</strong>：既可以用<strong>\字母</strong>也可以用<strong>\数值(八进制)</strong></li>
-</ul>
-</li>
-</ol>
-
-        <h4 id="printf函数"   >
-          <a href="#printf函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#printf函数" class="headerlink" title="printf函数"></a>printf函数</h4>
-      <ol>
-<li><p>格式：printf(“占位符1”,占位符2”,替换1,替换2)</p>
-<ul>
-<li><strong>printf</strong>函数的第<strong>一个参数</strong>是<strong>字符串</strong>——&gt;是需要输出的内容</li>
-<li><strong>printf</strong>函数<strong>第二以及后续参数</strong>都将<strong>依次</strong>替换<strong>占位符</strong></li>
-<li><strong>占位符的类型和数量</strong>要和<strong>后续参数的类型和数量</strong>一一对应</li>
-</ul>
-</li>
-<li><p><strong>当printf占位符的格式与后续参数的格式不相同时，输出为0</strong></p>
-<ul>
-<li><strong>特例：字符类型的本质是整形(ASCII)，可以正常输出字符和整数的映射关系</strong></li>
-<li><strong>如果整形变量的格式规范设置为%f，输出为0</strong></li>
-<li><strong>如果浮点类型变量的格式规范设置为%d，同样输出为0</strong></li>
-</ul>
-</li>
-<li><p>printf是可变参数函数，参数传入到函数的可变参数中，变量会发生自动<strong>类型提升</strong></p>
-<ul>
-<li>char和short会被提升为int——&gt;<strong>char、short、int</strong>均<strong>可以使用%d占位符</strong></li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/YN-XS/images/master/202208231328426.png" alt="image-20220823132831339"></p>
-<ul>
-<li>无符号类型<strong>unsigned</strong>同理，用u表示则最高位不会被当作符号字符</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/YN-XS/images/master/202208231327076.png" alt="image-20220823132742979"></p>
-</li>
-</ol>
-
-        <h4 id="转换规范-占位符"   >
-          <a href="#转换规范-占位符" class="heading-link"><i class="fas fa-link"></i></a><a href="#转换规范-占位符" class="headerlink" title="转换规范(占位符)"></a>转换规范(占位符)</h4>
-      <p><img src="https://raw.githubusercontent.com/YN-XS/images/master/202208231335113.png" alt="image-20220823133506073"></p>
-<p><img src="https://raw.githubusercontent.com/YN-XS/images/master/202208231335323.png" alt="image-20220823133523280"></p>
-<p><img src="https://raw.githubusercontent.com/YN-XS/images/master/202208231335027.png" alt="image-20220823133555984"></p>
-<p><img src="https://raw.githubusercontent.com/YN-XS/images/master/202208231336404.png" alt="image-20220823133612364"></p>
-<p><img src="https://raw.githubusercontent.com/YN-XS/images/master/202208231336077.png" alt="image-20220823133627035"></p>
-
-        <h5 id="转换类型"   >
-          <a href="#转换类型" class="heading-link"><i class="fas fa-link"></i></a><a href="#转换类型" class="headerlink" title="转换类型"></a><strong>转换类型</strong></h5>
-      <p><img src="https://raw.githubusercontent.com/YN-XS/images/master/202208231337299.png" alt="image-20220823133753254"></p>
-
-        <h5 id="长度指示符"   >
-          <a href="#长度指示符" class="heading-link"><i class="fas fa-link"></i></a><a href="#长度指示符" class="headerlink" title="长度指示符"></a><strong>长度指示符</strong></h5>
-      <ul>
-<li><strong>%d ——&gt; %ld 或 %lld 扩展到long&#x2F;long long</strong></li>
-<li><strong>%d ——&gt; %hd 或 %hhd 收缩到short&#x2F;char</strong></li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/YN-XS/images/master/202208231352919.png" alt="image-20220823135210872"></p>
-<p><img src="https://raw.githubusercontent.com/YN-XS/images/master/202208231352578.png" alt="image-20220823135234532"></p>
-<p><img src="https://raw.githubusercontent.com/YN-XS/images/master/202208231353238.png" alt="image-20220823135349191"></p>
-
-        <h5 id="转换精度"   >
-          <a href="#转换精度" class="heading-link"><i class="fas fa-link"></i></a><a href="#转换精度" class="headerlink" title="转换精度"></a><strong>转换精度</strong></h5>
-      <ul>
-<li><strong>整数类型——&gt;控制最小数字位数</strong></li>
-<li><strong>浮点类型——&gt;控制小数点后位数</strong></li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/YN-XS/images/master/202208231410402.png" alt="image-20220823141018341"></p>
-
-        <h5 id="最小字段宽度"   >
-          <a href="#最小字段宽度" class="heading-link"><i class="fas fa-link"></i></a><a href="#最小字段宽度" class="headerlink" title="最小字段宽度"></a><strong>最小字段宽度</strong></h5>
-      <ol>
-<li><strong>达到最小宽度则不做处理</strong></li>
-<li><strong>未达到最小宽度则补充空格</strong></li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/YN-XS/images/master/202208231413882.png" alt="image-20220823141309829"></p>
-
-        <h5 id="转换标志"   >
-          <a href="#转换标志" class="heading-link"><i class="fas fa-link"></i></a><a href="#转换标志" class="headerlink" title="转换标志"></a><strong>转换标志</strong></h5>
-      <ol>
-<li><strong>转换标志按顺序为：-+0#</strong></li>
-<li><strong>0：设置0作为填充字符</strong>——&gt;最小宽度不足默认是空格填充</li>
-<li><strong>-：设置-可使输出左对齐</strong>——&gt;输出默认为右对齐</li>
-<li><strong>+：设置输出结果产生符号</strong>——&gt;正数+、负数-</li>
-<li><strong>#：给进制前添加对应符号</strong>——&gt;(O)八进制、(OX)十六进制</li>
-</ol>
-
-        <h4 id="scanf函数"   >
-          <a href="#scanf函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#scanf函数" class="headerlink" title="scanf函数"></a>scanf函数</h4>
-      <ol>
-<li>printf函数：在控制台输出字符</li>
-<li>scanf函数：在控制图输入字符</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/YN-XS/images/master/202208231443115.png" alt="image-20220823144321064"></p>
-<pre class=" language-c"><code class="language-c"><span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%hhd %hd %d %lf %llf%"</span><span class="token punctuation">,</span> <span class="token operator">%</span>a<span class="token punctuation">,</span> <span class="token operator">%</span>b<span class="token punctuation">,</span> <span class="token operator">%</span>c<span class="token punctuation">,</span> <span class="token operator">%</span>d<span class="token punctuation">,</span> <span class="token operator">%</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p><img src="https://raw.githubusercontent.com/YN-XS/images/master/202208231449995.png" alt="image-20220823144910948"></p>
-<ol start="3">
-<li>输入时也要根据转换规范按要求输入<ul>
-<li><strong>转换规范中以什么符号进行分割，输入时也要以相同符号分割</strong></li>
-</ul>
-</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/YN-XS/images/master/202208231451832.png" alt="image-20220823145121781"></p>
-<p><img src="https://raw.githubusercontent.com/YN-XS/images/master/202208231451310.png" alt="image-20220823145151259"></p>
-<p><img src="https://raw.githubusercontent.com/YN-XS/images/master/202208231453046.png" alt="image-20220823145353994"></p>
-<ol start="4">
-<li><p>转换为二进制并存储到变量</p>
-<ul>
-<li><strong>scanf函数将输入的字符串按照对应转换规范进行转换</strong></li>
-<li><strong>转换完成后的二进制编码，将依次存放到后续参数的变量地址中</strong></li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/YN-XS/images/master/202208231501762.png" alt="image-20220823150136708"></p>
-<p><img src="https://raw.githubusercontent.com/YN-XS/images/master/202208231504681.png" alt="image-20220823150448624"></p>
-</li>
-<li><p>将输入的字符’A’转换为字符类型’A’</p>
-<ul>
-<li><strong>将字符A转换为整形和字符类形输出：A——&gt;65,’A’</strong></li>
-<li><strong>若输入字符’65’,%c只能接受第一位字符’6’,’6’——&gt;56,’6’</strong></li>
-</ul>
-</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/YN-XS/images/master/202208231510180.png" alt="image-20220823151003141"></p>
-<ol start="6">
-<li>将输入的字符’65’转换为整数的字符类型’65’<ul>
-<li><strong>将字符’65’转换为和字符类型输出：’65’——&gt;65,’A’</strong></li>
-<li><strong>输入其他非数值字符则格式不正确，只能输出0</strong></li>
-</ul>
-</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/YN-XS/images/master/202208231543611.png" alt="image-20220823154303574"></p>
-<ol start="7">
-<li><strong>总结</strong>(很重要，暂且这样分析！！)<ul>
-<li><strong>%c</strong>：只可以接受<strong>一个</strong>字符，**%hhd<strong>：只可以接受</strong>数值字符**</li>
-<li>字符’A’和数值字符’65’是<strong>等价的</strong></li>
-</ul>
-</li>
-<li><strong>数组名即地址，所以存储到数组中，不需要地址符！！！</strong></li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/YN-XS/images/master/202208231606355.png" alt="image-20220823160608316"></p>
-
-        <h4 id="表达式和运算符"   >
-          <a href="#表达式和运算符" class="heading-link"><i class="fas fa-link"></i></a><a href="#表达式和运算符" class="headerlink" title="表达式和运算符"></a>表达式和运算符</h4>
       
-        <h5 id="表达式"   >
-          <a href="#表达式" class="heading-link"><i class="fas fa-link"></i></a><a href="#表达式" class="headerlink" title="表达式"></a><strong>表达式</strong></h5>
-      <ul>
-<li>至少1个运算对象和至少0个运算符组成一个<strong>表达式</strong>（例如：100）</li>
-<li>每一个表达式都有一个结果</li>
-<li>表达式后接上<strong>分号;<strong>构成</strong>表达式语句</strong></li>
-<li>printf(“%d\n”, 5+10); 为函数调用表达式，5+10是它的<strong>子表达式</strong></li>
-</ul>
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/B/" title="分类于 高级编程语言">高级编程语言</a>
+</div>
 
-        <h5 id="运算符"   >
-          <a href="#运算符" class="heading-link"><i class="fas fa-link"></i></a><a href="#运算符" class="headerlink" title="运算符"></a><strong>运算符</strong></h5>
-      <ul>
-<li>加减乘除+-*&#x2F;</li>
-<li><strong>整形</strong>与<strong>整形</strong>相除——&gt;<strong>自动构成整除，结果中的小数部分会被丢弃（截断）</strong></li>
-<li>有<strong>浮点数</strong>参与相除——&gt;可以保留小数部分</li>
-</ul>
+    <span><a href="/2022/08/25/c-yu-yan-ji-chu-yi/" title="C语言基础一">C语言基础一</a></span>
+  </li>
 
-        <h5 id="当printf占位符的格式与后续参数的格式不相同时"   >
-          <a href="#当printf占位符的格式与后续参数的格式不相同时" class="heading-link"><i class="fas fa-link"></i></a><a href="#当printf占位符的格式与后续参数的格式不相同时" class="headerlink" title="当printf占位符的格式与后续参数的格式不相同时"></a>当printf<strong>占位符的格式</strong>与后续<strong>参数的格式不相同</strong>时</h5>
-      <ul>
-<li><strong>特例：字符类型的本质是整形(ASCII)，可以正常输出字符和整数的映射关系</strong></li>
-<li><strong>整形和浮点类型格式混用——&gt;输出结果为0</strong><ul>
-<li><strong>（%d,float）(%f,int)</strong></li>
-</ul>
-</li>
-<li><strong>其他格式类型混用——&gt;没有输出</strong><ul>
-<li><strong>(%s,char)(%c,字符串)…..</strong></li>
-</ul>
-</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/YN-XS/images/master/202208231814183.png" alt="image-20220823181430130"></p>
-<ol start="5">
-<li><p>求余运算符：%</p>
-<ul>
-<li>取得两数相除的余数——&gt;判断奇偶数</li>
-</ul>
-</li>
-<li><p>自增自减运算符</p>
-<ul>
-<li>自增运算符：++</li>
-<li>自减运算符：–</li>
-</ul>
-<pre class=" language-c"><code class="language-c"><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d %d\n"</span><span class="token punctuation">,</span> <span class="token operator">++</span>a<span class="token punctuation">,</span> <span class="token operator">--</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment" spellcheck="true">//先执行a++和b--，然后打印自增/自减变化后的结果</span>
-<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d %d\n"</span><span class="token punctuation">,</span> a<span class="token operator">++</span><span class="token punctuation">,</span> b<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment" spellcheck="true">//先打印a和b原来的结果，然后自增/自减改变它的值</span>
-</code></pre>
-<p><img src="https://raw.githubusercontent.com/YN-XS/images/master/202208231826792.png" alt="image-20220823182655752"></p>
-</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/YN-XS/images/master/202208231833229.png" alt="image-20220823183346188"></p>
-<ol start="7">
-<li>产生额外作用的发生时机<ul>
-<li>VS编译器累积所有自表达式求值后才会进行额外作用</li>
-<li>GCC编译器每完成一个子表达式就会立即产生额外作用</li>
-<li>但都有相同的最晚发生时机：完整表达式求值结束后进入下一段代码之前</li>
-<li>所以要避免在一个表达式中重复对一个变量进行自增&#x2F;自减</li>
-</ul>
-</li>
-<li>多元运算符<ul>
-<li>一元运算符：只有一个运算对象，自增、自减</li>
-<li>二元运算符：有两个运算对象，赋值、加减乘除</li>
-</ul>
-</li>
-<li>运算符优先级</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/YN-XS/images/master/202208231848293.png" alt="image-20220823184827249"></p>
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
 
-        <h4 id="自动类型转换-终极总结"   >
-          <a href="#自动类型转换-终极总结" class="heading-link"><i class="fas fa-link"></i></a><a href="#自动类型转换-终极总结" class="headerlink" title="自动类型转换(终极总结)"></a>自动类型转换(终极总结)</h4>
-      <ol>
-<li><strong>高级别类型的数据范围大于等于低级别类型</strong></li>
-<li><strong>无符号类型等级高于自身有符号类型：unsigned int &gt; int</strong></li>
-<li><strong>浮点数据类型高于所有整形数据类型： float &gt; unsigned long</strong></li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/YN-XS/images/master/202208232249696.png"></p>
-<ul>
-<li><p><strong>C语言会将运算符两边的类型先进行自动类型转换——&gt;然后开始运算</strong></p>
-</li>
-<li><p><strong>两个不同或相同数据类型做运算</strong></p>
-<ul>
-<li><strong>运算符（+ - * &#x2F;）</strong></li>
-<li><strong>运算结果至少都会转化为int类型</strong></li>
-<li><strong>运算符两边的数据类型都小于或等于int类型——&gt;运算结果为：int类型</strong></li>
-<li><strong>运算符两边存在任何大于int类型的数据类型——&gt;运算结果为：运算符两边中最高的数据类型</strong></li>
-</ul>
-</li>
-<li><p><strong>应用</strong></p>
-<ul>
-<li><strong>整数除法：int &#x2F; int——&gt;int</strong>  <strong>(运算符两边都是int)</strong></li>
-<li><strong>浮点数除法：int &#x2F; float——&gt;float</strong> (<strong>float等级 &gt; int等级</strong>)</li>
-</ul>
-</li>
-</ul>
-<pre><code>5 / 2 = 2
-5 / 2.0 = 2.500000
-</code></pre>
-<ul>
-<li><strong>强制类型转换</strong><ul>
-<li>(强制转换类型)强制转换的数据对象,例如：int(5.2)</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/YN-XS/images/master/202208232305438.png" alt="image-20220823230501392"></p>
-<ul>
-<li><strong>注意图示代码的使用的强制类型转换，只是改变运算时的临时数据对象的类型，并没有赋值改变变量自身的类型和数值</strong></li>
-</ul>
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">ZiJun @ Tea House</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
 
-        <h4 id="关系运算符和逻辑运算符"   >
-          <a href="#关系运算符和逻辑运算符" class="heading-link"><i class="fas fa-link"></i></a><a href="#关系运算符和逻辑运算符" class="headerlink" title="关系运算符和逻辑运算符"></a>关系运算符和逻辑运算符</h4>
-      <ul>
-<li><p><strong>关系运算符</strong></p>
-<ul>
-<li>C语言中用<strong>0表示假</strong>，用<strong>1表示真</strong></li>
-<li>大于等于：&gt; &#x3D;，小于等于：&lt; &#x3D;，等于&#x3D; &#x3D;，不等于：！&#x3D;</li>
-</ul>
-<pre class=" language-c"><code class="language-c"><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token operator">&lt;=</span><span class="token number">0</span><span class="token operator">&lt;=</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment" spellcheck="true">//结果为真，因为两个&lt;=运算符优先级相同，从左往右执行</span>
-</code></pre>
-<p><img src="https://raw.githubusercontent.com/YN-XS/images/master/202208232341255.png" alt="image-20220823234154197"></p>
-</li>
-<li><p><strong>逻辑运算符</strong></p>
-<ul>
-<li><strong>逻辑或：||</strong></li>
-<li><strong>逻辑与：&amp;&amp;</strong></li>
-<li><strong>逻辑运算符优先级低于关系运算符</strong></li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/YN-XS/images/master/202208232343697.png" alt="image-20220823234355659"></p>
-</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/YN-XS/images/master/202208232345502.png" alt="image-20220823234530453"></p>
-<ul>
-<li><strong>运算符优先级</strong></li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/YN-XS/images/master/202208232352520.png" alt="image-20220823235224466"></p>
-<p><img src="https://raw.githubusercontent.com/YN-XS/images/master/202208232353425.png" alt="image-20220823235322371"></p>
-<ul>
-<li><strong>注意： i++ &gt; ++i、逻辑非！、正负、乘除取余、加减、大于小于、等于不等于、&amp;&amp;、||、&#x3D;</strong></li>
-</ul>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/08/22/hello-world/">Hello World</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-08-22</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-08-22</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>Welcome to <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://hexo.io/" >Hexo</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>! This is your very first post. Check <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://hexo.io/docs/" >documentation</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> for more info. If you get any problems when using Hexo, you can find the answer in <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html" >troubleshooting</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> or you can ask me on <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues" >GitHub</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>.</p>
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '',
+    favicon: {
+      show: "(๑ᵔ⌔ᵔ๑)：正在进入茶社",
+      hide: "(๑‾᷅^‾᷅๑)：记得回到茶社"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
 
-        <h2 id="Quick-Start"   >
-          <a href="#Quick-Start" class="heading-link"><i class="fas fa-link"></i></a><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2>
-      
-        <h3 id="Create-a-new-post"   >
-          <a href="#Create-a-new-post" class="heading-link"><i class="fas fa-link"></i></a><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3>
-      <pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span>
-</code></pre>
-<p>More info: <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html" >Writing</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
 
-        <h3 id="Run-server"   >
-          <a href="#Run-server" class="heading-link"><i class="fas fa-link"></i></a><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3>
-      <pre class=" language-bash"><code class="language-bash">$ hexo server
-</code></pre>
-<p>More info: <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://hexo.io/docs/server.html" >Server</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
 
-        <h3 id="Generate-static-files"   >
-          <a href="#Generate-static-files" class="heading-link"><i class="fas fa-link"></i></a><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3>
-      <pre class=" language-bash"><code class="language-bash">$ hexo generate
-</code></pre>
-<p>More info: <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html" >Generating</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<script src="/js/app.js?v=0.2.5"></script>
 
-        <h3 id="Deploy-to-remote-sites"   >
-          <a href="#Deploy-to-remote-sites" class="heading-link"><i class="fas fa-link"></i></a><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3>
-      <pre class=" language-bash"><code class="language-bash">$ hexo deploy
-</code></pre>
-<p>More info: <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html" >Deployment</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-</div></div></article></section><nav class="paginator"><div class="paginator-inner"><span class="page-number current">1</span></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/assets/yh.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">人生如逆旅，我亦是行人</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/YN-XS" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://user.qzone.qq.com/2811618438/infocenter" target="_blank" rel="noopener" data-popover="QQ" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-qq"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">2</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">1</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">1</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>ZiJun</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/sidebar.js?v=2.7.0"></script></body></html>
+
+
+
+</body>
+</html>
