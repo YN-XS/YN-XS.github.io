@@ -1,611 +1,152 @@
-<?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title>Hello World</title>
-    <url>/2022/08/22/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvLw==">Hexo</span>! This is your very first post. Check <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL2RvY3Mv">documentation</span> for more info. If you get any problems when using Hexo, you can find the answer in <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL2RvY3MvdHJvdWJsZXNob290aW5nLmh0bWw=">troubleshooting</span> or you can ask me on <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2hleG9qcy9oZXhvL2lzc3Vlcw==">GitHub</span>.</p>
-<h2 id="quick-start"><a class="anchor" href="#quick-start">#</a> Quick Start</h2>
-<h3 id="create-a-new-post"><a class="anchor" href="#create-a-new-post">#</a> Create a new post</h3>
-<pre class=" language-language-bash"><code class="language-language-bash">$ hexo new "My New Post"
-</code></pre>
-<p>More info: <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvd3JpdGluZy5odG1s">Writing</span></p>
-<h3 id="run-server"><a class="anchor" href="#run-server">#</a> Run server</h3>
-<pre class=" language-language-bash"><code class="language-language-bash">$ hexo server
-</code></pre>
-<p>More info: <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvc2VydmVyLmh0bWw=">Server</span></p>
-<h3 id="generate-static-files"><a class="anchor" href="#generate-static-files">#</a> Generate static files</h3>
-<pre class=" language-language-bash"><code class="language-language-bash">$ hexo generate
-</code></pre>
-<p>More info: <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL2RvY3MvZ2VuZXJhdGluZy5odG1s">Generating</span></p>
-<h3 id="deploy-to-remote-sites"><a class="anchor" href="#deploy-to-remote-sites">#</a> Deploy to remote sites</h3>
-<pre class=" language-language-bash"><code class="language-language-bash">$ hexo deploy
-</code></pre>
-<p>More info: <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvb25lLWNvbW1hbmQtZGVwbG95bWVudC5odG1s">Deployment</span></p>
-]]></content>
-      <categories>
-        <category>个人随笔</category>
-      </categories>
-      <tags>
-        <tag>Hello World</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>C语言基础一</title>
-    <url>/2022/08/25/c-yu-yan-ji-chu-yi/</url>
-    <content><![CDATA[<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208252332362.png" alt="7_clear" /></p>
-<h4 id="第一个c语言程序helloworld"><a class="anchor" href="#第一个c语言程序helloworld">#</a> 第一个 C 语言程序：Hello，World</h4>
-<pre class=" language-language-c"><code class="language-language-c"># include "stdio.h"
-int main()&#123;
-    printf("hello world\n");
-    return 0;
-&#125;
-</code></pre>
-<pre class=" language-language-c"><code class="language-language-c"># 头文件
-返回值类型 函数名(输入参数值)&#123;
-    相关操作
-    return 函数返回值
-&#125;
-</code></pre>
-<ol>
-<li>记得先导入 include——&gt; 头文件<strong> stdio.h</strong></li>
-<li>头文件中声明了 printf 函数（定义在更深层）</li>
-<li>每个程序有且仅有一个主函数：<strong>main 函数</strong></li>
-<li>函数名前面是函数的<strong>返回值类型</strong>，与<strong> return</strong> 中的<strong>函数返回值</strong>的类型相对应</li>
-<li>C 语言不同于脚本语言的 python：每行代码末尾都要加<strong>分号；<strong> 并且输出</strong>默认不换行</strong>需要自行加入 **&quot;\n&quot; 转义符 **</li>
-</ol>
-<h4 id="两数之和函数"><a class="anchor" href="#两数之和函数">#</a> 两数之和函数</h4>
-<pre class=" language-language-c"><code class="language-language-c"># include "stdio.h"
-int add(int a, int b)&#123;
-    return a + b;
-&#125;
 
-int main()&#123;
-    int result;
-    result = add(2, 4);
-    printf("%d", result);
-&#125;
-</code></pre>
-<ol>
-<li>
-<p>先定义 add 函数，在调用 add 函数</p>
-</li>
-<li>
-<p>add 函数被主函数 main 调用，而<strong> main 函数</strong>会被<strong>自动调用</strong></p>
-</li>
-<li>
-<p>C 语言标准规定：主函数有返回值切必须为 int 类型</p>
-<ul>
-<li>
-<p>主函数 main 的返回值会返回给调用该程序的程序</p>
-</li>
-<li>
-<p>若程序正常结束，一般将主函数的返回值设置为 0</p>
-</li>
-</ul>
-</li>
-<li>
-<p>C 语言不同于脚本语言的 python，所有变量都需要先声明才能使用</p>
-<ul>
-<li>
-<p>标识符是变量、函数或其他实体的名称（字母、数字、下划线，<strong>数字不能开头</strong>）</p>
-</li>
-<li>
-<p>变量可以被赋值，常量不可以被赋值，直接给常量赋值是错误的</p>
-</li>
-</ul>
-</li>
-<li>
-<p>printf 函数是系统自带函数，将<strong>字符串</strong>输出到控制台</p>
-</li>
-<li>
-<p>printf = print + format ——&gt; 格式化打印</p>
-</li>
-<li>
-<p>printf 函数是将<strong>字符串</strong>打印到控制台：</p>
-<ul>
-<li>只有<strong>字符串类型</strong>可以被直接打印，其他类型需要特定的占位符 (% d,% f,% c)</li>
-<li>在引号内除了包含<strong>字符</strong>，还包含<strong>占位符</strong>，打印时会<strong>按顺序</strong>用<strong>变量</strong>的值<strong>代替</strong>占位符</li>
-<li>例如：printf (&quot;占位 1, 占位 2, 占位 3&quot;, 变量 1, 变量 2, 变量 3);</li>
-</ul>
-</li>
-</ol>
-<h4 id="整形数据类型"><a class="anchor" href="#整形数据类型">#</a> 整形数据类型</h4>
-<ol>
-<li>
-<p>占位符：% d</p>
-</li>
-<li>
-<p>不同整形数据类型的<strong>占用内存</strong>大小不同，表示的<strong>数据范围</strong>也不同</p>
-</li>
-<li>
-<p>计算机通过<strong>晶体管</strong>的开关状态记录数据</p>
-<ul>
-<li>
-<p>通常 8 个晶体管一组，称为字节</p>
-</li>
-<li>
-<p>每个晶体管又开关两种状态 (0,1)，<strong>二进制</strong>：一共 256 种状态</p>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msup><mn>2</mn><mn>8</mn></msup><mo>=</mo><mn>256</mn></mrow><annotation encoding="application/x-tex">2^8 = 256
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8641079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">8</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">5</span><span class="mord">6</span></span></span></span></span></p>
-</li>
-</ul>
-</li>
-<li>
-<p>sizeof 关键词：测量实体占用<strong>字节</strong>大小</p>
-</li>
-</ol>
-<pre class=" language-language-c"><code class="language-language-c"># include "stdio.h"
-int main()&#123;
-    printf("sizeof char = %d\n", sizeof(char));
-    printf("sizeof short = %d\n", sizeof(short));
-    printf("sizeof int = %d\n", sizeof(int));
-    printf("sizeof long = %d\n", sizeof(long));
-    printf("sizeof long long = %d\n", sizeof(long long));
-    int a;
-    printf("sizeof a = %d\n", sizeof(a));
-    printf("sizeof 100 = %d\n", sizeof(100));
-&#125;
-</code></pre>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208231300001.png" alt="" /></p>
-<ul>
-<li>最高位为符号位：2 的七次方、2 的十五次方...</li>
-<li>当确定数值为正数时，不需要最高位当作符号位使用 unsigned</li>
-</ul>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208231306582.png" alt="" /></p>
-<h4 id="浮点数据类型"><a class="anchor" href="#浮点数据类型">#</a> 浮点数据类型</h4>
-<ol>
-<li>
-<p>占位符：% f、% lf</p>
-</li>
-<li>
-<p>单精度浮点类型：float（4 个字节）</p>
-</li>
-</ol>
-<pre class=" language-language-c"><code class="language-language-c"># include"stdio.h"
-int main()&#123;
-    float a = 1.234567;
-    float b = 0.00001;
-    float c = 3.141592385;
-    printf("a = %f\n, b = %f\n, c = %f\n", a, b, c);
-&#125;
-</code></pre>
-<ul>
-<li>尾数较长的浮点数会产生<strong>误差</strong>，并不能表示无限精确</li>
-<li>C 语言标准规定 float 类型至少能表示<strong> 6 位有效数字</strong>：一般前六位数字准确，后面的数则会有误差</li>
-</ul>
-<ol start="3">
-<li>双精度浮点类型：double（8 个字节）</li>
-</ol>
-<pre class=" language-language-c"><code class="language-language-c">#include "stdio.h"
-int main()｛
-    double A = 1.234567;
-    double B = 0.00001;
-    double C = 3.141592385;
-    printf("A = %f\n B = %f\n C = %f\n", A, B, C);
-&#125;
-</code></pre>
-<h4 id="变量与常量"><a class="anchor" href="#变量与常量">#</a> 变量与常量</h4>
-<h5 id="数字类型"><a class="anchor" href="#数字类型">#</a> <strong>数字类型</strong></h5>
-<p><strong>变量</strong></p>
-<ol>
-<li>标识符：自己命名，表示变量、函数或其他实体的名称，使用前需要<strong>声明</strong>
-<ul>
-<li>字母、数字、下划线，<strong>数字不能开头</strong></li>
-<li>数据类型 标识符名称；</li>
-<li>int a;</li>
-</ul>
-</li>
-<li>关键词：C 语言标准规定词汇，可以直接使用</li>
-<li>变量<strong>可以</strong>被多次<strong>赋值</strong>
-<ul>
-<li>下列代码可以<strong>正确运行</strong></li>
-<li>允许变量被多次<strong>赋值</strong></li>
-</ul>
-</li>
-</ol>
-<pre class=" language-language-c"><code class="language-language-c">int a;
-a = 100;
-a = 200;	
-</code></pre>
-<ol start="4">
-<li>变量<strong>不可以</strong>被多次<strong>初始化</strong>
-<ul>
-<li>下列代码运行<strong>报错</strong> (<strong>重复声明</strong>)</li>
-<li>不允许变量被多次<strong>初始化</strong></li>
-</ul>
-</li>
-</ol>
-<pre class=" language-language-c"><code class="language-language-c">int a = 100;
-int a = 200;
-</code></pre>
-<p><strong>常量</strong></p>
-<ul>
-<li>
-<p>常量一开始就写死，无法修改</p>
-</li>
-<li>
-<p>字面常量：100,3.14，&quot;hello world&quot;</p>
-</li>
-<li>
-<p>字面常量无需声明，编译器可判断类型</p>
-</li>
-<li>
-<p>符号常量：#<strong>define</strong> <strong>符号常量名</strong> <strong>值</strong></p>
-</li>
-<li>
-<p>出现频率较高且需要修改的值，修改时只需在常量定义处修改即可</p>
-</li>
-<li>
-<p>打印字符串时，可以直接打印字符串常量或者使用 **% s 占位符 **，然后用字符串实体替换</p>
-</li>
-</ul>
-<h5 id="字符类型"><a class="anchor" href="#字符类型">#</a> <strong>字符类型</strong></h5>
-<p><strong>变量</strong></p>
-<ol>
-<li><strong>字符变量</strong>常用<strong> char</strong> 类型来表示</li>
-<li><strong>字符变量</strong>只占用 1 个字节的内存</li>
-</ol>
-<p><strong>常量</strong></p>
-<ol>
-<li>字符常量由<strong>单引号</strong>包括：'a','1',' 字'</li>
-<li>printf 函数<strong>只能</strong>输出<strong>字符串</strong>，所以输出单个字符时同样需要在字符串中使用<strong>占位符</strong>：% c</li>
-</ol>
-<pre class=" language-language-c"><code class="language-language-c">printf("%c%c",'a','z');
-</code></pre>
-<ol start="3">
-<li>字符<strong>常量</strong>内存大小
-<ul>
-<li>使用<strong> C 编译器</strong>的.c 文件中，<strong>字符常量</strong>占 4 个字节</li>
-<li>使用<strong> C++ 编译器</strong>的.cpp 文件中，<strong>字符常量</strong>占 1 个字节</li>
-</ul>
-</li>
-</ol>
-<h4 id="整数与字符的关系ascii"><a class="anchor" href="#整数与字符的关系ascii">#</a> 整数与字符的关系 ASCII</h4>
-<ol>
-<li><strong>字符类本质型就是整形类型</strong>
-<ul>
-<li>将字符类型命名为 char，只占 1 个字节，既能用于整形，又能用于字符类型</li>
-<li>字符类型 char 同样可以使用 +-*/，会对应到其所表示的 ASCII 码</li>
-<li>使用 **&quot;% c&quot;<strong> 占位符 ——&gt; 输出</strong>字符类型 **</li>
-<li>使用 **&quot;% d&quot;<strong> 占位符 ——&gt; 输出对应</strong>整形 **</li>
-</ul>
-</li>
-<li>当使用整形占位符输出字符类型时</li>
-</ol>
-<pre class=" language-language-c"><code class="language-language-c">printf("%d %d %d",'a','b','c');
-</code></pre>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208231310357.png" alt="image-20220823131046292" /></p>
-<ol start="3">
-<li>
-<p>所以字符和数字存在一对一的映射关系（美国信息交换标准代码 ASCII）</p>
-</li>
-<li>
-<p><strong>ACSII 编码：</strong></p>
-</li>
-<li>
-<p>CHAR：数值对应字符</p>
-</li>
-<li>
-<p>HEX：十六进制</p>
-</li>
-<li>
-<p>OCT：八进制</p>
-</li>
-<li>
-<p>DEC：十进制</p>
-</li>
-<li>
-<p>转换大小写</p>
-</li>
-</ol>
-<pre class=" language-language-c"><code class="language-language-c">char letter = 'A';
-printf("%c", letter + 32);
-</code></pre>
-<ol start="6">
-<li>
-<p><strong>字符串的字节长度 = 字符个数 + 1</strong></p>
-<ol>
-<li>字符串末尾会默认添加一个结束符</li>
-<li>每个字符占一个字节 + <strong>末尾的結束字符</strong> (标记字符串结束)</li>
-<li><strong>数值 0</strong>：用于表示字符串结束，注意是<strong>数值 0</strong>，而不是<strong>字符 0</strong></li>
-</ol>
-</li>
-<li>
-<p><strong>\ 数值：转移字符</strong></p>
-<ol>
-<li><strong>转义字符</strong>只占 ASCII 中的<strong>一个字符</strong></li>
-<li>直接在字符串中写<strong> 0</strong>——&gt;<strong> 字符 0</strong></li>
-<li>在字符串中使用转移字符 **\0**——&gt;<strong> 数值 0 (字符串结束标识符)</strong></li>
-<li><strong>结束符：\0</strong></li>
-</ol>
-</li>
-<li>
-<p><strong>转义字符斜杠后的数值是用八进制表示：\ 数值 (八进制)</strong></p>
-<ul>
-<li><strong>OCT('H')=110、OCT('e')=145、OCT('l')=154、OCT('o')=157</strong></li>
-<li>printf(&quot;\110\145\154\154\157&quot;);——&gt;&quot;Hello&quot;</li>
-</ul>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208231306290.png" alt="" /></p>
-<ul>
-<li><strong>不可见字符</strong>：既可以用 **\ 字母<strong>也可以用</strong> \ 数值 (八进制)**</li>
-</ul>
-</li>
-</ol>
-<h4 id="printf函数"><a class="anchor" href="#printf函数">#</a> printf 函数</h4>
-<ol>
-<li>
-<p>格式：printf (&quot;占位符 1&quot;, 占位符 2&quot;, 替换 1, 替换 2)</p>
-<ul>
-<li><strong>printf</strong> 函数的第<strong>一个参数</strong>是<strong>字符串</strong> ——&gt; 是需要输出的内容</li>
-<li><strong>printf</strong> 函数<strong>第二以及后续参数</strong>都将<strong>依次</strong>替换<strong>占位符</strong></li>
-<li><strong>占位符的类型和数量</strong>要和<strong>后续参数的类型和数量</strong>一一对应</li>
-</ul>
-</li>
-<li>
-<p><strong>当 printf 占位符的格式与后续参数的格式不相同时，输出为 0</strong></p>
-<ul>
-<li><strong>特例：字符类型的本质是整形 (ASCII)，可以正常输出字符和整数的映射关系</strong></li>
-<li><strong>如果整形变量的格式规范设置为 % f，输出为 0</strong></li>
-<li><strong>如果浮点类型变量的格式规范设置为 % d，同样输出为 0</strong></li>
-</ul>
-</li>
-<li>
-<p>printf 是可变参数函数，参数传入到函数的可变参数中，变量会发生自动<strong>类型提升</strong></p>
-<ul>
-<li>char 和 short 会被提升为 int——&gt;<strong>char、short、int</strong> 均<strong>可以使用 % d 占位符</strong></li>
-</ul>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208231328426.png" alt="image-20220823132831339" /></p>
-<ul>
-<li>无符号类型<strong> unsigned</strong> 同理，用 u 表示则最高位不会被当作符号字符</li>
-</ul>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208231327076.png" alt="image-20220823132742979" /></p>
-</li>
-</ol>
-<h4 id="转换规范占位符"><a class="anchor" href="#转换规范占位符">#</a> 转换规范 (占位符)</h4>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208231335113.png" alt="image-20220823133506073" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208231335323.png" alt="image-20220823133523280" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208231335027.png" alt="image-20220823133555984" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208231336404.png" alt="image-20220823133612364" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208231336077.png" alt="image-20220823133627035" /></p>
-<h5 id="转换类型"><a class="anchor" href="#转换类型">#</a> <strong>转换类型</strong></h5>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208231337299.png" alt="image-20220823133753254" /></p>
-<h5 id="长度指示符"><a class="anchor" href="#长度指示符">#</a> <strong>长度指示符</strong></h5>
-<ul>
-<li><strong>% d ——&gt; % ld 或 % lld 扩展到 long/long long</strong></li>
-<li><strong>% d ——&gt; % hd 或 % hhd 收缩到 short/char</strong></li>
-</ul>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208231352919.png" alt="image-20220823135210872" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208231352578.png" alt="image-20220823135234532" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208231353238.png" alt="image-20220823135349191" /></p>
-<h5 id="转换精度"><a class="anchor" href="#转换精度">#</a> <strong>转换精度</strong></h5>
-<ul>
-<li><strong>整数类型 ——&gt; 控制最小数字位数</strong></li>
-<li><strong>浮点类型 ——&gt; 控制小数点后位数</strong></li>
-</ul>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208231410402.png" alt="image-20220823141018341" /></p>
-<h5 id="最小字段宽度"><a class="anchor" href="#最小字段宽度">#</a> <strong>最小字段宽度</strong></h5>
-<ol>
-<li><strong>达到最小宽度则不做处理</strong></li>
-<li><strong>未达到最小宽度则补充空格</strong></li>
-</ol>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208231413882.png" alt="image-20220823141309829" /></p>
-<h5 id="转换标志"><a class="anchor" href="#转换标志">#</a> <strong>转换标志</strong></h5>
-<ol>
-<li><strong>转换标志按顺序为：-+0#</strong></li>
-<li><strong>0：设置 0 作为填充字符</strong> ——&gt; 最小宽度不足默认是空格填充</li>
-<li><strong>-：设置 - 可使输出左对齐</strong> ——&gt; 输出默认为右对齐</li>
-<li><strong>+：设置输出结果产生符号</strong> ——&gt; 正数 +、负数 -</li>
-<li><strong>#：给进制前添加对应符号</strong> ——&gt;(O) 八进制、(OX) 十六进制</li>
-</ol>
-<h4 id="scanf函数"><a class="anchor" href="#scanf函数">#</a> scanf 函数</h4>
-<ol>
-<li>printf 函数：在控制台输出字符</li>
-<li>scanf 函数：在控制图输入字符</li>
-</ol>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208231443115.png" alt="image-20220823144321064" /></p>
-<pre class=" language-language-c"><code class="language-language-c">scanf("%hhd %hd %d %lf %llf%", %a, %b, %c, %d, %e);
-</code></pre>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208231449995.png" alt="image-20220823144910948" /></p>
-<ol start="3">
-<li>输入时也要根据转换规范按要求输入
-<ul>
-<li><strong>转换规范中以什么符号进行分割，输入时也要以相同符号分割</strong></li>
-</ul>
-</li>
-</ol>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208231451832.png" alt="image-20220823145121781" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208231451310.png" alt="image-20220823145151259" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208231453046.png" alt="image-20220823145353994" /></p>
-<ol start="4">
-<li>
-<p>转换为二进制并存储到变量</p>
-<ul>
-<li><strong>scanf 函数将输入的字符串按照对应转换规范进行转换</strong></li>
-<li><strong>转换完成后的二进制编码，将依次存放到后续参数的变量地址中</strong></li>
-</ul>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208231501762.png" alt="image-20220823150136708" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208231504681.png" alt="image-20220823150448624" /></p>
-</li>
-<li>
-<p>将输入的字符 'A' 转换为字符类型 'A'</p>
-<ul>
-<li><strong>将字符 A 转换为整形和字符类形输出：A——&gt;65,'A'</strong></li>
-<li><strong>若输入字符 '65',% c 只能接受第一位字符 '6','6'——&gt;56,'6'</strong></li>
-</ul>
-</li>
-</ol>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208231510180.png" alt="image-20220823151003141" /></p>
-<ol start="6">
-<li>将输入的字符 '65' 转换为整数的字符类型 '65'
-<ul>
-<li><strong>将字符 '65' 转换为和字符类型输出：'65'——&gt;65,'A'</strong></li>
-<li><strong>输入其他非数值字符则格式不正确，只能输出 0</strong></li>
-</ul>
-</li>
-</ol>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208231543611.png" alt="image-20220823154303574" /></p>
-<ol start="7">
-<li><strong>总结</strong> (很重要，暂且这样分析！！)
-<ul>
-<li><strong>%c</strong>：只可以接受<strong>一个</strong>字符，<strong>%hhd</strong>：只可以接受<strong>数值字符</strong></li>
-<li>字符 'A' 和数值字符 '65' 是<strong>等价的</strong></li>
-</ul>
-</li>
-<li><strong>数组名即地址，所以存储到数组中，不需要地址符！！！</strong></li>
-</ol>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208231606355.png" alt="image-20220823160608316" /></p>
-<h4 id="表达式和运算符"><a class="anchor" href="#表达式和运算符">#</a> 表达式和运算符</h4>
-<h5 id="表达式"><a class="anchor" href="#表达式">#</a> <strong>表达式</strong></h5>
-<ul>
-<li>至少 1 个运算对象和至少 0 个运算符组成一个<strong>表达式</strong>（例如：100）</li>
-<li>每一个表达式都有一个结果</li>
-<li>表达式后接上<strong>分号；<strong> 构成</strong>表达式语句</strong></li>
-<li>printf (&quot;% d\n&quot;, 5+10); 为函数调用表达式，5+10 是它的<strong>子表达式</strong></li>
-</ul>
-<h5 id="运算符"><a class="anchor" href="#运算符">#</a> <strong>运算符</strong></h5>
-<ul>
-<li>加减乘除 +-*/</li>
-<li><strong>整形</strong>与<strong>整形</strong>相除 ——&gt;<strong> 自动构成整除，结果中的小数部分会被丢弃（截断）</strong></li>
-<li>有<strong>浮点数</strong>参与相除 ——&gt; 可以保留小数部分</li>
-</ul>
-<h5 id="当printf占位符的格式与后续参数的格式不相同时"><a class="anchor" href="#当printf占位符的格式与后续参数的格式不相同时">#</a> 当 printf<strong> 占位符的格式</strong>与后续<strong>参数的格式不相同</strong>时</h5>
-<ul>
-<li><strong>特例：字符类型的本质是整形 (ASCII)，可以正常输出字符和整数的映射关系</strong></li>
-<li><strong>整形和浮点类型格式混用 ——&gt; 输出结果为 0</strong>
-<ul>
-<li><strong>（%d,float）(%f,int)</strong></li>
-</ul>
-</li>
-<li><strong>其他格式类型混用 ——&gt; 没有输出</strong>
-<ul>
-<li><strong>(% s,char)(% c, 字符串).....</strong></li>
-</ul>
-</li>
-</ul>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208231814183.png" alt="image-20220823181430130" /></p>
-<ol start="5">
-<li>
-<p>求余运算符：%</p>
-<ul>
-<li>取得两数相除的余数 ——&gt; 判断奇偶数</li>
-</ul>
-</li>
-<li>
-<p>自增自减运算符</p>
-<ul>
-<li>自增运算符：++</li>
-<li>自减运算符：--</li>
-</ul>
-<pre class=" language-language-c"><code class="language-language-c">printf("%d %d\n", ++a, --b);	//先执行a++和b--，然后打印自增/自减变化后的结果
-printf("%d %d\n", a++, b--);	//先打印a和b原来的结果，然后自增/自减改变它的值
-</code></pre>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208231826792.png" alt="image-20220823182655752" /></p>
-</li>
-</ol>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208231833229.png" alt="image-20220823183346188" /></p>
-<ol start="7">
-<li>产生额外作用的发生时机
-<ul>
-<li>VS 编译器累积所有自表达式求值后才会进行额外作用</li>
-<li>GCC 编译器每完成一个子表达式就会立即产生额外作用</li>
-<li>但都有相同的最晚发生时机：完整表达式求值结束后进入下一段代码之前</li>
-<li>所以要避免在一个表达式中重复对一个变量进行自增 / 自减</li>
-</ul>
-</li>
-<li>多元运算符
-<ul>
-<li>一元运算符：只有一个运算对象，自增、自减</li>
-<li>二元运算符：有两个运算对象，赋值、加减乘除</li>
-</ul>
-</li>
-<li>运算符优先级</li>
-</ol>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208231848293.png" alt="image-20220823184827249" /></p>
-<h4 id="自动类型转换终极总结"><a class="anchor" href="#自动类型转换终极总结">#</a> 自动类型转换 (终极总结)</h4>
-<ol>
-<li><strong>高级别类型的数据范围大于等于低级别类型</strong></li>
-<li><strong>无符号类型等级高于自身有符号类型：unsigned int &gt; int</strong></li>
-<li><strong>浮点数据类型高于所有整形数据类型： float &gt; unsigned long</strong></li>
-</ol>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208232249696.png" alt="" /></p>
-<ul>
-<li>
-<p><strong>C 语言会将运算符两边的类型先进行自动类型转换 ——&gt; 然后开始运算</strong></p>
-</li>
-<li>
-<p><strong>两个不同或相同数据类型做运算</strong></p>
-<ul>
-<li><strong>运算符（+ - * /）</strong></li>
-<li><strong>运算结果至少都会转化为 int 类型</strong></li>
-<li><strong>运算符两边的数据类型都小于或等于 int 类型 ——&gt; 运算结果为：int 类型</strong></li>
-<li><strong>运算符两边存在任何大于 int 类型的数据类型 ——&gt; 运算结果为：运算符两边中最高的数据类型</strong></li>
-</ul>
-</li>
-<li>
-<p><strong>应用</strong></p>
-<ul>
-<li><strong>整数除法：int /int——&gt;int</strong>  <strong>(运算符两边都是 int)</strong></li>
-<li><strong>浮点数除法：int /float——&gt;float</strong> (<strong>float 等级&gt; int 等级</strong>)</li>
-</ul>
-</li>
-</ul>
-<pre><code>5 / 2 = 2
-5 / 2.0 = 2.500000
-</code></pre>
-<ul>
-<li><strong>强制类型转换</strong>
-<ul>
-<li>(强制转换类型) 强制转换的数据对象，例如：int (5.2)</li>
-</ul>
-</li>
-</ul>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208232305438.png" alt="image-20220823230501392" /></p>
-<ul>
-<li><strong>注意图示代码的使用的强制类型转换，只是改变运算时的临时数据对象的类型，并没有赋值改变变量自身的类型和数值</strong></li>
-</ul>
-<h4 id="关系运算符和逻辑运算符"><a class="anchor" href="#关系运算符和逻辑运算符">#</a> 关系运算符和逻辑运算符</h4>
-<ul>
-<li>
-<p><strong>关系运算符</strong></p>
-<ul>
-<li>C 语言中用<strong> 0 表示假</strong>，用<strong> 1 表示真</strong></li>
-<li>大于等于：&gt; =，小于等于：&lt; =，等于 = =，不等于：！=</li>
-</ul>
-<pre class=" language-language-c"><code class="language-language-c">printf("%d\n", 2<=0<=10);	//结果为真，因为两个<=运算符优先级相同，从左往右执行
-</code></pre>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208232341255.png" alt="image-20220823234154197" /></p>
-</li>
-<li>
-<p><strong>逻辑运算符</strong></p>
-<ul>
-<li><strong>逻辑或：||</strong></li>
-<li><strong>逻辑与：&amp;&amp;</strong></li>
-<li><strong>逻辑运算符优先级低于关系运算符</strong></li>
-</ul>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208232343697.png" alt="image-20220823234355659" /></p>
-</li>
-</ul>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208232345502.png" alt="image-20220823234530453" /></p>
-<ul>
-<li><strong>运算符优先级</strong></li>
-</ul>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208232352520.png" alt="image-20220823235224466" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208232353425.png" alt="image-20220823235322371" /></p>
-<ul>
-<li><strong>注意： i++ &gt; ++i、逻辑非！、正负、乘除取余、加减、大于小于、等于不等于、&amp;&amp;、||、=</strong></li>
-</ul>
-]]></content>
-      <categories>
-        <category>高级编程语言</category>
-      </categories>
-      <tags>
-        <tag>C语言</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>C语言基础二</title>
-    <url>/2022/08/26/c-yu-yan-ji-chu-er/</url>
-    <content><![CDATA[<h4 id="分支流程"><a class="anchor" href="#分支流程">#</a> 分支流程</h4>
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="心释的茶社" href="https://yn-xs.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="心释的茶社" href="https://yn-xs.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="心释的茶社" href="https://yn-xs.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="C语言" />
+
+
+<link rel="canonical" href="https://yn-xs.github.io/2022/08/26/c-yu-yan-ji-chu-er/">
+
+
+
+  <title>
+C语言基础二 - 高级编程语言 |
+Tea House = 心释的茶社 = 大家好，我是心释</title>
+<meta name="generator" content="Hexo 6.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">C语言基础二
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2022-08-26 15:56:05">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2022-08-26T15:56:05+08:00">2022-08-26</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Tea House</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="https://raw.githubusercontent.com/YN-XS/images/master/202208252332362.png">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/B/" itemprop="item" rel="index" title="分类于 高级编程语言"><span itemprop="name">高级编程语言</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://yn-xs.github.io/2022/08/26/c-yu-yan-ji-chu-er/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="ZiJun">
+    <meta itemprop="description" content="大家好，我是心释, ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="心释的茶社">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h4 id="分支流程"><a class="anchor" href="#分支流程">#</a> 分支流程</h4>
 <h5 id="if-else语句"><a class="anchor" href="#if-else语句">#</a> <strong>if else 语句</strong></h5>
 <ul>
 <li><strong>if 语句要吧条件语句写在括号 (条件语句) 内</strong></li>
@@ -1454,12 +995,285 @@ void func(int a)
 <p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250135422.png" alt="image-20220825013510336" /></p>
 </li>
 </ul>
-]]></content>
-      <categories>
-        <category>高级编程语言</category>
-      </categories>
-      <tags>
-        <tag>C语言</tag>
-      </tags>
-  </entry>
-</search>
+
+      <div class="tags">
+          <a href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag"><i class="ic i-tag"></i> C语言</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2022-08-26 15:58:38" itemprop="dateModified" datetime="2022-08-26T15:58:38+08:00">2022-08-26</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[奶茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="ZiJun 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/alipay.png" alt="ZiJun 支付宝">
+        <p>支付宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>ZiJun <i class="ic i-at"><em>@</em></i>心释的茶社
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://yn-xs.github.io/2022/08/26/c-yu-yan-ji-chu-er/" title="C语言基础二">https://yn-xs.github.io/2022/08/26/c-yu-yan-ji-chu-er/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2022/08/25/c-yu-yan-ji-chu-yi/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;YN-XS&#x2F;images&#x2F;master&#x2F;202208252332362.png" title="C语言基础一">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 高级编程语言</span>
+  <h3>C语言基础一</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E6%94%AF%E6%B5%81%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text"> 分支流程</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#if-else%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.1.</span> <span class="toc-text"> if else 语句</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#else-if-%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.2.</span> <span class="toc-text"> else if 语句</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.3.</span> <span class="toc-text"> 条件表达式</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E6%B5%81%E7%A8%8B"><span class="toc-number">2.</span> <span class="toc-text"> 循环流程</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#while%E5%BE%AA%E7%8E%AF"><span class="toc-number">2.1.</span> <span class="toc-text"> while 循环</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#for%E5%BE%AA%E7%8E%AF"><span class="toc-number">2.2.</span> <span class="toc-text"> for 循环</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#do-while%E5%BE%AA%E7%8E%AF"><span class="toc-number">2.3.</span> <span class="toc-text"> do while 循环</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B5%8C%E5%A5%97%E5%BE%AA%E7%8E%AF"><span class="toc-number">2.4.</span> <span class="toc-text"> 嵌套循环</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#break%E5%92%8Ccontinue"><span class="toc-number">2.5.</span> <span class="toc-text"> break 和 continue</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E9%87%8D%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5switch"><span class="toc-number">3.</span> <span class="toc-text"> 多重选择语句 switch</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E7%BB%84"><span class="toc-number">4.</span> <span class="toc-text"> 数组</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">4.1.</span> <span class="toc-text"> 数组初始化</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A3%B0%E6%98%8E%E6%95%B0%E7%BB%84%E4%BD%86%E4%B8%8D%E5%81%9A%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">4.2.</span> <span class="toc-text"> 声明数组但不做初始化</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E8%B6%8A%E7%95%8C"><span class="toc-number">4.3.</span> <span class="toc-text"> 数组越界</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B0%86%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0%E5%A4%8D%E5%88%B6%E4%B8%AA%E5%8F%A6%E4%B8%80%E4%B8%AA%E6%95%B0%E7%BB%84"><span class="toc-number">4.4.</span> <span class="toc-text"> 将数组中的元素复制个另一个数组</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A4%9A%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="toc-number">4.5.</span> <span class="toc-text"> 多维数组</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="toc-number">4.6.</span> <span class="toc-text"> 二维数组</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%AB%98%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="toc-number">4.7.</span> <span class="toc-text"> 高维数组</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%8E%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84"><span class="toc-number">5.</span> <span class="toc-text"> 字符串与字符数组</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84%E5%8F%AF%E4%BB%A5%E8%A2%AB%E7%9B%B4%E6%8E%A5%E8%B5%8B%E5%80%BC%E5%92%8C%E6%89%93%E5%8D%B0"><span class="toc-number">5.1.</span> <span class="toc-text"> 字符数组可以被直接赋值和打印</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E5%88%97%E8%A1%A8%E9%95%BF%E5%BA%A6%E5%B0%8F%E4%BA%8E%E6%95%B0%E7%BB%84%E9%95%BF%E5%BA%A6"><span class="toc-number">5.2.</span> <span class="toc-text"> 初始化列表长度小于数组长度</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E5%88%97%E8%A1%A8%E9%95%BF%E5%BA%A6%E7%AD%89%E4%BA%8E%E6%95%B0%E7%BB%84%E9%95%BF%E5%BA%A6"><span class="toc-number">5.3.</span> <span class="toc-text"> 初始化列表长度等于数组长度</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E5%88%97%E8%A1%A8%E9%95%BF%E5%BA%A6%E5%A4%A7%E4%BA%8E%E6%95%B0%E7%BB%84%E9%95%BF%E5%BA%A6"><span class="toc-number">5.4.</span> <span class="toc-text"> 初始化列表长度大于数组长度</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B5%8B%E9%87%8F%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84%E4%B8%AD%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E9%95%BF%E5%BA%A6"><span class="toc-number">5.5.</span> <span class="toc-text"> 测量字符数组中字符串的长度</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84"><span class="toc-number">5.6.</span> <span class="toc-text"> 修改字符数组</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">5.7.</span> <span class="toc-text"> 输入字符串</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#putchar%E5%92%8Cgetchar"><span class="toc-number">5.8.</span> <span class="toc-text"> putchar 和 getchar</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E7%BC%93%E5%AD%98"><span class="toc-number">6.</span> <span class="toc-text"> 输入输出缓存</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E7%BC%93%E5%AD%98%E5%8C%BA"><span class="toc-number">6.1.</span> <span class="toc-text"> 输出缓存区</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E7%BC%93%E5%AD%98%E5%8C%BA"><span class="toc-number">6.2.</span> <span class="toc-text"> 输入缓存区</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%8D%E5%B8%A6%E7%BC%93%E5%AD%98%E7%9A%84%E8%BE%93%E5%85%A5%E5%87%BD%E6%95%B0"><span class="toc-number">6.3.</span> <span class="toc-text"> 不带缓存的输入函数</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">7.</span> <span class="toc-text"> 函数</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%89%B9%E6%80%A7%E4%BB%A5%E5%8F%8A%E5%AE%9A%E4%B9%89"><span class="toc-number">7.1.</span> <span class="toc-text"> 函数特性以及定义</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B5%B7%E4%BC%A6%E5%85%AC%E5%BC%8F%E6%B1%82%E4%B8%89%E8%A7%92%E5%BD%A2%E9%9D%A2%E7%A7%AF"><span class="toc-number">7.2.</span> <span class="toc-text"> 海伦公式求三角形面积</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="toc-number">7.3.</span> <span class="toc-text"> 返回值</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%A3%B0%E6%98%8E"><span class="toc-number">7.4.</span> <span class="toc-text"> 函数声明</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E4%B8%8E%E8%BF%94%E5%9B%9E%E5%80%BC%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">7.5.</span> <span class="toc-text"> 参数与返回值类型转换</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BD%A2%E5%8F%82%E4%B8%8E%E5%AE%9E%E5%8F%82%E7%9B%B8%E4%BA%92%E7%8B%AC%E7%AB%8B"><span class="toc-number">7.6.</span> <span class="toc-text"> 形参与实参相互独立</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E9%80%92%E5%BD%92"><span class="toc-number">7.7.</span> <span class="toc-text"> 函数递归</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/2022/08/25/c-yu-yan-ji-chu-yi/" rel="bookmark" title="C语言基础一">C语言基础一</a></li><li class="active"><a href="/2022/08/26/c-yu-yan-ji-chu-er/" rel="bookmark" title="C语言基础二">C语言基础二</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="ZiJun"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">ZiJun</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">3</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">2</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">2</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/C/" title="分类于 个人随笔">个人随笔</a>
+</div>
+
+    <span><a href="/2022/08/22/hello-world/" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/B/" title="分类于 高级编程语言">高级编程语言</a>
+</div>
+
+    <span><a href="/2022/08/26/c-yu-yan-ji-chu-er/" title="C语言基础二">C语言基础二</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/B/" title="分类于 高级编程语言">高级编程语言</a>
+</div>
+
+    <span><a href="/2022/08/25/c-yu-yan-ji-chu-yi/" title="C语言基础一">C语言基础一</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">ZiJun @ Tea House</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2022/08/26/c-yu-yan-ji-chu-er/',
+    favicon: {
+      show: "(๑ᵔ⌔ᵔ๑)：正在进入茶社",
+      hide: "(๑‾᷅^‾᷅๑)：记得回到茶社"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
