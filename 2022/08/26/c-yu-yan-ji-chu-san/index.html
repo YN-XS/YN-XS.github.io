@@ -1,0 +1,897 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="心释的茶社" href="https://yn-xs.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="心释的茶社" href="https://yn-xs.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="心释的茶社" href="https://yn-xs.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="C语言" />
+
+
+<link rel="canonical" href="https://yn-xs.github.io/2022/08/26/c-yu-yan-ji-chu-san/">
+
+
+
+  <title>
+C语言基础三 - 高级编程语言 |
+Tea House = 心释的茶社 = 欢迎来到心释的茶社</title>
+<meta name="generator" content="Hexo 6.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+<div id="loading">
+    <div class="reliefload">
+        <span style="--i:0;"></span>
+        <span style="--i:1;"></span>
+        <span style="--i:2;"></span>
+        <span style="--i:3;"></span>
+        <span style="--i:4;"></span>
+        <span style="--i:5;"></span>
+        <span style="--i:6;"></span>
+    </div>
+</div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">C语言基础三
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2022-08-26 21:18:21">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2022-08-26T21:18:21+08:00">2022-08-26</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Tea House</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="https://raw.githubusercontent.com/YN-XS/images/master/202208252332362.png">
+      </div>
+    
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+
+    </header>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/B/" itemprop="item" rel="index" title="分类于 高级编程语言"><span itemprop="name">高级编程语言</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://yn-xs.github.io/2022/08/26/c-yu-yan-ji-chu-san/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="ZiJun">
+    <meta itemprop="description" content="欢迎来到心释的茶社, ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="心释的茶社">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h2 id="c语言基础三"><a class="anchor" href="#c语言基础三">#</a> C 语言基础三</h2>
+<h4 id="指针"><a class="anchor" href="#指针">#</a> 指针</h4>
+<ul>
+<li><strong>大多数情况下：认为指针即地址即可</strong></li>
+<li><strong>指针本身不是地址，但指针所保存的值是一个地址，就像变量和数值的关系，变量不是一个数值，但变量保存的值是一个数字</strong></li>
+</ul>
+<h5 id="内存地址"><a class="anchor" href="#内存地址">#</a> 内存地址</h5>
+<ul>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250740748.png" alt="image-20220825074045588" /></p>
+</li>
+<li>
+<p><strong>数据通过数据总线在 CPU 和内存间进行传输</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250742081.png" alt="image-20220825074252982" /></p>
+</li>
+<li>
+<p><strong>将内存中的每个数据分别放到每个寄存器中</strong></p>
+</li>
+<li>
+<p><strong>激活算数逻辑单元</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250745019.png" alt="image-20220825074530924" /></p>
+</li>
+<li>
+<p><strong>用另一个寄存器来存放计算结果，然后将结果存放到内存中</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250746738.png" alt="image-20220825074645644" /></p>
+</li>
+<li>
+<p><strong>每块内存地址中都由八个晶体管开关，每块内存地址都有编号</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250750731.png" alt="image-20220825075034656" /></p>
+</li>
+<li>
+<p><strong>不同的数据类型占用存储空间大小不同</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250752470.png" alt="image-20220825075214402" /></p>
+</li>
+<li>
+<p><strong>内存地址总结</strong></p>
+</li>
+<li>
+<p><strong>记录一个数据对象在内存地址中的位置需要两个信息：</strong></p>
+<ul>
+<li><strong>首地址 + 存储空间大小 (数据对象所占字节数)</strong></li>
+</ul>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250755563.png" alt="image-20220825075521476" /></p>
+</li>
+</ul>
+<h5 id="指针数据类型"><a class="anchor" href="#指针数据类型">#</a> 指针数据类型</h5>
+<ul>
+<li>
+<p><strong>取地址运算符：&amp;</strong></p>
+<ul>
+<li>
+<p><strong>在数据对象左边加上地址符 &amp;，即可获取数据对象的内存地址 (首地址 + 存储空间大小)</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250802418.png" alt="image-20220825080242349" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250804744.png" alt="image-20220825080420683" /></p>
+</li>
+<li>
+<p><strong>声明指针变量时：空格位置不同都是正确的</strong></p>
+</li>
+<li>
+<pre class=" language-language-c"><code class="language-language-c">int *p;		//空格在*左边
+int* p;		//空格在*右边
+int*p;		//没有空格
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- **指针值=对象首地址**</span><br><span class="line"></span><br><span class="line">- **数据类型——>指针类型——>存储空间大小**</span><br><span class="line"></span><br><span class="line">  - ![image-<span class="number">20220825080857964</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250808035</span>.png)</span><br><span class="line"></span><br><span class="line">  - ![image-<span class="number">20220825081044923</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250810984</span>.png)</span><br><span class="line"></span><br><span class="line">  - ![image-<span class="number">20220825081305997</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250813062</span>.png)</span><br><span class="line"></span><br><span class="line">- **取值运算符：***</span><br><span class="line"></span><br><span class="line">  - **在指针对象左边加上取值运算符*，即可根据内存地址(首地址+空间大小)找到数据对象**</span><br><span class="line">  - ![image-<span class="number">20220825082906168</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250829229</span>.png)</span><br><span class="line"></span><br><span class="line">  - **可以通过：对数据地址取值来访问数据对象**</span><br><span class="line">  - ![image-<span class="number">20220825083357629</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250833689</span>.png)</span><br><span class="line"></span><br><span class="line"><span class="comment">##### 不同指针类型</span></span><br><span class="line"></span><br><span class="line">- **不同指针类型所表示的数据对象的(内存的存储空间大小)不同——>不可以相互赋值**</span><br><span class="line">- **不同指针类型所表示的数据对象的(内存的存储空间大小不同)，但是指针本身所占用的空间大小可能相同**</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825084852196</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250848272</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825084933710</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250849760</span>.png)</span><br><span class="line"></span><br><span class="line"><span class="comment">##### 强制转化指针类型</span></span><br><span class="line"></span><br><span class="line">- **强制转换指针类型——>指针保存(数据对象的首地址)并不会变**</span><br><span class="line"></span><br><span class="line">- **强制转换指针类型——>但是指针表示的(数据对象的存储空间大小)发生改变**</span><br><span class="line"></span><br><span class="line">- **不同类型的指针在取值(*指针)时，从(指针所保存的首地址)开始向后取出(指针类型所表示的存储空间大小)的数据**</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825090139913</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250901975</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825090228704</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250902780</span>.png)</span><br><span class="line"></span><br><span class="line">- <span class="comment">##### **指针小总结**</span></span><br><span class="line"></span><br><span class="line">  - ![image-<span class="number">20220825090917903</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250909957</span>.png)</span><br><span class="line">  - **指针保存了数据对象的首地址和存储空间大小**</span><br><span class="line">  - **指针值 = 数据对象首地址**</span><br><span class="line">  - **指针类型——>数据对象的存储空间大小**</span><br><span class="line">  - **不同类型指针在取值(*指针)时，从(保存的首地址)开始向后取出(不同存储空间大小)的数据**</span><br><span class="line"></span><br><span class="line"><span class="comment">#### 指针运算</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##### 指针类型与整形相加减</span></span><br><span class="line"></span><br><span class="line">- **指针类型与整形相加减——>移动指针内保存的首地址**</span><br><span class="line"></span><br><span class="line">- **无法将整形数据 赋给 指针类型**</span><br><span class="line">- ![image-<span class="number">20220825091207365</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250912423</span>.png)</span><br><span class="line">- ![image-<span class="number">20220825091142239</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250911298</span>.png)</span><br><span class="line"></span><br><span class="line">- **将数值强行转换为指针类型**</span><br><span class="line">- ![image-<span class="number">20220825091645350</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250916406</span>.png)</span><br><span class="line">  - **不同指针的首地址相同，但其所表示的空间大小不同**</span><br><span class="line">  - ![image-<span class="number">20220825091947034</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250919089</span>.png)</span><br><span class="line">  - ![image-<span class="number">20220825092109330</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250921388</span>.png)</span><br><span class="line">  - **不同类型指针所表示的连续的地址间隔不同（因为所保存的数据类型的存储空间不同）**</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825092158225</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250921296</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825092429404</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250924469</span>.png)</span><br><span class="line"></span><br><span class="line">![image-<span class="number">20220825092451338</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250924396</span>.png)</span><br><span class="line"></span><br><span class="line"><span class="comment">##### 同类型指针减法运算</span></span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825093228555</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250932611</span>.png)</span><br><span class="line">- ![image-<span class="number">20220825093441483</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250934550</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825093848961</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250938020</span>.png)</span><br><span class="line"></span><br><span class="line"><span class="comment">##### 指针运算总结</span></span><br><span class="line"></span><br><span class="line">- **有实际意义的指针运算——>不会报错**</span><br><span class="line">  - ![image-<span class="number">20220825093953935</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250939984</span>.png)</span><br><span class="line"></span><br><span class="line">- **没有实际意义的指针运算——>会报错**</span><br><span class="line">  - ![image-<span class="number">20220825094056340</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250940393</span>.png)</span><br><span class="line"></span><br><span class="line"><span class="comment">#### 指针与数组</span></span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825102329063</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251023129</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825102353739</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251023798</span>.png)</span><br><span class="line"></span><br><span class="line">- **数组首地址**</span><br><span class="line">- ![image-<span class="number">20220825102530190</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251025238</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825102707495</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251027554</span>.png)</span><br><span class="line"></span><br><span class="line"><span class="comment">##### 数组名与指针的关系</span></span><br><span class="line"></span><br><span class="line">- **大多数情况下，数组名会转换成指向(数组第一个元素的地址)的指针**</span><br><span class="line">- **对数组名使用 sizeof 和使用 地址符& 时：不会将数组名转换为指针**</span><br><span class="line">- ![image-<span class="number">20220825103442228</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251034291</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825103552115</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251035189</span>.png)</span><br><span class="line">  - ![image-<span class="number">20220825104000774</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251040824</span>.png)</span><br><span class="line">  - ![image-<span class="number">20220825104025870</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251040925</span>.png)</span><br><span class="line">  - ![image-<span class="number">20220825104035911</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251040973</span>.png)</span><br><span class="line"></span><br><span class="line"><span class="comment">##### 指针访问数组</span></span><br><span class="line"></span><br><span class="line">- **访问数组元素的两种方法**</span><br><span class="line"></span><br><span class="line">  - **![image-<span class="number">20220825104222214</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251042276</span>.png)**</span><br><span class="line">  - ![image-<span class="number">20220825104329125</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251043172</span>.png)</span><br><span class="line"></span><br><span class="line">- **下标运算符[]的优先级高于一切**</span><br><span class="line"></span><br><span class="line">- **下标运算符最终会展开为指针的形式——>指针访问数组 = 下标访问数组**</span><br><span class="line"></span><br><span class="line">- ![](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251051468</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825104800762</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251048813</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825104833697</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251048756</span>.png)</span><br><span class="line"></span><br><span class="line">- ```c</span><br><span class="line">  arr[<span class="number">2</span>] ——> *(arr+<span class="number">2</span>)</span><br><span class="line">  [<span class="number">2</span>]arr ——> *(<span class="number">2</span>+arr)</span><br></pre></td></tr></table></figure>
+
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="指针作为参数传递"><a class="anchor" href="#指针作为参数传递">#</a> 指针作为参数传递</h5>
+<ul>
+<li>
+<p><strong>实参与形参相互独立（内存地址不同）</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251134932.png" alt="image-20220825113410866" /></p>
+</li>
+<li>
+<p><strong>形参和实参相互独立 ——&gt; 形参中的参数值，无论如何变化都不会影响实参中的参数值</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251136227.png" alt="image-20220825113619153" /></p>
+</li>
+<li>
+<p><strong>指针作为参数传递</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251316211.png" alt="image-20220825131640155" /></p>
+</li>
+<li>
+<p><strong>将指针传递到函数内部，函数就可以通过指针 (所指向的内存地址) 访问到数据对象，并对数据对象的值进行修改</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251321127.png" alt="image-20220825132121058" /></p>
+</li>
+<li>
+<p>*<em> 注意，是对指针所指向的 (数据对象的值)—(<em>指针) 进行修改，而不是对指针值 (数据对象的内存地址)—(指针) 进行修改</em></em></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251326487.png" alt="image-20220825132649418" /></p>
+</li>
+<li>
+<p><strong>scanf 函数无法直接修改 main 函数中的变量，而是通过指针 / 地址间接修改变量的值</strong></p>
+</li>
+<li>
+<p><strong>之所以在主函数 main 中调用 scanf 函数时，scanf 函数可以改变外部 (main 函数中) 的变量，是因为 scanf 函数中传递的参数是一个地址 / 指针（参数前需要地址符 &amp;）</strong></p>
+</li>
+<li>
+<p><strong>所以 scanf 输入函数会先读取从键盘中输入，转化后再将其存放到指针 / 地址所指向的数据对象（参数前需要地址符 &amp;）</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251334188.png" alt="image-20220825133434136" /></p>
+</li>
+</ul>
+<h5 id="void类型指针"><a class="anchor" href="#void类型指针">#</a> void * 类型指针</h5>
+<ul>
+<li>
+<p><strong>不同类型指针赋值会修改数据对象的类型 ——&gt; 不能相互赋值</strong></p>
+<ul>
+<li>
+<p><strong>因为指针包括了数据对象的首地址和数据对象的存储空间 ——&gt; 不同类型指针不能相互赋值</strong></p>
+</li>
+<li>
+<p><strong>首地址可以相同，但是存储空间不一致</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251342200.png" alt="image-20220825134239138" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251341313.png" alt="image-20220825134101255" /></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>void 类型指针没有类型 ——&gt; 仅仅保存数据对象的首地址，不保存存储空间大小</strong></p>
+</li>
+<li>
+<p><strong>因此任意类型的指针都可以直接赋值给 void 类型指针</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251348704.png" alt="image-20220825134815645" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251346184.png" alt="image-20220825134600114" /></p>
+</li>
+<li>
+<p><strong>由于 void 类型指针没有存储空间大小</strong></p>
+</li>
+<li>
+<p><strong>所以任何指针类型都可以直接将地址赋给 void 类型指</strong></p>
+</li>
+<li>
+<p><strong>但 void 类型指针要先强制转换后才能将地址赋给对应类型指针</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251357276.png" alt="image-20220825135717210" /></p>
+</li>
+<li>
+<pre class=" language-language-c"><code class="language-language-c"># include"stdio.h"
+int main()&#123;
+    int a = 8;
+    int *A = &a;
+    printf("%d\n", A);
+    printf("%d\n", *A);
+    void *B = A;
+    int *C = (int*)B;
+    printf("%d\n", B);
+    printf("%d\n", C);
+&#125;
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- **总结**</span><br><span class="line"></span><br><span class="line">- **所有类型的指针都可以直接将其指向的地址赋值给void类型的指针**</span><br><span class="line"></span><br><span class="line">- **但是void类型指针要先强制转换类型才能将地址赋给其他类型指针**</span><br><span class="line"></span><br><span class="line">- **void类型指针只能用于地址的传递，不能对地址取值——>只能打印void类型指针的地址(数据对象地址)**</span><br><span class="line"></span><br><span class="line">- **因为void类型指针没有类型——>不能打印地址的取值(数据对象的值)**</span><br><span class="line"></span><br><span class="line"><span class="comment">#### 多级指针</span></span><br><span class="line"></span><br><span class="line">- **指针作为一个数据对象也有自己的存储位置(地址)**</span><br><span class="line">- **指向指针的指针 = 多级指针**</span><br><span class="line">- ![image-<span class="number">20220825143152294</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251431358</span>.png)</span><br><span class="line">- **二级指针的声明**</span><br><span class="line">  - ![image-<span class="number">20220825144843604</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251448678</span>.png)</span><br><span class="line">- ![image-<span class="number">20220825144927815</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251449877</span>.png)</span><br><span class="line"></span><br><span class="line">![image-<span class="number">20220825145007456</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251450515</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825145028720</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251450778</span>.png)</span><br><span class="line"></span><br><span class="line"><span class="comment">##### 指针数组</span></span><br><span class="line"></span><br><span class="line">- **元素为指针的数组**</span><br><span class="line">- ![image-<span class="number">20220825145507501</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251455578</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825145744263</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251457339</span>.png)</span><br><span class="line">- ![image-<span class="number">20220825145542152</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251455217</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825153227051</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251532143</span>.png)</span><br><span class="line"></span><br><span class="line"><span class="comment">##### 从函数中返回指针</span></span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825153447378</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251534443</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825153549578</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251535637</span>.png)</span><br><span class="line"></span><br><span class="line">- **static类似与python中的global，使用static的变量将不会被系统回收**</span><br><span class="line">- ![image-<span class="number">20220825153649469</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251536530</span>.png)</span><br><span class="line"></span><br><span class="line"><span class="comment">##### 将二级指针作为函数参数</span></span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825154050938</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251540021</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825154129081</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251541135</span>.png)</span><br><span class="line"></span><br><span class="line">- **将指针初始化为 NULL / <span class="number">0</span> 是一个非常好的习惯**</span><br><span class="line"></span><br><span class="line">- ```C</span><br><span class="line">  int *a = NULL;</span><br><span class="line">  int *b = NULL;</span><br></pre></td></tr></table></figure>
+
+</code></pre>
+</li>
+</ul>
+<h4 id="指针与多维数组"><a class="anchor" href="#指针与多维数组">#</a> 指针与多维数组</h4>
+<ul>
+<li><strong>在一维数组中：数组的元素是一个元素 (int,char...)——&gt; 指针 (普通指针) 指向一维数组第一个 (元素的地址)</strong></li>
+<li><strong>在二维数组中：数组的元素是一行一维数组 ——&gt; 指针 (数组指针) 指向二维数组中的第一个一维 (数组的地址)</strong></li>
+</ul>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251625278.png" alt="image-20220825162539217" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251627083.png" alt="image-20220825162700032" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251627494.png" alt="image-20220825162738443" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251628868.png" alt="image-20220825162812808" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251629173.png" alt="image-20220825162924110" /></p>
+<h5 id="注意区分指针数组和数组指针"><a class="anchor" href="#注意区分指针数组和数组指针">#</a> 注意区分指针数组和数组指针</h5>
+<ul>
+<li><strong>指针数组：是一个元素为指针的数组</strong></li>
+<li><strong>数组指针：是一个指向数组的指针</strong></li>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251712501.png" alt="" /></li>
+<li><strong>从这里要开始注意</strong>
+<ul>
+<li><strong>普通的指针指向数组时，指向的（数组的第一个元素）的地址</strong></li>
+<li><strong>而数组指针指向数组时，指向的是（一个数组）的地址</strong></li>
+</ul>
+</li>
+</ul>
+<p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>* arr[<span class="number">20</span>];	<span class="comment">//很明显这是一个指针数组(指针类型的数组)</span></span><br><span class="line"><span class="type">int</span> (*arr)[<span class="number">20</span>];		<span class="comment">//这是一个数组指针，为了方便理解，可以看成：int[20](*arr)</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="数组指针移动和取值"><a class="anchor" href="#数组指针移动和取值">#</a> 数组指针移动和取值</h5>
+<ul>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251722489.png" alt="image-20220825172205378" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251723805.png" alt="image-20220825172354700" /></p>
+</li>
+<li>
+<p><strong>指针本身不是地址，但是指针所保存的值是一个地址</strong></p>
+</li>
+<li>
+<p>*<em> 二维数组中的数组指针指向第一行一维数组的地址，对二维数组的第一行一维数组的地址取值 (<em>地址)——&gt; 得到了第一行一维数组</em></em></p>
+<ul>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251736352.png" alt="image-20220825173639300" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251737451.png" alt="image-20220825173701370" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251737557.png" alt="image-20220825173725454" /></p>
+</li>
+<li>
+<p>图中 pInt10 是一个数组指针：指向了第一行数组</p>
+</li>
+<li>
+<p>pInt 是一个普通指针：指向了第一行数组的第一个元素</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="指针访问与下标访问"><a class="anchor" href="#指针访问与下标访问">#</a> 指针访问与下标访问</h5>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251741802.png" alt="image-20220825174144745" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251745518.png" alt="image-20220825174525466" /></p>
+<ul>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208252300994.png" alt="image-20220825174344429" /></p>
+</li>
+<li></li>
+</ul>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251744510.png" alt="image-20220825174432457" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251748868.png" alt="image-20220825174800806" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251748942.png" alt="image-20220825174819884" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251749597.png" alt="image-20220825174942549" /></p>
+<ul>
+<li><strong>所以第二个不能将数组名转换为指向数组首个元素的做法：（&amp; 数组名）——&gt; 这样会取得整个数组的地址（也就是数组指针）</strong></li>
+<li><strong>指针与地址的关系 = 变量名与变量值的关系一样</strong></li>
+<li><strong>大多数情况：认为指针即地址即可</strong></li>
+</ul>
+<h5 id="指针与三位数组"><a class="anchor" href="#指针与三位数组">#</a> 指针与三位数组</h5>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251808826.png" alt="image-20220825180853744" /></p>
+<h5 id="声明器"><a class="anchor" href="#声明器">#</a> 声明器</h5>
+<ul>
+<li>
+<h6 id="数组标识符的声明"><a class="anchor" href="#数组标识符的声明">#</a> 数组标识符的声明</h6>
+</li>
+<li>
+<p><strong>声明与使用的形式一致</strong></p>
+<ul>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251826037.png" alt="image-20220825182605971" /></li>
+</ul>
+</li>
+<li>
+<p><strong>函数声明器</strong></p>
+<ul>
+<li>
+<p><strong>参数名可省略参数名</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251828620.png" alt="image-20220825182838567" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251829820.png" alt="image-20220825182914772" /></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>声明器的中优先级</strong></p>
+<ul>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251830367.png" alt="image-20220825183009287" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251831583.png" alt="image-20220825183111525" /></p>
+<ul>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251845415.png" alt="image-20220825184535364" /></li>
+<li><strong>指针数组：</strong>
+<ol>
+<li><strong>数组方括号优先级第一：——&gt; 首先是一个 (数组)</strong></li>
+<li><strong>指针 * 号优先级第二：——&gt; 这个 (数组) 的元素是 (指针)</strong></li>
+<li><strong>int 优先级第三：——&gt; 这个 (指针) 指向 (int) 类型</strong></li>
+</ol>
+</li>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251852604.png" alt="image-20220825185206553" /></li>
+<li><strong>数组指针：</strong>
+<ol>
+<li><strong>括号内的 * 号优先级第一：——&gt; 首先是一个 (指针)</strong></li>
+<li><strong>数组方括号优先级第二：——&gt; 这个 (指针) 指向 (数组)</strong></li>
+<li><strong>int 优先级第三：——&gt;(数组) 的元素为 (int)</strong></li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p>指针数组指针</p>
+<ul>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251858390.png" alt="image-20220825185821325" /></li>
+</ul>
+</li>
+<li>
+<p>函数指针数组</p>
+<ul>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251900593.png" alt="image-20220825190041541" /></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="函数指针与数组"><a class="anchor" href="#函数指针与数组">#</a> 函数指针与数组</h5>
+<ul>
+<li><strong>函数指针：指向函数的指针</strong></li>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251906672.png" alt="image-20220825190619610" /></li>
+</ul>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251906693.png" alt="image-20220825190636643" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251911666.png" alt="image-20220825191130615" /></p>
+<ul>
+<li>
+<p><strong>两种通过函数指针调用函数的方法</strong></p>
+<ul>
+<li>*<em> 函数指针取值 (<em>指针) 即为函数</em></em></li>
+<li><strong>第二种方法是一种可行的简写：直接将函数指针当做函数使用</strong></li>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251911533.png" alt="image-20220825191159481" /></li>
+</ul>
+</li>
+<li>
+<p><strong>函数指针数组</strong></p>
+<ul>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251916565.png" alt="image-20220825191651510" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251917379.png" alt="image-20220825191725321" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251917996.png" alt="image-20220825191757943" /></p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="字符串和字符指针"><a class="anchor" href="#字符串和字符指针">#</a> 字符串和字符指针</h5>
+<ul>
+<li>
+<p><strong>字符串结束的标志是 数值 0 而不是 字符 '0'</strong></p>
+</li>
+<li>
+<p><strong>为了不让 数值 0 和 字符 '0' 冲突，使用转义字符 \0 表示数值 0</strong></p>
+<ul>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251922338.png" alt="image-20220825192235261" /></p>
+</li>
+<li>
+<p><strong>字符串常量无法被修改</strong></p>
+</li>
+<li>
+<p><strong>数组中的值可以修改 ——&gt; 可以用字符数组来装载字符串，然后修改字符数组中的字符</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251932522.png" alt="image-20220825193213458" /></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>能否正常结尾的字符串（字符串末尾自带结束符 \0）</strong></p>
+<ul>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251928369.png" alt="image-20220825192807290" /></li>
+</ul>
+</li>
+<li>
+<p><strong>字符数组与指针</strong></p>
+<ul>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251933773.png" alt="image-20220825193300708" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251933065.png" alt="image-20220825193322003" /></p>
+</li>
+<li>
+<p><strong>指针 p 为一个移动的游标</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251933327.png" alt="image-20220825193351258" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251934539.png" alt="image-20220825193408468" /></p>
+</li>
+<li>
+<p><strong>错误的写法</strong></p>
+<ul>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251936779.png" alt="image-20220825193637718" /></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>使用指针处理字符串 (字符数组)</strong></p>
+<ul>
+<li><strong>字符串反转：将字符串中首尾对应的元素两两交换</strong></li>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251943399.png" alt="image-20220825194328346" /></li>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251944049.png" alt="image-20220825194407984" /></li>
+</ul>
+</li>
+</ul>
+
+      <div class="tags">
+          <a href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag"><i class="ic i-tag"></i> C语言</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2022-08-29 21:59:17" itemprop="dateModified" datetime="2022-08-29T21:59:17+08:00">2022-08-29</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[奶茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="ZiJun 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/alipay.png" alt="ZiJun 支付宝">
+        <p>支付宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>ZiJun <i class="ic i-at"><em>@</em></i>心释的茶社
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://yn-xs.github.io/2022/08/26/c-yu-yan-ji-chu-san/" title="C语言基础三">https://yn-xs.github.io/2022/08/26/c-yu-yan-ji-chu-san/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2022/08/26/c-yu-yan-ji-chu-er/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;YN-XS&#x2F;images&#x2F;master&#x2F;202208252332362.png" title="C语言基础二">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 高级编程语言</span>
+  <h3>C语言基础二</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2022/08/27/xian-xing-dai-shu-ji-chu/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;YN-XS&#x2F;images&#x2F;master&#x2F;study_imgs&#x2F;202208292157811.png" title="线性代数基础">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 统计学习方法</span>
+  <h3>线性代数基础</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#c%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80%E4%B8%89"><span class="toc-number">1.</span> <span class="toc-text"> C 语言基础三</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%87%E9%92%88"><span class="toc-number">1.0.1.</span> <span class="toc-text"> 指针</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E5%9C%B0%E5%9D%80"><span class="toc-number">1.0.1.1.</span> <span class="toc-text"> 内存地址</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8C%87%E9%92%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.0.1.2.</span> <span class="toc-text"> 指针数据类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8C%87%E9%92%88%E4%BD%9C%E4%B8%BA%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92"><span class="toc-number">1.0.1.3.</span> <span class="toc-text"> 指针作为参数传递</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#void%E7%B1%BB%E5%9E%8B%E6%8C%87%E9%92%88"><span class="toc-number">1.0.1.4.</span> <span class="toc-text"> void * 类型指针</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%87%E9%92%88%E4%B8%8E%E5%A4%9A%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="toc-number">1.0.2.</span> <span class="toc-text"> 指针与多维数组</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E5%8C%BA%E5%88%86%E6%8C%87%E9%92%88%E6%95%B0%E7%BB%84%E5%92%8C%E6%95%B0%E7%BB%84%E6%8C%87%E9%92%88"><span class="toc-number">1.0.2.1.</span> <span class="toc-text"> 注意区分指针数组和数组指针</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E6%8C%87%E9%92%88%E7%A7%BB%E5%8A%A8%E5%92%8C%E5%8F%96%E5%80%BC"><span class="toc-number">1.0.2.2.</span> <span class="toc-text"> 数组指针移动和取值</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8C%87%E9%92%88%E8%AE%BF%E9%97%AE%E4%B8%8E%E4%B8%8B%E6%A0%87%E8%AE%BF%E9%97%AE"><span class="toc-number">1.0.2.3.</span> <span class="toc-text"> 指针访问与下标访问</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8C%87%E9%92%88%E4%B8%8E%E4%B8%89%E4%BD%8D%E6%95%B0%E7%BB%84"><span class="toc-number">1.0.2.4.</span> <span class="toc-text"> 指针与三位数组</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A3%B0%E6%98%8E%E5%99%A8"><span class="toc-number">1.0.2.5.</span> <span class="toc-text"> 声明器</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E6%A0%87%E8%AF%86%E7%AC%A6%E7%9A%84%E5%A3%B0%E6%98%8E"><span class="toc-number">1.0.2.5.1.</span> <span class="toc-text"> 数组标识符的声明</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88%E4%B8%8E%E6%95%B0%E7%BB%84"><span class="toc-number">1.0.2.6.</span> <span class="toc-text"> 函数指针与数组</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E5%AD%97%E7%AC%A6%E6%8C%87%E9%92%88"><span class="toc-number">1.0.2.7.</span> <span class="toc-text"> 字符串和字符指针</span></a></li></ol></li></ol></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/2022/08/25/c-yu-yan-ji-chu-yi/" rel="bookmark" title="C语言基础一">C语言基础一</a></li><li><a href="/2022/08/26/c-yu-yan-ji-chu-er/" rel="bookmark" title="C语言基础二">C语言基础二</a></li><li class="active"><a href="/2022/08/26/c-yu-yan-ji-chu-san/" rel="bookmark" title="C语言基础三">C语言基础三</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="ZiJun"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">ZiJun</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">6</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">3</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">3</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL1lOLVhT" title="https:&#x2F;&#x2F;github.com&#x2F;YN-XS"><i class="ic i-github"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvbXkvbS9tdXNpYy9wbGF5bGlzdD9pZD0yMDI2MzU0NDEy" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;my&#x2F;m&#x2F;music&#x2F;playlist?id&#x3D;2026354412"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item weibo" data-url="aHR0cHM6Ly93ZWliby5jb20vNzUyMTU1OTg5MA==" title="https:&#x2F;&#x2F;weibo.com&#x2F;7521559890"><i class="ic i-weibo"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/statistics/" rel="section"><i class="ic i-calendar"></i>文章统计</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2022/08/26/c-yu-yan-ji-chu-er/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2022/08/27/xian-xing-dai-shu-ji-chu/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/B/" title="分类于 高级编程语言">高级编程语言</a>
+</div>
+
+    <span><a href="/2022/08/25/c-yu-yan-ji-chu-yi/" title="C语言基础一">C语言基础一</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/C/" title="分类于 个人随笔">个人随笔</a>
+</div>
+
+    <span><a href="/2022/08/22/hello-world/" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/B/" title="分类于 高级编程语言">高级编程语言</a>
+</div>
+
+    <span><a href="/2022/08/26/c-yu-yan-ji-chu-er/" title="C语言基础二">C语言基础二</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
+</div>
+
+    <span><a href="/2022/08/28/xian-xing-dai-shu-jin-jie/" title="线性代数进阶">线性代数进阶</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
+</div>
+
+    <span><a href="/2022/08/27/xian-xing-dai-shu-ji-chu/" title="线性代数基础">线性代数基础</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/B/" title="分类于 高级编程语言">高级编程语言</a>
+</div>
+
+    <span><a href="/2022/08/26/c-yu-yan-ji-chu-san/" title="C语言基础三">C语言基础三</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">ZiJun @ Tea House</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2022/08/26/c-yu-yan-ji-chu-san/',
+    favicon: {
+      show: "(๑ᵔ⌔ᵔ๑)：正在进入茶社",
+      hide: "(๑‾᷅^‾᷅๑)：记得回到茶社"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js,npm/echarts@5.2.2/dist/echarts.min.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

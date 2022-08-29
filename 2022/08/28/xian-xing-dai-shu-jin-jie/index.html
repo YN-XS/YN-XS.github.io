@@ -1,0 +1,784 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="心释的茶社" href="https://yn-xs.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="心释的茶社" href="https://yn-xs.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="心释的茶社" href="https://yn-xs.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="线性代数" />
+
+
+<link rel="canonical" href="https://yn-xs.github.io/2022/08/28/xian-xing-dai-shu-jin-jie/">
+
+
+
+  <title>
+线性代数进阶 - 统计学习方法 |
+Tea House = 心释的茶社 = 欢迎来到心释的茶社</title>
+<meta name="generator" content="Hexo 6.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+<div id="loading">
+    <div class="reliefload">
+        <span style="--i:0;"></span>
+        <span style="--i:1;"></span>
+        <span style="--i:2;"></span>
+        <span style="--i:3;"></span>
+        <span style="--i:4;"></span>
+        <span style="--i:5;"></span>
+        <span style="--i:6;"></span>
+    </div>
+</div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">线性代数进阶
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2022-08-28 18:39:34">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2022-08-28T18:39:34+08:00">2022-08-28</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Tea House</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208292154354.png">
+      </div>
+    
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+
+    </header>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/A/" itemprop="item" rel="index" title="分类于 统计学习方法"><span itemprop="name">统计学习方法</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://yn-xs.github.io/2022/08/28/xian-xing-dai-shu-jin-jie/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="ZiJun">
+    <meta itemprop="description" content="欢迎来到心释的茶社, ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="心释的茶社">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="线性代数进阶"><a class="anchor" href="#线性代数进阶">#</a> 线性代数进阶</h1>
+<h2 id="向量"><a class="anchor" href="#向量">#</a> 向量</h2>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281005651.png" alt="image-20220828100539542" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281008859.png" alt="image-20220828100844721" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281012944.png" alt="image-20220828101247881" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281015683.png" alt="image-20220828101518624" /></p>
+<h3 id="向量的加法"><a class="anchor" href="#向量的加法">#</a> 向量的加法</h3>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281027690.png" alt="image-20220828102705636" /></p>
+<h3 id="向量的数乘"><a class="anchor" href="#向量的数乘">#</a> 向量的数乘</h3>
+<p><strong>标量 &lt;——&gt; 数字在线性代数中的主要作用就是放缩向量</strong></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281033875.png" alt="image-20220828103312824" /><br />
+<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281041379.png" alt="image-20220828104114331" /></p>
+<h2 id="向量的线性组合-张成的空间和基"><a class="anchor" href="#向量的线性组合-张成的空间和基">#</a> 向量的线性组合、张成的空间和基</h2>
+<h3 id="基向量"><a class="anchor" href="#基向量">#</a> 基向量</h3>
+<p>i 和 j 是 xy 坐标系的基向量，也称为 x 轴上的 i 帽和 y 轴上的 j 帽（x 和 y 轴正方向上的单位向量）<br />
+i 帽和 j 帽一般为：i 帽 (1,0) T 和 j 帽 (0,1) T<br />
+<strong> 将坐标看成一个标量 ——&gt; 那么基向量就是这些标量缩放的对象</strong><br />
+<strong> x 坐标作用于 i 帽，y 坐标作用与 j 帽</strong><br />
+用数字描述向量时都依赖于基向量<br />
+<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281139764.png" alt="image-20220828113920713" /><br />
+<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281137863.png" alt="image-20220828113709803" /></p>
+<h3 id="向量的线性组合"><a class="anchor" href="#向量的线性组合">#</a> 向量的线性组合</h3>
+<p>两个数乘向量的和称为这两个向量的线性组合<br />
+向量 = 标量 * 基向量 (单位向量)<br />
+ 如果让两个标量同时自由变化，则可以得到所有的向量</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281217993.png" alt="image-20220828121737882" /></p>
+<p>如果固定其中一个标量不变，让另一个标量自由变化，所产生的向量的终点在一条直线上</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281146135.png" alt="image-20220828114631036" /></p>
+<p>若两个基向量恰好共线：所产生的向量的终点被限制在一条过原点的直线上</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281218562.png" alt="image-20220828121834504" /></p>
+<p>若两个基向量都是零向量：只能被限制在原点</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281219692.png" alt="image-20220828121902636" /></p>
+<h3 id="张成的空间"><a class="anchor" href="#张成的空间">#</a> 张成的空间</h3>
+<p>大部分二维向量张成的空间是二维向量的集合<br />
+<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281221771.png" alt="image-20220828122144650" /></p>
+<p>当二维向量共线时张成的空间则是终点落在一条直线上的向量的集合</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281311517.png" alt="image-20220828131147471" /></p>
+<p>当考虑多个向量时，将每个向量抽象为它的终点，就不必考虑所有的箭头了，只需要考虑无线大的二维平面本身</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281317328.png" alt="image-20220828131723092" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281317264.png" alt="image-20220828131743142" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281318915.png" alt="image-20220828131816792" /></p>
+<ul>
+<li>考虑一个向量时 ——&gt; 把它看作箭头</li>
+<li>考虑多个向量时 ——&gt; 把它们看作点<br />
+两个向量张成的空间实际就是三维空间中一个过原点的平面
+<ul>
+<li>所以终点落在这个平面的向量的集合（向量的起点都是原点）<br />
+<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281324411.png" alt="image-20220828132409340" /></li>
+</ul>
+</li>
+</ul>
+<p>三个数乘向量的线性组合<br />
+选择三个标量，对三个向量分别进行缩放，然后吧结果相加<br />
+三个向量所有的线性组合构成了它们张成的空间<br />
+<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281327581.png" alt="image-20220828132758497" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281332032.png" alt="image-20220828133235965" /></p>
+<h3 id="线性相关"><a class="anchor" href="#线性相关">#</a> 线性相关</h3>
+<p>当有多个向量时，移除其中一个向量，而不减小张成的空间 ——&gt; 它们<strong>线性相关</strong><br />
+其中一个向量可以被其他向量的线性组合所表示 &lt;—— 因为这个向量已经落在了其他向量张成的空间中</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281338017.png" alt="image-20220828133845953" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281341219.png" alt="image-20220828134109137" /></p>
+<h3 id="线性无关"><a class="anchor" href="#线性无关">#</a> 线性无关</h3>
+<p>所有向量都给张成的空间添加了新的维度<br />
+不存在任意一个向量可以被其他向量<br />
+<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281345813.png" alt="image-20220828134524728" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281351917.png" alt="image-20220828135101826" /></p>
+<h3 id="向量空间"><a class="anchor" href="#向量空间">#</a> 向量空间</h3>
+<p>向量空间的<strong>基向量</strong>是张成这个空间的其中<strong>一组【线性无关】的向量所组成的集合</strong></p>
+<h2 id="矩阵与线性变换"><a class="anchor" href="#矩阵与线性变换">#</a> 矩阵与线性变换</h2>
+<p><strong>变换本质上是（函数）的一种花哨说法</strong><br />
+<strong>函数：接收输入内容 ——&gt; 输出对应结果</strong></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281838179.png" alt="image-20220828183802120" /><br />
+<strong> 特别的，在线性代数的情况下：接收一个向量 ——&gt; 输出一个向量的变换</strong></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281841307.png" alt="image-20220828184116230" /></p>
+<h3 id="向量的函数变换运动"><a class="anchor" href="#向量的函数变换运动">#</a> 向量的函数 ——&gt; 变换 — 运动</h3>
+<p>如果一个变换接受一个向量并输出一个向量：试着想象输入向量移动 (旋转) 到输出向量的运动过程</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281902081.png" alt="image-20220828190222997" /></p>
+<p>理解整个变换：每一个输入向量都移动到对应输出向量的位置</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281906469.png" alt="image-20220828190610202" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281905948.png" alt="image-20220828190518637" /></p>
+<p>将向量看作箭头时，同时考虑所有二维向量会变得很拥挤，可以将每个向量的重点来看作这个向量</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281908439.png" alt="image-20220828190808320" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281908445.png" alt="image-20220828190835332" /></p>
+<p>对无线网格上的所有点同时做变换</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281910080.png" alt="image-20220828191000968" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281910372.png" alt="image-20220828191024168" /></p>
+<p>同时保留每个向量变换前的终点和变换后的终点，追踪它们的相对关系</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281912858.png" alt="image-20220828191230701" /></p>
+<h3 id="线性变换的要求"><a class="anchor" href="#线性变换的要求">#</a> 线性变换的要求</h3>
+<ul>
+<li>变换之后</li>
+</ul>
+<ol>
+<li>直线依旧是直线</li>
+<li>原点位置保持不变</li>
+<li>网格线保持变形且等距分布</li>
+</ol>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281915176.png" alt="image-20220828191508017" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281915031.png" alt="image-20220828191523924" /></p>
+<h3 id="向量依赖于基向量的数乘和相加"><a class="anchor" href="#向量依赖于基向量的数乘和相加">#</a> 向量依赖于基向量的数乘和相加</h3>
+<p>变换前的基向量：i 帽 (1,0) T 和 j 帽 (0,1) T<br />
+ 因从：只需要记录基向量 i 帽和 j 帽变换后的位置 ——&gt; 就能推断出任意向量变换之后的位置</p>
+<ul>
+<li>
+<p>变换前：基向量与向量的关系</p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281925352.png" alt="image-20220828192525266" /></p>
+</li>
+<li>
+<p>变换后：基向量与向量的关系</p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281928652.png" alt="image-20220828192812533" /></p>
+</li>
+</ul>
+<p>变换前：i 帽 (1,0) T，j 帽 (0,1) T，基于 i 帽和 j 帽的任意向量 (x，y) T</p>
+<p>x 和 y 分别为基向量数乘的标量，标量 x 和 y 乘以基向量后相加 ——&gt;(x,y) T</p>
+<ul>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208282003851.png" alt="image-20220828200306782" /></li>
+</ul>
+<h3 id="矩阵就是对空间的一种特定变换"><a class="anchor" href="#矩阵就是对空间的一种特定变换">#</a> 矩阵就是对空间的一种特定变换</h3>
+<ul>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208282033065.png" alt="image-20220828203356019" /></p>
+</li>
+<li>
+<p>所以二维线性变换仅由四个数字完全确定：</p>
+<ul>
+<li>
+<p><strong>变换后</strong> i 帽的两个坐标 和 j 帽的两个坐标</p>
+</li>
+<li>
+<p>将 i 帽和 j 帽封装一起 ——&gt; 得到了<strong>描述线性变化的矩阵</strong></p>
+<ul>
+<li>矩阵的列就是变换后的基向量</li>
+</ul>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208282010335.png" alt="image-20220828201059237" /></p>
+</li>
+<li>
+<p>描述线性变换的矩阵 * 输入向量 (变换前) = 输出向量 (变换后)</p>
+<ul>
+<li>这就是缩放基向量再相加的思想</li>
+</ul>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208282014521.png" alt="image-20220828201438460" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208282018001.png" alt="image-20220828201822914" /></p>
+</li>
+</ul>
+</li>
+</ul>
+<p>实质上矩阵的向量乘法就是基向量的线性组合</p>
+<ul>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208282020772.png" alt="image-20220828202059638" /></li>
+</ul>
+<p>矩阵 ——&gt; 对空间的一种特定变换</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208282057071.png" alt="image-20220828205743944" /></p>
+<h2 id="矩阵乘法与线性变换复合"><a class="anchor" href="#矩阵乘法与线性变换复合">#</a> 矩阵乘法与线性变换复合</h2>
+<p>矩阵代表一个特定的线性变换</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208282245530.png" alt="image-20220828224522885" /></p>
+<p>矩阵与向量相乘就是将矩阵所表示的线性变换作用于那个向量</p>
+<ul>
+<li><strong>矩阵在左边：看作对变量做变换的一个函数</strong></li>
+<li><strong>被变换的向量在右边：看作一个被变换的变量</strong><br />
+<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208290006984.png" alt="image-20220829000639814" /></li>
+</ul>
+<p>线性变化的复合变换</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208290054884.png" alt="image-20220829005412680" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208290055645.png" alt="image-20220829005556548" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208290102823.png" alt="image-20220829010206744" /></p>
+<p>矩阵与矩阵的相乘<br />
+让 (左) 矩阵所代表的线性变换分别作用于 (右) 矩阵的的每一列向量，分别得到两列变换后的向量，最后复合成一个矩阵</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208290128164.png" alt="image-20220829012851080" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208290129323.png" alt="image-20220829012949235" /></p>
+<p>找到 (右) 矩阵中已经变换过的 i 帽，将 (左) 矩阵所代表的线性变换作用于 i 帽 ——&gt; 得到复合矩阵的第一列</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291026658.png" alt="image-20220829102627467" /></p>
+<p>找到 (右) 矩阵中已经变换过的 j 帽，将 (左) 矩阵所代表的线性变换作用于 j 帽 ——&gt; 得到复合矩阵的第二列</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291028563.png" alt="image-20220829102812456" /></p>
+<p>矩阵不满足交换律</p>
+<ul>
+<li>变换的顺序 (右 ——&gt; 左) 发生改变 ——&gt; 对结果产生影响</li>
+</ul>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291031262.png" alt="image-20220829103129203" /></p>
+<p>先剪切后旋转</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291036279.png" alt="image-20220829103634148" /></p>
+<p>先旋转后剪切</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291037580.png" alt="image-20220829103708402" /></p>
+<p>矩阵满足结合律</p>
+<ul>
+<li>变换的顺序 (右 ——&gt; 左) 保持不变 ——&gt; 对结果没有影响</li>
+</ul>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291041455.png" alt="image-20220829104112332" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291041904.png" alt="image-20220829104128776" /></p>
+<h3 id="二维空间的线性变换"><a class="anchor" href="#二维空间的线性变换">#</a> 二维空间的线性变换</h3>
+<p>所有向量依赖于两个基向量：x 轴上的 i 帽和 y 轴上的 j 帽<br />
+原始的 i 帽：(1,0)<br />
+ 原始的 j 帽：(0,1)<br />
+<strong> i 帽作用于向量的 x 坐标</strong><br />
+<strong> j 帽作用于向量的 y 坐标</strong><br />
+二维矩阵相乘：是对二维基向量连续做了两次变换，右边矩阵是对原始的基向量变换后的矩阵。</p>
+<ul>
+<li>矩阵对向量做变换：x 坐标对 i 帽进行放缩，y 坐标对 j 帽进行放缩</li>
+</ul>
+<ol>
+<li>将右边矩阵的每一列向量分立出来，得到二列向量</li>
+<li>再让左边矩阵分别作用（放缩再相加）于每一个向量，得到二列变换后的向量</li>
+<li>再将二列变换后的向量放在一个 2 * 2 的矩阵中得到了最终变换的结果<br />
+<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291051328.png" alt="image-20220829105100186" /></li>
+</ol>
+<h3 id="三维空间的线性变换"><a class="anchor" href="#三维空间的线性变换">#</a> 三维空间的线性变换</h3>
+<p>所有向量依赖于三个基向量：x 轴的 i 帽，y 轴的 j 帽和 z 轴的 k 帽<br />
+原始的 i 帽：(1,0,0)<br />
+ 原始的 j 帽：(0,1,0)<br />
+ 原始的 k 帽：(0,0,1)<br />
+<strong> i 帽作用于向量的 x 坐标</strong><br />
+<strong> j 帽作用于向量的 y 坐标</strong><br />
+<strong> k 帽作用于向量的 z 坐标</strong><br />
+<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291052161.png" alt="image-20220829105208060" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291146990.png" alt="image-20220829114654704" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291148701.png" alt="image-20220829114801620" /></p>
+<p>将三个基向量记录在一个 3 * 3 的矩阵中</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291201114.png" alt="image-20220829120134015" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291201269.png" alt="image-20220829120151165" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291205509.png" alt="image-20220829120543384" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291204770.png" alt="image-20220829120403648" /></p>
+<p>三维矩阵相乘：是对三维基向量连续做了两次变换，右边矩阵是对原始的基向量变换后的矩阵。</p>
+<ul>
+<li>矩阵对向量做变换：x 坐标对 i 帽进行放缩，y 坐标对 j 帽进行放缩，z 坐标对 k 帽进行放缩</li>
+</ul>
+<ol>
+<li>将右边矩阵的每一列向量分立出来，得到三列向量</li>
+<li>再让左边矩阵分别作用（放缩再相加）于每一个向量，得到三列变换后的向量</li>
+<li>再将三列变换后的向量放在一个 3 * 3 的矩阵中得到了最终变换的结果<br />
+<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291208573.png" alt="image-20220829120839353" /></li>
+</ol>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291211882.png" alt="image-20220829121135808" /></p>
+<h2 id="行列式"><a class="anchor" href="#行列式">#</a> 行列式</h2>
+<h3 id="二维空间中的行列式"><a class="anchor" href="#二维空间中的行列式">#</a> 二维空间中的行列式</h3>
+<p>在二维空间中，基向量 i 帽 (1,0) 和 j 帽 (0,1) 可构成一个底为 1，高为 1 的正方形，面积为 1&lt;——&gt; 由基向量狗构成的原始的矩阵的行列式值为 1<br />
+ 将基向量变换后得到的矩阵的行列式值 ——&gt; 变换后基向量所构成四边形的面积（放缩的倍数）</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291519736.png" alt="image-20220829151907634" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291518138.png" alt="image-20220829151808015" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291517516.png" alt="image-20220829151751415" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291520328.png" alt="image-20220829152040228" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291521854.png" alt="image-20220829152111720" /><br />
+ 将空间压缩到了一条直线上<br />
+<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291523203.png" alt="image-20220829152322085" /><br />
+ 将空间压缩到了更小的维度上<br />
+<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291524164.png" alt="image-20220829152431072" /></p>
+<p>行列式的负值<br />
+如果矩阵的行列式为负值，则说明矩阵所表示的变换使空间的定向发生了改变（想象将一张纸表示的二维平面翻转过来）<br />
+行列式的绝对值依然表示区域面积的缩放比例<br />
+<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291526010.png" alt="image-20220829152609927" /><br />
+ 定向改变前</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291529088.png" alt="image-20220829152940009" /><br />
+ 定向改变后</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291530412.png" alt="image-20220829153014235" /></p>
+<p>假设变换后的 i 帽从一个方向不断靠近 j 帽，并转换到 j 帽的另一个方向</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291533237.png" alt="image-20220829153342080" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291534564.png" alt="image-20220829153411486" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291534881.png" alt="image-20220829153438729" /></p>
+<h3 id="三维空间中的行列式"><a class="anchor" href="#三维空间中的行列式">#</a> 三维空间中的行列式</h3>
+<p>在三维空间中则将对象聚焦到一个 i 帽，j 帽，k 帽所表示的 1 * 1* 1 的立方体中，矩阵的行列式值表示矩阵的空间中区域体积的放缩比例<br />
+立方体初始体积为 1<br />
+<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291539913.png" alt="image-20220829153932808" /></p>
+<p>正方体被压缩为了平行六面体<br />
+<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291541352.png" alt="image-20220829154101167" /></p>
+<p>原始立方体体积为 1，变换后的比例则为变换后立方体的体积<br />
+<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291543546.png" alt="image-20220829154317442" /></p>
+<p>三维空间行列式正负所表示的定向</p>
+<p>右手定则（行列式为正）</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291556824.png" alt="image-20220829155614722" /></p>
+<p>左手定则（行列式为负）</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291557353.png" alt="image-20220829155705237" /></p>
+<p>矩阵行列式值的计算</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291558766.png" alt="image-20220829155858714" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291601077.png" alt="image-20220829160120994" /></p>
+<h2 id="逆矩阵-列空间和零空间"><a class="anchor" href="#逆矩阵-列空间和零空间">#</a> 逆矩阵、列空间和零空间</h2>
+<h3 id="线性方程组"><a class="anchor" href="#线性方程组">#</a> 线性方程组</h3>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291610794.png" alt="image-20220829161018718" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291611647.png" alt="image-20220829161120545" /></p>
+<ul>
+<li>矩阵 A 代表一种线性变换</li>
+<li>A<strong>x</strong> = <strong>v</strong> 意味着找到一个<strong> x</strong> 向量经过矩阵<strong> A</strong> 变换后可以和向量<strong> v</strong> 重合</li>
+</ul>
+<h3 id="逆矩阵"><a class="anchor" href="#逆矩阵">#</a> 逆矩阵</h3>
+<p>向量经过矩阵 (A) 变换后，再经过 A 的逆矩阵 (A 逆) 变换，则会回到原来的状态</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291648645.png" alt="image-20220829164858537" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291648725.png" alt="image-20220829164838622" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291704377.png" alt="image-20220829164941847" /></p>
+<p>矩阵的行列式不为 0，则矩阵存在逆矩阵</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291651600.png" alt="image-20220829165133543" /></p>
+<p>求解 Ax = v，只需要将 v 乘以 A 的逆矩阵 ——&gt;x</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291653530.png" alt="image-20220829165302361" /></p>
+<h3 id="矩阵的秩"><a class="anchor" href="#矩阵的秩">#</a> 矩阵的秩</h3>
+<p>矩阵的秩表示<strong>变换后</strong>的空间的维数<br />
+秩如果小于原来空间的维数 ——&gt; 原空间被压缩了<br />
+<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291656465.png" alt="image-20220829165647388" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291657563.png" alt="image-20220829165703449" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291657829.png" alt="image-20220829165725685" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291657397.png" alt="image-20220829165752082" /></p>
+<h3 id="列空间"><a class="anchor" href="#列空间">#</a> 列空间</h3>
+<p>矩阵的列所张成的空间</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291708743.png" alt="image-20220829170833638" /></p>
+<p>秩与矩阵的列数相等 ——&gt; 满秩</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291709927.png" alt="image-20220829170955802" /></p>
+<p>线性变化必须保持原点位置不变 ——&gt; 零向量一定在列空间中</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291711990.png" alt="image-20220829171110879" /></p>
+<h3 id="零空间"><a class="anchor" href="#零空间">#</a> 零空间</h3>
+<p><strong>变换后落在原点的向量的集合 —— 矩阵的零空间或矩阵的核</strong></p>
+<h2 id="非方阵"><a class="anchor" href="#非方阵">#</a> 非方阵</h2>
+<p><strong>可笑的是，有人尝试去求非方阵的行列式</strong></p>
+<p>不同维数之间的变换是合理的</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291720662.png" alt="image-20220829172025578" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291720104.png" alt="image-20220829172040022" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291721417.png" alt="image-20220829172107226" /></p>
+
+      <div class="tags">
+          <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag"><i class="ic i-tag"></i> 线性代数</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2022-08-29 21:59:31" itemprop="dateModified" datetime="2022-08-29T21:59:31+08:00">2022-08-29</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[奶茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="ZiJun 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/alipay.png" alt="ZiJun 支付宝">
+        <p>支付宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>ZiJun <i class="ic i-at"><em>@</em></i>心释的茶社
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://yn-xs.github.io/2022/08/28/xian-xing-dai-shu-jin-jie/" title="线性代数进阶">https://yn-xs.github.io/2022/08/28/xian-xing-dai-shu-jin-jie/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2022/08/27/xian-xing-dai-shu-ji-chu/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;YN-XS&#x2F;images&#x2F;master&#x2F;study_imgs&#x2F;202208292157811.png" title="线性代数基础">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 统计学习方法</span>
+  <h3>线性代数基础</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%BF%9B%E9%98%B6"><span class="toc-number">1.</span> <span class="toc-text"> 线性代数进阶</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%91%E9%87%8F"><span class="toc-number">1.1.</span> <span class="toc-text"> 向量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%91%E9%87%8F%E7%9A%84%E5%8A%A0%E6%B3%95"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 向量的加法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%91%E9%87%8F%E7%9A%84%E6%95%B0%E4%B9%98"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 向量的数乘</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%91%E9%87%8F%E7%9A%84%E7%BA%BF%E6%80%A7%E7%BB%84%E5%90%88-%E5%BC%A0%E6%88%90%E7%9A%84%E7%A9%BA%E9%97%B4%E5%92%8C%E5%9F%BA"><span class="toc-number">1.2.</span> <span class="toc-text"> 向量的线性组合、张成的空间和基</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E5%90%91%E9%87%8F"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 基向量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%91%E9%87%8F%E7%9A%84%E7%BA%BF%E6%80%A7%E7%BB%84%E5%90%88"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 向量的线性组合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%A0%E6%88%90%E7%9A%84%E7%A9%BA%E9%97%B4"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 张成的空间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E7%9B%B8%E5%85%B3"><span class="toc-number">1.2.4.</span> <span class="toc-text"> 线性相关</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E6%97%A0%E5%85%B3"><span class="toc-number">1.2.5.</span> <span class="toc-text"> 线性无关</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4"><span class="toc-number">1.2.6.</span> <span class="toc-text"> 向量空间</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E4%B8%8E%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2"><span class="toc-number">1.3.</span> <span class="toc-text"> 矩阵与线性变换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%91%E9%87%8F%E7%9A%84%E5%87%BD%E6%95%B0%E5%8F%98%E6%8D%A2%E8%BF%90%E5%8A%A8"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 向量的函数 ——&gt; 变换 — 运动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2%E7%9A%84%E8%A6%81%E6%B1%82"><span class="toc-number">1.3.2.</span> <span class="toc-text"> 线性变换的要求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%91%E9%87%8F%E4%BE%9D%E8%B5%96%E4%BA%8E%E5%9F%BA%E5%90%91%E9%87%8F%E7%9A%84%E6%95%B0%E4%B9%98%E5%92%8C%E7%9B%B8%E5%8A%A0"><span class="toc-number">1.3.3.</span> <span class="toc-text"> 向量依赖于基向量的数乘和相加</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E5%B0%B1%E6%98%AF%E5%AF%B9%E7%A9%BA%E9%97%B4%E7%9A%84%E4%B8%80%E7%A7%8D%E7%89%B9%E5%AE%9A%E5%8F%98%E6%8D%A2"><span class="toc-number">1.3.4.</span> <span class="toc-text"> 矩阵就是对空间的一种特定变换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95%E4%B8%8E%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2%E5%A4%8D%E5%90%88"><span class="toc-number">1.4.</span> <span class="toc-text"> 矩阵乘法与线性变换复合</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E7%BB%B4%E7%A9%BA%E9%97%B4%E7%9A%84%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2"><span class="toc-number">1.4.1.</span> <span class="toc-text"> 二维空间的线性变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E7%BB%B4%E7%A9%BA%E9%97%B4%E7%9A%84%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2"><span class="toc-number">1.4.2.</span> <span class="toc-text"> 三维空间的线性变换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="toc-number">1.5.</span> <span class="toc-text"> 行列式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E7%BB%B4%E7%A9%BA%E9%97%B4%E4%B8%AD%E7%9A%84%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="toc-number">1.5.1.</span> <span class="toc-text"> 二维空间中的行列式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E7%BB%B4%E7%A9%BA%E9%97%B4%E4%B8%AD%E7%9A%84%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="toc-number">1.5.2.</span> <span class="toc-text"> 三维空间中的行列式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%86%E7%9F%A9%E9%98%B5-%E5%88%97%E7%A9%BA%E9%97%B4%E5%92%8C%E9%9B%B6%E7%A9%BA%E9%97%B4"><span class="toc-number">1.6.</span> <span class="toc-text"> 逆矩阵、列空间和零空间</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84"><span class="toc-number">1.6.1.</span> <span class="toc-text"> 线性方程组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%86%E7%9F%A9%E9%98%B5"><span class="toc-number">1.6.2.</span> <span class="toc-text"> 逆矩阵</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E7%A7%A9"><span class="toc-number">1.6.3.</span> <span class="toc-text"> 矩阵的秩</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%97%E7%A9%BA%E9%97%B4"><span class="toc-number">1.6.4.</span> <span class="toc-text"> 列空间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%B6%E7%A9%BA%E9%97%B4"><span class="toc-number">1.6.5.</span> <span class="toc-text"> 零空间</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%9E%E6%96%B9%E9%98%B5"><span class="toc-number">1.7.</span> <span class="toc-text"> 非方阵</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/2022/08/27/xian-xing-dai-shu-ji-chu/" rel="bookmark" title="线性代数基础">线性代数基础</a></li><li class="active"><a href="/2022/08/28/xian-xing-dai-shu-jin-jie/" rel="bookmark" title="线性代数进阶">线性代数进阶</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="ZiJun"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">ZiJun</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">6</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">3</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">3</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL1lOLVhT" title="https:&#x2F;&#x2F;github.com&#x2F;YN-XS"><i class="ic i-github"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvbXkvbS9tdXNpYy9wbGF5bGlzdD9pZD0yMDI2MzU0NDEy" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;my&#x2F;m&#x2F;music&#x2F;playlist?id&#x3D;2026354412"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item weibo" data-url="aHR0cHM6Ly93ZWliby5jb20vNzUyMTU1OTg5MA==" title="https:&#x2F;&#x2F;weibo.com&#x2F;7521559890"><i class="ic i-weibo"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/statistics/" rel="section"><i class="ic i-calendar"></i>文章统计</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/B/" title="分类于 高级编程语言">高级编程语言</a>
+</div>
+
+    <span><a href="/2022/08/25/c-yu-yan-ji-chu-yi/" title="C语言基础一">C语言基础一</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/C/" title="分类于 个人随笔">个人随笔</a>
+</div>
+
+    <span><a href="/2022/08/22/hello-world/" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/B/" title="分类于 高级编程语言">高级编程语言</a>
+</div>
+
+    <span><a href="/2022/08/26/c-yu-yan-ji-chu-san/" title="C语言基础三">C语言基础三</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
+</div>
+
+    <span><a href="/2022/08/27/xian-xing-dai-shu-ji-chu/" title="线性代数基础">线性代数基础</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/B/" title="分类于 高级编程语言">高级编程语言</a>
+</div>
+
+    <span><a href="/2022/08/26/c-yu-yan-ji-chu-er/" title="C语言基础二">C语言基础二</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
+</div>
+
+    <span><a href="/2022/08/28/xian-xing-dai-shu-jin-jie/" title="线性代数进阶">线性代数进阶</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">ZiJun @ Tea House</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2022/08/28/xian-xing-dai-shu-jin-jie/',
+    favicon: {
+      show: "(๑ᵔ⌔ᵔ๑)：正在进入茶社",
+      hide: "(๑‾᷅^‾᷅๑)：记得回到茶社"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js,npm/echarts@5.2.2/dist/echarts.min.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

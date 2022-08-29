@@ -33,27 +33,20 @@
 
   <title>
 C语言基础一 - 高级编程语言 |
-Tea House = 心释的茶社 = 大家好，我是心释</title>
+Tea House = 心释的茶社 = 欢迎来到心释的茶社</title>
 <meta name="generator" content="Hexo 6.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
-  <div id="loading">
-    <div class="cat">
-      <div class="body"></div>
-      <div class="head">
-        <div class="face"></div>
-      </div>
-      <div class="foot">
-        <div class="tummy-end"></div>
-        <div class="bottom"></div>
-        <div class="legs left"></div>
-        <div class="legs right"></div>
-      </div>
-      <div class="paw">
-        <div class="hands left"></div>
-        <div class="hands right"></div>
-      </div>
+<div id="loading">
+    <div class="reliefload">
+        <span style="--i:0;"></span>
+        <span style="--i:1;"></span>
+        <span style="--i:2;"></span>
+        <span style="--i:3;"></span>
+        <span style="--i:4;"></span>
+        <span style="--i:5;"></span>
+        <span style="--i:6;"></span>
     </div>
-  </div>
+</div>
   <div id="container">
     <header id="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="inner">
@@ -103,7 +96,7 @@ Tea House = 心释的茶社 = 大家好，我是心释</title>
       <div id="imgs" class="pjax">
           <img src="https://raw.githubusercontent.com/YN-XS/images/master/202208252332362.png">
       </div>
-    </header>
+    
     <div id="waves">
       <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
         <defs>
@@ -117,6 +110,8 @@ Tea House = 心释的茶社 = 大家好，我是心释</title>
         </g>
       </svg>
     </div>
+
+    </header>
     <main>
       <div class="inner">
         <div id="main" class="pjax">
@@ -136,7 +131,7 @@ Tea House = 心释的茶社 = 大家好，我是心释</title>
   <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="image" content="/images/avatar.jpg">
     <meta itemprop="name" content="ZiJun">
-    <meta itemprop="description" content="大家好，我是心释, ">
+    <meta itemprop="description" content="欢迎来到心释的茶社, ">
   </span>
 
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -146,20 +141,10 @@ Tea House = 心释的茶社 = 大家好，我是心释</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208252332362.png" alt="7_clear" /></p>
+    <h1 id="c语言基础一"><a class="anchor" href="#c语言基础一">#</a> C 语言基础一</h1>
 <h4 id="第一个c语言程序helloworld"><a class="anchor" href="#第一个c语言程序helloworld">#</a> 第一个 C 语言程序：Hello，World</h4>
-<pre class=" language-language-c"><code class="language-language-c"># include "stdio.h"
-int main()&#123;
-    printf("hello world\n");
-    return 0;
-&#125;
-</code></pre>
-<pre class=" language-language-c"><code class="language-language-c"># 头文件
-返回值类型 函数名(输入参数值)&#123;
-    相关操作
-    return 函数返回值
-&#125;
-</code></pre>
+<p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># <span class="keyword">include</span> <span class="string">&quot;stdio.h&quot;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;hello world\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 头文件</span><br><span class="line">返回值类型 函数名(输入参数值)&#123;</span><br><span class="line">    相关操作</span><br><span class="line">    <span class="keyword">return</span> 函数返回值</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <ol>
 <li>记得先导入 include——&gt; 头文件<strong> stdio.h</strong></li>
 <li>头文件中声明了 printf 函数（定义在更深层）</li>
@@ -168,17 +153,7 @@ int main()&#123;
 <li>C 语言不同于脚本语言的 python：每行代码末尾都要加<strong>分号；<strong> 并且输出</strong>默认不换行</strong>需要自行加入 **&quot;\n&quot; 转义符 **</li>
 </ol>
 <h4 id="两数之和函数"><a class="anchor" href="#两数之和函数">#</a> 两数之和函数</h4>
-<pre class=" language-language-c"><code class="language-language-c"># include "stdio.h"
-int add(int a, int b)&#123;
-    return a + b;
-&#125;
-
-int main()&#123;
-    int result;
-    result = add(2, 4);
-    printf("%d", result);
-&#125;
-</code></pre>
+<p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># <span class="keyword">include</span> <span class="string">&quot;stdio.h&quot;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">add</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">int</span> result;</span><br><span class="line">    result = add(<span class="number">2</span>, <span class="number">4</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, result);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <ol>
 <li>
 <p>先定义 add 函数，在调用 add 函数</p>
@@ -248,18 +223,7 @@ int main()&#123;
 <p>sizeof 关键词：测量实体占用<strong>字节</strong>大小</p>
 </li>
 </ol>
-<pre class=" language-language-c"><code class="language-language-c"># include "stdio.h"
-int main()&#123;
-    printf("sizeof char = %d\n", sizeof(char));
-    printf("sizeof short = %d\n", sizeof(short));
-    printf("sizeof int = %d\n", sizeof(int));
-    printf("sizeof long = %d\n", sizeof(long));
-    printf("sizeof long long = %d\n", sizeof(long long));
-    int a;
-    printf("sizeof a = %d\n", sizeof(a));
-    printf("sizeof 100 = %d\n", sizeof(100));
-&#125;
-</code></pre>
+<p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># <span class="keyword">include</span> <span class="string">&quot;stdio.h&quot;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;sizeof char = %d\n&quot;</span>, <span class="keyword">sizeof</span>(<span class="type">char</span>));</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;sizeof short = %d\n&quot;</span>, <span class="keyword">sizeof</span>(<span class="type">short</span>));</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;sizeof int = %d\n&quot;</span>, <span class="keyword">sizeof</span>(<span class="type">int</span>));</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;sizeof long = %d\n&quot;</span>, <span class="keyword">sizeof</span>(<span class="type">long</span>));</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;sizeof long long = %d\n&quot;</span>, <span class="keyword">sizeof</span>(<span class="type">long</span> <span class="type">long</span>));</span><br><span class="line">    <span class="type">int</span> a;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;sizeof a = %d\n&quot;</span>, <span class="keyword">sizeof</span>(a));</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;sizeof 100 = %d\n&quot;</span>, <span class="keyword">sizeof</span>(<span class="number">100</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208231300001.png" alt="" /></p>
 <ul>
 <li>最高位为符号位：2 的七次方、2 的十五次方...</li>
@@ -275,14 +239,7 @@ int main()&#123;
 <p>单精度浮点类型：float（4 个字节）</p>
 </li>
 </ol>
-<pre class=" language-language-c"><code class="language-language-c"># include"stdio.h"
-int main()&#123;
-    float a = 1.234567;
-    float b = 0.00001;
-    float c = 3.141592385;
-    printf("a = %f\n, b = %f\n, c = %f\n", a, b, c);
-&#125;
-</code></pre>
+<p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># <span class="keyword">include</span><span class="string">&quot;stdio.h&quot;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">float</span> a = <span class="number">1.234567</span>;</span><br><span class="line">    <span class="type">float</span> b = <span class="number">0.00001</span>;</span><br><span class="line">    <span class="type">float</span> c = <span class="number">3.141592385</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;a = %f\n, b = %f\n, c = %f\n&quot;</span>, a, b, c);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>尾数较长的浮点数会产生<strong>误差</strong>，并不能表示无限精确</li>
 <li>C 语言标准规定 float 类型至少能表示<strong> 6 位有效数字</strong>：一般前六位数字准确，后面的数则会有误差</li>
@@ -290,14 +247,7 @@ int main()&#123;
 <ol start="3">
 <li>双精度浮点类型：double（8 个字节）</li>
 </ol>
-<pre class=" language-language-c"><code class="language-language-c">#include "stdio.h"
-int main()｛
-    double A = 1.234567;
-    double B = 0.00001;
-    double C = 3.141592385;
-    printf("A = %f\n B = %f\n C = %f\n", A, B, C);
-&#125;
-</code></pre>
+<p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;stdio.h&quot;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>｛</span><br><span class="line">    <span class="type">double</span> A = <span class="number">1.234567</span>;</span><br><span class="line">    <span class="type">double</span> B = <span class="number">0.00001</span>;</span><br><span class="line">    <span class="type">double</span> C = <span class="number">3.141592385</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;A = %f\n B = %f\n C = %f\n&quot;</span>, A, B, C);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h4 id="变量与常量"><a class="anchor" href="#变量与常量">#</a> 变量与常量</h4>
 <h5 id="数字类型"><a class="anchor" href="#数字类型">#</a> <strong>数字类型</strong></h5>
 <p><strong>变量</strong></p>
@@ -317,10 +267,7 @@ int main()｛
 </ul>
 </li>
 </ol>
-<pre class=" language-language-c"><code class="language-language-c">int a;
-a = 100;
-a = 200;	
-</code></pre>
+<p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a;</span><br><span class="line">a = <span class="number">100</span>;</span><br><span class="line">a = <span class="number">200</span>;	</span><br></pre></td></tr></table></figure></p>
 <ol start="4">
 <li>变量<strong>不可以</strong>被多次<strong>初始化</strong>
 <ul>
@@ -329,9 +276,7 @@ a = 200;
 </ul>
 </li>
 </ol>
-<pre class=" language-language-c"><code class="language-language-c">int a = 100;
-int a = 200;
-</code></pre>
+<p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">100</span>;</span><br><span class="line"><span class="type">int</span> a = <span class="number">200</span>;</span><br></pre></td></tr></table></figure></p>
 <p><strong>常量</strong></p>
 <ul>
 <li>
@@ -364,8 +309,7 @@ int a = 200;
 <li>字符常量由<strong>单引号</strong>包括：'a','1',' 字'</li>
 <li>printf 函数<strong>只能</strong>输出<strong>字符串</strong>，所以输出单个字符时同样需要在字符串中使用<strong>占位符</strong>：% c</li>
 </ol>
-<pre class=" language-language-c"><code class="language-language-c">printf("%c%c",'a','z');
-</code></pre>
+<p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%c%c&quot;</span>,<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;z&#x27;</span>);</span><br></pre></td></tr></table></figure></p>
 <ol start="3">
 <li>字符<strong>常量</strong>内存大小
 <ul>
@@ -386,8 +330,7 @@ int a = 200;
 </li>
 <li>当使用整形占位符输出字符类型时</li>
 </ol>
-<pre class=" language-language-c"><code class="language-language-c">printf("%d %d %d",'a','b','c');
-</code></pre>
+<p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d %d %d&quot;</span>,<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>);</span><br></pre></td></tr></table></figure></p>
 <p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208231310357.png" alt="image-20220823131046292" /></p>
 <ol start="3">
 <li>
@@ -412,9 +355,7 @@ int a = 200;
 <p>转换大小写</p>
 </li>
 </ol>
-<pre class=" language-language-c"><code class="language-language-c">char letter = 'A';
-printf("%c", letter + 32);
-</code></pre>
+<p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> letter = <span class="string">&#x27;A&#x27;</span>;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>, letter + <span class="number">32</span>);</span><br></pre></td></tr></table></figure></p>
 <ol start="6">
 <li>
 <p><strong>字符串的字节长度 = 字符个数 + 1</strong></p>
@@ -517,8 +458,7 @@ printf("%c", letter + 32);
 <li>scanf 函数：在控制图输入字符</li>
 </ol>
 <p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208231443115.png" alt="image-20220823144321064" /></p>
-<pre class=" language-language-c"><code class="language-language-c">scanf("%hhd %hd %d %lf %llf%", %a, %b, %c, %d, %e);
-</code></pre>
+<p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%hhd %hd %d %lf %llf%&quot;</span>, %a, %b, %c, %d, %e);</span><br></pre></td></tr></table></figure></p>
 <p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208231449995.png" alt="image-20220823144910948" /></p>
 <ol start="3">
 <li>输入时也要根据转换规范按要求输入
@@ -610,9 +550,7 @@ printf("%c", letter + 32);
 <li>自增运算符：++</li>
 <li>自减运算符：--</li>
 </ul>
-<pre class=" language-language-c"><code class="language-language-c">printf("%d %d\n", ++a, --b);	//先执行a++和b--，然后打印自增/自减变化后的结果
-printf("%d %d\n", a++, b--);	//先打印a和b原来的结果，然后自增/自减改变它的值
-</code></pre>
+<p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d %d\n&quot;</span>, ++a, --b);	<span class="comment">//先执行a++和b--，然后打印自增/自减变化后的结果</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d %d\n&quot;</span>, a++, b--);	<span class="comment">//先打印a和b原来的结果，然后自增/自减改变它的值</span></span><br></pre></td></tr></table></figure></p>
 <p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208231826792.png" alt="image-20220823182655752" /></p>
 </li>
 </ol>
@@ -663,9 +601,7 @@ printf("%d %d\n", a++, b--);	//先打印a和b原来的结果，然后自增/自�
 </ul>
 </li>
 </ul>
-<pre><code>5 / 2 = 2
-5 / 2.0 = 2.500000
-</code></pre>
+<p><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">5 </span>/ <span class="number">2</span> = <span class="number">2</span></span><br><span class="line"><span class="symbol">5 </span>/ <span class="number">2.0</span> = <span class="number">2.500000</span></span><br></pre></td></tr></table></figure></p>
 <ul>
 <li><strong>强制类型转换</strong>
 <ul>
@@ -685,8 +621,7 @@ printf("%d %d\n", a++, b--);	//先打印a和b原来的结果，然后自增/自�
 <li>C 语言中用<strong> 0 表示假</strong>，用<strong> 1 表示真</strong></li>
 <li>大于等于：&gt; =，小于等于：&lt; =，等于 = =，不等于：！=</li>
 </ul>
-<pre class=" language-language-c"><code class="language-language-c">printf("%d\n", 2<=0<=10);	//结果为真，因为两个<=运算符优先级相同，从左往右执行
-</code></pre>
+<p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, <span class="number">2</span>&lt;=<span class="number">0</span>&lt;=<span class="number">10</span>);	<span class="comment">//结果为真，因为两个&lt;=运算符优先级相同，从左往右执行</span></span><br></pre></td></tr></table></figure></p>
 <p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208232341255.png" alt="image-20220823234154197" /></p>
 </li>
 <li>
@@ -722,7 +657,7 @@ printf("%d %d\n", a++, b--);	//先打印a和b原来的结果，然后自增/自�
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2022-08-26 15:05:32" itemprop="dateModified" datetime="2022-08-26T15:05:32+08:00">2022-08-26</time>
+    <time title="修改时间：2022-08-27 00:04:56" itemprop="dateModified" datetime="2022-08-27T00:04:56+08:00">2022-08-27</time>
   </span>
 </div>
 
@@ -772,7 +707,7 @@ printf("%d %d\n", a++, b--);	//先打印a和b原来的结果，然后自增/自�
     <div class="item left">
       
 
-  <a href="/2022/08/22/hello-world/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giciub8ja1j20zk0m81ky.jpg" title="Hello World">
+  <a href="/2022/08/22/hello-world/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclhtuo6nj20zk0m8ttm.jpg" title="Hello World">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> 个人随笔</span>
   <h3>Hello World</h3>
@@ -804,11 +739,11 @@ printf("%d %d\n", a++, b--);	//先打印a和b原来的结果，然后自增/自�
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E4%B8%AAc%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8Fhelloworld"><span class="toc-number">1.</span> <span class="toc-text"> 第一个 C 语言程序：Hello，World</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C%E5%87%BD%E6%95%B0"><span class="toc-number">2.</span> <span class="toc-text"> 两数之和函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B4%E5%BD%A2%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.</span> <span class="toc-text"> 整形数据类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%AE%E7%82%B9%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">4.</span> <span class="toc-text"> 浮点数据类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B8%B8%E9%87%8F"><span class="toc-number">5.</span> <span class="toc-text"> 变量与常量</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E7%B1%BB%E5%9E%8B"><span class="toc-number">5.1.</span> <span class="toc-text"> 数字类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E7%B1%BB%E5%9E%8B"><span class="toc-number">5.2.</span> <span class="toc-text"> 字符类型</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B4%E6%95%B0%E4%B8%8E%E5%AD%97%E7%AC%A6%E7%9A%84%E5%85%B3%E7%B3%BBascii"><span class="toc-number">6.</span> <span class="toc-text"> 整数与字符的关系 ASCII</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#printf%E5%87%BD%E6%95%B0"><span class="toc-number">7.</span> <span class="toc-text"> printf 函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BD%AC%E6%8D%A2%E8%A7%84%E8%8C%83%E5%8D%A0%E4%BD%8D%E7%AC%A6"><span class="toc-number">8.</span> <span class="toc-text"> 转换规范 (占位符)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BD%AC%E6%8D%A2%E7%B1%BB%E5%9E%8B"><span class="toc-number">8.1.</span> <span class="toc-text"> 转换类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%95%BF%E5%BA%A6%E6%8C%87%E7%A4%BA%E7%AC%A6"><span class="toc-number">8.2.</span> <span class="toc-text"> 长度指示符</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BD%AC%E6%8D%A2%E7%B2%BE%E5%BA%A6"><span class="toc-number">8.3.</span> <span class="toc-text"> 转换精度</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9C%80%E5%B0%8F%E5%AD%97%E6%AE%B5%E5%AE%BD%E5%BA%A6"><span class="toc-number">8.4.</span> <span class="toc-text"> 最小字段宽度</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BD%AC%E6%8D%A2%E6%A0%87%E5%BF%97"><span class="toc-number">8.5.</span> <span class="toc-text"> 转换标志</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#scanf%E5%87%BD%E6%95%B0"><span class="toc-number">9.</span> <span class="toc-text"> scanf 函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8C%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">10.</span> <span class="toc-text"> 表达式和运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">10.1.</span> <span class="toc-text"> 表达式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">10.2.</span> <span class="toc-text"> 运算符</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BD%93printf%E5%8D%A0%E4%BD%8D%E7%AC%A6%E7%9A%84%E6%A0%BC%E5%BC%8F%E4%B8%8E%E5%90%8E%E7%BB%AD%E5%8F%82%E6%95%B0%E7%9A%84%E6%A0%BC%E5%BC%8F%E4%B8%8D%E7%9B%B8%E5%90%8C%E6%97%B6"><span class="toc-number">10.3.</span> <span class="toc-text"> 当 printf 占位符的格式与后续参数的格式不相同时</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E7%BB%88%E6%9E%81%E6%80%BB%E7%BB%93"><span class="toc-number">11.</span> <span class="toc-text"> 自动类型转换 (终极总结)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">12.</span> <span class="toc-text"> 关系运算符和逻辑运算符</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#c%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80%E4%B8%80"><span class="toc-number">1.</span> <span class="toc-text"> C 语言基础一</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E4%B8%AAc%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8Fhelloworld"><span class="toc-number">1.0.0.1.</span> <span class="toc-text"> 第一个 C 语言程序：Hello，World</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C%E5%87%BD%E6%95%B0"><span class="toc-number">1.0.0.2.</span> <span class="toc-text"> 两数之和函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B4%E5%BD%A2%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.0.0.3.</span> <span class="toc-text"> 整形数据类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%AE%E7%82%B9%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.0.0.4.</span> <span class="toc-text"> 浮点数据类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B8%B8%E9%87%8F"><span class="toc-number">1.0.0.5.</span> <span class="toc-text"> 变量与常量</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.0.0.5.1.</span> <span class="toc-text"> 数字类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.0.0.5.2.</span> <span class="toc-text"> 字符类型</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B4%E6%95%B0%E4%B8%8E%E5%AD%97%E7%AC%A6%E7%9A%84%E5%85%B3%E7%B3%BBascii"><span class="toc-number">1.0.0.6.</span> <span class="toc-text"> 整数与字符的关系 ASCII</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#printf%E5%87%BD%E6%95%B0"><span class="toc-number">1.0.0.7.</span> <span class="toc-text"> printf 函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BD%AC%E6%8D%A2%E8%A7%84%E8%8C%83%E5%8D%A0%E4%BD%8D%E7%AC%A6"><span class="toc-number">1.0.0.8.</span> <span class="toc-text"> 转换规范 (占位符)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BD%AC%E6%8D%A2%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.0.0.8.1.</span> <span class="toc-text"> 转换类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%95%BF%E5%BA%A6%E6%8C%87%E7%A4%BA%E7%AC%A6"><span class="toc-number">1.0.0.8.2.</span> <span class="toc-text"> 长度指示符</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BD%AC%E6%8D%A2%E7%B2%BE%E5%BA%A6"><span class="toc-number">1.0.0.8.3.</span> <span class="toc-text"> 转换精度</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9C%80%E5%B0%8F%E5%AD%97%E6%AE%B5%E5%AE%BD%E5%BA%A6"><span class="toc-number">1.0.0.8.4.</span> <span class="toc-text"> 最小字段宽度</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BD%AC%E6%8D%A2%E6%A0%87%E5%BF%97"><span class="toc-number">1.0.0.8.5.</span> <span class="toc-text"> 转换标志</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#scanf%E5%87%BD%E6%95%B0"><span class="toc-number">1.0.0.9.</span> <span class="toc-text"> scanf 函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8C%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.0.0.10.</span> <span class="toc-text"> 表达式和运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.0.0.10.1.</span> <span class="toc-text"> 表达式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.0.0.10.2.</span> <span class="toc-text"> 运算符</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BD%93printf%E5%8D%A0%E4%BD%8D%E7%AC%A6%E7%9A%84%E6%A0%BC%E5%BC%8F%E4%B8%8E%E5%90%8E%E7%BB%AD%E5%8F%82%E6%95%B0%E7%9A%84%E6%A0%BC%E5%BC%8F%E4%B8%8D%E7%9B%B8%E5%90%8C%E6%97%B6"><span class="toc-number">1.0.0.10.3.</span> <span class="toc-text"> 当 printf 占位符的格式与后续参数的格式不相同时</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E7%BB%88%E6%9E%81%E6%80%BB%E7%BB%93"><span class="toc-number">1.0.0.11.</span> <span class="toc-text"> 自动类型转换 (终极总结)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.0.0.12.</span> <span class="toc-text"> 关系运算符和逻辑运算符</span></a></li></ol></li></ol></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li class="active"><a href="/2022/08/25/c-yu-yan-ji-chu-yi/" rel="bookmark" title="C语言基础一">C语言基础一</a></li><li><a href="/2022/08/26/c-yu-yan-ji-chu-er/" rel="bookmark" title="C语言基础二">C语言基础二</a></li>
+          <li class="active"><a href="/2022/08/25/c-yu-yan-ji-chu-yi/" rel="bookmark" title="C语言基础一">C语言基础一</a></li><li><a href="/2022/08/26/c-yu-yan-ji-chu-er/" rel="bookmark" title="C语言基础二">C语言基础二</a></li><li><a href="/2022/08/26/c-yu-yan-ji-chu-san/" rel="bookmark" title="C语言基础三">C语言基础三</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -822,25 +757,28 @@ printf("%d %d\n", a++, b--);	//先打印a和b原来的结果，然后自增/自�
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">3</span>
+        <span class="count">6</span>
         <span class="name">文章</span>
       </a>
     </div>
     <div class="item categories">
       <a href="/categories/">
-        <span class="count">2</span>
+        <span class="count">3</span>
         <span class="name">分类</span>
       </a>
     </div>
     <div class="item tags">
       <a href="/tags/">
-        <span class="count">2</span>
+        <span class="count">3</span>
         <span class="name">标签</span>
       </a>
     </div>
 </nav>
 
 <div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL1lOLVhT" title="https:&#x2F;&#x2F;github.com&#x2F;YN-XS"><i class="ic i-github"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvbXkvbS9tdXNpYy9wbGF5bGlzdD9pZD0yMDI2MzU0NDEy" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;my&#x2F;m&#x2F;music&#x2F;playlist?id&#x3D;2026354412"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item weibo" data-url="aHR0cHM6Ly93ZWliby5jb20vNzUyMTU1OTg5MA==" title="https:&#x2F;&#x2F;weibo.com&#x2F;7521559890"><i class="ic i-weibo"></i></span>
 </div>
 
 <ul class="menu">
@@ -876,6 +814,11 @@ printf("%d %d\n", a++, b--);	//先打印a和b原来的结果，然后自增/自�
   </li>
 
   </ul>
+    
+  <li class="item">
+    <a href="/statistics/" rel="section"><i class="ic i-calendar"></i>文章统计</a>
+  </li>
+
 
 </ul>
 
@@ -912,10 +855,20 @@ printf("%d %d\n", a++, b--);	//先打印a和b原来的结果，然后自增/自�
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/C/" title="分类于 个人随笔">个人随笔</a>
+<a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
 </div>
 
-    <span><a href="/2022/08/22/hello-world/" title="Hello World">Hello World</a></span>
+    <span><a href="/2022/08/28/xian-xing-dai-shu-jin-jie/" title="线性代数进阶">线性代数进阶</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/B/" title="分类于 高级编程语言">高级编程语言</a>
+</div>
+
+    <span><a href="/2022/08/26/c-yu-yan-ji-chu-san/" title="C语言基础三">C语言基础三</a></span>
   </li>
 
       
@@ -926,6 +879,26 @@ printf("%d %d\n", a++, b--);	//先打印a和b原来的结果，然后自增/自�
 </div>
 
     <span><a href="/2022/08/26/c-yu-yan-ji-chu-er/" title="C语言基础二">C语言基础二</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/C/" title="分类于 个人随笔">个人随笔</a>
+</div>
+
+    <span><a href="/2022/08/22/hello-world/" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
+</div>
+
+    <span><a href="/2022/08/27/xian-xing-dai-shu-ji-chu/" title="线性代数基础">线性代数基础</a></span>
   </li>
 
       
@@ -991,7 +964,7 @@ printf("%d %d\n", a++, b--);	//先打印a和b原来的结果，然后自增/自�
 
 <script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
 
-<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js,npm/echarts@5.2.2/dist/echarts.min.js"></script>
 
 <script src="/js/app.js?v=0.2.5"></script>
 

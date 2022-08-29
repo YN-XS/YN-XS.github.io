@@ -30,27 +30,20 @@
 
 
   <title> |
-Tea House = 心释的茶社 = 大家好，我是心释</title>
+Tea House = 心释的茶社 = 欢迎来到心释的茶社</title>
 <meta name="generator" content="Hexo 6.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
-  <div id="loading">
-    <div class="cat">
-      <div class="body"></div>
-      <div class="head">
-        <div class="face"></div>
-      </div>
-      <div class="foot">
-        <div class="tummy-end"></div>
-        <div class="bottom"></div>
-        <div class="legs left"></div>
-        <div class="legs right"></div>
-      </div>
-      <div class="paw">
-        <div class="hands left"></div>
-        <div class="hands right"></div>
-      </div>
+<div id="loading">
+    <div class="reliefload">
+        <span style="--i:0;"></span>
+        <span style="--i:1;"></span>
+        <span style="--i:2;"></span>
+        <span style="--i:3;"></span>
+        <span style="--i:4;"></span>
+        <span style="--i:5;"></span>
+        <span style="--i:6;"></span>
     </div>
-  </div>
+</div>
   <div id="container">
     <header id="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="inner">
@@ -88,15 +81,15 @@ Tea House = 心释的茶社 = 大家好，我是心释</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclh3brzpj20zk0m8ann.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclize41wj20zk0m87gk.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giciszlczyj20zk0m816d.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclfdu6exj20zk0m87hw.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipex2cdtbj20zk0m8x6p.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicitf0kl1j20zk0m87fe.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipev1x5e4j20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giciryrr3rj20zk0m8nhk.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gicljitigmj20zk0m87fp.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gicm07ih54j20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipetv6p75j20zk0m8x6p.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipeybxm1pj20zk0m8niv.jpg"></li>
         </ul>
       </div>
-    </header>
+    
     <div id="waves">
       <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
         <defs>
@@ -110,6 +103,8 @@ Tea House = 心释的茶社 = 大家好，我是心释</title>
         </g>
       </svg>
     </div>
+
+    </header>
     <main>
       <div class="inner">
         <div id="main" class="pjax">
@@ -121,7 +116,7 @@ Tea House = 心释的茶社 = 大家好，我是心释</title>
   <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="image" content="/images/avatar.jpg">
     <meta itemprop="name" content="ZiJun">
-    <meta itemprop="description" content="大家好，我是心释, ">
+    <meta itemprop="description" content="欢迎来到心释的茶社, ">
   </span>
 
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -153,18 +148,21 @@ Add Live2D widget to web page. Compatible with PJAX.</p>
 </ul>
 <h2 id="依赖-dependencies"><a class="anchor" href="#依赖-dependencies">#</a> 依赖 Dependencies</h2>
 <p>本插件需要 Font Awesome 图标支持，请确保相关样式表已在页面中加载。以 Font Awesome v6 为例，请在  <code>&lt;head&gt;</code>  中加入：<br />
-Font Awesome is required for this plugin. Take Font Awesome v6 as an example, please add the following in  <code>&lt;head&gt;</code> :</p>
-<figure class="highlight xml"><figcaption data-lang="XML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></pre></td></tr></table></figure><p>否则图标将无法正常显示。（如果网页中已经加载了任何版本的 Font Awesome，就不要重复加载了）</p>
+Font Awesome is required for this plugin. Take Font Awesome v6 as an example, please add the following in  <code>&lt;head&gt;</code> :<br />
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure><br />
+ 否则图标将无法正常显示。（如果网页中已经加载了任何版本的 Font Awesome，就不要重复加载了）</p>
 <h2 id="使用-usage"><a class="anchor" href="#使用-usage">#</a> 使用 Usage</h2>
-<p>将这一行代码加入  <code>&lt;head&gt;</code>  或  <code>&lt;body&gt;</code> ，即可展现出效果：</p>
-<figure class="highlight xml"><figcaption data-lang="XML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></pre></td></tr></table></figure><p>如果网站启用了 PJAX，由于看板娘不必每页刷新，因此要注意将相关脚本放到 PJAX 刷新区域之外。</p>
+<p>将这一行代码加入  <code>&lt;head&gt;</code>  或  <code>&lt;body&gt;</code> ，即可展现出效果：<br />
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure><br />
+ 如果网站启用了 PJAX，由于看板娘不必每页刷新，因此要注意将相关脚本放到 PJAX 刷新区域之外。</p>
 <p>换句话说，如果你是小白，或者只需要最基础的功能，就只用把这一行代码，连同前面加载 Font Awesome 的一行代码，一起放到 html 的  <code>&lt;head&gt;</code>  中即可。<br />
 对于用各种模版引擎（例如 Nunjucks，Jinja 或者 PHP）生成的页面，也要自行修改，方法类似，只是可能略为麻烦。以 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> 为例，需要在主题相关的 ejs 或 njk 模版中正确配置路径，才可以加载。</p>
 <p><strong>但是！我们强烈推荐自己进行配置，否则很多功能是不完整的，并且可能产生问题！</strong><br />
 如果你有兴趣自己折腾的话，请看下面的详细说明。</p>
 <h3 id="using-cdn"><a class="anchor" href="#using-cdn">#</a> Using CDN</h3>
-<p>要自定义有关内容，可以把这个仓库 Fork 一份，然后进行修改。这时，使用方法对应地变为</p>
-<figure class="highlight xml"><figcaption data-lang="XML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://fastly.jsdelivr.net/gh/username/live2d-widget@latest/autoload.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></pre></td></tr></table></figure><p>将此处的  <code>username</code>  替换为你的 GitHub 用户名。为了使 CDN 的内容正常刷新，需要创建新的 git tag 并推送至 GitHub 仓库中，否则此处的  <code>@latest</code>  仍然指向更新前的文件。此外 CDN 本身存在缓存，因此改动可能需要一定的时间生效。相关文档：</p>
+<p>要自定义有关内容，可以把这个仓库 Fork 一份，然后进行修改。这时，使用方法对应地变为<br />
+ <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://fastly.jsdelivr.net/gh/username/live2d-widget@latest/autoload.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure><br />
+ 将此处的  <code>username</code>  替换为你的 GitHub 用户名。为了使 CDN 的内容正常刷新，需要创建新的 git tag 并推送至 GitHub 仓库中，否则此处的  <code>@latest</code>  仍然指向更新前的文件。此外 CDN 本身存在缓存，因此改动可能需要一定的时间生效。相关文档：</p>
 <ul>
 <li><span class="exturl" data-url="aHR0cHM6Ly9naXQtc2NtLmNvbS9ib29rL2VuL3YyL0dpdC1CYXNpY3MtVGFnZ2luZw==">Git Basics - Tagging</span></li>
 <li><span class="exturl" data-url="aHR0cHM6Ly9oZWxwLmdpdGh1Yi5jb20vZW4vZ2l0aHViL2FkbWluaXN0ZXJpbmctYS1yZXBvc2l0b3J5L21hbmFnaW5nLXJlbGVhc2VzLWluLWEtcmVwb3NpdG9yeQ==">Managing releases in a repository</span></li>
@@ -172,25 +170,21 @@ Font Awesome is required for this plugin. Take Font Awesome v6 as an example, pl
 <h3 id="self-host"><a class="anchor" href="#self-host">#</a> Self-host</h3>
 <p>你也可以直接把这些文件放到服务器上，而不是通过 CDN 加载。</p>
 <ul>
-<li>如果你能够通过  <code>ssh</code>  访问你的主机，请把整个仓库克隆到服务器上。执行：<pre class=" language-language-bash"><code class="language-language-bash">cd /path/to/your/webroot
-# Clone this repository
-git clone https://github.com/stevenjoezhang/live2d-widget.git
-</code></pre>
-</li>
+<li>如果你能够通过  <code>ssh</code>  访问你的主机，请把整个仓库克隆到服务器上。执行：<br />
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /path/to/your/webroot</span><br><span class="line"><span class="comment"># Clone this repository</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/stevenjoezhang/live2d-widget.git</span><br></pre></td></tr></table></figure></li>
 <li>如果你的主机无法用  <code>ssh</code>  连接（例如一般的虚拟主机），请选择  <code>Download ZIP</code> ，然后通过  <code>ftp</code>  等方式上传到主机上，再解压到网站的目录下。</li>
 <li>如果你是通过 Hexo 等工具部署的静态博客，请在博客源文件（即  <code>source</code> ）目录下，执行前述的  <code>git clone</code>  命令。重新部署博客时，相关文件就会自动上传到对应的路径下。为了避免这些文件被 Hexo 插件错误地修改，可能需要设置  <code>skip_render</code> 。</li>
 </ul>
 <p>这样，整个项目就可以通过你的服务器 IP 或者域名从公网访问了。不妨试试能否正常地通过浏览器打开  <code>autoload.js</code>  和  <code>live2d.min.js</code>  等文件，并确认这些文件的内容是完整和正确的。<br />
 一切正常的话，接下来修改一些配置就行了。（需要通过服务器上的文本编辑器修改；你也可以先在本地完成这一步骤，再上传到服务器上）<br />
-修改  <code>autoload.js</code>  中的常量  <code>live2d_path</code>  为  <code>live2d-widget</code>  这一目录的 URL。比如说，如果你能够通过</p>
-<pre><code>https://example.com/path/to/live2d-widget/live2d.min.js
-</code></pre>
-<p>访问到  <code>live2d.min.js</code> ，那么就把  <code>live2d_path</code>  的值修改为</p>
-<pre><code>https://example.com/path/to/live2d-widget/
-</code></pre>
-<p>路径末尾的  <code>/</code>  一定要加上。具体可以参考  <code>autoload.js</code>  内的注释。<br />
-完成后，在你要添加看板娘的界面加入</p>
-<figure class="highlight xml"><figcaption data-lang="XML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://example.com/path/to/live2d-widget/autoload.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></pre></td></tr></table></figure><p>就可以加载了。</p>
+修改  <code>autoload.js</code>  中的常量  <code>live2d_path</code>  为  <code>live2d-widget</code>  这一目录的 URL。比如说，如果你能够通过<br />
+ <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="regexp">//</span>example.com<span class="regexp">/path/</span>to<span class="regexp">/live2d-widget/</span>live2d.min.js</span><br></pre></td></tr></table></figure><br />
+ 访问到  <code>live2d.min.js</code> ，那么就把  <code>live2d_path</code>  的值修改为<br />
+ <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="regexp">//</span>example.com<span class="regexp">/path/</span>to<span class="regexp">/live2d-widget/</span></span><br></pre></td></tr></table></figure><br />
+ 路径末尾的  <code>/</code>  一定要加上。具体可以参考  <code>autoload.js</code>  内的注释。<br />
+完成后，在你要添加看板娘的界面加入<br />
+ <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://example.com/path/to/live2d-widget/autoload.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure><br />
+ 就可以加载了。</p>
 <h2 id="后端-api"><a class="anchor" href="#后端-api">#</a> 后端 API</h2>
 <p><code>initWidget</code>  方法接受名为  <code>apiPath</code>  和  <code>cdnPath</code>  的参数，两者设置其中一项即可。其中  <code>apiPath</code>  为后端 API 的 URL，可以自行搭建，并增加模型（需要修改的内容比较多，此处不再赘述）。而  <code>cdnPath</code>  则是通过 jsDelivr 这样的 CDN 服务加载资源，更加稳定。</p>
 <h2 id="目录结构-files"><a class="anchor" href="#目录结构-files">#</a> 目录结构 Files</h2>
@@ -327,25 +321,28 @@ Live2D Cubism Components は Live2D Open Software License で提供していま�
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">3</span>
+        <span class="count">6</span>
         <span class="name">文章</span>
       </a>
     </div>
     <div class="item categories">
       <a href="/categories/">
-        <span class="count">2</span>
+        <span class="count">3</span>
         <span class="name">分类</span>
       </a>
     </div>
     <div class="item tags">
       <a href="/tags/">
-        <span class="count">2</span>
+        <span class="count">3</span>
         <span class="name">标签</span>
       </a>
     </div>
 </nav>
 
 <div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL1lOLVhT" title="https:&#x2F;&#x2F;github.com&#x2F;YN-XS"><i class="ic i-github"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvbXkvbS9tdXNpYy9wbGF5bGlzdD9pZD0yMDI2MzU0NDEy" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;my&#x2F;m&#x2F;music&#x2F;playlist?id&#x3D;2026354412"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item weibo" data-url="aHR0cHM6Ly93ZWliby5jb20vNzUyMTU1OTg5MA==" title="https:&#x2F;&#x2F;weibo.com&#x2F;7521559890"><i class="ic i-weibo"></i></span>
 </div>
 
 <ul class="menu">
@@ -381,6 +378,11 @@ Live2D Cubism Components は Live2D Open Software License で提供していま�
   </li>
 
   </ul>
+    
+  <li class="item">
+    <a href="/statistics/" rel="section"><i class="ic i-calendar"></i>文章统计</a>
+  </li>
+
 
 </ul>
 
@@ -415,6 +417,26 @@ Live2D Cubism Components は Live2D Open Software License で提供していま�
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
+</div>
+
+    <span><a href="/2022/08/27/xian-xing-dai-shu-ji-chu/" title="线性代数基础">线性代数基础</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
+</div>
+
+    <span><a href="/2022/08/28/xian-xing-dai-shu-jin-jie/" title="线性代数进阶">线性代数进阶</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="/categories/B/" title="分类于 高级编程语言">高级编程语言</a>
 </div>
 
@@ -428,7 +450,7 @@ Live2D Cubism Components は Live2D Open Software License で提供していま�
 <a href="/categories/B/" title="分类于 高级编程语言">高级编程语言</a>
 </div>
 
-    <span><a href="/2022/08/26/c-yu-yan-ji-chu-er/" title="C语言基础二">C语言基础二</a></span>
+    <span><a href="/2022/08/26/c-yu-yan-ji-chu-san/" title="C语言基础三">C语言基础三</a></span>
   </li>
 
       
@@ -439,6 +461,16 @@ Live2D Cubism Components は Live2D Open Software License で提供していま�
 </div>
 
     <span><a href="/2022/08/22/hello-world/" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/B/" title="分类于 高级编程语言">高级编程语言</a>
+</div>
+
+    <span><a href="/2022/08/26/c-yu-yan-ji-chu-er/" title="C语言基础二">C语言基础二</a></span>
   </li>
 
   </ul>
@@ -494,7 +526,7 @@ Live2D Cubism Components は Live2D Open Software License で提供していま�
 
 <script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
 
-<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js,npm/echarts@5.2.2/dist/echarts.min.js"></script>
 
 <script src="/js/app.js?v=0.2.5"></script>
 

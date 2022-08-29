@@ -1,0 +1,949 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="心释的茶社" href="https://yn-xs.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="心释的茶社" href="https://yn-xs.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="心释的茶社" href="https://yn-xs.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="线性代数" />
+
+
+<link rel="canonical" href="https://yn-xs.github.io/2022/08/27/xian-xing-dai-shu-ji-chu/">
+
+
+
+  <title>
+线性代数基础 - 统计学习方法 |
+Tea House = 心释的茶社 = 欢迎来到心释的茶社</title>
+<meta name="generator" content="Hexo 6.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+<div id="loading">
+    <div class="reliefload">
+        <span style="--i:0;"></span>
+        <span style="--i:1;"></span>
+        <span style="--i:2;"></span>
+        <span style="--i:3;"></span>
+        <span style="--i:4;"></span>
+        <span style="--i:5;"></span>
+        <span style="--i:6;"></span>
+    </div>
+</div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">线性代数基础
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2022-08-27 17:49:34">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2022-08-27T17:49:34+08:00">2022-08-27</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Tea House</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208292157811.png">
+      </div>
+    
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+
+    </header>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/A/" itemprop="item" rel="index" title="分类于 统计学习方法"><span itemprop="name">统计学习方法</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://yn-xs.github.io/2022/08/27/xian-xing-dai-shu-ji-chu/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="ZiJun">
+    <meta itemprop="description" content="欢迎来到心释的茶社, ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="心释的茶社">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="线性代数基础"><a class="anchor" href="#线性代数基础">#</a> 线性代数基础</h1>
+<h2 id="行列式"><a class="anchor" href="#行列式">#</a> 行列式</h2>
+<ul>
+<li>
+<p>行列式的项：行列式的每一个项，都是行列式中不同行不同列的元素的乘积，N 阶行列式有 N! 个项</p>
+<ul>
+<li>每一项的符号 (+-) 由下标中行排列和列排列逆序数决定</li>
+</ul>
+</li>
+<li>
+<p>行列式的定义：行列式中所有项的代数和（不同行不同列元素乘积的代数和）</p>
+<ul>
+<li>例如：最简单的 2 阶行列式的值是，主对角线元素的乘积 (项)* 副对角线元素的乘积 (项)，其中：主对角线元素和副对角线元素就是取自不同行不同列的元素</li>
+<li>主副对角线各自的元素的乘积就是一个项 (共 2! 个项)，行列式的值为这 2! 个项的代数和 (a11 乘以 a22) 项 - (a21 乘以 a12) 项</li>
+</ul>
+</li>
+<li>
+<p>逆序数：一组数列中的<strong>每一个元素</strong>的<strong>后续元素</strong>小于自己 (逆序) 的个数，累加求和即为逆序数</p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208271022144.png" alt="image-20220827102216107" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208271023072.png" alt="image-20220827102323043" /></p>
+</li>
+<li>
+<p>行列式的性质（针对行或列）：</p>
+<ol>
+<li>互换行或列，行列式符号改变</li>
+<li>提取公因子</li>
+<li>倍加</li>
+<li>拆分</li>
+<li>对应成比例，值为零（存在一行或一列全为零）</li>
+</ol>
+</li>
+<li>
+<p>行列式的值</p>
+<ul>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208271036168.png" alt="image-20220827103652138" /></li>
+</ul>
+</li>
+<li>
+<p>行列式展开（按行或列）</p>
+<ul>
+<li>余子式 M：(根据下标) 去掉所在行和列后剩下的行列式</li>
+<li>代数余子式 A：(根据下标) 给<strong>余子式</strong>添加符号 (+-)</li>
+<li>行列式的值：某一行 (列) 的每个元素分别乘以元素的代数余子式</li>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208271052110.png" alt="image-20220827105231082" /></li>
+</ul>
+</li>
+</ul>
+<h2 id="矩阵"><a class="anchor" href="#矩阵">#</a> 矩阵</h2>
+<ul>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208271055084.png" alt="image-20220827105536041" /></li>
+<li>特别注意
+<ul>
+<li>行列式是一个数，矩阵是一个表</li>
+<li>行列式必须是（N * N 阶）的，矩阵是（N * M 阶）的（可以是方阵 N=M）</li>
+</ul>
+</li>
+<li>矩阵和行列式的运算区别
+<ul>
+<li>行列式数乘：行列式的某一行 (列) 乘以一个数</li>
+<li>矩阵数乘：矩阵中的每一个元素都乘以一个数</li>
+<li>行列式加减：(求出结果后) 数字的加减</li>
+<li>矩阵加减：同形矩阵 (同行同列的两个矩阵)，对应元素相加减</li>
+<li>行列式乘除：(求出结果后) 数字的乘除</li>
+<li>矩阵乘除：前行乘后列（前一个矩阵的列数必须等于后一个矩阵的行数）
+<ul>
+<li>(N * M) 阶 * (M * K) 阶 = (N * K) 阶</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>矩阵不满足交换律
+<ul>
+<li>运算结果涉及两个矩阵相乘的公式都不相等（AB!=BA）</li>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208271115559.png" alt="image-20220827111552530" /></li>
+</ul>
+</li>
+<li>其他矩阵
+<ul>
+<li>转置矩阵
+<ul>
+<li>行变列，列变行</li>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208271121262.png" alt="image-20220827112111236" /></li>
+</ul>
+</li>
+<li>伴随矩阵
+<ul>
+<li>伴随矩阵一定是方阵</li>
+<li>伴随矩阵中的各个元素是原方阵中各个的代数余子式
+<ul>
+<li>(代数余子式是一个行列式)</li>
+</ul>
+</li>
+<li>最后将代数余子式以取得原方阵转置矩阵的下标排列</li>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208271148357.png" alt="image-20220827114844333" /></li>
+</ul>
+</li>
+<li>单位矩阵
+<ul>
+<li>单位矩阵一定是方阵</li>
+<li>主对角线上的元素全为 1，其余元素全为 0</li>
+<li>矩阵运算中涉及 1 的运算都要转换为单位矩阵 E</li>
+<li>|E| = 1，EA = AE = A</li>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208271155906.png" alt="image-20220827115516878" /></li>
+</ul>
+</li>
+<li>逆矩阵
+<ul>
+<li>逆矩阵一定是方阵</li>
+<li>若 AB = BA = E，则 B 和 A 互为逆矩阵</li>
+<li>可逆的充要条件：|A| != 0</li>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208271223138.png" alt="image-20220827122320109" /></li>
+<li>另一种求逆矩阵的方法 (增广矩阵)：将同形的单位矩阵放在可逆矩阵右边，进行初等行变换，将原可逆转换为单位矩阵，次数右边由单位矩阵转化的新的矩阵就是可逆矩阵的逆矩阵</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>其他矩阵之间的关系
+<ul>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208271256907.jpg" alt="" /></li>
+</ul>
+</li>
+<li><strong>总结：</strong>
+<ul>
+<li><strong>因为只有方阵才有行列式值</strong></li>
+<li><strong>所以伴随矩阵，可逆矩阵，单位矩阵都是方阵</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="初等行变换"><a class="anchor" href="#初等行变换">#</a> 初等行变换</h2>
+<ul>
+<li>初等行变换是将矩阵进行变换，变换后的矩阵与原矩阵不相等</li>
+<li>原矩阵 ————&gt; 变换后的矩阵 （矩阵间使用的是箭头，而不是等号）</li>
+<li>初等行变换的基本操作：
+<ol>
+<li>换行（某两行互换位置）</li>
+<li>倍乘（某一行乘以一个常数）</li>
+<li>倍加（某一行加上一个另一行的倍数）</li>
+</ol>
+<ul>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208271412963.png" alt="image-20220827141236923" /></li>
+</ul>
+</li>
+<li>阶梯型矩阵：
+<ol>
+<li>全零行位于最后一行</li>
+<li>每行的<strong>首项</strong>是主元，主元的列位置<strong>严格向右递增</strong>
+<ul>
+<li>（每行从左至右连续的 0 严格增加）</li>
+</ul>
+</li>
+<li>阶梯型矩阵不唯一</li>
+</ol>
+</li>
+<li>最简形矩阵
+<ol>
+<li>每行的首项：主元为 1</li>
+<li>主元所在<strong>列</strong>的其他元素都为 0</li>
+<li>最简形矩阵唯一</li>
+</ol>
+</li>
+<li>个人转换方法总结：
+<ol>
+<li>先应用上三角方法将矩阵转换为阶梯型矩阵</li>
+<li>再应用下三角方法和初等行变换的方法，将矩阵转换为最简形矩阵</li>
+</ol>
+</li>
+</ul>
+<h2 id="矩阵的秩"><a class="anchor" href="#矩阵的秩">#</a> 矩阵的秩</h2>
+<ul>
+<li>矩阵的秩 = 行阶梯型矩阵的非零行的行数</li>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208271449986.png" alt="image-20220827144900948" />
+<ol>
+<li>矩阵 A 的秩 R (A) 不大于行数也不大于列数</li>
+<li>若方阵的秩为方阵的行数和列数 ——&gt; 不含零行，行列式值！= 0，反之则存在零行 ——&gt; 行列式值 = 0</li>
+<li>矩阵做经过转置和数乘，矩阵的秩不发生改变</li>
+<li>两个矩阵相乘后的矩阵的秩不大于任何一个原矩阵的秩</li>
+</ol>
+</li>
+</ul>
+<h2 id="向量"><a class="anchor" href="#向量">#</a> 向量</h2>
+<ul>
+<li>一个向量是是一个 1 * N 或 N * 1 的矩阵</li>
+</ul>
+<ol>
+<li>
+<p>标量（Scalar）: 一个实数，只有大小，没有方向</p>
+</li>
+<li>
+<p>向量（Vector）: 一组实数组成的有序数组，既有大小，也有方向</p>
+<ul>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208271607202.png" alt="image-20220827160718175" /></p>
+</li>
+<li>
+<p>一个<strong> N 维向量 a</strong> 是由<strong> N 个有序实数</strong>组成，a_N 是向量 a 的第 n 个分量，或第 n 维</p>
+</li>
+<li>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>a</mi><mo>=</mo><mo stretchy="false">[</mo><msub><mi>a</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>a</mi><mn>2</mn></msub><mo separator="true">,</mo><msub><mi>a</mi><mn>3</mn></msub><mo separator="true">,</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo separator="true">,</mo><msub><mi>a</mi><mi>N</mi></msub><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">a = [a_1,a_2,a_3,...,a_N]
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.10903em;">N</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">]</span></span></span></span></span></p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="向量组"><a class="anchor" href="#向量组">#</a> 向量组</h2>
+<ul>
+<li>一个向量组是 N * M 的矩阵</li>
+<li>向量组是一行或一列相同维数的向量的集合 (行向量、列向量)</li>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208271613974.png" alt="image-20220827161317944" /></li>
+</ul>
+<h2 id="向量空间"><a class="anchor" href="#向量空间">#</a> 向量空间</h2>
+<p><strong>欧式空间∈向量空间 = 线性空间</strong></p>
+<ul>
+<li>
+<p>向量空间（Vector Space）：也称线性空间（Linear Space），是由向量组成的集合，并满足以下两个条件：（一个向量组关于向量加法和数乘的运算是封闭的，这个向量组构成向量空间）</p>
+<ul>
+<li>向量空间是特殊的向量组（满足向量加法和数乘运算的封闭性）</li>
+</ul>
+<ol>
+<li>向量加法 +：向量空间𝒱中的两个向量𝒂和𝒃，它们的和𝒂 + 𝒃也属于空间𝒱</li>
+<li>标量乘法⋅：向量空间𝒱中的任一向量𝒂和任一标量𝑐，它们的乘积𝑐⋅𝒂也属于空间𝒱</li>
+</ol>
+</li>
+<li>
+<p>欧氏空间（Euclidean Space）：是一个常用的线性空间</p>
+<ul>
+<li>一个欧氏空间表示通常为ℝ𝑁，其中𝑁为空间维度（Dimension）</li>
+<li>欧氏空间中的向量加法和标量乘法定义为：(其中 a，b，c，∈ℝ标量)</li>
+</ul>
+</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mo stretchy="false">[</mo><msub><mi>𝑎</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>𝑎</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>𝑎</mi><mi>𝑁</mi></msub><mo stretchy="false">]</mo><mo>+</mo><mo stretchy="false">[</mo><msub><mi>𝑏</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>𝑏</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>𝑏</mi><mi>𝑁</mi></msub><mo stretchy="false">]</mo><mo>=</mo><mo stretchy="false">[</mo><msub><mi>𝑎</mi><mn>1</mn></msub><mo>+</mo><msub><mi>𝑏</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>𝑎</mi><mn>2</mn></msub><mo>+</mo><msub><mi>𝑏</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>𝑎</mi><mi>𝑁</mi></msub><mo>+</mo><msub><mi>𝑏</mi><mi>𝑁</mi></msub><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[𝑎_1, 𝑎_2, ⋯ , 𝑎_𝑁 ] + [𝑏_1, 𝑏_2, ⋯ , 𝑏_𝑁 ] = [𝑎_1 + 𝑏_1, 𝑎_2 + 𝑏_2, ⋯ , 𝑎_𝑁 + 𝑏_𝑁 ]
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.10903em;">N</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.10903em;">N</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.10903em;">N</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.10903em;">N</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">]</span></span></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>c</mi><mo>⋅</mo><mo stretchy="false">[</mo><msub><mi>𝑎</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>𝑎</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>𝑎</mi><mi>𝑁</mi></msub><mo stretchy="false">]</mo><mo>=</mo><mo stretchy="false">[</mo><mi>𝑐</mi><mo>⋅</mo><msub><mi>𝑎</mi><mn>1</mn></msub><mo separator="true">,</mo><mi>𝑐</mi><mo>⋅</mo><msub><mi>𝑎</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><mi>𝑐</mi><mo>⋅</mo><msub><mi>𝑎</mi><mi>𝑁</mi></msub><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">c ⋅ [𝑎_1, 𝑎_2, ⋯ , 𝑎_𝑁 ] = [𝑐⋅𝑎_1, 𝑐⋅𝑎_2, ⋯ , 𝑐⋅𝑎_𝑁 ]
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.44445em;vertical-align:0em;"></span><span class="mord mathnormal">c</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.10903em;">N</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathnormal">c</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.63889em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">c</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.63889em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">c</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.10903em;">N</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">]</span></span></span></span></span></p>
+<ul>
+<li>
+<p>线性子空间：一个向量空间的线性子空间是这个向量空间的子集，并且满足向量空间的条件（向量加法和标量乘法），</p>
+</li>
+<li>
+<p>线性相关与线性无关：</p>
+<ul>
+<li>对于线性空间 𝒱 中的取出的 N 个向量 {𝒗1 , 𝒗2 , ⋯ , 𝒗N}（这是一组向量）
+<ul>
+<li>线性无关：<strong>只存在全为 0</strong> 的<strong>标量</strong> 𝜆1,𝜆2,⋯,𝜆N，满足𝜆1𝒗1 + 𝜆2𝒗2 +⋯ + 𝜆N𝒗N = 0</li>
+<li>任意一个向量都无法被其余的向量所表示</li>
+<li>线性相关：<strong>存在任意一组不全为 0</strong> 的<strong>标量</strong> 𝜆1,𝜆2,⋯,𝜆N，满足𝜆1𝒗1 + 𝜆2𝒗2 +⋯ + 𝜆N𝒗N = 0</li>
+<li>存在向量可以被其余向量所表示</li>
+</ul>
+</li>
+<li><strong>线性相关：有无数的非零解 (对标量等比例放大 —&gt; 无数)</strong>
+<ul>
+<li>存在一个向量可以被其余向量所表示 ——&gt; 这个向量组组成的矩阵的秩 <strong>小于</strong> 向量的个数</li>
+</ul>
+</li>
+<li><strong>线性无关：只有 0 解，一组线性无关的向量是一个向量空间的代表 (没有重复)</strong>
+<ul>
+<li>不存在可以被其余向量所表示的向量 (都是代表)——&gt; 矩阵的秩 <strong>等于</strong> 向量的个数</li>
+</ul>
+</li>
+<li>从矩阵方面考虑：
+<ul>
+<li>线性相关 ——&gt;
+<ul>
+<li>向量组组成的矩阵的秩小于向量的个数</li>
+<li>向量组组成的矩阵存在零向量 (存在可以被矩阵中其余向量所表示的向量)</li>
+</ul>
+</li>
+<li>线性无关 ——&gt;
+<ul>
+<li>向量组组成的矩阵的秩等于向量的个数</li>
+<li>向量组组成的矩阵不存在零向量 (不存在可以被矩阵中其余向量所表示的向量)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>极大线性无关组：</p>
+<ul>
+<li>
+<p>从向量空间中取出一组线性无关的向量（线性无关组）</p>
+</li>
+<li>
+<p>取出线性无关组的向量空间中剩余的每一个向量<strong>都能</strong>由这个线性无关组中的向量所表示</p>
+</li>
+<li>
+<p>所以：从向量空间中取出的线性无关组中所包含<strong>向量数量最多</strong>的那组就是极大线性无关组</p>
+</li>
+</ul>
+<hr />
+<ul>
+<li>例如：向量空间中取出一组线性无关组后，向量空间中剩余的向量中还有一个不能被这组线性无关组所表示，那么这组线性无关组不是<strong>极大</strong>线性无关组，把线性无关组无法表示的向量添加到线性无关组中，那么：线性无关组 ——&gt; 极大线性无关组</li>
+</ul>
+<hr />
+<ul>
+<li>
+<p>从矩阵方面考虑：</p>
+<ul>
+<li>
+<p>向量组组成的矩阵的秩数等于不全为零的向量的个数</p>
+</li>
+<li>
+<p>矩阵的秩数等于向量个数 ——&gt; 矩阵中向量组是极大无关组</p>
+</li>
+<li>
+<p>矩阵的秩数小于向量个数 ——&gt; 矩阵中向量组不是极大无关组，将矩阵中的零向量 (可以被其余向量所表示的向量) 去除后，矩阵中剩余的向量是极大无关组</p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208271728886.png" alt="image-20220827172844844" /></p>
+</li>
+</ul>
+</li>
+<li>
+<p>极大线性无关组的性质：</p>
+<ul>
+<li>向量空间 (向量组) 的极大线性无关组不唯一，其中向量数量达到最大即可</li>
+<li>向量空间 (向量组) 与它的极大无关组等价，因为向量组的所有向量都可以极大无关组 (<strong>向量代表</strong>) 进行线性表示</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>N 维向量、N 维向量空间、N 维向量空间的维数</p>
+<ul>
+<li>N 维向量：N 个实数组成的有序数组</li>
+<li>N 维向量空间：N 维向量组成的向量组 (且满足向量加法和数乘 封闭性)</li>
+<li>N 维向量空间的维数：极大线性无关组中所包含的向量的个数</li>
+</ul>
+</li>
+</ul>
+<h2 id="齐次线性方程组-ax-0"><a class="anchor" href="#齐次线性方程组-ax-0">#</a> 齐次线性方程组 A⋅x = 0</h2>
+<ul>
+<li>齐次线性方程组指的是<strong>常数项全部为零</strong>的<strong>线性方程组</strong></li>
+<li>求解齐次线性方程组：A⋅x = 0
+<ol>
+<li>取出方程组的未知数系数矩阵（A）</li>
+<li>矩阵的秩 R (A) = 矩阵的行数 n&lt;——&gt; 只有零解（组成矩阵的向量组为极大线性无关组）</li>
+<li>矩阵的秩 R (A) &lt; 矩阵的行数 n——&gt; 有 n - R (A) 个解向量（线性无关），和无穷多个解 (线性相关)
+<ul>
+<li>解向量：每个解向量乘以对应的行向量 ——&gt; 结果为 0</li>
+</ul>
+</li>
+<li>每个解向量乘以系数后求和 ——&gt; 得到通解</li>
+</ol>
+<ul>
+<li>需要自行设置值来匹配出解向量，通常设置值取 0 或 1，设置值的个数等于矩阵中<strong>零行</strong>的数量，从后往前设置</li>
+</ul>
+</li>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208272237573.png" alt="image-20220827223705471" /></li>
+</ul>
+<h2 id="非齐次线性方程组ax-β"><a class="anchor" href="#非齐次线性方程组ax-β">#</a> 非齐次线性方程组：A⋅x = β</h2>
+<ul>
+<li>非其次线性方程组指的是：<strong>常数项不全部为零</strong>的<strong>线性方程组</strong></li>
+<li>求解非其次线性方程组：A⋅x = β
+<ol>
+<li>取出方程组未知数系数和常数组成的增广矩阵（A : β）</li>
+<li>R (A) != R (A : β) ——&gt; 方程组无解</li>
+<li>R (A) = R (A : β) = n (行数) ——&gt; 方程组有唯一解</li>
+<li>R (A) = R (A : β) &lt; n (行数) ——&gt; 方程组有无数解</li>
+</ol>
+</li>
+<li>非其次线性方程组的通解 = 齐次通解 + 非其次特解</li>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208272259137.png" alt="image-20220827225903088" /></li>
+</ul>
+<h2 id="特征值和特征向量"><a class="anchor" href="#特征值和特征向量">#</a> 特征值和特征向量</h2>
+<ul>
+<li>
+<p>单位矩阵 E：<strong>主对角线</strong>的元素全为 1，其余元素都为 0</p>
+<ul>
+<li>切记：只有<strong>主对角线</strong>有值 1</li>
+</ul>
+</li>
+<li>
+<p>求解矩阵的特征值</p>
+</li>
+<li>
+<p>N 阶矩阵就有 N 个特征值：特征值可能存在重复，可能都不同</p>
+<ol>
+<li>设特征值为 λ</li>
+<li>矩阵 A - λ 倍的单位向量 ——&gt; 矩阵主对角线上的所有元素减去一个 λ，得到新的矩阵：A - λ⋅E</li>
+<li>将新的矩阵 (A - λ⋅E) 取行列式值：|A - λ⋅E|</li>
+<li>另 | A - λ⋅E| = 0 ——&gt; 得到一个或多个特征值</li>
+</ol>
+</li>
+<li>
+<p>若有 N 个特征值相同：则称这个向量是 N 重特征值</p>
+<ul>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208280027646.png" alt="image-20220828002703615" /></li>
+</ul>
+</li>
+<li>
+<p>求解特征向量</p>
+<ol>
+<li>将求得的特征值 λ 带入 (A - λ⋅E)⋅X = 0</li>
+<li>矩阵中的每一个非零行都可以求出一个有关解向量的方程组</li>
+<li>非重特征值 ——&gt; 只有一个解向量 ——&gt; 只有一个特征向量 (解向量乘以系数)</li>
+<li>N 重特征值 ——&gt; 最多 N 个解向量 ——&gt; 最多 N 个线性无关的特征向量</li>
+<li>所有的解向量乘以系数后相加 ——&gt; 特征向量</li>
+</ol>
+<ul>
+<li>求解向量时，需要设定几个值来表示出其中一个解（通常设置 0 和 1 来匹配出解向量）</li>
+</ul>
+</li>
+<li>
+<p>总结：</p>
+<ul>
+<li>求特征值：|A - λ⋅E| = 0 ——&gt; λ(特征值)</li>
+<li>求特征向量：(A - λ⋅E)⋅X = 0 ——&gt; X (解向量)</li>
+</ul>
+<hr />
+<ul>
+<li>
+<p>解向量自身就是一个系数为 1 的特征向量（对于非重特征值）</p>
+</li>
+<li>
+<p>每个非重特征值只对应一个解向量 ——&gt; 一个特征向量</p>
+</li>
+</ul>
+<hr />
+<ul>
+<li>
+<p>N 阶矩阵的 C 重特征值最多有 C 个线性无关的特征向量</p>
+</li>
+<li>
+<p>N 阶矩阵 A 的线性无关的特征向量个数 = 解向量的个数 = N - R (A)</p>
+</li>
+</ul>
+<hr />
+<ul>
+<li>
+<p>需要自行设置值来匹配出解向量，通常设置值取 0 或 1，设置值的个数等于矩阵中<strong>零行</strong>的数量，从后往前设置</p>
+</li>
+<li>
+<p>特征向量 = 特征值对应的每个解向量乘以系数后相加</p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208280108027.png" alt="image-20220828010848979" /></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="相似对角化"><a class="anchor" href="#相似对角化">#</a> 相似对角化</h2>
+<p>只有方阵可以 (相似) 对角化<br />
+不同特征值对应的特征向量一定线性无关</p>
+<ol>
+<li>N 阶对称阵一定可以对角化</li>
+</ol>
+<ul>
+<li>对称阵：关于主对角线对称，矩阵转置 = 矩阵本身</li>
+</ul>
+<ol start="2">
+<li>特征值不存在相同</li>
+</ol>
+<ul>
+<li>N 阶方阵有 N 个不同的特征值 ——&gt; 该 N 阶方阵可以对角化</li>
+</ul>
+<ol start="3">
+<li><strong>特征值存在相同</strong></li>
+</ol>
+<ul>
+<li>每个解向量自身就是一个系数为 1 的特征向量（对于非重特征值）</li>
+<li>N 阶特征矩阵 B 有 N-R (B) 个解向量 ——&gt;N-R (B) 个特征向量</li>
+<li>C 重特征值对应的 N 阶特征矩阵必须有 C 个线性无关特征向量 ——&gt; 该 N 阶方阵可以对角化</li>
+</ul>
+<p>相似交换矩阵 P</p>
+<ul>
+<li>相似交换矩阵 P 是所有特征向量的所有解向量 (系数为 1 的特征向量) 所构成的矩阵</li>
+<li>矩阵 A 的相似对角矩阵 = P 逆 * A * P</li>
+<li>相似对角矩阵的主对角线上的元素为所有特征值，其他元素为 0</li>
+</ul>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208292108423.png" alt="image-20220829210817323" /></p>
+
+      <div class="tags">
+          <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag"><i class="ic i-tag"></i> 线性代数</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2022-08-29 21:59:27" itemprop="dateModified" datetime="2022-08-29T21:59:27+08:00">2022-08-29</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[奶茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="ZiJun 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/alipay.png" alt="ZiJun 支付宝">
+        <p>支付宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>ZiJun <i class="ic i-at"><em>@</em></i>心释的茶社
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://yn-xs.github.io/2022/08/27/xian-xing-dai-shu-ji-chu/" title="线性代数基础">https://yn-xs.github.io/2022/08/27/xian-xing-dai-shu-ji-chu/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2022/08/26/c-yu-yan-ji-chu-san/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;YN-XS&#x2F;images&#x2F;master&#x2F;202208252332362.png" title="C语言基础三">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 高级编程语言</span>
+  <h3>C语言基础三</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2022/08/28/xian-xing-dai-shu-jin-jie/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;YN-XS&#x2F;images&#x2F;master&#x2F;study_imgs&#x2F;202208292154354.png" title="线性代数进阶">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 统计学习方法</span>
+  <h3>线性代数进阶</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text"> 线性代数基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="toc-number">1.1.</span> <span class="toc-text"> 行列式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5"><span class="toc-number">1.2.</span> <span class="toc-text"> 矩阵</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9D%E7%AD%89%E8%A1%8C%E5%8F%98%E6%8D%A2"><span class="toc-number">1.3.</span> <span class="toc-text"> 初等行变换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E7%A7%A9"><span class="toc-number">1.4.</span> <span class="toc-text"> 矩阵的秩</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%91%E9%87%8F"><span class="toc-number">1.5.</span> <span class="toc-text"> 向量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%91%E9%87%8F%E7%BB%84"><span class="toc-number">1.6.</span> <span class="toc-text"> 向量组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4"><span class="toc-number">1.7.</span> <span class="toc-text"> 向量空间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%BD%90%E6%AC%A1%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84-ax-0"><span class="toc-number">1.8.</span> <span class="toc-text"> 齐次线性方程组 A⋅x &#x3D; 0</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%9E%E9%BD%90%E6%AC%A1%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84ax-%CE%B2"><span class="toc-number">1.9.</span> <span class="toc-text"> 非齐次线性方程组：A⋅x &#x3D; β</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E5%BE%81%E5%80%BC%E5%92%8C%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F"><span class="toc-number">1.10.</span> <span class="toc-text"> 特征值和特征向量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E4%BC%BC%E5%AF%B9%E8%A7%92%E5%8C%96"><span class="toc-number">1.11.</span> <span class="toc-text"> 相似对角化</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li class="active"><a href="/2022/08/27/xian-xing-dai-shu-ji-chu/" rel="bookmark" title="线性代数基础">线性代数基础</a></li><li><a href="/2022/08/28/xian-xing-dai-shu-jin-jie/" rel="bookmark" title="线性代数进阶">线性代数进阶</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="ZiJun"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">ZiJun</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">6</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">3</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">3</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL1lOLVhT" title="https:&#x2F;&#x2F;github.com&#x2F;YN-XS"><i class="ic i-github"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvbXkvbS9tdXNpYy9wbGF5bGlzdD9pZD0yMDI2MzU0NDEy" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;my&#x2F;m&#x2F;music&#x2F;playlist?id&#x3D;2026354412"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item weibo" data-url="aHR0cHM6Ly93ZWliby5jb20vNzUyMTU1OTg5MA==" title="https:&#x2F;&#x2F;weibo.com&#x2F;7521559890"><i class="ic i-weibo"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/statistics/" rel="section"><i class="ic i-calendar"></i>文章统计</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2022/08/26/c-yu-yan-ji-chu-san/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2022/08/28/xian-xing-dai-shu-jin-jie/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/B/" title="分类于 高级编程语言">高级编程语言</a>
+</div>
+
+    <span><a href="/2022/08/26/c-yu-yan-ji-chu-er/" title="C语言基础二">C语言基础二</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
+</div>
+
+    <span><a href="/2022/08/28/xian-xing-dai-shu-jin-jie/" title="线性代数进阶">线性代数进阶</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/B/" title="分类于 高级编程语言">高级编程语言</a>
+</div>
+
+    <span><a href="/2022/08/25/c-yu-yan-ji-chu-yi/" title="C语言基础一">C语言基础一</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
+</div>
+
+    <span><a href="/2022/08/27/xian-xing-dai-shu-ji-chu/" title="线性代数基础">线性代数基础</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/C/" title="分类于 个人随笔">个人随笔</a>
+</div>
+
+    <span><a href="/2022/08/22/hello-world/" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/B/" title="分类于 高级编程语言">高级编程语言</a>
+</div>
+
+    <span><a href="/2022/08/26/c-yu-yan-ji-chu-san/" title="C语言基础三">C语言基础三</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">ZiJun @ Tea House</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2022/08/27/xian-xing-dai-shu-ji-chu/',
+    favicon: {
+      show: "(๑ᵔ⌔ᵔ๑)：正在进入茶社",
+      hide: "(๑‾᷅^‾᷅๑)：记得回到茶社"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js,npm/echarts@5.2.2/dist/echarts.min.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
