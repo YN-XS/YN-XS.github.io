@@ -94,7 +94,7 @@ Tea House = 心释的茶社 = 欢迎来到心释的茶社</title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208292157811.png">
+          <img src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208310952298.png">
       </div>
     
     <div id="waves">
@@ -481,7 +481,8 @@ Tea House = 心释的茶社 = 欢迎来到心释的茶社</title>
 <li>齐次线性方程组指的是<strong>常数项全部为零</strong>的<strong>线性方程组</strong></li>
 <li>求解齐次线性方程组：A⋅x = 0
 <ol>
-<li>取出方程组的未知数系数矩阵（A）</li>
+<li>用 0 将方程组补全，未知数个数与方程组的方程数相等（行数和列数相等）</li>
+<li>取出方程组的未知数系数方阵（A）</li>
 <li>矩阵的秩 R (A) = 矩阵的行数 n&lt;——&gt; 只有零解（组成矩阵的向量组为极大线性无关组）</li>
 <li>矩阵的秩 R (A) &lt; 矩阵的行数 n——&gt; 有 n - R (A) 个解向量（线性无关），和无穷多个解 (线性相关)
 <ul>
@@ -540,10 +541,9 @@ Tea House = 心释的茶社 = 欢迎来到心释的茶社</title>
 <p>求解特征向量</p>
 <ol>
 <li>将求得的特征值 λ 带入 (A - λ⋅E)⋅X = 0</li>
-<li>矩阵中的每一个非零行都可以求出一个有关解向量的方程组</li>
 <li>非重特征值 ——&gt; 只有一个解向量 ——&gt; 只有一个特征向量 (解向量乘以系数)</li>
-<li>N 重特征值 ——&gt; 最多 N 个解向量 ——&gt; 最多 N 个线性无关的特征向量</li>
-<li>所有的解向量乘以系数后相加 ——&gt; 特征向量</li>
+<li>N 阶矩阵的 C 重特征值 ——&gt; 最多 C 个线性无关解向量 ——&gt; 最多 C 个线性无关的特征向量</li>
+<li>所有的解向量乘以系数后相加 ——&gt; 通解</li>
 </ol>
 <ul>
 <li>求解向量时，需要设定几个值来表示出其中一个解（通常设置 0 和 1 来匹配出解向量）</li>
@@ -563,6 +563,9 @@ Tea House = 心释的茶社 = 欢迎来到心释的茶社</title>
 <li>
 <p>每个非重特征值只对应一个解向量 ——&gt; 一个特征向量</p>
 </li>
+<li>
+<p>重特征值</p>
+</li>
 </ul>
 <hr />
 <ul>
@@ -570,7 +573,7 @@ Tea House = 心释的茶社 = 欢迎来到心释的茶社</title>
 <p>N 阶矩阵的 C 重特征值最多有 C 个线性无关的特征向量</p>
 </li>
 <li>
-<p>N 阶矩阵 A 的线性无关的特征向量个数 = 解向量的个数 = N - R (A)</p>
+<p>N 阶矩阵 A 的线性无关的特征向量个数 = 线性无关的解向量的个数 = N - R (A)</p>
 </li>
 </ul>
 <hr />
@@ -597,26 +600,30 @@ Tea House = 心释的茶社 = 欢迎来到心释的茶社</title>
 <li>对称阵：关于主对角线对称，矩阵转置 = 矩阵本身</li>
 </ul>
 <ol start="2">
-<li>特征值不存在相同</li>
+<li>方阵的阶数 = 方阵特征向量的个数</li>
 </ol>
 <ul>
-<li>N 阶方阵有 N 个不同的特征值 ——&gt; 该 N 阶方阵可以对角化</li>
+<li>无论有没有相等特征值，最终都表现为每个特征值都对应一个线性无关的特征向量，也就是方阵的阶数 = (线性无关的) 特征向量的个数</li>
 </ul>
-<ol start="3">
-<li><strong>特征值存在相同</strong></li>
-</ol>
+<p>相似对角矩阵</p>
 <ul>
-<li>每个解向量自身就是一个系数为 1 的特征向量（对于非重特征值）</li>
-<li>N 阶特征矩阵 B 有 N-R (B) 个解向量 ——&gt;N-R (B) 个特征向量</li>
-<li>C 重特征值对应的 N 阶特征矩阵必须有 C 个线性无关特征向量 ——&gt; 该 N 阶方阵可以对角化</li>
-</ul>
-<p>相似交换矩阵 P</p>
-<ul>
-<li>相似交换矩阵 P 是所有特征向量的所有解向量 (系数为 1 的特征向量) 所构成的矩阵</li>
+<li>可逆变换矩阵 P, 是所有特征向量的所有解向量 (系数为 1 的特征向量) 所构成的矩阵</li>
 <li>矩阵 A 的相似对角矩阵 = P 逆 * A * P</li>
 <li>相似对角矩阵的主对角线上的元素为所有特征值，其他元素为 0</li>
 </ul>
 <p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208292108423.png" alt="image-20220829210817323" /></p>
+<h2 id="规范正交化"><a class="anchor" href="#规范正交化">#</a> 规范正交化</h2>
+<p>将矩阵的每一列向量分别做规范正交化，得到新的几列向量<br />
+再将新的向量构成一个矩阵 ——&gt; 得到正交矩阵</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208292303143.png" alt="202208292257053_clear" /></p>
+<h2 id="二次型"><a class="anchor" href="#二次型">#</a> 二次型</h2>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208300003888.png" alt="image-20220830000345295" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208300004878.png" alt="image-20220830000410288" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208300004692.png" alt="image-20220830000429871" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208300034706.png" alt="image-20220830003450056" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208300005066.png" alt="image-20220830000449940" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208300005616.png" alt="image-20220830000537793" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208300033922.png" alt="image-20220830003314292" /></p>
 
       <div class="tags">
           <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag"><i class="ic i-tag"></i> 线性代数</a>
@@ -631,7 +638,7 @@ Tea House = 心释的茶社 = 欢迎来到心释的茶社</title>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2022-08-29 21:59:27" itemprop="dateModified" datetime="2022-08-29T21:59:27+08:00">2022-08-29</time>
+    <time title="修改时间：2022-08-31 09:53:24" itemprop="dateModified" datetime="2022-08-31T09:53:24+08:00">2022-08-31</time>
   </span>
 </div>
 
@@ -691,7 +698,7 @@ Tea House = 心释的茶社 = 欢迎来到心释的茶社</title>
     <div class="item right">
       
 
-  <a href="/2022/08/28/xian-xing-dai-shu-jin-jie/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;YN-XS&#x2F;images&#x2F;master&#x2F;study_imgs&#x2F;202208292154354.png" title="线性代数进阶">
+  <a href="/2022/08/28/xian-xing-dai-shu-jin-jie/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;YN-XS&#x2F;images&#x2F;master&#x2F;study_imgs&#x2F;202208310954768.png" title="线性代数进阶">
   <span class="type">下一篇</span>
   <span class="category"><i class="ic i-flag"></i> 统计学习方法</span>
   <h3>线性代数进阶</h3>
@@ -713,11 +720,11 @@ Tea House = 心释的茶社 = 欢迎来到心释的茶社</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text"> 线性代数基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="toc-number">1.1.</span> <span class="toc-text"> 行列式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5"><span class="toc-number">1.2.</span> <span class="toc-text"> 矩阵</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9D%E7%AD%89%E8%A1%8C%E5%8F%98%E6%8D%A2"><span class="toc-number">1.3.</span> <span class="toc-text"> 初等行变换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E7%A7%A9"><span class="toc-number">1.4.</span> <span class="toc-text"> 矩阵的秩</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%91%E9%87%8F"><span class="toc-number">1.5.</span> <span class="toc-text"> 向量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%91%E9%87%8F%E7%BB%84"><span class="toc-number">1.6.</span> <span class="toc-text"> 向量组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4"><span class="toc-number">1.7.</span> <span class="toc-text"> 向量空间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%BD%90%E6%AC%A1%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84-ax-0"><span class="toc-number">1.8.</span> <span class="toc-text"> 齐次线性方程组 A⋅x &#x3D; 0</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%9E%E9%BD%90%E6%AC%A1%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84ax-%CE%B2"><span class="toc-number">1.9.</span> <span class="toc-text"> 非齐次线性方程组：A⋅x &#x3D; β</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E5%BE%81%E5%80%BC%E5%92%8C%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F"><span class="toc-number">1.10.</span> <span class="toc-text"> 特征值和特征向量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E4%BC%BC%E5%AF%B9%E8%A7%92%E5%8C%96"><span class="toc-number">1.11.</span> <span class="toc-text"> 相似对角化</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text"> 线性代数基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="toc-number">1.1.</span> <span class="toc-text"> 行列式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5"><span class="toc-number">1.2.</span> <span class="toc-text"> 矩阵</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9D%E7%AD%89%E8%A1%8C%E5%8F%98%E6%8D%A2"><span class="toc-number">1.3.</span> <span class="toc-text"> 初等行变换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E7%A7%A9"><span class="toc-number">1.4.</span> <span class="toc-text"> 矩阵的秩</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%91%E9%87%8F"><span class="toc-number">1.5.</span> <span class="toc-text"> 向量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%91%E9%87%8F%E7%BB%84"><span class="toc-number">1.6.</span> <span class="toc-text"> 向量组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4"><span class="toc-number">1.7.</span> <span class="toc-text"> 向量空间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%BD%90%E6%AC%A1%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84-ax-0"><span class="toc-number">1.8.</span> <span class="toc-text"> 齐次线性方程组 A⋅x &#x3D; 0</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%9E%E9%BD%90%E6%AC%A1%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84ax-%CE%B2"><span class="toc-number">1.9.</span> <span class="toc-text"> 非齐次线性方程组：A⋅x &#x3D; β</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E5%BE%81%E5%80%BC%E5%92%8C%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F"><span class="toc-number">1.10.</span> <span class="toc-text"> 特征值和特征向量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E4%BC%BC%E5%AF%B9%E8%A7%92%E5%8C%96"><span class="toc-number">1.11.</span> <span class="toc-text"> 相似对角化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%84%E8%8C%83%E6%AD%A3%E4%BA%A4%E5%8C%96"><span class="toc-number">1.12.</span> <span class="toc-text"> 规范正交化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E6%AC%A1%E5%9E%8B"><span class="toc-number">1.13.</span> <span class="toc-text"> 二次型</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li class="active"><a href="/2022/08/27/xian-xing-dai-shu-ji-chu/" rel="bookmark" title="线性代数基础">线性代数基础</a></li><li><a href="/2022/08/28/xian-xing-dai-shu-jin-jie/" rel="bookmark" title="线性代数进阶">线性代数进阶</a></li>
+          <li class="active"><a href="/2022/08/27/xian-xing-dai-shu-ji-chu/" rel="bookmark" title="线性代数基础">线性代数基础</a></li><li><a href="/2022/08/28/xian-xing-dai-shu-jin-jie/" rel="bookmark" title="线性代数进阶">线性代数进阶</a></li><li><a href="/2022/08/29/xian-xing-hui-gui/" rel="bookmark" title="线性回归">线性回归</a></li><li><a href="/2022/08/29/ti-du-xia-jiang/" rel="bookmark" title="梯度下降">梯度下降</a></li><li><a href="/2022/08/29/knn-suan-fa/" rel="bookmark" title="KNN算法">KNN算法</a></li><li><a href="/2022/08/29/jue-ce-shu-suan-fa/" rel="bookmark" title="决策树算法">决策树算法</a></li><li><a href="/2022/08/29/ju-lei-suan-fa/" rel="bookmark" title="聚类算法">聚类算法</a></li><li><a href="/2022/08/29/bei-xie-si-suan-fa/" rel="bookmark" title="贝叶斯算法">贝叶斯算法</a></li><li><a href="/2022/08/29/mo-xing-de-xun-lian/" rel="bookmark" title="模型的训练">模型的训练</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -731,7 +738,7 @@ Tea House = 心释的茶社 = 欢迎来到心释的茶社</title>
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">6</span>
+        <span class="count">14</span>
         <span class="name">文章</span>
       </a>
     </div>
@@ -743,7 +750,7 @@ Tea House = 心释的茶社 = 欢迎来到心释的茶社</title>
     </div>
     <div class="item tags">
       <a href="/tags/">
-        <span class="count">3</span>
+        <span class="count">5</span>
         <span class="name">标签</span>
       </a>
     </div>
@@ -829,10 +836,10 @@ Tea House = 心释的茶社 = 欢迎来到心释的茶社</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/B/" title="分类于 高级编程语言">高级编程语言</a>
+<a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
 </div>
 
-    <span><a href="/2022/08/26/c-yu-yan-ji-chu-er/" title="C语言基础二">C语言基础二</a></span>
+    <span><a href="/2022/08/29/ju-lei-suan-fa/" title="聚类算法">聚类算法</a></span>
   </li>
 
       
@@ -842,7 +849,27 @@ Tea House = 心释的茶社 = 欢迎来到心释的茶社</title>
 <a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
 </div>
 
-    <span><a href="/2022/08/28/xian-xing-dai-shu-jin-jie/" title="线性代数进阶">线性代数进阶</a></span>
+    <span><a href="/2022/08/29/bei-xie-si-suan-fa/" title="贝叶斯算法">贝叶斯算法</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/B/" title="分类于 高级编程语言">高级编程语言</a>
+</div>
+
+    <span><a href="/2022/08/30/python-ji-suan-ji-er-ji/" title="Python计算机二级">Python计算机二级</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
+</div>
+
+    <span><a href="/2022/08/29/mo-xing-de-xun-lian/" title="模型的训练">模型的训练</a></span>
   </li>
 
       
@@ -862,7 +889,7 @@ Tea House = 心释的茶社 = 欢迎来到心释的茶社</title>
 <a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
 </div>
 
-    <span><a href="/2022/08/27/xian-xing-dai-shu-ji-chu/" title="线性代数基础">线性代数基础</a></span>
+    <span><a href="/2022/08/29/knn-suan-fa/" title="KNN算法">KNN算法</a></span>
   </li>
 
       
@@ -879,10 +906,30 @@ Tea House = 心释的茶社 = 欢迎来到心释的茶社</title>
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
+</div>
+
+    <span><a href="/2022/08/29/ti-du-xia-jiang/" title="梯度下降">梯度下降</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="/categories/B/" title="分类于 高级编程语言">高级编程语言</a>
 </div>
 
-    <span><a href="/2022/08/26/c-yu-yan-ji-chu-san/" title="C语言基础三">C语言基础三</a></span>
+    <span><a href="/2022/08/26/c-yu-yan-ji-chu-er/" title="C语言基础二">C语言基础二</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
+</div>
+
+    <span><a href="/2022/08/28/xian-xing-dai-shu-jin-jie/" title="线性代数进阶">线性代数进阶</a></span>
   </li>
 
   </ul>

@@ -24,12 +24,16 @@
 <link rel="stylesheet" href="/css/app.css?v=0.2.5">
 
   
-
-<link rel="canonical" href="https://yn-xs.github.io/categories/B/">
-
+  <meta name="keywords" content="机器学习" />
 
 
-  <title>分类：高级编程语言 | Tea House = 心释的茶社 = 欢迎来到心释的茶社</title>
+<link rel="canonical" href="https://yn-xs.github.io/2022/08/29/knn-suan-fa/">
+
+
+
+  <title>
+KNN算法 - 统计学习方法 |
+Tea House = 心释的茶社 = 欢迎来到心释的茶社</title>
 <meta name="generator" content="Hexo 6.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
 <div id="loading">
@@ -49,9 +53,19 @@
         <div id="brand">
           <div class="pjax">
           
-  <h1 itemprop="name headline">
-    分类于"高级编程语言"的文章
+  <h1 itemprop="name headline">KNN算法
   </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2022-08-29 16:51:09">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2022-08-29T16:51:09+08:00">2022-08-29</time>
+  </span>
+</div>
+
 
           </div>
         </div>
@@ -81,12 +95,12 @@
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicitf0kl1j20zk0m87fe.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclfdu6exj20zk0m87hw.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giciszlczyj20zk0m816d.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipeun65urj20zk0m81ii.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicm0fdw5cj20zk0m8hdt.jpg"></li>
           <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipew8gmvyj20zk0m87wh.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclhfehz7j20zk0m8u0x.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipew28b65j20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclfb3vzhj20zk0m8wny.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipexw3o58j20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicitcxhpij20zk0m8hdt.jpg"></li>
         </ul>
       </div>
     
@@ -109,90 +123,163 @@
       <div class="inner">
         <div id="main" class="pjax">
           
-  <div class="collapse wrap">
-    <h2 class="item header">
-      <a href="/categories">全部</a>
-      <small>/</small>
-      高级编程语言
-      <small>分类</small>
-    </h2>
-        <article class="item normal" itemscope itemtype="http://schema.org/Article">
-          <div class="meta">
-            <time itemprop="dateCreated"
-                  datetime="2022-08-30T10:26:36+08:00"
-                  content="2022-08-30">
-              08-30
-            </time>
-          </div>
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/A/" itemprop="item" rel="index" title="分类于 统计学习方法"><span itemprop="name">统计学习方法</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
 
-          <div class="title">
-              <a href="/2022/08/30/python-ji-suan-ji-er-ji/" itemprop="url">
-                <span itemprop="name">Python计算机二级</span>
-              </a>
-          </div>
-        </article>
-        <article class="item normal" itemscope itemtype="http://schema.org/Article">
-          <div class="meta">
-            <time itemprop="dateCreated"
-                  datetime="2022-08-26T21:18:21+08:00"
-                  content="2022-08-26">
-              08-26
-            </time>
-          </div>
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://yn-xs.github.io/2022/08/29/knn-suan-fa/">
 
-          <div class="title">
-              <a href="/2022/08/26/c-yu-yan-ji-chu-san/" itemprop="url">
-                <span itemprop="name">C语言基础三</span>
-              </a>
-          </div>
-        </article>
-        <article class="item normal" itemscope itemtype="http://schema.org/Article">
-          <div class="meta">
-            <time itemprop="dateCreated"
-                  datetime="2022-08-26T15:56:05+08:00"
-                  content="2022-08-26">
-              08-26
-            </time>
-          </div>
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="ZiJun">
+    <meta itemprop="description" content="欢迎来到心释的茶社, ">
+  </span>
 
-          <div class="title">
-              <a href="/2022/08/26/c-yu-yan-ji-chu-er/" itemprop="url">
-                <span itemprop="name">C语言基础二</span>
-              </a>
-          </div>
-        </article>
-        <article class="item normal" itemscope itemtype="http://schema.org/Article">
-          <div class="meta">
-            <time itemprop="dateCreated"
-                  datetime="2022-08-25T23:18:21+08:00"
-                  content="2022-08-25">
-              08-25
-            </time>
-          </div>
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="心释的茶社">
+  </span>
 
-          <div class="title">
-              <a href="/2022/08/25/c-yu-yan-ji-chu-yi/" itemprop="url">
-                <span itemprop="name">C语言基础一</span>
-              </a>
-          </div>
-        </article>
+  <div class="body md" itemprop="articleBody">
+    
 
+    <h1 id="knn算法"><a class="anchor" href="#knn算法">#</a> KNN 算法</h1>
+<h2 id="物以类聚人以群分"><a class="anchor" href="#物以类聚人以群分">#</a> 物以类聚人以群分</h2>
+<ul>
+<li>看一个人怎么样，看他身边的朋友什么样即可</li>
+</ul>
+<ol>
+<li>
+<p>取所有样本 (行) 的部分特征 (data 列) 和类别标签 (label 列) 来绘制散点图<br />
+ (不同类别标签的样本的颜色或形状不同)</p>
+</li>
+<li>
+<p>引进一个新的样本 (x = 特征 1，y = 特征 2，z = 特征 3，表示类别标签 color 或 symbol)</p>
+</li>
+<li>
+<p>计算所有样本点与新引入点的距离 (欧式距离或马氏距离等)</p>
+</li>
+<li>
+<p>对得到的所有欧式距离做升序排列，取前 k 个数据的 (取到了与我们新引进的样本点最近的 k 个数据的索引)</p>
+</li>
+<li>
+<p>对得到的前 k 个数据进行加权求平均 (尽管有 k 个离得近的样本，但是这 k 个距离不相同，距离越近的类别标签的权重越大，越远的类别标签权重越小)</p>
+</li>
+</ol>
+<p>欧式距离：欧几里得距离</p>
+<ul>
+<li>两个样本的欧式距离 = sqrt (∑相同特征相减取平方)</li>
+<li>二维情况下，每一个样本 (点) 只有 x 坐标和 y 坐标两个特征 ——&gt; 所以它们的欧式距离 = sqrt ((x1-x2)²＋(y1-y2)²)</li>
+</ul>
+<p>K 太大：欠拟合<br />
+ K 太小：过拟合</p>
+
+      <div class="tags">
+          <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag"><i class="ic i-tag"></i> 机器学习</a>
+      </div>
   </div>
 
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2022-08-31 21:25:35" itemprop="dateModified" datetime="2022-08-31T21:25:35+08:00">2022-08-31</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[奶茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="ZiJun 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/alipay.png" alt="ZiJun 支付宝">
+        <p>支付宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>ZiJun <i class="ic i-at"><em>@</em></i>心释的茶社
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://yn-xs.github.io/2022/08/29/knn-suan-fa/" title="KNN算法">https://yn-xs.github.io/2022/08/29/knn-suan-fa/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
   
 
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2022/08/29/jue-ce-shu-suan-fa/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giciundwu5j20zk0m8n9e.jpg" title="决策树算法">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 统计学习方法</span>
+  <h3>决策树算法</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2022/08/29/bei-xie-si-suan-fa/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipesng5oej20zk0m87d4.jpg" title="贝叶斯算法">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 统计学习方法</span>
+  <h3>贝叶斯算法</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
 
 
         </div>
         <div id="sidebar">
           
+
 <div class="inner">
 
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#knn%E7%AE%97%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text"> KNN 算法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%A9%E4%BB%A5%E7%B1%BB%E8%81%9A%E4%BA%BA%E4%BB%A5%E7%BE%A4%E5%88%86"><span class="toc-number">1.1.</span> <span class="toc-text"> 物以类聚人以群分</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/2022/08/27/xian-xing-dai-shu-ji-chu/" rel="bookmark" title="线性代数基础">线性代数基础</a></li><li><a href="/2022/08/28/xian-xing-dai-shu-jin-jie/" rel="bookmark" title="线性代数进阶">线性代数进阶</a></li><li><a href="/2022/08/29/xian-xing-hui-gui/" rel="bookmark" title="线性回归">线性回归</a></li><li><a href="/2022/08/29/ti-du-xia-jiang/" rel="bookmark" title="梯度下降">梯度下降</a></li><li class="active"><a href="/2022/08/29/knn-suan-fa/" rel="bookmark" title="KNN算法">KNN算法</a></li><li><a href="/2022/08/29/jue-ce-shu-suan-fa/" rel="bookmark" title="决策树算法">决策树算法</a></li><li><a href="/2022/08/29/ju-lei-suan-fa/" rel="bookmark" title="聚类算法">聚类算法</a></li><li><a href="/2022/08/29/bei-xie-si-suan-fa/" rel="bookmark" title="贝叶斯算法">贝叶斯算法</a></li><li><a href="/2022/08/29/mo-xing-de-xun-lian/" rel="bookmark" title="模型的训练">模型的训练</a></li>
+        </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
         <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -276,14 +363,17 @@
 
   <ul id="quick">
     <li class="prev pjax">
+        <a href="/2022/08/29/jue-ce-shu-suan-fa/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
+        <a href="/2022/08/29/bei-xie-si-suan-fa/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
 </div>
+
 
         </div>
         <div class="dimmer"></div>
@@ -296,6 +386,66 @@
 <div class="rpost pjax">
   <h2>随机文章</h2>
   <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/B/" title="分类于 高级编程语言">高级编程语言</a>
+</div>
+
+    <span><a href="/2022/08/25/c-yu-yan-ji-chu-yi/" title="C语言基础一">C语言基础一</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
+</div>
+
+    <span><a href="/2022/08/29/bei-xie-si-suan-fa/" title="贝叶斯算法">贝叶斯算法</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
+</div>
+
+    <span><a href="/2022/08/29/ju-lei-suan-fa/" title="聚类算法">聚类算法</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
+</div>
+
+    <span><a href="/2022/08/29/xian-xing-hui-gui/" title="线性回归">线性回归</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
+</div>
+
+    <span><a href="/2022/08/29/ti-du-xia-jiang/" title="梯度下降">梯度下降</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/B/" title="分类于 高级编程语言">高级编程语言</a>
+</div>
+
+    <span><a href="/2022/08/26/c-yu-yan-ji-chu-er/" title="C语言基础二">C语言基础二</a></span>
+  </li>
+
       
   <li class="item">
     
@@ -323,17 +473,7 @@
 <a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
 </div>
 
-    <span><a href="/2022/08/29/mo-xing-de-xun-lian/" title="模型的训练">模型的训练</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
-</div>
-
-    <span><a href="/2022/08/29/bei-xie-si-suan-fa/" title="贝叶斯算法">贝叶斯算法</a></span>
+    <span><a href="/2022/08/27/xian-xing-dai-shu-ji-chu/" title="线性代数基础">线性代数基础</a></span>
   </li>
 
       
@@ -344,56 +484,6 @@
 </div>
 
     <span><a href="/2022/08/30/python-ji-suan-ji-er-ji/" title="Python计算机二级">Python计算机二级</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/B/" title="分类于 高级编程语言">高级编程语言</a>
-</div>
-
-    <span><a href="/2022/08/25/c-yu-yan-ji-chu-yi/" title="C语言基础一">C语言基础一</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
-</div>
-
-    <span><a href="/2022/08/29/knn-suan-fa/" title="KNN算法">KNN算法</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/B/" title="分类于 高级编程语言">高级编程语言</a>
-</div>
-
-    <span><a href="/2022/08/26/c-yu-yan-ji-chu-san/" title="C语言基础三">C语言基础三</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/B/" title="分类于 高级编程语言">高级编程语言</a>
-</div>
-
-    <span><a href="/2022/08/26/c-yu-yan-ji-chu-er/" title="C语言基础二">C语言基础二</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
-</div>
-
-    <span><a href="/2022/08/29/ti-du-xia-jiang/" title="梯度下降">梯度下降</a></span>
   </li>
 
   </ul>
@@ -424,7 +514,7 @@
   </div>
 <script data-config type="text/javascript">
   var LOCAL = {
-    path: 'categories/B/',
+    path: '2022/08/29/knn-suan-fa/',
     favicon: {
       show: "(๑ᵔ⌔ᵔ๑)：正在进入茶社",
       hide: "(๑‾᷅^‾᷅๑)：记得回到茶社"

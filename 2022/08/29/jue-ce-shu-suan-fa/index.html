@@ -1,0 +1,610 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="心释的茶社" href="https://yn-xs.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="心释的茶社" href="https://yn-xs.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="心释的茶社" href="https://yn-xs.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="机器学习" />
+
+
+<link rel="canonical" href="https://yn-xs.github.io/2022/08/29/jue-ce-shu-suan-fa/">
+
+
+
+  <title>
+决策树算法 - 统计学习方法 |
+Tea House = 心释的茶社 = 欢迎来到心释的茶社</title>
+<meta name="generator" content="Hexo 6.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+<div id="loading">
+    <div class="reliefload">
+        <span style="--i:0;"></span>
+        <span style="--i:1;"></span>
+        <span style="--i:2;"></span>
+        <span style="--i:3;"></span>
+        <span style="--i:4;"></span>
+        <span style="--i:5;"></span>
+        <span style="--i:6;"></span>
+    </div>
+</div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">决策树算法
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2022-08-29 16:51:09">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2022-08-29T16:51:09+08:00">2022-08-29</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Tea House</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipev1x5e4j20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicljitigmj20zk0m87fp.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclh3brzpj20zk0m8ann.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclga70tsj20zk0m84mr.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclg5ms2rj20zk0m8u0x.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclx6phq6j20zk0m8e36.jpg"></li>
+        </ul>
+      </div>
+    
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+
+    </header>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/A/" itemprop="item" rel="index" title="分类于 统计学习方法"><span itemprop="name">统计学习方法</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://yn-xs.github.io/2022/08/29/jue-ce-shu-suan-fa/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="ZiJun">
+    <meta itemprop="description" content="欢迎来到心释的茶社, ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="心释的茶社">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="决策树算法"><a class="anchor" href="#决策树算法">#</a> 决策树算法</h1>
+<ul>
+<li>
+<p>从根节点开始一步步走到叶子节点 (决策)</p>
+</li>
+<li>
+<p>所有数据最终都会落到叶子节点，既可以做分类也可以做回归</p>
+</li>
+<li>
+<p>根节点：第一个选择点</p>
+</li>
+<li>
+<p>非叶子节点和分支：中间过程</p>
+</li>
+<li>
+<p>叶子节点：最终的决策结果</p>
+</li>
+</ul>
+<h2 id="决策树的训练阶段"><a class="anchor" href="#决策树的训练阶段">#</a> 决策树的训练阶段</h2>
+<ol>
+<li>
+<p>从给定的数据集构建出来一棵树 (从根节点开始选择特征，如何进行特征划分)</p>
+</li>
+<li>
+<p>决策树测试阶段</p>
+</li>
+<li>
+<p>输入一个样本，根据构造出来的树模型从上到下一步步决策</p>
+</li>
+</ol>
+<ul>
+<li>
+<p>如何判断各个特征区分能力的强弱:</p>
+<ul>
+<li>根节点的特征的区分能力最强，根节点以下的节点的区分能力依次下降</li>
+</ul>
+</li>
+</ul>
+<h2 id="衡量标准熵"><a class="anchor" href="#衡量标准熵">#</a> 衡量标准 —— 熵</h2>
+<p>熵：随机变量的不确定性的度量</p>
+<p>(熵值越大，混乱程度越大 [杂货市场和专卖店] )</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312130964.png" alt="image-20220831213057923" /></p>
+<p>pi 为某个数据在集合中的概率 (所占比例)</p>
+<p>A 集合的熵值 = –(0.8×log0.8+0.2×log0.2）</p>
+<p>B 集合的熵值 = –(8×0.1×log0.1+0.2×log0.2)</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312131891.png" alt="image-20220831213106850" /></p>
+<p>概率 pi 的值为 [0 ：1]，在对数函数 log 中 pi 越小，函数值越大 (等同于种类多，混乱程度大（不确定性大）—&gt; 熵值大)</p>
+<p>信息增益：表示特征 X 使得类 Y 的不确定性减少的程度（希望分类后，同类中一起），信息增益大 == 熵值下降多</p>
+<h2 id="id3"><a class="anchor" href="#id3">#</a> ID3</h2>
+<ol>
+<li>
+<p>根据原始数据的标签（标签 1、标签 2...），计算原始熵值</p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312131840.png" alt="image-20220831213116767" /> 对每个特征逐个计算熵值</p>
+</li>
+</ol>
+<p>若选取的某一个特征（天气）中有三种 种类（晴天 、阴天、下雨），则分别计算该特征下三种结果中的关于原始数据标签的三个熵值，最后将三个熵值加权相加（权重为三个熵值所对应的三个特征下的结果站所有结果中的比例）便得到了该特征的熵值</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312131656.png" alt="image-20220831213124598" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312131694.png" alt="image-20220831213133644" /></p>
+<ol start="3">
+<li>信息增益 == 原始熵值 - 特征的熵值</li>
+</ol>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312131694.png" alt="" /></p>
+<ol start="4">
+<li>取信息增益最大的特征</li>
+</ol>
+<p>（ID3：信息增益）当特征（ID 或索引）非常稀疏，种类非常多，信息增益无法处理，于是提出了信息 C4.5 的信息增益率</p>
+<h2 id="c45"><a class="anchor" href="#c45">#</a> C4.5</h2>
+<p>信息增益率 == 信息增益 / 自身熵值</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312131123.png" alt="image-20220831213158083" /></p>
+<h2 id="cart"><a class="anchor" href="#cart">#</a> CART</h2>
+<p>基尼系数 (GINI)：同样也是 p 越小函数值越大（等同与种类越多，混乱程度越大 —&gt; 熵值越大）。</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312132354.png" alt="image-20220831213207313" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312132715.png" alt="image-20220831213213668" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312132347.png" alt="image-20220831213222297" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312132182.png" alt="image-20220831213230103" /></p>
+<p>如果 遇到的特征值是一组连续值（体重），则先对这些离散值进行排序，然后不断的做二分（左边 1 个，左边 2 个，左边 3 个...）计算每一种二分后的信息增益，取信息增益最大，熵值最小（信息增益 = 原始熵值 - 特征的熵值）的分界点。这就是连续值 “离散化” 过程</p>
+<h2 id="决策树剪枝策略不希望决策树过于庞大复杂防止过拟合"><a class="anchor" href="#决策树剪枝策略不希望决策树过于庞大复杂防止过拟合">#</a> 决策树剪枝策略（不希望决策树过于庞大复杂，防止过拟合）</h2>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312132069.png" alt="image-20220831213237012" /></p>
+<ul>
+<li>预剪枝：限制深度，叶子节点个数... 防止决策树过于庞大复杂（在建立决策树的同时进行剪枝操作）</li>
+</ul>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312132852.png" alt="image-20220831213243761" /></p>
+<ul>
+<li>后剪枝：（建立完决策树之后再进行剪枝 ）</li>
+</ul>
+<h2 id="决策树做回归标签为连续值"><a class="anchor" href="#决策树做回归标签为连续值">#</a> 决策树做回归（标签为连续值）</h2>
+<p>以方差为衡量标准，方差小（偏离程度小 = 混乱程度低 = 熵值小）的划分方案好。</p>
+<p>测试某一个样本时，样本的标签值则等于他所被划分类中所有数据标签的平均值</p>
+
+      <div class="tags">
+          <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag"><i class="ic i-tag"></i> 机器学习</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2022-08-31 21:33:45" itemprop="dateModified" datetime="2022-08-31T21:33:45+08:00">2022-08-31</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[奶茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="ZiJun 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/alipay.png" alt="ZiJun 支付宝">
+        <p>支付宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>ZiJun <i class="ic i-at"><em>@</em></i>心释的茶社
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://yn-xs.github.io/2022/08/29/jue-ce-shu-suan-fa/" title="决策树算法">https://yn-xs.github.io/2022/08/29/jue-ce-shu-suan-fa/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2022/08/29/ti-du-xia-jiang/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipevgoki5j20zk0m84qp.jpg" title="梯度下降">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 统计学习方法</span>
+  <h3>梯度下降</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2022/08/29/knn-suan-fa/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclimtf7dj20zk0m8qav.jpg" title="KNN算法">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 统计学习方法</span>
+  <h3>KNN算法</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%86%B3%E7%AD%96%E6%A0%91%E7%AE%97%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text"> 决策树算法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%B3%E7%AD%96%E6%A0%91%E7%9A%84%E8%AE%AD%E7%BB%83%E9%98%B6%E6%AE%B5"><span class="toc-number">1.1.</span> <span class="toc-text"> 决策树的训练阶段</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A1%E9%87%8F%E6%A0%87%E5%87%86%E7%86%B5"><span class="toc-number">1.2.</span> <span class="toc-text"> 衡量标准 —— 熵</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#id3"><span class="toc-number">1.3.</span> <span class="toc-text"> ID3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#c45"><span class="toc-number">1.4.</span> <span class="toc-text"> C4.5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cart"><span class="toc-number">1.5.</span> <span class="toc-text"> CART</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%B3%E7%AD%96%E6%A0%91%E5%89%AA%E6%9E%9D%E7%AD%96%E7%95%A5%E4%B8%8D%E5%B8%8C%E6%9C%9B%E5%86%B3%E7%AD%96%E6%A0%91%E8%BF%87%E4%BA%8E%E5%BA%9E%E5%A4%A7%E5%A4%8D%E6%9D%82%E9%98%B2%E6%AD%A2%E8%BF%87%E6%8B%9F%E5%90%88"><span class="toc-number">1.6.</span> <span class="toc-text"> 决策树剪枝策略（不希望决策树过于庞大复杂，防止过拟合）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%B3%E7%AD%96%E6%A0%91%E5%81%9A%E5%9B%9E%E5%BD%92%E6%A0%87%E7%AD%BE%E4%B8%BA%E8%BF%9E%E7%BB%AD%E5%80%BC"><span class="toc-number">1.7.</span> <span class="toc-text"> 决策树做回归（标签为连续值）</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/2022/08/27/xian-xing-dai-shu-ji-chu/" rel="bookmark" title="线性代数基础">线性代数基础</a></li><li><a href="/2022/08/28/xian-xing-dai-shu-jin-jie/" rel="bookmark" title="线性代数进阶">线性代数进阶</a></li><li><a href="/2022/08/29/xian-xing-hui-gui/" rel="bookmark" title="线性回归">线性回归</a></li><li><a href="/2022/08/29/ti-du-xia-jiang/" rel="bookmark" title="梯度下降">梯度下降</a></li><li><a href="/2022/08/29/knn-suan-fa/" rel="bookmark" title="KNN算法">KNN算法</a></li><li class="active"><a href="/2022/08/29/jue-ce-shu-suan-fa/" rel="bookmark" title="决策树算法">决策树算法</a></li><li><a href="/2022/08/29/ju-lei-suan-fa/" rel="bookmark" title="聚类算法">聚类算法</a></li><li><a href="/2022/08/29/bei-xie-si-suan-fa/" rel="bookmark" title="贝叶斯算法">贝叶斯算法</a></li><li><a href="/2022/08/29/mo-xing-de-xun-lian/" rel="bookmark" title="模型的训练">模型的训练</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="ZiJun"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">ZiJun</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">14</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">3</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">5</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL1lOLVhT" title="https:&#x2F;&#x2F;github.com&#x2F;YN-XS"><i class="ic i-github"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvbXkvbS9tdXNpYy9wbGF5bGlzdD9pZD0yMDI2MzU0NDEy" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;my&#x2F;m&#x2F;music&#x2F;playlist?id&#x3D;2026354412"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item weibo" data-url="aHR0cHM6Ly93ZWliby5jb20vNzUyMTU1OTg5MA==" title="https:&#x2F;&#x2F;weibo.com&#x2F;7521559890"><i class="ic i-weibo"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/statistics/" rel="section"><i class="ic i-calendar"></i>文章统计</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2022/08/29/ti-du-xia-jiang/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2022/08/29/knn-suan-fa/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
+</div>
+
+    <span><a href="/2022/08/29/xian-xing-hui-gui/" title="线性回归">线性回归</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/B/" title="分类于 高级编程语言">高级编程语言</a>
+</div>
+
+    <span><a href="/2022/08/26/c-yu-yan-ji-chu-er/" title="C语言基础二">C语言基础二</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/B/" title="分类于 高级编程语言">高级编程语言</a>
+</div>
+
+    <span><a href="/2022/08/30/python-ji-suan-ji-er-ji/" title="Python计算机二级">Python计算机二级</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/B/" title="分类于 高级编程语言">高级编程语言</a>
+</div>
+
+    <span><a href="/2022/08/25/c-yu-yan-ji-chu-yi/" title="C语言基础一">C语言基础一</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/C/" title="分类于 个人随笔">个人随笔</a>
+</div>
+
+    <span><a href="/2022/08/22/hello-world/" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
+</div>
+
+    <span><a href="/2022/08/27/xian-xing-dai-shu-ji-chu/" title="线性代数基础">线性代数基础</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/B/" title="分类于 高级编程语言">高级编程语言</a>
+</div>
+
+    <span><a href="/2022/08/26/c-yu-yan-ji-chu-san/" title="C语言基础三">C语言基础三</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
+</div>
+
+    <span><a href="/2022/08/29/mo-xing-de-xun-lian/" title="模型的训练">模型的训练</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
+</div>
+
+    <span><a href="/2022/08/29/bei-xie-si-suan-fa/" title="贝叶斯算法">贝叶斯算法</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
+</div>
+
+    <span><a href="/2022/08/29/ti-du-xia-jiang/" title="梯度下降">梯度下降</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">ZiJun @ Tea House</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2022/08/29/jue-ce-shu-suan-fa/',
+    favicon: {
+      show: "(๑ᵔ⌔ᵔ๑)：正在进入茶社",
+      hide: "(๑‾᷅^‾᷅๑)：记得回到茶社"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js,npm/echarts@5.2.2/dist/echarts.min.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
