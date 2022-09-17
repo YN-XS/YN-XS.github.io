@@ -514,6 +514,493 @@
       </tags>
   </entry>
   <entry>
+    <title>C语言基础三</title>
+    <url>/2022/08/26/c-yu-yan-ji-chu-san/</url>
+    <content><![CDATA[<h2 id="c语言基础三"><a class="anchor" href="#c语言基础三">#</a> C 语言基础三</h2>
+<h4 id="指针"><a class="anchor" href="#指针">#</a> 指针</h4>
+<ul>
+<li><strong>大多数情况下：认为指针即地址即可</strong></li>
+<li><strong>指针本身不是地址，但指针所保存的值是一个地址，就像变量和数值的关系，变量不是一个数值，但变量保存的值是一个数字</strong></li>
+</ul>
+<h5 id="内存地址"><a class="anchor" href="#内存地址">#</a> 内存地址</h5>
+<ul>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250740748.png" alt="image-20220825074045588" /></p>
+</li>
+<li>
+<p><strong>数据通过数据总线在 CPU 和内存间进行传输</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250742081.png" alt="image-20220825074252982" /></p>
+</li>
+<li>
+<p><strong>将内存中的每个数据分别放到每个寄存器中</strong></p>
+</li>
+<li>
+<p><strong>激活算数逻辑单元</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250745019.png" alt="image-20220825074530924" /></p>
+</li>
+<li>
+<p><strong>用另一个寄存器来存放计算结果，然后将结果存放到内存中</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250746738.png" alt="image-20220825074645644" /></p>
+</li>
+<li>
+<p><strong>每块内存地址中都由八个晶体管开关，每块内存地址都有编号</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250750731.png" alt="image-20220825075034656" /></p>
+</li>
+<li>
+<p><strong>不同的数据类型占用存储空间大小不同</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250752470.png" alt="image-20220825075214402" /></p>
+</li>
+<li>
+<p><strong>内存地址总结</strong></p>
+</li>
+<li>
+<p><strong>记录一个数据对象在内存地址中的位置需要两个信息：</strong></p>
+<ul>
+<li><strong>首地址 + 存储空间大小 (数据对象所占字节数)</strong></li>
+</ul>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250755563.png" alt="image-20220825075521476" /></p>
+</li>
+</ul>
+<h5 id="指针数据类型"><a class="anchor" href="#指针数据类型">#</a> 指针数据类型</h5>
+<ul>
+<li>
+<p><strong>取地址运算符：&amp;</strong></p>
+<ul>
+<li>
+<p><strong>在数据对象左边加上地址符 &amp;，即可获取数据对象的内存地址 (首地址 + 存储空间大小)</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250802418.png" alt="image-20220825080242349" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250804744.png" alt="image-20220825080420683" /></p>
+</li>
+<li>
+<p><strong>声明指针变量时：空格位置不同都是正确的</strong></p>
+</li>
+<li>
+<pre class=" language-language-c"><code class="language-language-c">int *p;		//空格在*左边
+int* p;		//空格在*右边
+int*p;		//没有空格
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">- **指针值=对象首地址**</span><br><span class="line"></span><br><span class="line">- **数据类型——>指针类型——>存储空间大小**</span><br><span class="line"></span><br><span class="line">  - ![image-<span class="number">20220825080857964</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250808035</span>.png)</span><br><span class="line"></span><br><span class="line">  - ![image-<span class="number">20220825081044923</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250810984</span>.png)</span><br><span class="line"></span><br><span class="line">  - ![image-<span class="number">20220825081305997</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250813062</span>.png)</span><br><span class="line"></span><br><span class="line">- **取值运算符：***</span><br><span class="line"></span><br><span class="line">  - **在指针对象左边加上取值运算符*，即可根据内存地址(首地址+空间大小)找到数据对象**</span><br><span class="line">  - ![image-<span class="number">20220825082906168</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250829229</span>.png)</span><br><span class="line"></span><br><span class="line">  - **可以通过：对数据地址取值来访问数据对象**</span><br><span class="line">  - ![image-<span class="number">20220825083357629</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250833689</span>.png)</span><br><span class="line"></span><br><span class="line"><span class="comment">##### 不同指针类型</span></span><br><span class="line"></span><br><span class="line">- **不同指针类型所表示的数据对象的(内存的存储空间大小)不同——>不可以相互赋值**</span><br><span class="line">- **不同指针类型所表示的数据对象的(内存的存储空间大小不同)，但是指针本身所占用的空间大小可能相同**</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825084852196</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250848272</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825084933710</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250849760</span>.png)</span><br><span class="line"></span><br><span class="line"><span class="comment">##### 强制转化指针类型</span></span><br><span class="line"></span><br><span class="line">- **强制转换指针类型——>指针保存(数据对象的首地址)并不会变**</span><br><span class="line"></span><br><span class="line">- **强制转换指针类型——>但是指针表示的(数据对象的存储空间大小)发生改变**</span><br><span class="line"></span><br><span class="line">- **不同类型的指针在取值(*指针)时，从(指针所保存的首地址)开始向后取出(指针类型所表示的存储空间大小)的数据**</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825090139913</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250901975</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825090228704</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250902780</span>.png)</span><br><span class="line"></span><br><span class="line">- <span class="comment">##### **指针小总结**</span></span><br><span class="line"></span><br><span class="line">  - ![image-<span class="number">20220825090917903</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250909957</span>.png)</span><br><span class="line">  - **指针保存了数据对象的首地址和存储空间大小**</span><br><span class="line">  - **指针值 = 数据对象首地址**</span><br><span class="line">  - **指针类型——>数据对象的存储空间大小**</span><br><span class="line">  - **不同类型指针在取值(*指针)时，从(保存的首地址)开始向后取出(不同存储空间大小)的数据**</span><br><span class="line"></span><br><span class="line"><span class="comment">#### 指针运算</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##### 指针类型与整形相加减</span></span><br><span class="line"></span><br><span class="line">- **指针类型与整形相加减——>移动指针内保存的首地址**</span><br><span class="line"></span><br><span class="line">- **无法将整形数据 赋给 指针类型**</span><br><span class="line">- ![image-<span class="number">20220825091207365</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250912423</span>.png)</span><br><span class="line">- ![image-<span class="number">20220825091142239</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250911298</span>.png)</span><br><span class="line"></span><br><span class="line">- **将数值强行转换为指针类型**</span><br><span class="line">- ![image-<span class="number">20220825091645350</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250916406</span>.png)</span><br><span class="line">  - **不同指针的首地址相同，但其所表示的空间大小不同**</span><br><span class="line">  - ![image-<span class="number">20220825091947034</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250919089</span>.png)</span><br><span class="line">  - ![image-<span class="number">20220825092109330</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250921388</span>.png)</span><br><span class="line">  - **不同类型指针所表示的连续的地址间隔不同（因为所保存的数据类型的存储空间不同）**</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825092158225</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250921296</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825092429404</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250924469</span>.png)</span><br><span class="line"></span><br><span class="line">![image-<span class="number">20220825092451338</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250924396</span>.png)</span><br><span class="line"></span><br><span class="line"><span class="comment">##### 同类型指针减法运算</span></span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825093228555</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250932611</span>.png)</span><br><span class="line">- ![image-<span class="number">20220825093441483</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250934550</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825093848961</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250938020</span>.png)</span><br><span class="line"></span><br><span class="line"><span class="comment">##### 指针运算总结</span></span><br><span class="line"></span><br><span class="line">- **有实际意义的指针运算——>不会报错**</span><br><span class="line">  - ![image-<span class="number">20220825093953935</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250939984</span>.png)</span><br><span class="line"></span><br><span class="line">- **没有实际意义的指针运算——>会报错**</span><br><span class="line">  - ![image-<span class="number">20220825094056340</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250940393</span>.png)</span><br><span class="line"></span><br><span class="line"><span class="comment">#### 指针与数组</span></span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825102329063</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251023129</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825102353739</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251023798</span>.png)</span><br><span class="line"></span><br><span class="line">- **数组首地址**</span><br><span class="line">- ![image-<span class="number">20220825102530190</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251025238</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825102707495</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251027554</span>.png)</span><br><span class="line"></span><br><span class="line"><span class="comment">##### 数组名与指针的关系</span></span><br><span class="line"></span><br><span class="line">- **大多数情况下，数组名会转换成指向(数组第一个元素的地址)的指针**</span><br><span class="line">- **对数组名使用 sizeof 和使用 地址符& 时：不会将数组名转换为指针**</span><br><span class="line">- ![image-<span class="number">20220825103442228</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251034291</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825103552115</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251035189</span>.png)</span><br><span class="line">  - ![image-<span class="number">20220825104000774</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251040824</span>.png)</span><br><span class="line">  - ![image-<span class="number">20220825104025870</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251040925</span>.png)</span><br><span class="line">  - ![image-<span class="number">20220825104035911</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251040973</span>.png)</span><br><span class="line"></span><br><span class="line"><span class="comment">##### 指针访问数组</span></span><br><span class="line"></span><br><span class="line">- **访问数组元素的两种方法**</span><br><span class="line"></span><br><span class="line">  - **![image-<span class="number">20220825104222214</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251042276</span>.png)**</span><br><span class="line">  - ![image-<span class="number">20220825104329125</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251043172</span>.png)</span><br><span class="line"></span><br><span class="line">- **下标运算符[]的优先级高于一切**</span><br><span class="line"></span><br><span class="line">- **下标运算符最终会展开为指针的形式——>指针访问数组 = 下标访问数组**</span><br><span class="line"></span><br><span class="line">- ![](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251051468</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825104800762</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251048813</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825104833697</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251048756</span>.png)</span><br><span class="line"></span><br><span class="line">- ```c</span><br><span class="line">  arr[<span class="number">2</span>] ——> *(arr+<span class="number">2</span>)</span><br><span class="line">  [<span class="number">2</span>]arr ——> *(<span class="number">2</span>+arr)</span><br></pre></td></tr></table></figure>
+
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="指针作为参数传递"><a class="anchor" href="#指针作为参数传递">#</a> 指针作为参数传递</h5>
+<ul>
+<li>
+<p><strong>实参与形参相互独立（内存地址不同）</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251134932.png" alt="image-20220825113410866" /></p>
+</li>
+<li>
+<p><strong>形参和实参相互独立 ——&gt; 形参中的参数值，无论如何变化都不会影响实参中的参数值</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251136227.png" alt="image-20220825113619153" /></p>
+</li>
+<li>
+<p><strong>指针作为参数传递</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251316211.png" alt="image-20220825131640155" /></p>
+</li>
+<li>
+<p><strong>将指针传递到函数内部，函数就可以通过指针 (所指向的内存地址) 访问到数据对象，并对数据对象的值进行修改</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251321127.png" alt="image-20220825132121058" /></p>
+</li>
+<li>
+<p>*<em> 注意，是对指针所指向的 (数据对象的值)—(<em>指针) 进行修改，而不是对指针值 (数据对象的内存地址)—(指针) 进行修改</em></em></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251326487.png" alt="image-20220825132649418" /></p>
+</li>
+<li>
+<p><strong>scanf 函数无法直接修改 main 函数中的变量，而是通过指针 / 地址间接修改变量的值</strong></p>
+</li>
+<li>
+<p><strong>之所以在主函数 main 中调用 scanf 函数时，scanf 函数可以改变外部 (main 函数中) 的变量，是因为 scanf 函数中传递的参数是一个地址 / 指针（参数前需要地址符 &amp;）</strong></p>
+</li>
+<li>
+<p><strong>所以 scanf 输入函数会先读取从键盘中输入，转化后再将其存放到指针 / 地址所指向的数据对象（参数前需要地址符 &amp;）</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251334188.png" alt="image-20220825133434136" /></p>
+</li>
+</ul>
+<h5 id="void类型指针"><a class="anchor" href="#void类型指针">#</a> void * 类型指针</h5>
+<ul>
+<li>
+<p><strong>不同类型指针赋值会修改数据对象的类型 ——&gt; 不能相互赋值</strong></p>
+<ul>
+<li>
+<p><strong>因为指针包括了数据对象的首地址和数据对象的存储空间 ——&gt; 不同类型指针不能相互赋值</strong></p>
+</li>
+<li>
+<p><strong>首地址可以相同，但是存储空间不一致</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251342200.png" alt="image-20220825134239138" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251341313.png" alt="image-20220825134101255" /></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>void 类型指针没有类型 ——&gt; 仅仅保存数据对象的首地址，不保存存储空间大小</strong></p>
+</li>
+<li>
+<p><strong>因此任意类型的指针都可以直接赋值给 void 类型指针</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251348704.png" alt="image-20220825134815645" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251346184.png" alt="image-20220825134600114" /></p>
+</li>
+<li>
+<p><strong>由于 void 类型指针没有存储空间大小</strong></p>
+</li>
+<li>
+<p><strong>所以任何指针类型都可以直接将地址赋给 void 类型指</strong></p>
+</li>
+<li>
+<p><strong>但 void 类型指针要先强制转换后才能将地址赋给对应类型指针</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251357276.png" alt="image-20220825135717210" /></p>
+</li>
+<li>
+<pre class=" language-language-c"><code class="language-language-c"># include"stdio.h"
+int main()&#123;
+    int a = 8;
+    int *A = &a;
+    printf("%d\n", A);
+    printf("%d\n", *A);
+    void *B = A;
+    int *C = (int*)B;
+    printf("%d\n", B);
+    printf("%d\n", C);
+&#125;
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">- **总结**</span><br><span class="line"></span><br><span class="line">- **所有类型的指针都可以直接将其指向的地址赋值给void类型的指针**</span><br><span class="line"></span><br><span class="line">- **但是void类型指针要先强制转换类型才能将地址赋给其他类型指针**</span><br><span class="line"></span><br><span class="line">- **void类型指针只能用于地址的传递，不能对地址取值——>只能打印void类型指针的地址(数据对象地址)**</span><br><span class="line"></span><br><span class="line">- **因为void类型指针没有类型——>不能打印地址的取值(数据对象的值)**</span><br><span class="line"></span><br><span class="line"><span class="comment">#### 多级指针</span></span><br><span class="line"></span><br><span class="line">- **指针作为一个数据对象也有自己的存储位置(地址)**</span><br><span class="line">- **指向指针的指针 = 多级指针**</span><br><span class="line">- ![image-<span class="number">20220825143152294</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251431358</span>.png)</span><br><span class="line">- **二级指针的声明**</span><br><span class="line">  - ![image-<span class="number">20220825144843604</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251448678</span>.png)</span><br><span class="line">- ![image-<span class="number">20220825144927815</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251449877</span>.png)</span><br><span class="line"></span><br><span class="line">![image-<span class="number">20220825145007456</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251450515</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825145028720</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251450778</span>.png)</span><br><span class="line"></span><br><span class="line"><span class="comment">##### 指针数组</span></span><br><span class="line"></span><br><span class="line">- **元素为指针的数组**</span><br><span class="line">- ![image-<span class="number">20220825145507501</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251455578</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825145744263</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251457339</span>.png)</span><br><span class="line">- ![image-<span class="number">20220825145542152</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251455217</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825153227051</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251532143</span>.png)</span><br><span class="line"></span><br><span class="line"><span class="comment">##### 从函数中返回指针</span></span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825153447378</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251534443</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825153549578</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251535637</span>.png)</span><br><span class="line"></span><br><span class="line">- **static类似与python中的global，使用static的变量将不会被系统回收**</span><br><span class="line">- ![image-<span class="number">20220825153649469</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251536530</span>.png)</span><br><span class="line"></span><br><span class="line"><span class="comment">##### 将二级指针作为函数参数</span></span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825154050938</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251540021</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825154129081</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251541135</span>.png)</span><br><span class="line"></span><br><span class="line">- **将指针初始化为 NULL / <span class="number">0</span> 是一个非常好的习惯**</span><br><span class="line"></span><br><span class="line">- ```C</span><br><span class="line">  int *a = NULL;</span><br><span class="line">  int *b = NULL;</span><br></pre></td></tr></table></figure>
+
+</code></pre>
+</li>
+</ul>
+<h4 id="指针与多维数组"><a class="anchor" href="#指针与多维数组">#</a> 指针与多维数组</h4>
+<ul>
+<li><strong>在一维数组中：数组的元素是一个元素 (int,char...)——&gt; 指针 (普通指针) 指向一维数组第一个 (元素的地址)</strong></li>
+<li><strong>在二维数组中：数组的元素是一行一维数组 ——&gt; 指针 (数组指针) 指向二维数组中的第一个一维 (数组的地址)</strong></li>
+</ul>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251625278.png" alt="image-20220825162539217" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251627083.png" alt="image-20220825162700032" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251627494.png" alt="image-20220825162738443" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251628868.png" alt="image-20220825162812808" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251629173.png" alt="image-20220825162924110" /></p>
+<h5 id="注意区分指针数组和数组指针"><a class="anchor" href="#注意区分指针数组和数组指针">#</a> 注意区分指针数组和数组指针</h5>
+<ul>
+<li><strong>指针数组：是一个元素为指针的数组</strong></li>
+<li><strong>数组指针：是一个指向数组的指针</strong></li>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251712501.png" alt="" /></li>
+<li><strong>从这里要开始注意</strong>
+<ul>
+<li><strong>普通的指针指向数组时，指向的（数组的第一个元素）的地址</strong></li>
+<li><strong>而数组指针指向数组时，指向的是（一个数组）的地址</strong></li>
+</ul>
+</li>
+</ul>
+<p><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>* arr[<span class="number">20</span>];	<span class="comment">//很明显这是一个指针数组(指针类型的数组)</span></span><br><span class="line"><span class="type">int</span> (*arr)[<span class="number">20</span>];		<span class="comment">//这是一个数组指针，为了方便理解，可以看成：int[20](*arr)</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="数组指针移动和取值"><a class="anchor" href="#数组指针移动和取值">#</a> 数组指针移动和取值</h5>
+<ul>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251722489.png" alt="image-20220825172205378" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251723805.png" alt="image-20220825172354700" /></p>
+</li>
+<li>
+<p><strong>指针本身不是地址，但是指针所保存的值是一个地址</strong></p>
+</li>
+<li>
+<p>*<em> 二维数组中的数组指针指向第一行一维数组的地址，对二维数组的第一行一维数组的地址取值 (<em>地址)——&gt; 得到了第一行一维数组</em></em></p>
+<ul>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251736352.png" alt="image-20220825173639300" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251737451.png" alt="image-20220825173701370" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251737557.png" alt="image-20220825173725454" /></p>
+</li>
+<li>
+<p>图中 pInt10 是一个数组指针：指向了第一行数组</p>
+</li>
+<li>
+<p>pInt 是一个普通指针：指向了第一行数组的第一个元素</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="指针访问与下标访问"><a class="anchor" href="#指针访问与下标访问">#</a> 指针访问与下标访问</h5>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251741802.png" alt="image-20220825174144745" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251745518.png" alt="image-20220825174525466" /></p>
+<ul>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208252300994.png" alt="image-20220825174344429" /></p>
+</li>
+<li></li>
+</ul>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251744510.png" alt="image-20220825174432457" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251748868.png" alt="image-20220825174800806" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251748942.png" alt="image-20220825174819884" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251749597.png" alt="image-20220825174942549" /></p>
+<ul>
+<li><strong>所以第二个不能将数组名转换为指向数组首个元素的做法：（&amp; 数组名）——&gt; 这样会取得整个数组的地址（也就是数组指针）</strong></li>
+<li><strong>指针与地址的关系 = 变量名与变量值的关系一样</strong></li>
+<li><strong>大多数情况：认为指针即地址即可</strong></li>
+</ul>
+<h5 id="指针与三位数组"><a class="anchor" href="#指针与三位数组">#</a> 指针与三位数组</h5>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251808826.png" alt="image-20220825180853744" /></p>
+<h5 id="声明器"><a class="anchor" href="#声明器">#</a> 声明器</h5>
+<ul>
+<li>
+<h6 id="数组标识符的声明"><a class="anchor" href="#数组标识符的声明">#</a> 数组标识符的声明</h6>
+</li>
+<li>
+<p><strong>声明与使用的形式一致</strong></p>
+<ul>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251826037.png" alt="image-20220825182605971" /></li>
+</ul>
+</li>
+<li>
+<p><strong>函数声明器</strong></p>
+<ul>
+<li>
+<p><strong>参数名可省略参数名</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251828620.png" alt="image-20220825182838567" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251829820.png" alt="image-20220825182914772" /></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>声明器的中优先级</strong></p>
+<ul>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251830367.png" alt="image-20220825183009287" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251831583.png" alt="image-20220825183111525" /></p>
+<ul>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251845415.png" alt="image-20220825184535364" /></li>
+<li><strong>指针数组：</strong>
+<ol>
+<li><strong>数组方括号优先级第一：——&gt; 首先是一个 (数组)</strong></li>
+<li><strong>指针 * 号优先级第二：——&gt; 这个 (数组) 的元素是 (指针)</strong></li>
+<li><strong>int 优先级第三：——&gt; 这个 (指针) 指向 (int) 类型</strong></li>
+</ol>
+</li>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251852604.png" alt="image-20220825185206553" /></li>
+<li><strong>数组指针：</strong>
+<ol>
+<li><strong>括号内的 * 号优先级第一：——&gt; 首先是一个 (指针)</strong></li>
+<li><strong>数组方括号优先级第二：——&gt; 这个 (指针) 指向 (数组)</strong></li>
+<li><strong>int 优先级第三：——&gt;(数组) 的元素为 (int)</strong></li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p>指针数组指针</p>
+<ul>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251858390.png" alt="image-20220825185821325" /></li>
+</ul>
+</li>
+<li>
+<p>函数指针数组</p>
+<ul>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251900593.png" alt="image-20220825190041541" /></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="函数指针与数组"><a class="anchor" href="#函数指针与数组">#</a> 函数指针与数组</h5>
+<ul>
+<li><strong>函数指针：指向函数的指针</strong></li>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251906672.png" alt="image-20220825190619610" /></li>
+</ul>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251906693.png" alt="image-20220825190636643" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251911666.png" alt="image-20220825191130615" /></p>
+<ul>
+<li>
+<p><strong>两种通过函数指针调用函数的方法</strong></p>
+<ul>
+<li>*<em> 函数指针取值 (<em>指针) 即为函数</em></em></li>
+<li><strong>第二种方法是一种可行的简写：直接将函数指针当做函数使用</strong></li>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251911533.png" alt="image-20220825191159481" /></li>
+</ul>
+</li>
+<li>
+<p><strong>函数指针数组</strong></p>
+<ul>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251916565.png" alt="image-20220825191651510" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251917379.png" alt="image-20220825191725321" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251917996.png" alt="image-20220825191757943" /></p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="字符串和字符指针"><a class="anchor" href="#字符串和字符指针">#</a> 字符串和字符指针</h5>
+<ul>
+<li>
+<p><strong>字符串结束的标志是 数值 0 而不是 字符 '0'</strong></p>
+</li>
+<li>
+<p><strong>为了不让 数值 0 和 字符 '0' 冲突，使用转义字符 \0 表示数值 0</strong></p>
+<ul>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251922338.png" alt="image-20220825192235261" /></p>
+</li>
+<li>
+<p><strong>字符串常量无法被修改</strong></p>
+</li>
+<li>
+<p><strong>数组中的值可以修改 ——&gt; 可以用字符数组来装载字符串，然后修改字符数组中的字符</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251932522.png" alt="image-20220825193213458" /></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>能否正常结尾的字符串（字符串末尾自带结束符 \0）</strong></p>
+<ul>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251928369.png" alt="image-20220825192807290" /></li>
+</ul>
+</li>
+<li>
+<p><strong>字符数组与指针</strong></p>
+<ul>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251933773.png" alt="image-20220825193300708" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251933065.png" alt="image-20220825193322003" /></p>
+</li>
+<li>
+<p><strong>指针 p 为一个移动的游标</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251933327.png" alt="image-20220825193351258" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251934539.png" alt="image-20220825193408468" /></p>
+</li>
+<li>
+<p><strong>错误的写法</strong></p>
+<ul>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251936779.png" alt="image-20220825193637718" /></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>使用指针处理字符串 (字符数组)</strong></p>
+<ul>
+<li><strong>字符串反转：将字符串中首尾对应的元素两两交换</strong></li>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251943399.png" alt="image-20220825194328346" /></li>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251944049.png" alt="image-20220825194407984" /></li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>高级编程语言</category>
+      </categories>
+      <tags>
+        <tag>C语言</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算机原理</title>
+    <url>/2022/08/30/python-ji-suan-ji-er-ji/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>高级编程语言</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>KNN算法</title>
+    <url>/2022/08/29/knn-suan-fa/</url>
+    <content><![CDATA[<h1 id="knn算法"><a class="anchor" href="#knn算法">#</a> KNN 算法</h1>
+<h2 id="物以类聚人以群分"><a class="anchor" href="#物以类聚人以群分">#</a> 物以类聚人以群分</h2>
+<ul>
+<li>看一个人怎么样，看他身边的朋友什么样即可</li>
+</ul>
+<ol>
+<li>
+<p>取所有样本 (行) 的部分特征 (data 列) 和类别标签 (label 列) 来绘制散点图<br />
+ (不同类别标签的样本的颜色或形状不同)</p>
+</li>
+<li>
+<p>引进一个新的样本 (x = 特征 1，y = 特征 2，z = 特征 3，表示类别标签 color 或 symbol)</p>
+</li>
+<li>
+<p>计算所有样本点与新引入点的距离 (欧式距离或马氏距离等)</p>
+</li>
+<li>
+<p>对得到的所有欧式距离做升序排列，取前 k 个数据的 (取到了与我们新引进的样本点最近的 k 个数据的索引)</p>
+</li>
+<li>
+<p>对得到的前 k 个数据进行加权求平均 (尽管有 k 个离得近的样本，但是这 k 个距离不相同，距离越近的类别标签的权重越大，越远的类别标签权重越小)</p>
+</li>
+</ol>
+<p>欧式距离：欧几里得距离</p>
+<ul>
+<li>两个样本的欧式距离 = sqrt (∑相同特征相减取平方)</li>
+<li>二维情况下，每一个样本 (点) 只有 x 坐标和 y 坐标两个特征 ——&gt; 所以它们的欧式距离 = sqrt ((x1-x2)²＋(y1-y2)²)</li>
+</ul>
+<p>K 太大：欠拟合<br />
+ K 太小：过拟合</p>
+]]></content>
+      <categories>
+        <category>统计学习方法</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>C语言基础二</title>
     <url>/2022/08/26/c-yu-yan-ji-chu-er/</url>
     <content><![CDATA[<h1 id="c语言基础二"><a class="anchor" href="#c语言基础二">#</a> C 语言基础二</h1>
@@ -1115,484 +1602,98 @@ int func(int, int);		//编译器检测到有两个int类型的参数
       </tags>
   </entry>
   <entry>
-    <title>C语言基础三</title>
-    <url>/2022/08/26/c-yu-yan-ji-chu-san/</url>
-    <content><![CDATA[<h2 id="c语言基础三"><a class="anchor" href="#c语言基础三">#</a> C 语言基础三</h2>
-<h4 id="指针"><a class="anchor" href="#指针">#</a> 指针</h4>
-<ul>
-<li><strong>大多数情况下：认为指针即地址即可</strong></li>
-<li><strong>指针本身不是地址，但指针所保存的值是一个地址，就像变量和数值的关系，变量不是一个数值，但变量保存的值是一个数字</strong></li>
-</ul>
-<h5 id="内存地址"><a class="anchor" href="#内存地址">#</a> 内存地址</h5>
+    <title>决策树算法</title>
+    <url>/2022/08/29/jue-ce-shu-suan-fa/</url>
+    <content><![CDATA[<h1 id="决策树算法"><a class="anchor" href="#决策树算法">#</a> 决策树算法</h1>
 <ul>
 <li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250740748.png" alt="image-20220825074045588" /></p>
+<p>从根节点开始一步步走到叶子节点 (决策)</p>
 </li>
 <li>
-<p><strong>数据通过数据总线在 CPU 和内存间进行传输</strong></p>
+<p>所有数据最终都会落到叶子节点，既可以做分类也可以做回归</p>
 </li>
 <li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250742081.png" alt="image-20220825074252982" /></p>
+<p>根节点：第一个选择点</p>
 </li>
 <li>
-<p><strong>将内存中的每个数据分别放到每个寄存器中</strong></p>
+<p>非叶子节点和分支：中间过程</p>
 </li>
 <li>
-<p><strong>激活算数逻辑单元</strong></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250745019.png" alt="image-20220825074530924" /></p>
-</li>
-<li>
-<p><strong>用另一个寄存器来存放计算结果，然后将结果存放到内存中</strong></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250746738.png" alt="image-20220825074645644" /></p>
-</li>
-<li>
-<p><strong>每块内存地址中都由八个晶体管开关，每块内存地址都有编号</strong></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250750731.png" alt="image-20220825075034656" /></p>
-</li>
-<li>
-<p><strong>不同的数据类型占用存储空间大小不同</strong></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250752470.png" alt="image-20220825075214402" /></p>
-</li>
-<li>
-<p><strong>内存地址总结</strong></p>
-</li>
-<li>
-<p><strong>记录一个数据对象在内存地址中的位置需要两个信息：</strong></p>
-<ul>
-<li><strong>首地址 + 存储空间大小 (数据对象所占字节数)</strong></li>
-</ul>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250755563.png" alt="image-20220825075521476" /></p>
+<p>叶子节点：最终的决策结果</p>
 </li>
 </ul>
-<h5 id="指针数据类型"><a class="anchor" href="#指针数据类型">#</a> 指针数据类型</h5>
-<ul>
-<li>
-<p><strong>取地址运算符：&amp;</strong></p>
-<ul>
-<li>
-<p><strong>在数据对象左边加上地址符 &amp;，即可获取数据对象的内存地址 (首地址 + 存储空间大小)</strong></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250802418.png" alt="image-20220825080242349" /></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250804744.png" alt="image-20220825080420683" /></p>
-</li>
-<li>
-<p><strong>声明指针变量时：空格位置不同都是正确的</strong></p>
-</li>
-<li>
-<pre class=" language-language-c"><code class="language-language-c">int *p;		//空格在*左边
-int* p;		//空格在*右边
-int*p;		//没有空格
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">- **指针值=对象首地址**</span><br><span class="line"></span><br><span class="line">- **数据类型——>指针类型——>存储空间大小**</span><br><span class="line"></span><br><span class="line">  - ![image-<span class="number">20220825080857964</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250808035</span>.png)</span><br><span class="line"></span><br><span class="line">  - ![image-<span class="number">20220825081044923</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250810984</span>.png)</span><br><span class="line"></span><br><span class="line">  - ![image-<span class="number">20220825081305997</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250813062</span>.png)</span><br><span class="line"></span><br><span class="line">- **取值运算符：***</span><br><span class="line"></span><br><span class="line">  - **在指针对象左边加上取值运算符*，即可根据内存地址(首地址+空间大小)找到数据对象**</span><br><span class="line">  - ![image-<span class="number">20220825082906168</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250829229</span>.png)</span><br><span class="line"></span><br><span class="line">  - **可以通过：对数据地址取值来访问数据对象**</span><br><span class="line">  - ![image-<span class="number">20220825083357629</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250833689</span>.png)</span><br><span class="line"></span><br><span class="line"><span class="comment">##### 不同指针类型</span></span><br><span class="line"></span><br><span class="line">- **不同指针类型所表示的数据对象的(内存的存储空间大小)不同——>不可以相互赋值**</span><br><span class="line">- **不同指针类型所表示的数据对象的(内存的存储空间大小不同)，但是指针本身所占用的空间大小可能相同**</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825084852196</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250848272</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825084933710</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250849760</span>.png)</span><br><span class="line"></span><br><span class="line"><span class="comment">##### 强制转化指针类型</span></span><br><span class="line"></span><br><span class="line">- **强制转换指针类型——>指针保存(数据对象的首地址)并不会变**</span><br><span class="line"></span><br><span class="line">- **强制转换指针类型——>但是指针表示的(数据对象的存储空间大小)发生改变**</span><br><span class="line"></span><br><span class="line">- **不同类型的指针在取值(*指针)时，从(指针所保存的首地址)开始向后取出(指针类型所表示的存储空间大小)的数据**</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825090139913</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250901975</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825090228704</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250902780</span>.png)</span><br><span class="line"></span><br><span class="line">- <span class="comment">##### **指针小总结**</span></span><br><span class="line"></span><br><span class="line">  - ![image-<span class="number">20220825090917903</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250909957</span>.png)</span><br><span class="line">  - **指针保存了数据对象的首地址和存储空间大小**</span><br><span class="line">  - **指针值 = 数据对象首地址**</span><br><span class="line">  - **指针类型——>数据对象的存储空间大小**</span><br><span class="line">  - **不同类型指针在取值(*指针)时，从(保存的首地址)开始向后取出(不同存储空间大小)的数据**</span><br><span class="line"></span><br><span class="line"><span class="comment">#### 指针运算</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##### 指针类型与整形相加减</span></span><br><span class="line"></span><br><span class="line">- **指针类型与整形相加减——>移动指针内保存的首地址**</span><br><span class="line"></span><br><span class="line">- **无法将整形数据 赋给 指针类型**</span><br><span class="line">- ![image-<span class="number">20220825091207365</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250912423</span>.png)</span><br><span class="line">- ![image-<span class="number">20220825091142239</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250911298</span>.png)</span><br><span class="line"></span><br><span class="line">- **将数值强行转换为指针类型**</span><br><span class="line">- ![image-<span class="number">20220825091645350</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250916406</span>.png)</span><br><span class="line">  - **不同指针的首地址相同，但其所表示的空间大小不同**</span><br><span class="line">  - ![image-<span class="number">20220825091947034</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250919089</span>.png)</span><br><span class="line">  - ![image-<span class="number">20220825092109330</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250921388</span>.png)</span><br><span class="line">  - **不同类型指针所表示的连续的地址间隔不同（因为所保存的数据类型的存储空间不同）**</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825092158225</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250921296</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825092429404</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250924469</span>.png)</span><br><span class="line"></span><br><span class="line">![image-<span class="number">20220825092451338</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250924396</span>.png)</span><br><span class="line"></span><br><span class="line"><span class="comment">##### 同类型指针减法运算</span></span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825093228555</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250932611</span>.png)</span><br><span class="line">- ![image-<span class="number">20220825093441483</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250934550</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825093848961</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250938020</span>.png)</span><br><span class="line"></span><br><span class="line"><span class="comment">##### 指针运算总结</span></span><br><span class="line"></span><br><span class="line">- **有实际意义的指针运算——>不会报错**</span><br><span class="line">  - ![image-<span class="number">20220825093953935</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250939984</span>.png)</span><br><span class="line"></span><br><span class="line">- **没有实际意义的指针运算——>会报错**</span><br><span class="line">  - ![image-<span class="number">20220825094056340</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208250940393</span>.png)</span><br><span class="line"></span><br><span class="line"><span class="comment">#### 指针与数组</span></span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825102329063</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251023129</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825102353739</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251023798</span>.png)</span><br><span class="line"></span><br><span class="line">- **数组首地址**</span><br><span class="line">- ![image-<span class="number">20220825102530190</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251025238</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825102707495</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251027554</span>.png)</span><br><span class="line"></span><br><span class="line"><span class="comment">##### 数组名与指针的关系</span></span><br><span class="line"></span><br><span class="line">- **大多数情况下，数组名会转换成指向(数组第一个元素的地址)的指针**</span><br><span class="line">- **对数组名使用 sizeof 和使用 地址符& 时：不会将数组名转换为指针**</span><br><span class="line">- ![image-<span class="number">20220825103442228</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251034291</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825103552115</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251035189</span>.png)</span><br><span class="line">  - ![image-<span class="number">20220825104000774</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251040824</span>.png)</span><br><span class="line">  - ![image-<span class="number">20220825104025870</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251040925</span>.png)</span><br><span class="line">  - ![image-<span class="number">20220825104035911</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251040973</span>.png)</span><br><span class="line"></span><br><span class="line"><span class="comment">##### 指针访问数组</span></span><br><span class="line"></span><br><span class="line">- **访问数组元素的两种方法**</span><br><span class="line"></span><br><span class="line">  - **![image-<span class="number">20220825104222214</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251042276</span>.png)**</span><br><span class="line">  - ![image-<span class="number">20220825104329125</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251043172</span>.png)</span><br><span class="line"></span><br><span class="line">- **下标运算符[]的优先级高于一切**</span><br><span class="line"></span><br><span class="line">- **下标运算符最终会展开为指针的形式——>指针访问数组 = 下标访问数组**</span><br><span class="line"></span><br><span class="line">- ![](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251051468</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825104800762</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251048813</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825104833697</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251048756</span>.png)</span><br><span class="line"></span><br><span class="line">- ```c</span><br><span class="line">  arr[<span class="number">2</span>] ——> *(arr+<span class="number">2</span>)</span><br><span class="line">  [<span class="number">2</span>]arr ——> *(<span class="number">2</span>+arr)</span><br></pre></td></tr></table></figure>
-
-</code></pre>
-</li>
-</ul>
-</li>
-</ul>
-<h5 id="指针作为参数传递"><a class="anchor" href="#指针作为参数传递">#</a> 指针作为参数传递</h5>
-<ul>
-<li>
-<p><strong>实参与形参相互独立（内存地址不同）</strong></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251134932.png" alt="image-20220825113410866" /></p>
-</li>
-<li>
-<p><strong>形参和实参相互独立 ——&gt; 形参中的参数值，无论如何变化都不会影响实参中的参数值</strong></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251136227.png" alt="image-20220825113619153" /></p>
-</li>
-<li>
-<p><strong>指针作为参数传递</strong></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251316211.png" alt="image-20220825131640155" /></p>
-</li>
-<li>
-<p><strong>将指针传递到函数内部，函数就可以通过指针 (所指向的内存地址) 访问到数据对象，并对数据对象的值进行修改</strong></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251321127.png" alt="image-20220825132121058" /></p>
-</li>
-<li>
-<p>*<em> 注意，是对指针所指向的 (数据对象的值)—(<em>指针) 进行修改，而不是对指针值 (数据对象的内存地址)—(指针) 进行修改</em></em></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251326487.png" alt="image-20220825132649418" /></p>
-</li>
-<li>
-<p><strong>scanf 函数无法直接修改 main 函数中的变量，而是通过指针 / 地址间接修改变量的值</strong></p>
-</li>
-<li>
-<p><strong>之所以在主函数 main 中调用 scanf 函数时，scanf 函数可以改变外部 (main 函数中) 的变量，是因为 scanf 函数中传递的参数是一个地址 / 指针（参数前需要地址符 &amp;）</strong></p>
-</li>
-<li>
-<p><strong>所以 scanf 输入函数会先读取从键盘中输入，转化后再将其存放到指针 / 地址所指向的数据对象（参数前需要地址符 &amp;）</strong></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251334188.png" alt="image-20220825133434136" /></p>
-</li>
-</ul>
-<h5 id="void类型指针"><a class="anchor" href="#void类型指针">#</a> void * 类型指针</h5>
-<ul>
-<li>
-<p><strong>不同类型指针赋值会修改数据对象的类型 ——&gt; 不能相互赋值</strong></p>
-<ul>
-<li>
-<p><strong>因为指针包括了数据对象的首地址和数据对象的存储空间 ——&gt; 不同类型指针不能相互赋值</strong></p>
-</li>
-<li>
-<p><strong>首地址可以相同，但是存储空间不一致</strong></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251342200.png" alt="image-20220825134239138" /></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251341313.png" alt="image-20220825134101255" /></p>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>void 类型指针没有类型 ——&gt; 仅仅保存数据对象的首地址，不保存存储空间大小</strong></p>
-</li>
-<li>
-<p><strong>因此任意类型的指针都可以直接赋值给 void 类型指针</strong></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251348704.png" alt="image-20220825134815645" /></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251346184.png" alt="image-20220825134600114" /></p>
-</li>
-<li>
-<p><strong>由于 void 类型指针没有存储空间大小</strong></p>
-</li>
-<li>
-<p><strong>所以任何指针类型都可以直接将地址赋给 void 类型指</strong></p>
-</li>
-<li>
-<p><strong>但 void 类型指针要先强制转换后才能将地址赋给对应类型指针</strong></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251357276.png" alt="image-20220825135717210" /></p>
-</li>
-<li>
-<pre class=" language-language-c"><code class="language-language-c"># include"stdio.h"
-int main()&#123;
-    int a = 8;
-    int *A = &a;
-    printf("%d\n", A);
-    printf("%d\n", *A);
-    void *B = A;
-    int *C = (int*)B;
-    printf("%d\n", B);
-    printf("%d\n", C);
-&#125;
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">- **总结**</span><br><span class="line"></span><br><span class="line">- **所有类型的指针都可以直接将其指向的地址赋值给void类型的指针**</span><br><span class="line"></span><br><span class="line">- **但是void类型指针要先强制转换类型才能将地址赋给其他类型指针**</span><br><span class="line"></span><br><span class="line">- **void类型指针只能用于地址的传递，不能对地址取值——>只能打印void类型指针的地址(数据对象地址)**</span><br><span class="line"></span><br><span class="line">- **因为void类型指针没有类型——>不能打印地址的取值(数据对象的值)**</span><br><span class="line"></span><br><span class="line"><span class="comment">#### 多级指针</span></span><br><span class="line"></span><br><span class="line">- **指针作为一个数据对象也有自己的存储位置(地址)**</span><br><span class="line">- **指向指针的指针 = 多级指针**</span><br><span class="line">- ![image-<span class="number">20220825143152294</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251431358</span>.png)</span><br><span class="line">- **二级指针的声明**</span><br><span class="line">  - ![image-<span class="number">20220825144843604</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251448678</span>.png)</span><br><span class="line">- ![image-<span class="number">20220825144927815</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251449877</span>.png)</span><br><span class="line"></span><br><span class="line">![image-<span class="number">20220825145007456</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251450515</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825145028720</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251450778</span>.png)</span><br><span class="line"></span><br><span class="line"><span class="comment">##### 指针数组</span></span><br><span class="line"></span><br><span class="line">- **元素为指针的数组**</span><br><span class="line">- ![image-<span class="number">20220825145507501</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251455578</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825145744263</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251457339</span>.png)</span><br><span class="line">- ![image-<span class="number">20220825145542152</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251455217</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825153227051</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251532143</span>.png)</span><br><span class="line"></span><br><span class="line"><span class="comment">##### 从函数中返回指针</span></span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825153447378</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251534443</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825153549578</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251535637</span>.png)</span><br><span class="line"></span><br><span class="line">- **static类似与python中的global，使用static的变量将不会被系统回收**</span><br><span class="line">- ![image-<span class="number">20220825153649469</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251536530</span>.png)</span><br><span class="line"></span><br><span class="line"><span class="comment">##### 将二级指针作为函数参数</span></span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825154050938</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251540021</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825154129081</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251541135</span>.png)</span><br><span class="line"></span><br><span class="line">- **将指针初始化为 NULL / <span class="number">0</span> 是一个非常好的习惯**</span><br><span class="line"></span><br><span class="line">- ```C</span><br><span class="line">  int *a = NULL;</span><br><span class="line">  int *b = NULL;</span><br></pre></td></tr></table></figure>
-
-</code></pre>
-</li>
-</ul>
-<h4 id="指针与多维数组"><a class="anchor" href="#指针与多维数组">#</a> 指针与多维数组</h4>
-<ul>
-<li><strong>在一维数组中：数组的元素是一个元素 (int,char...)——&gt; 指针 (普通指针) 指向一维数组第一个 (元素的地址)</strong></li>
-<li><strong>在二维数组中：数组的元素是一行一维数组 ——&gt; 指针 (数组指针) 指向二维数组中的第一个一维 (数组的地址)</strong></li>
-</ul>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251625278.png" alt="image-20220825162539217" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251627083.png" alt="image-20220825162700032" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251627494.png" alt="image-20220825162738443" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251628868.png" alt="image-20220825162812808" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251629173.png" alt="image-20220825162924110" /></p>
-<h5 id="注意区分指针数组和数组指针"><a class="anchor" href="#注意区分指针数组和数组指针">#</a> 注意区分指针数组和数组指针</h5>
-<ul>
-<li><strong>指针数组：是一个元素为指针的数组</strong></li>
-<li><strong>数组指针：是一个指向数组的指针</strong></li>
-<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251712501.png" alt="" /></li>
-<li><strong>从这里要开始注意</strong>
-<ul>
-<li><strong>普通的指针指向数组时，指向的（数组的第一个元素）的地址</strong></li>
-<li><strong>而数组指针指向数组时，指向的是（一个数组）的地址</strong></li>
-</ul>
-</li>
-</ul>
-<p><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>* arr[<span class="number">20</span>];	<span class="comment">//很明显这是一个指针数组(指针类型的数组)</span></span><br><span class="line"><span class="type">int</span> (*arr)[<span class="number">20</span>];		<span class="comment">//这是一个数组指针，为了方便理解，可以看成：int[20](*arr)</span></span><br></pre></td></tr></table></figure></p>
-<h5 id="数组指针移动和取值"><a class="anchor" href="#数组指针移动和取值">#</a> 数组指针移动和取值</h5>
-<ul>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251722489.png" alt="image-20220825172205378" /></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251723805.png" alt="image-20220825172354700" /></p>
-</li>
-<li>
-<p><strong>指针本身不是地址，但是指针所保存的值是一个地址</strong></p>
-</li>
-<li>
-<p>*<em> 二维数组中的数组指针指向第一行一维数组的地址，对二维数组的第一行一维数组的地址取值 (<em>地址)——&gt; 得到了第一行一维数组</em></em></p>
-<ul>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251736352.png" alt="image-20220825173639300" /></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251737451.png" alt="image-20220825173701370" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251737557.png" alt="image-20220825173725454" /></p>
-</li>
-<li>
-<p>图中 pInt10 是一个数组指针：指向了第一行数组</p>
-</li>
-<li>
-<p>pInt 是一个普通指针：指向了第一行数组的第一个元素</p>
-</li>
-</ul>
-</li>
-</ul>
-<h5 id="指针访问与下标访问"><a class="anchor" href="#指针访问与下标访问">#</a> 指针访问与下标访问</h5>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251741802.png" alt="image-20220825174144745" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251745518.png" alt="image-20220825174525466" /></p>
-<ul>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208252300994.png" alt="image-20220825174344429" /></p>
-</li>
-<li></li>
-</ul>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251744510.png" alt="image-20220825174432457" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251748868.png" alt="image-20220825174800806" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251748942.png" alt="image-20220825174819884" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251749597.png" alt="image-20220825174942549" /></p>
-<ul>
-<li><strong>所以第二个不能将数组名转换为指向数组首个元素的做法：（&amp; 数组名）——&gt; 这样会取得整个数组的地址（也就是数组指针）</strong></li>
-<li><strong>指针与地址的关系 = 变量名与变量值的关系一样</strong></li>
-<li><strong>大多数情况：认为指针即地址即可</strong></li>
-</ul>
-<h5 id="指针与三位数组"><a class="anchor" href="#指针与三位数组">#</a> 指针与三位数组</h5>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251808826.png" alt="image-20220825180853744" /></p>
-<h5 id="声明器"><a class="anchor" href="#声明器">#</a> 声明器</h5>
-<ul>
-<li>
-<h6 id="数组标识符的声明"><a class="anchor" href="#数组标识符的声明">#</a> 数组标识符的声明</h6>
-</li>
-<li>
-<p><strong>声明与使用的形式一致</strong></p>
-<ul>
-<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251826037.png" alt="image-20220825182605971" /></li>
-</ul>
-</li>
-<li>
-<p><strong>函数声明器</strong></p>
-<ul>
-<li>
-<p><strong>参数名可省略参数名</strong></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251828620.png" alt="image-20220825182838567" /></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251829820.png" alt="image-20220825182914772" /></p>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>声明器的中优先级</strong></p>
-<ul>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251830367.png" alt="image-20220825183009287" /></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251831583.png" alt="image-20220825183111525" /></p>
-<ul>
-<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251845415.png" alt="image-20220825184535364" /></li>
-<li><strong>指针数组：</strong>
-<ol>
-<li><strong>数组方括号优先级第一：——&gt; 首先是一个 (数组)</strong></li>
-<li><strong>指针 * 号优先级第二：——&gt; 这个 (数组) 的元素是 (指针)</strong></li>
-<li><strong>int 优先级第三：——&gt; 这个 (指针) 指向 (int) 类型</strong></li>
-</ol>
-</li>
-<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251852604.png" alt="image-20220825185206553" /></li>
-<li><strong>数组指针：</strong>
-<ol>
-<li><strong>括号内的 * 号优先级第一：——&gt; 首先是一个 (指针)</strong></li>
-<li><strong>数组方括号优先级第二：——&gt; 这个 (指针) 指向 (数组)</strong></li>
-<li><strong>int 优先级第三：——&gt;(数组) 的元素为 (int)</strong></li>
-</ol>
-</li>
-</ul>
-</li>
-<li>
-<p>指针数组指针</p>
-<ul>
-<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251858390.png" alt="image-20220825185821325" /></li>
-</ul>
-</li>
-<li>
-<p>函数指针数组</p>
-<ul>
-<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251900593.png" alt="image-20220825190041541" /></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h5 id="函数指针与数组"><a class="anchor" href="#函数指针与数组">#</a> 函数指针与数组</h5>
-<ul>
-<li><strong>函数指针：指向函数的指针</strong></li>
-<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251906672.png" alt="image-20220825190619610" /></li>
-</ul>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251906693.png" alt="image-20220825190636643" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251911666.png" alt="image-20220825191130615" /></p>
-<ul>
-<li>
-<p><strong>两种通过函数指针调用函数的方法</strong></p>
-<ul>
-<li>*<em> 函数指针取值 (<em>指针) 即为函数</em></em></li>
-<li><strong>第二种方法是一种可行的简写：直接将函数指针当做函数使用</strong></li>
-<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251911533.png" alt="image-20220825191159481" /></li>
-</ul>
-</li>
-<li>
-<p><strong>函数指针数组</strong></p>
-<ul>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251916565.png" alt="image-20220825191651510" /></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251917379.png" alt="image-20220825191725321" /></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251917996.png" alt="image-20220825191757943" /></p>
-</li>
-</ul>
-</li>
-</ul>
-<h5 id="字符串和字符指针"><a class="anchor" href="#字符串和字符指针">#</a> 字符串和字符指针</h5>
-<ul>
-<li>
-<p><strong>字符串结束的标志是 数值 0 而不是 字符 '0'</strong></p>
-</li>
-<li>
-<p><strong>为了不让 数值 0 和 字符 '0' 冲突，使用转义字符 \0 表示数值 0</strong></p>
-<ul>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251922338.png" alt="image-20220825192235261" /></p>
-</li>
-<li>
-<p><strong>字符串常量无法被修改</strong></p>
-</li>
-<li>
-<p><strong>数组中的值可以修改 ——&gt; 可以用字符数组来装载字符串，然后修改字符数组中的字符</strong></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251932522.png" alt="image-20220825193213458" /></p>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>能否正常结尾的字符串（字符串末尾自带结束符 \0）</strong></p>
-<ul>
-<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251928369.png" alt="image-20220825192807290" /></li>
-</ul>
-</li>
-<li>
-<p><strong>字符数组与指针</strong></p>
-<ul>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251933773.png" alt="image-20220825193300708" /></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251933065.png" alt="image-20220825193322003" /></p>
-</li>
-<li>
-<p><strong>指针 p 为一个移动的游标</strong></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251933327.png" alt="image-20220825193351258" /></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251934539.png" alt="image-20220825193408468" /></p>
-</li>
-<li>
-<p><strong>错误的写法</strong></p>
-<ul>
-<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251936779.png" alt="image-20220825193637718" /></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>使用指针处理字符串 (字符数组)</strong></p>
-<ul>
-<li><strong>字符串反转：将字符串中首尾对应的元素两两交换</strong></li>
-<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251943399.png" alt="image-20220825194328346" /></li>
-<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251944049.png" alt="image-20220825194407984" /></li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>高级编程语言</category>
-      </categories>
-      <tags>
-        <tag>C语言</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python计算机二级</title>
-    <url>/2022/08/30/python-ji-suan-ji-er-ji/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>高级编程语言</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>KNN算法</title>
-    <url>/2022/08/29/knn-suan-fa/</url>
-    <content><![CDATA[<h1 id="knn算法"><a class="anchor" href="#knn算法">#</a> KNN 算法</h1>
-<h2 id="物以类聚人以群分"><a class="anchor" href="#物以类聚人以群分">#</a> 物以类聚人以群分</h2>
-<ul>
-<li>看一个人怎么样，看他身边的朋友什么样即可</li>
-</ul>
+<h2 id="决策树的训练阶段"><a class="anchor" href="#决策树的训练阶段">#</a> 决策树的训练阶段</h2>
 <ol>
 <li>
-<p>取所有样本 (行) 的部分特征 (data 列) 和类别标签 (label 列) 来绘制散点图<br />
- (不同类别标签的样本的颜色或形状不同)</p>
+<p>从给定的数据集构建出来一棵树 (从根节点开始选择特征，如何进行特征划分)</p>
 </li>
 <li>
-<p>引进一个新的样本 (x = 特征 1，y = 特征 2，z = 特征 3，表示类别标签 color 或 symbol)</p>
+<p>决策树测试阶段</p>
 </li>
 <li>
-<p>计算所有样本点与新引入点的距离 (欧式距离或马氏距离等)</p>
-</li>
-<li>
-<p>对得到的所有欧式距离做升序排列，取前 k 个数据的 (取到了与我们新引进的样本点最近的 k 个数据的索引)</p>
-</li>
-<li>
-<p>对得到的前 k 个数据进行加权求平均 (尽管有 k 个离得近的样本，但是这 k 个距离不相同，距离越近的类别标签的权重越大，越远的类别标签权重越小)</p>
+<p>输入一个样本，根据构造出来的树模型从上到下一步步决策</p>
 </li>
 </ol>
-<p>欧式距离：欧几里得距离</p>
 <ul>
-<li>两个样本的欧式距离 = sqrt (∑相同特征相减取平方)</li>
-<li>二维情况下，每一个样本 (点) 只有 x 坐标和 y 坐标两个特征 ——&gt; 所以它们的欧式距离 = sqrt ((x1-x2)²＋(y1-y2)²)</li>
+<li>
+<p>如何判断各个特征区分能力的强弱:</p>
+<ul>
+<li>根节点的特征的区分能力最强，根节点以下的节点的区分能力依次下降</li>
 </ul>
-<p>K 太大：欠拟合<br />
- K 太小：过拟合</p>
+</li>
+</ul>
+<h2 id="衡量标准熵"><a class="anchor" href="#衡量标准熵">#</a> 衡量标准 —— 熵</h2>
+<p>熵：随机变量的不确定性的度量</p>
+<p>(熵值越大，混乱程度越大 [杂货市场和专卖店] )</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312130964.png" alt="image-20220831213057923" /></p>
+<p>pi 为某个数据在集合中的概率 (所占比例)</p>
+<p>A 集合的熵值 = –(0.8×log0.8+0.2×log0.2）</p>
+<p>B 集合的熵值 = –(8×0.1×log0.1+0.2×log0.2)</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312131891.png" alt="image-20220831213106850" /></p>
+<p>概率 pi 的值为 [0 ：1]，在对数函数 log 中 pi 越小，函数值越大 (等同于种类多，混乱程度大（不确定性大）—&gt; 熵值大)</p>
+<p>信息增益：表示特征 X 使得类 Y 的不确定性减少的程度（希望分类后，同类中一起），信息增益大 == 熵值下降多</p>
+<h2 id="id3"><a class="anchor" href="#id3">#</a> ID3</h2>
+<ol>
+<li>
+<p>根据原始数据的标签（标签 1、标签 2...），计算原始熵值</p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312131840.png" alt="image-20220831213116767" /> 对每个特征逐个计算熵值</p>
+</li>
+</ol>
+<p>若选取的某一个特征（天气）中有三种 种类（晴天 、阴天、下雨），则分别计算该特征下三种结果中的关于原始数据标签的三个熵值，最后将三个熵值加权相加（权重为三个熵值所对应的三个特征下的结果站所有结果中的比例）便得到了该特征的熵值</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312131656.png" alt="image-20220831213124598" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312131694.png" alt="image-20220831213133644" /></p>
+<ol start="3">
+<li>信息增益 == 原始熵值 - 特征的熵值</li>
+</ol>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312131694.png" alt="" /></p>
+<ol start="4">
+<li>取信息增益最大的特征</li>
+</ol>
+<p>（ID3：信息增益）当特征（ID 或索引）非常稀疏，种类非常多，信息增益无法处理，于是提出了信息 C4.5 的信息增益率</p>
+<h2 id="c45"><a class="anchor" href="#c45">#</a> C4.5</h2>
+<p>信息增益率 == 信息增益 / 自身熵值</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312131123.png" alt="image-20220831213158083" /></p>
+<h2 id="cart"><a class="anchor" href="#cart">#</a> CART</h2>
+<p>基尼系数 (GINI)：同样也是 p 越小函数值越大（等同与种类越多，混乱程度越大 —&gt; 熵值越大）。</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312132354.png" alt="image-20220831213207313" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312132715.png" alt="image-20220831213213668" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312132347.png" alt="image-20220831213222297" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312132182.png" alt="image-20220831213230103" /></p>
+<p>如果 遇到的特征值是一组连续值（体重），则先对这些离散值进行排序，然后不断的做二分（左边 1 个，左边 2 个，左边 3 个...）计算每一种二分后的信息增益，取信息增益最大，熵值最小（信息增益 = 原始熵值 - 特征的熵值）的分界点。这就是连续值 “离散化” 过程</p>
+<h2 id="决策树剪枝策略不希望决策树过于庞大复杂防止过拟合"><a class="anchor" href="#决策树剪枝策略不希望决策树过于庞大复杂防止过拟合">#</a> 决策树剪枝策略（不希望决策树过于庞大复杂，防止过拟合）</h2>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312132069.png" alt="image-20220831213237012" /></p>
+<ul>
+<li>预剪枝：限制深度，叶子节点个数... 防止决策树过于庞大复杂（在建立决策树的同时进行剪枝操作）</li>
+</ul>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312132852.png" alt="image-20220831213243761" /></p>
+<ul>
+<li>后剪枝：（建立完决策树之后再进行剪枝 ）</li>
+</ul>
+<h2 id="决策树做回归标签为连续值"><a class="anchor" href="#决策树做回归标签为连续值">#</a> 决策树做回归（标签为连续值）</h2>
+<p>以方差为衡量标准，方差小（偏离程度小 = 混乱程度低 = 熵值小）的划分方案好。</p>
+<p>测试某一个样本时，样本的标签值则等于他所被划分类中所有数据标签的平均值</p>
 ]]></content>
       <categories>
         <category>统计学习方法</category>
@@ -1718,107 +1819,6 @@ ax = fig.add_subplot()<br />
  plt.legend (loc = (0–10 的数字表示图例不同位置),fontsize = 20)</p>
 </li>
 </ul>
-]]></content>
-      <categories>
-        <category>统计学习方法</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>决策树算法</title>
-    <url>/2022/08/29/jue-ce-shu-suan-fa/</url>
-    <content><![CDATA[<h1 id="决策树算法"><a class="anchor" href="#决策树算法">#</a> 决策树算法</h1>
-<ul>
-<li>
-<p>从根节点开始一步步走到叶子节点 (决策)</p>
-</li>
-<li>
-<p>所有数据最终都会落到叶子节点，既可以做分类也可以做回归</p>
-</li>
-<li>
-<p>根节点：第一个选择点</p>
-</li>
-<li>
-<p>非叶子节点和分支：中间过程</p>
-</li>
-<li>
-<p>叶子节点：最终的决策结果</p>
-</li>
-</ul>
-<h2 id="决策树的训练阶段"><a class="anchor" href="#决策树的训练阶段">#</a> 决策树的训练阶段</h2>
-<ol>
-<li>
-<p>从给定的数据集构建出来一棵树 (从根节点开始选择特征，如何进行特征划分)</p>
-</li>
-<li>
-<p>决策树测试阶段</p>
-</li>
-<li>
-<p>输入一个样本，根据构造出来的树模型从上到下一步步决策</p>
-</li>
-</ol>
-<ul>
-<li>
-<p>如何判断各个特征区分能力的强弱:</p>
-<ul>
-<li>根节点的特征的区分能力最强，根节点以下的节点的区分能力依次下降</li>
-</ul>
-</li>
-</ul>
-<h2 id="衡量标准熵"><a class="anchor" href="#衡量标准熵">#</a> 衡量标准 —— 熵</h2>
-<p>熵：随机变量的不确定性的度量</p>
-<p>(熵值越大，混乱程度越大 [杂货市场和专卖店] )</p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312130964.png" alt="image-20220831213057923" /></p>
-<p>pi 为某个数据在集合中的概率 (所占比例)</p>
-<p>A 集合的熵值 = –(0.8×log0.8+0.2×log0.2）</p>
-<p>B 集合的熵值 = –(8×0.1×log0.1+0.2×log0.2)</p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312131891.png" alt="image-20220831213106850" /></p>
-<p>概率 pi 的值为 [0 ：1]，在对数函数 log 中 pi 越小，函数值越大 (等同于种类多，混乱程度大（不确定性大）—&gt; 熵值大)</p>
-<p>信息增益：表示特征 X 使得类 Y 的不确定性减少的程度（希望分类后，同类中一起），信息增益大 == 熵值下降多</p>
-<h2 id="id3"><a class="anchor" href="#id3">#</a> ID3</h2>
-<ol>
-<li>
-<p>根据原始数据的标签（标签 1、标签 2...），计算原始熵值</p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312131840.png" alt="image-20220831213116767" /> 对每个特征逐个计算熵值</p>
-</li>
-</ol>
-<p>若选取的某一个特征（天气）中有三种 种类（晴天 、阴天、下雨），则分别计算该特征下三种结果中的关于原始数据标签的三个熵值，最后将三个熵值加权相加（权重为三个熵值所对应的三个特征下的结果站所有结果中的比例）便得到了该特征的熵值</p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312131656.png" alt="image-20220831213124598" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312131694.png" alt="image-20220831213133644" /></p>
-<ol start="3">
-<li>信息增益 == 原始熵值 - 特征的熵值</li>
-</ol>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312131694.png" alt="" /></p>
-<ol start="4">
-<li>取信息增益最大的特征</li>
-</ol>
-<p>（ID3：信息增益）当特征（ID 或索引）非常稀疏，种类非常多，信息增益无法处理，于是提出了信息 C4.5 的信息增益率</p>
-<h2 id="c45"><a class="anchor" href="#c45">#</a> C4.5</h2>
-<p>信息增益率 == 信息增益 / 自身熵值</p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312131123.png" alt="image-20220831213158083" /></p>
-<h2 id="cart"><a class="anchor" href="#cart">#</a> CART</h2>
-<p>基尼系数 (GINI)：同样也是 p 越小函数值越大（等同与种类越多，混乱程度越大 —&gt; 熵值越大）。</p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312132354.png" alt="image-20220831213207313" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312132715.png" alt="image-20220831213213668" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312132347.png" alt="image-20220831213222297" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312132182.png" alt="image-20220831213230103" /></p>
-<p>如果 遇到的特征值是一组连续值（体重），则先对这些离散值进行排序，然后不断的做二分（左边 1 个，左边 2 个，左边 3 个...）计算每一种二分后的信息增益，取信息增益最大，熵值最小（信息增益 = 原始熵值 - 特征的熵值）的分界点。这就是连续值 “离散化” 过程</p>
-<h2 id="决策树剪枝策略不希望决策树过于庞大复杂防止过拟合"><a class="anchor" href="#决策树剪枝策略不希望决策树过于庞大复杂防止过拟合">#</a> 决策树剪枝策略（不希望决策树过于庞大复杂，防止过拟合）</h2>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312132069.png" alt="image-20220831213237012" /></p>
-<ul>
-<li>预剪枝：限制深度，叶子节点个数... 防止决策树过于庞大复杂（在建立决策树的同时进行剪枝操作）</li>
-</ul>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312132852.png" alt="image-20220831213243761" /></p>
-<ul>
-<li>后剪枝：（建立完决策树之后再进行剪枝 ）</li>
-</ul>
-<h2 id="决策树做回归标签为连续值"><a class="anchor" href="#决策树做回归标签为连续值">#</a> 决策树做回归（标签为连续值）</h2>
-<p>以方差为衡量标准，方差小（偏离程度小 = 混乱程度低 = 熵值小）的划分方案好。</p>
-<p>测试某一个样本时，样本的标签值则等于他所被划分类中所有数据标签的平均值</p>
 ]]></content>
       <categories>
         <category>统计学习方法</category>
@@ -1966,338 +1966,6 @@ y = np.matrix(y.values)</p>
       </categories>
       <tags>
         <tag>机器学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>线性代数进阶</title>
-    <url>/2022/08/28/xian-xing-dai-shu-jin-jie/</url>
-    <content><![CDATA[<h1 id="线性代数进阶"><a class="anchor" href="#线性代数进阶">#</a> 线性代数进阶</h1>
-<h2 id="向量"><a class="anchor" href="#向量">#</a> 向量</h2>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281005651.png" alt="image-20220828100539542" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281008859.png" alt="image-20220828100844721" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281012944.png" alt="image-20220828101247881" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281015683.png" alt="image-20220828101518624" /></p>
-<h3 id="向量的加法"><a class="anchor" href="#向量的加法">#</a> 向量的加法</h3>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281027690.png" alt="image-20220828102705636" /></p>
-<h3 id="向量的数乘"><a class="anchor" href="#向量的数乘">#</a> 向量的数乘</h3>
-<p><strong>标量 &lt;——&gt; 数字在线性代数中的主要作用就是放缩向量</strong></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281033875.png" alt="image-20220828103312824" /><br />
-<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281041379.png" alt="image-20220828104114331" /></p>
-<h2 id="向量的线性组合-张成的空间和基"><a class="anchor" href="#向量的线性组合-张成的空间和基">#</a> 向量的线性组合、张成的空间和基</h2>
-<h3 id="基向量"><a class="anchor" href="#基向量">#</a> 基向量</h3>
-<p>i 和 j 是 xy 坐标系的基向量，也称为 x 轴上的 i 帽和 y 轴上的 j 帽（x 和 y 轴正方向上的单位向量）<br />
-i 帽和 j 帽一般为：i 帽 (1,0) T 和 j 帽 (0,1) T<br />
-<strong> 将坐标看成一个标量 ——&gt; 那么基向量就是这些标量缩放的对象</strong><br />
-<strong> x 坐标作用于 i 帽，y 坐标作用与 j 帽</strong><br />
-用数字描述向量时都依赖于基向量<br />
-<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281139764.png" alt="image-20220828113920713" /><br />
-<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281137863.png" alt="image-20220828113709803" /></p>
-<h3 id="向量的线性组合"><a class="anchor" href="#向量的线性组合">#</a> 向量的线性组合</h3>
-<p>两个数乘向量的和称为这两个向量的线性组合<br />
-向量 = 标量 * 基向量 (单位向量)<br />
- 如果让两个标量同时自由变化，则可以得到所有的向量</p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281217993.png" alt="image-20220828121737882" /></p>
-<p>如果固定其中一个标量不变，让另一个标量自由变化，所产生的向量的终点在一条直线上</p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281146135.png" alt="image-20220828114631036" /></p>
-<p>若两个基向量恰好共线：所产生的向量的终点被限制在一条过原点的直线上</p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281218562.png" alt="image-20220828121834504" /></p>
-<p>若两个基向量都是零向量：只能被限制在原点</p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281219692.png" alt="image-20220828121902636" /></p>
-<h3 id="张成的空间"><a class="anchor" href="#张成的空间">#</a> 张成的空间</h3>
-<p>大部分二维向量张成的空间是二维向量的集合<br />
-<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281221771.png" alt="image-20220828122144650" /></p>
-<p>当二维向量共线时张成的空间则是终点落在一条直线上的向量的集合</p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281311517.png" alt="image-20220828131147471" /></p>
-<p>当考虑多个向量时，将每个向量抽象为它的终点，就不必考虑所有的箭头了，只需要考虑无线大的二维平面本身</p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281317328.png" alt="image-20220828131723092" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281317264.png" alt="image-20220828131743142" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281318915.png" alt="image-20220828131816792" /></p>
-<ul>
-<li>考虑一个向量时 ——&gt; 把它看作箭头</li>
-<li>考虑多个向量时 ——&gt; 把它们看作点<br />
-两个向量张成的空间实际就是三维空间中一个过原点的平面
-<ul>
-<li>所以终点落在这个平面的向量的集合（向量的起点都是原点）<br />
-<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281324411.png" alt="image-20220828132409340" /></li>
-</ul>
-</li>
-</ul>
-<p>三个数乘向量的线性组合<br />
-选择三个标量，对三个向量分别进行缩放，然后吧结果相加<br />
-三个向量所有的线性组合构成了它们张成的空间<br />
-<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281327581.png" alt="image-20220828132758497" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281332032.png" alt="image-20220828133235965" /></p>
-<h3 id="线性相关"><a class="anchor" href="#线性相关">#</a> 线性相关</h3>
-<p>当有多个向量时，移除其中一个向量，而不减小张成的空间 ——&gt; 它们<strong>线性相关</strong><br />
-其中一个向量可以被其他向量的线性组合所表示 &lt;—— 因为这个向量已经落在了其他向量张成的空间中</p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281338017.png" alt="image-20220828133845953" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281341219.png" alt="image-20220828134109137" /></p>
-<h3 id="线性无关"><a class="anchor" href="#线性无关">#</a> 线性无关</h3>
-<p>所有向量都给张成的空间添加了新的维度<br />
-不存在任意一个向量可以被其他向量<br />
-<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281345813.png" alt="image-20220828134524728" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281351917.png" alt="image-20220828135101826" /></p>
-<h3 id="向量空间"><a class="anchor" href="#向量空间">#</a> 向量空间</h3>
-<p>向量空间的<strong>基向量</strong>是张成这个空间的其中<strong>一组【线性无关】的向量所组成的集合</strong></p>
-<h2 id="矩阵与线性变换"><a class="anchor" href="#矩阵与线性变换">#</a> 矩阵与线性变换</h2>
-<p><strong>变换本质上是（函数）的一种花哨说法</strong><br />
-<strong>函数：接收输入内容 ——&gt; 输出对应结果</strong></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281838179.png" alt="image-20220828183802120" /><br />
-<strong> 特别的，在线性代数的情况下：接收一个向量 ——&gt; 输出一个向量的变换</strong></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281841307.png" alt="image-20220828184116230" /></p>
-<h3 id="向量的函数变换运动"><a class="anchor" href="#向量的函数变换运动">#</a> 向量的函数 ——&gt; 变换 — 运动</h3>
-<p>如果一个变换接受一个向量并输出一个向量：试着想象输入向量移动 (旋转) 到输出向量的运动过程</p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281902081.png" alt="image-20220828190222997" /></p>
-<p>理解整个变换：每一个输入向量都移动到对应输出向量的位置</p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281906469.png" alt="image-20220828190610202" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281905948.png" alt="image-20220828190518637" /></p>
-<p>将向量看作箭头时，同时考虑所有二维向量会变得很拥挤，可以将每个向量的重点来看作这个向量</p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281908439.png" alt="image-20220828190808320" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281908445.png" alt="image-20220828190835332" /></p>
-<p>对无线网格上的所有点同时做变换</p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281910080.png" alt="image-20220828191000968" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281910372.png" alt="image-20220828191024168" /></p>
-<p>同时保留每个向量变换前的终点和变换后的终点，追踪它们的相对关系</p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281912858.png" alt="image-20220828191230701" /></p>
-<h3 id="线性变换的要求"><a class="anchor" href="#线性变换的要求">#</a> 线性变换的要求</h3>
-<ul>
-<li>变换之后</li>
-</ul>
-<ol>
-<li>直线依旧是直线</li>
-<li>原点位置保持不变</li>
-<li>网格线保持变形且等距分布</li>
-</ol>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281915176.png" alt="image-20220828191508017" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281915031.png" alt="image-20220828191523924" /></p>
-<h3 id="向量依赖于基向量的数乘和相加"><a class="anchor" href="#向量依赖于基向量的数乘和相加">#</a> 向量依赖于基向量的数乘和相加</h3>
-<p>变换前的基向量：i 帽 (1,0) T 和 j 帽 (0,1) T<br />
- 因从：只需要记录基向量 i 帽和 j 帽变换后的位置 ——&gt; 就能推断出任意向量变换之后的位置</p>
-<ul>
-<li>
-<p>变换前：基向量与向量的关系</p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281925352.png" alt="image-20220828192525266" /></p>
-</li>
-<li>
-<p>变换后：基向量与向量的关系</p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281928652.png" alt="image-20220828192812533" /></p>
-</li>
-</ul>
-<p>变换前：i 帽 (1,0) T，j 帽 (0,1) T，基于 i 帽和 j 帽的任意向量 (x，y) T</p>
-<p>x 和 y 分别为基向量数乘的标量，标量 x 和 y 乘以基向量后相加 ——&gt;(x,y) T</p>
-<ul>
-<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208282003851.png" alt="image-20220828200306782" /></li>
-</ul>
-<h3 id="矩阵就是对空间的一种特定变换"><a class="anchor" href="#矩阵就是对空间的一种特定变换">#</a> 矩阵就是对空间的一种特定变换</h3>
-<ul>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208282033065.png" alt="image-20220828203356019" /></p>
-</li>
-<li>
-<p>所以二维线性变换仅由四个数字完全确定：</p>
-<ul>
-<li>
-<p><strong>变换后</strong> i 帽的两个坐标 和 j 帽的两个坐标</p>
-</li>
-<li>
-<p>将 i 帽和 j 帽封装一起 ——&gt; 得到了<strong>描述线性变化的矩阵</strong></p>
-<ul>
-<li>矩阵的列就是变换后的基向量</li>
-</ul>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208282010335.png" alt="image-20220828201059237" /></p>
-</li>
-<li>
-<p>描述线性变换的矩阵 * 输入向量 (变换前) = 输出向量 (变换后)</p>
-<ul>
-<li>这就是缩放基向量再相加的思想</li>
-</ul>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208282014521.png" alt="image-20220828201438460" /></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208282018001.png" alt="image-20220828201822914" /></p>
-</li>
-</ul>
-</li>
-</ul>
-<p>实质上矩阵的向量乘法就是基向量的线性组合</p>
-<ul>
-<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208282020772.png" alt="image-20220828202059638" /></li>
-</ul>
-<p>矩阵 ——&gt; 对空间的一种特定变换</p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208282057071.png" alt="image-20220828205743944" /></p>
-<h2 id="矩阵乘法与线性变换复合"><a class="anchor" href="#矩阵乘法与线性变换复合">#</a> 矩阵乘法与线性变换复合</h2>
-<p>矩阵代表一个特定的线性变换</p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208282245530.png" alt="image-20220828224522885" /></p>
-<p>矩阵与向量相乘就是将矩阵所表示的线性变换作用于那个向量</p>
-<ul>
-<li><strong>矩阵在左边：看作对变量做变换的一个函数</strong></li>
-<li><strong>被变换的向量在右边：看作一个被变换的变量</strong><br />
-<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208290006984.png" alt="image-20220829000639814" /></li>
-</ul>
-<p>线性变化的复合变换</p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208290054884.png" alt="image-20220829005412680" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208290055645.png" alt="image-20220829005556548" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208290102823.png" alt="image-20220829010206744" /></p>
-<p>矩阵与矩阵的相乘<br />
-让 (左) 矩阵所代表的线性变换分别作用于 (右) 矩阵的的每一列向量，分别得到两列变换后的向量，最后复合成一个矩阵</p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208290128164.png" alt="image-20220829012851080" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208290129323.png" alt="image-20220829012949235" /></p>
-<p>找到 (右) 矩阵中已经变换过的 i 帽，将 (左) 矩阵所代表的线性变换作用于 i 帽 ——&gt; 得到复合矩阵的第一列</p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291026658.png" alt="image-20220829102627467" /></p>
-<p>找到 (右) 矩阵中已经变换过的 j 帽，将 (左) 矩阵所代表的线性变换作用于 j 帽 ——&gt; 得到复合矩阵的第二列</p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291028563.png" alt="image-20220829102812456" /></p>
-<p>矩阵不满足交换律</p>
-<ul>
-<li>变换的顺序 (右 ——&gt; 左) 发生改变 ——&gt; 对结果产生影响</li>
-</ul>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291031262.png" alt="image-20220829103129203" /></p>
-<p>先剪切后旋转</p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291036279.png" alt="image-20220829103634148" /></p>
-<p>先旋转后剪切</p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291037580.png" alt="image-20220829103708402" /></p>
-<p>矩阵满足结合律</p>
-<ul>
-<li>变换的顺序 (右 ——&gt; 左) 保持不变 ——&gt; 对结果没有影响</li>
-</ul>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291041455.png" alt="image-20220829104112332" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291041904.png" alt="image-20220829104128776" /></p>
-<h3 id="二维空间的线性变换"><a class="anchor" href="#二维空间的线性变换">#</a> 二维空间的线性变换</h3>
-<p>所有向量依赖于两个基向量：x 轴上的 i 帽和 y 轴上的 j 帽<br />
-原始的 i 帽：(1,0)<br />
- 原始的 j 帽：(0,1)<br />
-<strong> i 帽作用于向量的 x 坐标</strong><br />
-<strong> j 帽作用于向量的 y 坐标</strong><br />
-二维矩阵相乘：是对二维基向量连续做了两次变换，右边矩阵是对原始的基向量变换后的矩阵。</p>
-<ul>
-<li>矩阵对向量做变换：x 坐标对 i 帽进行放缩，y 坐标对 j 帽进行放缩</li>
-</ul>
-<ol>
-<li>将右边矩阵的每一列向量分立出来，得到二列向量</li>
-<li>再让左边矩阵分别作用（放缩再相加）于每一个向量，得到二列变换后的向量</li>
-<li>再将二列变换后的向量放在一个 2 * 2 的矩阵中得到了最终变换的结果<br />
-<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291051328.png" alt="image-20220829105100186" /></li>
-</ol>
-<h3 id="三维空间的线性变换"><a class="anchor" href="#三维空间的线性变换">#</a> 三维空间的线性变换</h3>
-<p>所有向量依赖于三个基向量：x 轴的 i 帽，y 轴的 j 帽和 z 轴的 k 帽<br />
-原始的 i 帽：(1,0,0)<br />
- 原始的 j 帽：(0,1,0)<br />
- 原始的 k 帽：(0,0,1)<br />
-<strong> i 帽作用于向量的 x 坐标</strong><br />
-<strong> j 帽作用于向量的 y 坐标</strong><br />
-<strong> k 帽作用于向量的 z 坐标</strong><br />
-<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291052161.png" alt="image-20220829105208060" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291146990.png" alt="image-20220829114654704" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291148701.png" alt="image-20220829114801620" /></p>
-<p>将三个基向量记录在一个 3 * 3 的矩阵中</p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291201114.png" alt="image-20220829120134015" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291201269.png" alt="image-20220829120151165" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291205509.png" alt="image-20220829120543384" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291204770.png" alt="image-20220829120403648" /></p>
-<p>三维矩阵相乘：是对三维基向量连续做了两次变换，右边矩阵是对原始的基向量变换后的矩阵。</p>
-<ul>
-<li>矩阵对向量做变换：x 坐标对 i 帽进行放缩，y 坐标对 j 帽进行放缩，z 坐标对 k 帽进行放缩</li>
-</ul>
-<ol>
-<li>将右边矩阵的每一列向量分立出来，得到三列向量</li>
-<li>再让左边矩阵分别作用（放缩再相加）于每一个向量，得到三列变换后的向量</li>
-<li>再将三列变换后的向量放在一个 3 * 3 的矩阵中得到了最终变换的结果<br />
-<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291208573.png" alt="image-20220829120839353" /></li>
-</ol>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291211882.png" alt="image-20220829121135808" /></p>
-<h2 id="行列式"><a class="anchor" href="#行列式">#</a> 行列式</h2>
-<h3 id="二维空间中的行列式"><a class="anchor" href="#二维空间中的行列式">#</a> 二维空间中的行列式</h3>
-<p>在二维空间中，基向量 i 帽 (1,0) 和 j 帽 (0,1) 可构成一个底为 1，高为 1 的正方形，面积为 1&lt;——&gt; 由基向量狗构成的原始的矩阵的行列式值为 1<br />
- 将基向量变换后得到的矩阵的行列式值 ——&gt; 变换后基向量所构成四边形的面积（放缩的倍数）</p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291519736.png" alt="image-20220829151907634" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291518138.png" alt="image-20220829151808015" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291517516.png" alt="image-20220829151751415" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291520328.png" alt="image-20220829152040228" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291521854.png" alt="image-20220829152111720" /><br />
- 将空间压缩到了一条直线上<br />
-<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291523203.png" alt="image-20220829152322085" /><br />
- 将空间压缩到了更小的维度上<br />
-<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291524164.png" alt="image-20220829152431072" /></p>
-<p>行列式的负值<br />
-如果矩阵的行列式为负值，则说明矩阵所表示的变换使空间的定向发生了改变（想象将一张纸表示的二维平面翻转过来）<br />
-行列式的绝对值依然表示区域面积的缩放比例<br />
-<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291526010.png" alt="image-20220829152609927" /><br />
- 定向改变前</p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291529088.png" alt="image-20220829152940009" /><br />
- 定向改变后</p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291530412.png" alt="image-20220829153014235" /></p>
-<p>假设变换后的 i 帽从一个方向不断靠近 j 帽，并转换到 j 帽的另一个方向</p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291533237.png" alt="image-20220829153342080" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291534564.png" alt="image-20220829153411486" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291534881.png" alt="image-20220829153438729" /></p>
-<h3 id="三维空间中的行列式"><a class="anchor" href="#三维空间中的行列式">#</a> 三维空间中的行列式</h3>
-<p>在三维空间中则将对象聚焦到一个 i 帽，j 帽，k 帽所表示的 1 * 1* 1 的立方体中，矩阵的行列式值表示矩阵的空间中区域体积的放缩比例<br />
-立方体初始体积为 1<br />
-<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291539913.png" alt="image-20220829153932808" /></p>
-<p>正方体被压缩为了平行六面体<br />
-<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291541352.png" alt="image-20220829154101167" /></p>
-<p>原始立方体体积为 1，变换后的比例则为变换后立方体的体积<br />
-<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291543546.png" alt="image-20220829154317442" /></p>
-<p>三维空间行列式正负所表示的定向</p>
-<p>右手定则（行列式为正）</p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291556824.png" alt="image-20220829155614722" /></p>
-<p>左手定则（行列式为负）</p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291557353.png" alt="image-20220829155705237" /></p>
-<p>矩阵行列式值的计算</p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291558766.png" alt="image-20220829155858714" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291601077.png" alt="image-20220829160120994" /></p>
-<h2 id="逆矩阵-列空间和零空间"><a class="anchor" href="#逆矩阵-列空间和零空间">#</a> 逆矩阵、列空间和零空间</h2>
-<h3 id="线性方程组"><a class="anchor" href="#线性方程组">#</a> 线性方程组</h3>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291610794.png" alt="image-20220829161018718" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291611647.png" alt="image-20220829161120545" /></p>
-<ul>
-<li>矩阵 A 代表一种线性变换</li>
-<li>A<strong>x</strong> = <strong>v</strong> 意味着找到一个<strong> x</strong> 向量经过矩阵<strong> A</strong> 变换后可以和向量<strong> v</strong> 重合</li>
-</ul>
-<h3 id="逆矩阵"><a class="anchor" href="#逆矩阵">#</a> 逆矩阵</h3>
-<p>向量经过矩阵 (A) 变换后，再经过 A 的逆矩阵 (A 逆) 变换，则会回到原来的状态</p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291648645.png" alt="image-20220829164858537" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291648725.png" alt="image-20220829164838622" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291704377.png" alt="image-20220829164941847" /></p>
-<p>矩阵的行列式不为 0，则矩阵存在逆矩阵</p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291651600.png" alt="image-20220829165133543" /></p>
-<p>求解 Ax = v，只需要将 v 乘以 A 的逆矩阵 ——&gt;x</p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291653530.png" alt="image-20220829165302361" /></p>
-<h3 id="矩阵的秩"><a class="anchor" href="#矩阵的秩">#</a> 矩阵的秩</h3>
-<p>矩阵的秩表示<strong>变换后</strong>的空间的维数<br />
-秩如果小于原来空间的维数 ——&gt; 原空间被压缩了<br />
-<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291656465.png" alt="image-20220829165647388" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291657563.png" alt="image-20220829165703449" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291657829.png" alt="image-20220829165725685" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291657397.png" alt="image-20220829165752082" /></p>
-<h3 id="列空间"><a class="anchor" href="#列空间">#</a> 列空间</h3>
-<p>矩阵的列所张成的空间</p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291708743.png" alt="image-20220829170833638" /></p>
-<p>秩与矩阵的列数相等 ——&gt; 满秩</p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291709927.png" alt="image-20220829170955802" /></p>
-<p>线性变化必须保持原点位置不变 ——&gt; 零向量一定在列空间中</p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291711990.png" alt="image-20220829171110879" /></p>
-<h3 id="零空间"><a class="anchor" href="#零空间">#</a> 零空间</h3>
-<p><strong>变换后落在原点的向量的集合 —— 矩阵的零空间或矩阵的核</strong></p>
-<h2 id="非方阵"><a class="anchor" href="#非方阵">#</a> 非方阵</h2>
-<p><strong>可笑的是，有人尝试去求非方阵的行列式</strong></p>
-<p>不同维数之间的变换是合理的</p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291720662.png" alt="image-20220829172025578" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291720104.png" alt="image-20220829172040022" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291721417.png" alt="image-20220829172107226" /></p>
-]]></content>
-      <categories>
-        <category>统计学习方法</category>
-      </categories>
-      <tags>
-        <tag>线性代数</tag>
       </tags>
   </entry>
   <entry>
@@ -2786,6 +2454,338 @@ i 帽和 j 帽一般为：i 帽 (1,0) T 和 j 帽 (0,1) T<br />
 <p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208300005066.png" alt="image-20220830000449940" /></p>
 <p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208300005616.png" alt="image-20220830000537793" /></p>
 <p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208300033922.png" alt="image-20220830003314292" /></p>
+]]></content>
+      <categories>
+        <category>统计学习方法</category>
+      </categories>
+      <tags>
+        <tag>线性代数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>线性代数进阶</title>
+    <url>/2022/08/28/xian-xing-dai-shu-jin-jie/</url>
+    <content><![CDATA[<h1 id="线性代数进阶"><a class="anchor" href="#线性代数进阶">#</a> 线性代数进阶</h1>
+<h2 id="向量"><a class="anchor" href="#向量">#</a> 向量</h2>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281005651.png" alt="image-20220828100539542" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281008859.png" alt="image-20220828100844721" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281012944.png" alt="image-20220828101247881" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281015683.png" alt="image-20220828101518624" /></p>
+<h3 id="向量的加法"><a class="anchor" href="#向量的加法">#</a> 向量的加法</h3>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281027690.png" alt="image-20220828102705636" /></p>
+<h3 id="向量的数乘"><a class="anchor" href="#向量的数乘">#</a> 向量的数乘</h3>
+<p><strong>标量 &lt;——&gt; 数字在线性代数中的主要作用就是放缩向量</strong></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281033875.png" alt="image-20220828103312824" /><br />
+<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281041379.png" alt="image-20220828104114331" /></p>
+<h2 id="向量的线性组合-张成的空间和基"><a class="anchor" href="#向量的线性组合-张成的空间和基">#</a> 向量的线性组合、张成的空间和基</h2>
+<h3 id="基向量"><a class="anchor" href="#基向量">#</a> 基向量</h3>
+<p>i 和 j 是 xy 坐标系的基向量，也称为 x 轴上的 i 帽和 y 轴上的 j 帽（x 和 y 轴正方向上的单位向量）<br />
+i 帽和 j 帽一般为：i 帽 (1,0) T 和 j 帽 (0,1) T<br />
+<strong> 将坐标看成一个标量 ——&gt; 那么基向量就是这些标量缩放的对象</strong><br />
+<strong> x 坐标作用于 i 帽，y 坐标作用与 j 帽</strong><br />
+用数字描述向量时都依赖于基向量<br />
+<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281139764.png" alt="image-20220828113920713" /><br />
+<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281137863.png" alt="image-20220828113709803" /></p>
+<h3 id="向量的线性组合"><a class="anchor" href="#向量的线性组合">#</a> 向量的线性组合</h3>
+<p>两个数乘向量的和称为这两个向量的线性组合<br />
+向量 = 标量 * 基向量 (单位向量)<br />
+ 如果让两个标量同时自由变化，则可以得到所有的向量</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281217993.png" alt="image-20220828121737882" /></p>
+<p>如果固定其中一个标量不变，让另一个标量自由变化，所产生的向量的终点在一条直线上</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281146135.png" alt="image-20220828114631036" /></p>
+<p>若两个基向量恰好共线：所产生的向量的终点被限制在一条过原点的直线上</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281218562.png" alt="image-20220828121834504" /></p>
+<p>若两个基向量都是零向量：只能被限制在原点</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281219692.png" alt="image-20220828121902636" /></p>
+<h3 id="张成的空间"><a class="anchor" href="#张成的空间">#</a> 张成的空间</h3>
+<p>大部分二维向量张成的空间是二维向量的集合<br />
+<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281221771.png" alt="image-20220828122144650" /></p>
+<p>当二维向量共线时张成的空间则是终点落在一条直线上的向量的集合</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281311517.png" alt="image-20220828131147471" /></p>
+<p>当考虑多个向量时，将每个向量抽象为它的终点，就不必考虑所有的箭头了，只需要考虑无线大的二维平面本身</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281317328.png" alt="image-20220828131723092" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281317264.png" alt="image-20220828131743142" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281318915.png" alt="image-20220828131816792" /></p>
+<ul>
+<li>考虑一个向量时 ——&gt; 把它看作箭头</li>
+<li>考虑多个向量时 ——&gt; 把它们看作点<br />
+两个向量张成的空间实际就是三维空间中一个过原点的平面
+<ul>
+<li>所以终点落在这个平面的向量的集合（向量的起点都是原点）<br />
+<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281324411.png" alt="image-20220828132409340" /></li>
+</ul>
+</li>
+</ul>
+<p>三个数乘向量的线性组合<br />
+选择三个标量，对三个向量分别进行缩放，然后吧结果相加<br />
+三个向量所有的线性组合构成了它们张成的空间<br />
+<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281327581.png" alt="image-20220828132758497" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281332032.png" alt="image-20220828133235965" /></p>
+<h3 id="线性相关"><a class="anchor" href="#线性相关">#</a> 线性相关</h3>
+<p>当有多个向量时，移除其中一个向量，而不减小张成的空间 ——&gt; 它们<strong>线性相关</strong><br />
+其中一个向量可以被其他向量的线性组合所表示 &lt;—— 因为这个向量已经落在了其他向量张成的空间中</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281338017.png" alt="image-20220828133845953" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281341219.png" alt="image-20220828134109137" /></p>
+<h3 id="线性无关"><a class="anchor" href="#线性无关">#</a> 线性无关</h3>
+<p>所有向量都给张成的空间添加了新的维度<br />
+不存在任意一个向量可以被其他向量<br />
+<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281345813.png" alt="image-20220828134524728" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281351917.png" alt="image-20220828135101826" /></p>
+<h3 id="向量空间"><a class="anchor" href="#向量空间">#</a> 向量空间</h3>
+<p>向量空间的<strong>基向量</strong>是张成这个空间的其中<strong>一组【线性无关】的向量所组成的集合</strong></p>
+<h2 id="矩阵与线性变换"><a class="anchor" href="#矩阵与线性变换">#</a> 矩阵与线性变换</h2>
+<p><strong>变换本质上是（函数）的一种花哨说法</strong><br />
+<strong>函数：接收输入内容 ——&gt; 输出对应结果</strong></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281838179.png" alt="image-20220828183802120" /><br />
+<strong> 特别的，在线性代数的情况下：接收一个向量 ——&gt; 输出一个向量的变换</strong></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281841307.png" alt="image-20220828184116230" /></p>
+<h3 id="向量的函数变换运动"><a class="anchor" href="#向量的函数变换运动">#</a> 向量的函数 ——&gt; 变换 — 运动</h3>
+<p>如果一个变换接受一个向量并输出一个向量：试着想象输入向量移动 (旋转) 到输出向量的运动过程</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281902081.png" alt="image-20220828190222997" /></p>
+<p>理解整个变换：每一个输入向量都移动到对应输出向量的位置</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281906469.png" alt="image-20220828190610202" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281905948.png" alt="image-20220828190518637" /></p>
+<p>将向量看作箭头时，同时考虑所有二维向量会变得很拥挤，可以将每个向量的重点来看作这个向量</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281908439.png" alt="image-20220828190808320" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281908445.png" alt="image-20220828190835332" /></p>
+<p>对无线网格上的所有点同时做变换</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281910080.png" alt="image-20220828191000968" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281910372.png" alt="image-20220828191024168" /></p>
+<p>同时保留每个向量变换前的终点和变换后的终点，追踪它们的相对关系</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281912858.png" alt="image-20220828191230701" /></p>
+<h3 id="线性变换的要求"><a class="anchor" href="#线性变换的要求">#</a> 线性变换的要求</h3>
+<ul>
+<li>变换之后</li>
+</ul>
+<ol>
+<li>直线依旧是直线</li>
+<li>原点位置保持不变</li>
+<li>网格线保持变形且等距分布</li>
+</ol>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281915176.png" alt="image-20220828191508017" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281915031.png" alt="image-20220828191523924" /></p>
+<h3 id="向量依赖于基向量的数乘和相加"><a class="anchor" href="#向量依赖于基向量的数乘和相加">#</a> 向量依赖于基向量的数乘和相加</h3>
+<p>变换前的基向量：i 帽 (1,0) T 和 j 帽 (0,1) T<br />
+ 因从：只需要记录基向量 i 帽和 j 帽变换后的位置 ——&gt; 就能推断出任意向量变换之后的位置</p>
+<ul>
+<li>
+<p>变换前：基向量与向量的关系</p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281925352.png" alt="image-20220828192525266" /></p>
+</li>
+<li>
+<p>变换后：基向量与向量的关系</p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208281928652.png" alt="image-20220828192812533" /></p>
+</li>
+</ul>
+<p>变换前：i 帽 (1,0) T，j 帽 (0,1) T，基于 i 帽和 j 帽的任意向量 (x，y) T</p>
+<p>x 和 y 分别为基向量数乘的标量，标量 x 和 y 乘以基向量后相加 ——&gt;(x,y) T</p>
+<ul>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208282003851.png" alt="image-20220828200306782" /></li>
+</ul>
+<h3 id="矩阵就是对空间的一种特定变换"><a class="anchor" href="#矩阵就是对空间的一种特定变换">#</a> 矩阵就是对空间的一种特定变换</h3>
+<ul>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208282033065.png" alt="image-20220828203356019" /></p>
+</li>
+<li>
+<p>所以二维线性变换仅由四个数字完全确定：</p>
+<ul>
+<li>
+<p><strong>变换后</strong> i 帽的两个坐标 和 j 帽的两个坐标</p>
+</li>
+<li>
+<p>将 i 帽和 j 帽封装一起 ——&gt; 得到了<strong>描述线性变化的矩阵</strong></p>
+<ul>
+<li>矩阵的列就是变换后的基向量</li>
+</ul>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208282010335.png" alt="image-20220828201059237" /></p>
+</li>
+<li>
+<p>描述线性变换的矩阵 * 输入向量 (变换前) = 输出向量 (变换后)</p>
+<ul>
+<li>这就是缩放基向量再相加的思想</li>
+</ul>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208282014521.png" alt="image-20220828201438460" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208282018001.png" alt="image-20220828201822914" /></p>
+</li>
+</ul>
+</li>
+</ul>
+<p>实质上矩阵的向量乘法就是基向量的线性组合</p>
+<ul>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208282020772.png" alt="image-20220828202059638" /></li>
+</ul>
+<p>矩阵 ——&gt; 对空间的一种特定变换</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208282057071.png" alt="image-20220828205743944" /></p>
+<h2 id="矩阵乘法与线性变换复合"><a class="anchor" href="#矩阵乘法与线性变换复合">#</a> 矩阵乘法与线性变换复合</h2>
+<p>矩阵代表一个特定的线性变换</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208282245530.png" alt="image-20220828224522885" /></p>
+<p>矩阵与向量相乘就是将矩阵所表示的线性变换作用于那个向量</p>
+<ul>
+<li><strong>矩阵在左边：看作对变量做变换的一个函数</strong></li>
+<li><strong>被变换的向量在右边：看作一个被变换的变量</strong><br />
+<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208290006984.png" alt="image-20220829000639814" /></li>
+</ul>
+<p>线性变化的复合变换</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208290054884.png" alt="image-20220829005412680" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208290055645.png" alt="image-20220829005556548" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208290102823.png" alt="image-20220829010206744" /></p>
+<p>矩阵与矩阵的相乘<br />
+让 (左) 矩阵所代表的线性变换分别作用于 (右) 矩阵的的每一列向量，分别得到两列变换后的向量，最后复合成一个矩阵</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208290128164.png" alt="image-20220829012851080" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208290129323.png" alt="image-20220829012949235" /></p>
+<p>找到 (右) 矩阵中已经变换过的 i 帽，将 (左) 矩阵所代表的线性变换作用于 i 帽 ——&gt; 得到复合矩阵的第一列</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291026658.png" alt="image-20220829102627467" /></p>
+<p>找到 (右) 矩阵中已经变换过的 j 帽，将 (左) 矩阵所代表的线性变换作用于 j 帽 ——&gt; 得到复合矩阵的第二列</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291028563.png" alt="image-20220829102812456" /></p>
+<p>矩阵不满足交换律</p>
+<ul>
+<li>变换的顺序 (右 ——&gt; 左) 发生改变 ——&gt; 对结果产生影响</li>
+</ul>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291031262.png" alt="image-20220829103129203" /></p>
+<p>先剪切后旋转</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291036279.png" alt="image-20220829103634148" /></p>
+<p>先旋转后剪切</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291037580.png" alt="image-20220829103708402" /></p>
+<p>矩阵满足结合律</p>
+<ul>
+<li>变换的顺序 (右 ——&gt; 左) 保持不变 ——&gt; 对结果没有影响</li>
+</ul>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291041455.png" alt="image-20220829104112332" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291041904.png" alt="image-20220829104128776" /></p>
+<h3 id="二维空间的线性变换"><a class="anchor" href="#二维空间的线性变换">#</a> 二维空间的线性变换</h3>
+<p>所有向量依赖于两个基向量：x 轴上的 i 帽和 y 轴上的 j 帽<br />
+原始的 i 帽：(1,0)<br />
+ 原始的 j 帽：(0,1)<br />
+<strong> i 帽作用于向量的 x 坐标</strong><br />
+<strong> j 帽作用于向量的 y 坐标</strong><br />
+二维矩阵相乘：是对二维基向量连续做了两次变换，右边矩阵是对原始的基向量变换后的矩阵。</p>
+<ul>
+<li>矩阵对向量做变换：x 坐标对 i 帽进行放缩，y 坐标对 j 帽进行放缩</li>
+</ul>
+<ol>
+<li>将右边矩阵的每一列向量分立出来，得到二列向量</li>
+<li>再让左边矩阵分别作用（放缩再相加）于每一个向量，得到二列变换后的向量</li>
+<li>再将二列变换后的向量放在一个 2 * 2 的矩阵中得到了最终变换的结果<br />
+<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291051328.png" alt="image-20220829105100186" /></li>
+</ol>
+<h3 id="三维空间的线性变换"><a class="anchor" href="#三维空间的线性变换">#</a> 三维空间的线性变换</h3>
+<p>所有向量依赖于三个基向量：x 轴的 i 帽，y 轴的 j 帽和 z 轴的 k 帽<br />
+原始的 i 帽：(1,0,0)<br />
+ 原始的 j 帽：(0,1,0)<br />
+ 原始的 k 帽：(0,0,1)<br />
+<strong> i 帽作用于向量的 x 坐标</strong><br />
+<strong> j 帽作用于向量的 y 坐标</strong><br />
+<strong> k 帽作用于向量的 z 坐标</strong><br />
+<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291052161.png" alt="image-20220829105208060" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291146990.png" alt="image-20220829114654704" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291148701.png" alt="image-20220829114801620" /></p>
+<p>将三个基向量记录在一个 3 * 3 的矩阵中</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291201114.png" alt="image-20220829120134015" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291201269.png" alt="image-20220829120151165" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291205509.png" alt="image-20220829120543384" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291204770.png" alt="image-20220829120403648" /></p>
+<p>三维矩阵相乘：是对三维基向量连续做了两次变换，右边矩阵是对原始的基向量变换后的矩阵。</p>
+<ul>
+<li>矩阵对向量做变换：x 坐标对 i 帽进行放缩，y 坐标对 j 帽进行放缩，z 坐标对 k 帽进行放缩</li>
+</ul>
+<ol>
+<li>将右边矩阵的每一列向量分立出来，得到三列向量</li>
+<li>再让左边矩阵分别作用（放缩再相加）于每一个向量，得到三列变换后的向量</li>
+<li>再将三列变换后的向量放在一个 3 * 3 的矩阵中得到了最终变换的结果<br />
+<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291208573.png" alt="image-20220829120839353" /></li>
+</ol>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291211882.png" alt="image-20220829121135808" /></p>
+<h2 id="行列式"><a class="anchor" href="#行列式">#</a> 行列式</h2>
+<h3 id="二维空间中的行列式"><a class="anchor" href="#二维空间中的行列式">#</a> 二维空间中的行列式</h3>
+<p>在二维空间中，基向量 i 帽 (1,0) 和 j 帽 (0,1) 可构成一个底为 1，高为 1 的正方形，面积为 1&lt;——&gt; 由基向量狗构成的原始的矩阵的行列式值为 1<br />
+ 将基向量变换后得到的矩阵的行列式值 ——&gt; 变换后基向量所构成四边形的面积（放缩的倍数）</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291519736.png" alt="image-20220829151907634" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291518138.png" alt="image-20220829151808015" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291517516.png" alt="image-20220829151751415" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291520328.png" alt="image-20220829152040228" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291521854.png" alt="image-20220829152111720" /><br />
+ 将空间压缩到了一条直线上<br />
+<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291523203.png" alt="image-20220829152322085" /><br />
+ 将空间压缩到了更小的维度上<br />
+<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291524164.png" alt="image-20220829152431072" /></p>
+<p>行列式的负值<br />
+如果矩阵的行列式为负值，则说明矩阵所表示的变换使空间的定向发生了改变（想象将一张纸表示的二维平面翻转过来）<br />
+行列式的绝对值依然表示区域面积的缩放比例<br />
+<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291526010.png" alt="image-20220829152609927" /><br />
+ 定向改变前</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291529088.png" alt="image-20220829152940009" /><br />
+ 定向改变后</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291530412.png" alt="image-20220829153014235" /></p>
+<p>假设变换后的 i 帽从一个方向不断靠近 j 帽，并转换到 j 帽的另一个方向</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291533237.png" alt="image-20220829153342080" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291534564.png" alt="image-20220829153411486" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291534881.png" alt="image-20220829153438729" /></p>
+<h3 id="三维空间中的行列式"><a class="anchor" href="#三维空间中的行列式">#</a> 三维空间中的行列式</h3>
+<p>在三维空间中则将对象聚焦到一个 i 帽，j 帽，k 帽所表示的 1 * 1* 1 的立方体中，矩阵的行列式值表示矩阵的空间中区域体积的放缩比例<br />
+立方体初始体积为 1<br />
+<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291539913.png" alt="image-20220829153932808" /></p>
+<p>正方体被压缩为了平行六面体<br />
+<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291541352.png" alt="image-20220829154101167" /></p>
+<p>原始立方体体积为 1，变换后的比例则为变换后立方体的体积<br />
+<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291543546.png" alt="image-20220829154317442" /></p>
+<p>三维空间行列式正负所表示的定向</p>
+<p>右手定则（行列式为正）</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291556824.png" alt="image-20220829155614722" /></p>
+<p>左手定则（行列式为负）</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291557353.png" alt="image-20220829155705237" /></p>
+<p>矩阵行列式值的计算</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291558766.png" alt="image-20220829155858714" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291601077.png" alt="image-20220829160120994" /></p>
+<h2 id="逆矩阵-列空间和零空间"><a class="anchor" href="#逆矩阵-列空间和零空间">#</a> 逆矩阵、列空间和零空间</h2>
+<h3 id="线性方程组"><a class="anchor" href="#线性方程组">#</a> 线性方程组</h3>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291610794.png" alt="image-20220829161018718" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291611647.png" alt="image-20220829161120545" /></p>
+<ul>
+<li>矩阵 A 代表一种线性变换</li>
+<li>A<strong>x</strong> = <strong>v</strong> 意味着找到一个<strong> x</strong> 向量经过矩阵<strong> A</strong> 变换后可以和向量<strong> v</strong> 重合</li>
+</ul>
+<h3 id="逆矩阵"><a class="anchor" href="#逆矩阵">#</a> 逆矩阵</h3>
+<p>向量经过矩阵 (A) 变换后，再经过 A 的逆矩阵 (A 逆) 变换，则会回到原来的状态</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291648645.png" alt="image-20220829164858537" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291648725.png" alt="image-20220829164838622" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291704377.png" alt="image-20220829164941847" /></p>
+<p>矩阵的行列式不为 0，则矩阵存在逆矩阵</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291651600.png" alt="image-20220829165133543" /></p>
+<p>求解 Ax = v，只需要将 v 乘以 A 的逆矩阵 ——&gt;x</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291653530.png" alt="image-20220829165302361" /></p>
+<h3 id="矩阵的秩"><a class="anchor" href="#矩阵的秩">#</a> 矩阵的秩</h3>
+<p>矩阵的秩表示<strong>变换后</strong>的空间的维数<br />
+秩如果小于原来空间的维数 ——&gt; 原空间被压缩了<br />
+<img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291656465.png" alt="image-20220829165647388" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291657563.png" alt="image-20220829165703449" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291657829.png" alt="image-20220829165725685" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291657397.png" alt="image-20220829165752082" /></p>
+<h3 id="列空间"><a class="anchor" href="#列空间">#</a> 列空间</h3>
+<p>矩阵的列所张成的空间</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291708743.png" alt="image-20220829170833638" /></p>
+<p>秩与矩阵的列数相等 ——&gt; 满秩</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291709927.png" alt="image-20220829170955802" /></p>
+<p>线性变化必须保持原点位置不变 ——&gt; 零向量一定在列空间中</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291711990.png" alt="image-20220829171110879" /></p>
+<h3 id="零空间"><a class="anchor" href="#零空间">#</a> 零空间</h3>
+<p><strong>变换后落在原点的向量的集合 —— 矩阵的零空间或矩阵的核</strong></p>
+<h2 id="非方阵"><a class="anchor" href="#非方阵">#</a> 非方阵</h2>
+<p><strong>可笑的是，有人尝试去求非方阵的行列式</strong></p>
+<p>不同维数之间的变换是合理的</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291720662.png" alt="image-20220829172025578" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291720104.png" alt="image-20220829172040022" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208291721417.png" alt="image-20220829172107226" /></p>
 ]]></content>
       <categories>
         <category>统计学习方法</category>
