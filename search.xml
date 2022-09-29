@@ -1,621 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>C语言基础三</title>
-    <url>/2022/08/26/c-yu-yan-ji-chu-san/</url>
-    <content><![CDATA[<h2 id="c语言基础三"><a class="anchor" href="#c语言基础三">#</a> C 语言基础三</h2>
-<h4 id="指针"><a class="anchor" href="#指针">#</a> 指针</h4>
-<ul>
-<li><strong>大多数情况下：认为指针即地址即可</strong></li>
-<li><strong>指针本身不是地址，但指针所保存的值是一个地址，就像变量和数值的关系，变量不是一个数值，但变量保存的值是一个数字</strong></li>
-</ul>
-<h5 id="内存地址"><a class="anchor" href="#内存地址">#</a> 内存地址</h5>
-<ul>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250740748.png" alt="image-20220825074045588" /></p>
-</li>
-<li>
-<p><strong>数据通过数据总线在 CPU 和内存间进行传输</strong></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250742081.png" alt="image-20220825074252982" /></p>
-</li>
-<li>
-<p><strong>将内存中的每个数据分别放到每个寄存器中</strong></p>
-</li>
-<li>
-<p><strong>激活算数逻辑单元</strong></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250745019.png" alt="image-20220825074530924" /></p>
-</li>
-<li>
-<p><strong>用另一个寄存器来存放计算结果，然后将结果存放到内存中</strong></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250746738.png" alt="image-20220825074645644" /></p>
-</li>
-<li>
-<p><strong>每块内存地址中都由八个晶体管开关，每块内存地址都有编号</strong></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250750731.png" alt="image-20220825075034656" /></p>
-</li>
-<li>
-<p><strong>不同的数据类型占用存储空间大小不同</strong></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250752470.png" alt="image-20220825075214402" /></p>
-</li>
-<li>
-<p><strong>内存地址总结</strong></p>
-</li>
-<li>
-<p><strong>记录一个数据对象在内存地址中的位置需要两个信息：</strong></p>
-<ul>
-<li><strong>首地址 + 存储空间大小 (数据对象所占字节数)</strong></li>
-</ul>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250755563.png" alt="image-20220825075521476" /></p>
-</li>
-</ul>
-<h5 id="指针数据类型"><a class="anchor" href="#指针数据类型">#</a> 指针数据类型</h5>
-<ul>
-<li>
-<p><strong>取地址运算符：&amp;</strong></p>
-<ul>
-<li>
-<p><strong>在数据对象左边加上地址符 &amp;，即可获取数据对象的内存地址 (首地址 + 存储空间大小)</strong></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250802418.png" alt="image-20220825080242349" /></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250804744.png" alt="image-20220825080420683" /></p>
-</li>
-<li>
-<p><strong>声明指针变量时：空格位置不同都是正确的</strong></p>
-</li>
-<li>
-<p>int <em>p;		// 空格在</em>左边<br />
- int* p;		// 空格在<em>右边<br />
- int</em>p;		// 没有空格</p>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>指针值 = 对象首地址</strong></p>
-</li>
-<li>
-<p><strong>数据类型 ——&gt; 指针类型 ——&gt; 存储空间大小</strong></p>
-<ul>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250808035.png" alt="image-20220825080857964" /></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250810984.png" alt="image-20220825081044923" /></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250813062.png" alt="image-20220825081305997" /></p>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>取值运算符：</strong>*</p>
-<ul>
-<li>
-<p><em><em>在指针对象左边加上取值运算符</em>，即可根据内存地址 (首地址 + 空间大小) 找到数据对象</em> *</p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250829229.png" alt="image-20220825082906168" /></p>
-</li>
-<li>
-<p><strong>可以通过：对数据地址取值来访问数据对象</strong></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250833689.png" alt="image-20220825083357629" /></p>
-</li>
-</ul>
-</li>
-</ul>
-<h5 id="不同指针类型"><a class="anchor" href="#不同指针类型">#</a> 不同指针类型</h5>
-<ul>
-<li>
-<p><strong>不同指针类型所表示的数据对象的 (内存的存储空间大小) 不同 ——&gt; 不可以相互赋值</strong></p>
-</li>
-<li>
-<p><strong>不同指针类型所表示的数据对象的 (内存的存储空间大小不同)，但是指针本身所占用的空间大小可能相同</strong></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250848272.png" alt="image-20220825084852196" /></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250849760.png" alt="image-20220825084933710" /></p>
-</li>
-</ul>
-<h5 id="强制转化指针类型"><a class="anchor" href="#强制转化指针类型">#</a> 强制转化指针类型</h5>
-<ul>
-<li>
-<p><strong>强制转换指针类型 ——&gt; 指针保存 (数据对象的首地址) 并不会变</strong></p>
-</li>
-<li>
-<p><strong>强制转换指针类型 ——&gt; 但是指针表示的 (数据对象的存储空间大小) 发生改变</strong></p>
-</li>
-<li>
-<p>*<em> 不同类型的指针在取值 (<em>指针) 时，从 (指针所保存的首地址) 开始向后取出 (指针类型所表示的存储空间大小) 的数据</em></em></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250901975.png" alt="image-20220825090139913" /></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250902780.png" alt="image-20220825090228704" /></p>
-</li>
-<li>
-<h5 id="指针小总结"><a class="anchor" href="#指针小总结">#</a> <strong>指针小总结</strong></h5>
-<ul>
-<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250909957.png" alt="image-20220825090917903" /></li>
-<li><strong>指针保存了数据对象的首地址和存储空间大小</strong></li>
-<li><strong>指针值 = 数据对象首地址</strong></li>
-<li><strong>指针类型 ——&gt; 数据对象的存储空间大小</strong></li>
-<li>*<em> 不同类型指针在取值 (<em>指针) 时，从 (保存的首地址) 开始向后取出 (不同存储空间大小) 的数据</em></em></li>
-</ul>
-</li>
-</ul>
-<h4 id="指针运算"><a class="anchor" href="#指针运算">#</a> 指针运算</h4>
-<h5 id="指针类型与整形相加减"><a class="anchor" href="#指针类型与整形相加减">#</a> 指针类型与整形相加减</h5>
-<ul>
-<li>
-<p><strong>指针类型与整形相加减 ——&gt; 移动指针内保存的首地址</strong></p>
-</li>
-<li>
-<p><strong>无法将整形数据 赋给 指针类型</strong></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250912423.png" alt="image-20220825091207365" /></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250911298.png" alt="image-20220825091142239" /></p>
-</li>
-<li>
-<p><strong>将数值强行转换为指针类型</strong></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250916406.png" alt="image-20220825091645350" /></p>
-<ul>
-<li><strong>不同指针的首地址相同，但其所表示的空间大小不同</strong></li>
-<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250919089.png" alt="image-20220825091947034" /></li>
-<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250921388.png" alt="image-20220825092109330" /></li>
-<li><strong>不同类型指针所表示的连续的地址间隔不同（因为所保存的数据类型的存储空间不同）</strong></li>
-</ul>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250921296.png" alt="image-20220825092158225" /></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250924469.png" alt="image-20220825092429404" /></p>
-</li>
-</ul>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250924396.png" alt="image-20220825092451338" /></p>
-<h5 id="同类型指针减法运算"><a class="anchor" href="#同类型指针减法运算">#</a> 同类型指针减法运算</h5>
-<ul>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250932611.png" alt="image-20220825093228555" /></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250934550.png" alt="image-20220825093441483" /></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250938020.png" alt="image-20220825093848961" /></p>
-</li>
-</ul>
-<h5 id="指针运算总结"><a class="anchor" href="#指针运算总结">#</a> 指针运算总结</h5>
-<ul>
-<li>
-<p><strong>有实际意义的指针运算 ——&gt; 不会报错</strong></p>
-<ul>
-<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250939984.png" alt="image-20220825093953935" /></li>
-</ul>
-</li>
-<li>
-<p><strong>没有实际意义的指针运算 ——&gt; 会报错</strong></p>
-<ul>
-<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250940393.png" alt="image-20220825094056340" /></li>
-</ul>
-</li>
-</ul>
-<h4 id="指针与数组"><a class="anchor" href="#指针与数组">#</a> 指针与数组</h4>
-<ul>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251023129.png" alt="image-20220825102329063" /></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251023798.png" alt="image-20220825102353739" /></p>
-</li>
-<li>
-<p><strong>数组首地址</strong></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251025238.png" alt="image-20220825102530190" /></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251027554.png" alt="image-20220825102707495" /></p>
-</li>
-</ul>
-<h5 id="数组名与指针的关系"><a class="anchor" href="#数组名与指针的关系">#</a> 数组名与指针的关系</h5>
-<ul>
-<li>
-<p><strong>大多数情况下，数组名会转换成指向 (数组第一个元素的地址) 的指针</strong></p>
-</li>
-<li>
-<p><strong>对数组名使用 sizeof 和使用 地址符 &amp; 时：不会将数组名转换为指针</strong></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251034291.png" alt="image-20220825103442228" /></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251035189.png" alt="image-20220825103552115" /></p>
-<ul>
-<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251040824.png" alt="image-20220825104000774" /></li>
-<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251040925.png" alt="image-20220825104025870" /></li>
-<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251040973.png" alt="image-20220825104035911" /></li>
-</ul>
-</li>
-</ul>
-<h5 id="指针访问数组"><a class="anchor" href="#指针访问数组">#</a> 指针访问数组</h5>
-<ul>
-<li>
-<p><strong>访问数组元素的两种方法</strong></p>
-<ul>
-<li><strong><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251042276.png" alt="image-20220825104222214" /></strong></li>
-<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251043172.png" alt="image-20220825104329125" /></li>
-</ul>
-</li>
-<li>
-<p><strong>下标运算符 [] 的优先级高于一切</strong></p>
-</li>
-<li>
-<p><strong>下标运算符最终会展开为指针的形式 ——&gt; 指针访问数组 = 下标访问数组</strong></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251051468.png" alt="" /></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251048813.png" alt="image-20220825104800762" /></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251048756.png" alt="image-20220825104833697" /></p>
-</li>
-<li>
-<p>arr[2] ——&gt; *(arr+2)<br />
-[2]arr ——&gt; *(2+arr)</p>
-</li>
-</ul>
-<h5 id="指针作为参数传递"><a class="anchor" href="#指针作为参数传递">#</a> 指针作为参数传递</h5>
-<ul>
-<li>
-<p><strong>实参与形参相互独立（内存地址不同）</strong></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251134932.png" alt="image-20220825113410866" /></p>
-</li>
-<li>
-<p><strong>形参和实参相互独立 ——&gt; 形参中的参数值，无论如何变化都不会影响实参中的参数值</strong></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251136227.png" alt="image-20220825113619153" /></p>
-</li>
-<li>
-<p><strong>指针作为参数传递</strong></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251316211.png" alt="image-20220825131640155" /></p>
-</li>
-<li>
-<p><strong>将指针传递到函数内部，函数就可以通过指针 (所指向的内存地址) 访问到数据对象，并对数据对象的值进行修改</strong></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251321127.png" alt="image-20220825132121058" /></p>
-</li>
-<li>
-<p>*<em> 注意，是对指针所指向的 (数据对象的值)—(<em>指针) 进行修改，而不是对指针值 (数据对象的内存地址)—(指针) 进行修改</em></em></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251326487.png" alt="image-20220825132649418" /></p>
-</li>
-<li>
-<p><strong>scanf 函数无法直接修改 main 函数中的变量，而是通过指针 / 地址间接修改变量的值</strong></p>
-</li>
-<li>
-<p><strong>之所以在主函数 main 中调用 scanf 函数时，scanf 函数可以改变外部 (main 函数中) 的变量，是因为 scanf 函数中传递的参数是一个地址 / 指针（参数前需要地址符 &amp;）</strong></p>
-</li>
-<li>
-<p><strong>所以 scanf 输入函数会先读取从键盘中输入，转化后再将其存放到指针 / 地址所指向的数据对象（参数前需要地址符 &amp;）</strong></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251334188.png" alt="image-20220825133434136" /></p>
-</li>
-</ul>
-<h5 id="void类型指针"><a class="anchor" href="#void类型指针">#</a> void * 类型指针</h5>
-<ul>
-<li>
-<p><strong>不同类型指针赋值会修改数据对象的类型 ——&gt; 不能相互赋值</strong></p>
-<ul>
-<li>
-<p><strong>因为指针包括了数据对象的首地址和数据对象的存储空间 ——&gt; 不同类型指针不能相互赋值</strong></p>
-</li>
-<li>
-<p><strong>首地址可以相同，但是存储空间不一致</strong></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251342200.png" alt="image-20220825134239138" /></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251341313.png" alt="image-20220825134101255" /></p>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>void 类型指针没有类型 ——&gt; 仅仅保存数据对象的首地址，不保存存储空间大小</strong></p>
-</li>
-<li>
-<p><strong>因此任意类型的指针都可以直接赋值给 void 类型指针</strong></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251348704.png" alt="image-20220825134815645" /></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251346184.png" alt="image-20220825134600114" /></p>
-</li>
-<li>
-<p><strong>由于 void 类型指针没有存储空间大小</strong></p>
-</li>
-<li>
-<p><strong>所以任何指针类型都可以直接将地址赋给 void 类型指</strong></p>
-</li>
-<li>
-<p><strong>但 void 类型指针要先强制转换后才能将地址赋给对应类型指针</strong></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251357276.png" alt="image-20220825135717210" /></p>
-</li>
-<li>
-<pre class=" language-language-c"><code class="language-language-c"># include"stdio.h"
-int main()&#123;
-    int a = 8;
-    int *A = &a;
-    printf("%d\n", A);
-    printf("%d\n", *A);
-    void *B = A;
-    int *C = (int*)B;
-    printf("%d\n", B);
-    printf("%d\n", C);
-&#125;
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">- **总结**</span><br><span class="line"></span><br><span class="line">- **所有类型的指针都可以直接将其指向的地址赋值给void类型的指针**</span><br><span class="line"></span><br><span class="line">- **但是void类型指针要先强制转换类型才能将地址赋给其他类型指针**</span><br><span class="line"></span><br><span class="line">- **void类型指针只能用于地址的传递，不能对地址取值——>只能打印void类型指针的地址(数据对象地址)**</span><br><span class="line"></span><br><span class="line">- **因为void类型指针没有类型——>不能打印地址的取值(数据对象的值)**</span><br><span class="line"></span><br><span class="line"><span class="comment">#### 多级指针</span></span><br><span class="line"></span><br><span class="line">- **指针作为一个数据对象也有自己的存储位置(地址)**</span><br><span class="line">- **指向指针的指针 = 多级指针**</span><br><span class="line">- ![image-<span class="number">20220825143152294</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251431358</span>.png)</span><br><span class="line">- **二级指针的声明**</span><br><span class="line">  - ![image-<span class="number">20220825144843604</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251448678</span>.png)</span><br><span class="line">- ![image-<span class="number">20220825144927815</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251449877</span>.png)</span><br><span class="line"></span><br><span class="line">![image-<span class="number">20220825145007456</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251450515</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825145028720</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251450778</span>.png)</span><br><span class="line"></span><br><span class="line"><span class="comment">##### 指针数组</span></span><br><span class="line"></span><br><span class="line">- **元素为指针的数组**</span><br><span class="line">- ![image-<span class="number">20220825145507501</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251455578</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825145744263</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251457339</span>.png)</span><br><span class="line">- ![image-<span class="number">20220825145542152</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251455217</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825153227051</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251532143</span>.png)</span><br><span class="line"></span><br><span class="line"><span class="comment">##### 从函数中返回指针</span></span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825153447378</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251534443</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825153549578</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251535637</span>.png)</span><br><span class="line"></span><br><span class="line">- **static类似与python中的global，使用static的变量将不会被系统回收**</span><br><span class="line">- ![image-<span class="number">20220825153649469</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251536530</span>.png)</span><br><span class="line"></span><br><span class="line"><span class="comment">##### 将二级指针作为函数参数</span></span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825154050938</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251540021</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825154129081</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251541135</span>.png)</span><br><span class="line"></span><br><span class="line">- **将指针初始化为 NULL / <span class="number">0</span> 是一个非常好的习惯**</span><br><span class="line"></span><br><span class="line">- </span><br><span class="line">  int *a = NULL;</span><br><span class="line">  int *b = NULL;</span><br><span class="line"></span><br><span class="line"><span class="comment">#### 指针与多维数组</span></span><br><span class="line"></span><br><span class="line">- **在一维数组中：数组的元素是一个元素(int,char...)——>指针(普通指针)指向一维数组第一个(元素的地址)**</span><br><span class="line">- **在二维数组中：数组的元素是一行一维数组——>指针(数组指针)指向二维数组中的第一个一维(数组的地址)**</span><br><span class="line"></span><br><span class="line">![image-<span class="number">20220825162539217</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251625278</span>.png)</span><br><span class="line"></span><br><span class="line">![image-<span class="number">20220825162700032</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251627083</span>.png)</span><br><span class="line"></span><br><span class="line">![image-<span class="number">20220825162738443</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251627494</span>.png)</span><br><span class="line"></span><br><span class="line">![image-<span class="number">20220825162812808</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251628868</span>.png)</span><br><span class="line"></span><br><span class="line">![image-<span class="number">20220825162924110</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251629173</span>.png)</span><br><span class="line"></span><br><span class="line"><span class="comment">##### 注意区分指针数组和数组指针</span></span><br><span class="line"></span><br><span class="line">- **指针数组：是一个元素为指针的数组**</span><br><span class="line">- **数组指针：是一个指向数组的指针**</span><br><span class="line">- ![](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251712501</span>.png)</span><br><span class="line">- **从这里要开始注意**</span><br><span class="line">  - **普通的指针指向数组时，指向的（数组的第一个元素）的地址**</span><br><span class="line">  - **而数组指针指向数组时，指向的是（一个数组）的地址**</span><br><span class="line"></span><br><span class="line">```c</span><br><span class="line">int* arr[<span class="number">20</span>];	<span class="regexp">//</span>很明显这是一个指针数组(指针类型的数组)</span><br><span class="line">int (*arr)[<span class="number">20</span>];		<span class="regexp">//</span>这是一个数组指针，为了方便理解，可以看成：int[<span class="number">20</span>](*arr)</span><br></pre></td></tr></table></figure>
-
-</code></pre>
-</li>
-</ul>
-<h5 id="数组指针移动和取值"><a class="anchor" href="#数组指针移动和取值">#</a> 数组指针移动和取值</h5>
-<ul>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251722489.png" alt="image-20220825172205378" /></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251723805.png" alt="image-20220825172354700" /></p>
-</li>
-<li>
-<p><strong>指针本身不是地址，但是指针所保存的值是一个地址</strong></p>
-</li>
-<li>
-<p>*<em> 二维数组中的数组指针指向第一行一维数组的地址，对二维数组的第一行一维数组的地址取值 (<em>地址)——&gt; 得到了第一行一维数组</em></em></p>
-<ul>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251736352.png" alt="image-20220825173639300" /></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251737451.png" alt="image-20220825173701370" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251737557.png" alt="image-20220825173725454" /></p>
-</li>
-<li>
-<p>图中 pInt10 是一个数组指针：指向了第一行数组</p>
-</li>
-<li>
-<p>pInt 是一个普通指针：指向了第一行数组的第一个元素</p>
-</li>
-</ul>
-</li>
-</ul>
-<h5 id="指针访问与下标访问"><a class="anchor" href="#指针访问与下标访问">#</a> 指针访问与下标访问</h5>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251741802.png" alt="image-20220825174144745" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251745518.png" alt="image-20220825174525466" /></p>
-<ul>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208252300994.png" alt="image-20220825174344429" /></p>
-</li>
-<li></li>
-</ul>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251744510.png" alt="image-20220825174432457" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251748868.png" alt="image-20220825174800806" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251748942.png" alt="image-20220825174819884" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251749597.png" alt="image-20220825174942549" /></p>
-<ul>
-<li><strong>所以第二个不能将数组名转换为指向数组首个元素的做法：（&amp; 数组名）——&gt; 这样会取得整个数组的地址（也就是数组指针）</strong></li>
-<li><strong>指针与地址的关系 = 变量名与变量值的关系一样</strong></li>
-<li><strong>大多数情况：认为指针即地址即可</strong></li>
-</ul>
-<h5 id="指针与三位数组"><a class="anchor" href="#指针与三位数组">#</a> 指针与三位数组</h5>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251808826.png" alt="image-20220825180853744" /></p>
-<h5 id="声明器"><a class="anchor" href="#声明器">#</a> 声明器</h5>
-<ul>
-<li>
-<h6 id="数组标识符的声明"><a class="anchor" href="#数组标识符的声明">#</a> 数组标识符的声明</h6>
-</li>
-<li>
-<p><strong>声明与使用的形式一致</strong></p>
-<ul>
-<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251826037.png" alt="image-20220825182605971" /></li>
-</ul>
-</li>
-<li>
-<p><strong>函数声明器</strong></p>
-<ul>
-<li>
-<p><strong>参数名可省略参数名</strong></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251828620.png" alt="image-20220825182838567" /></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251829820.png" alt="image-20220825182914772" /></p>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>声明器的中优先级</strong></p>
-<ul>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251830367.png" alt="image-20220825183009287" /></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251831583.png" alt="image-20220825183111525" /></p>
-<ul>
-<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251845415.png" alt="image-20220825184535364" /></li>
-<li><strong>指针数组：</strong>
-<ol>
-<li><strong>数组方括号优先级第一：——&gt; 首先是一个 (数组)</strong></li>
-<li><strong>指针 * 号优先级第二：——&gt; 这个 (数组) 的元素是 (指针)</strong></li>
-<li><strong>int 优先级第三：——&gt; 这个 (指针) 指向 (int) 类型</strong></li>
-</ol>
-</li>
-<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251852604.png" alt="image-20220825185206553" /></li>
-<li><strong>数组指针：</strong>
-<ol>
-<li><strong>括号内的 * 号优先级第一：——&gt; 首先是一个 (指针)</strong></li>
-<li><strong>数组方括号优先级第二：——&gt; 这个 (指针) 指向 (数组)</strong></li>
-<li><strong>int 优先级第三：——&gt;(数组) 的元素为 (int)</strong></li>
-</ol>
-</li>
-</ul>
-</li>
-<li>
-<p>指针数组指针</p>
-<ul>
-<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251858390.png" alt="image-20220825185821325" /></li>
-</ul>
-</li>
-<li>
-<p>函数指针数组</p>
-<ul>
-<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251900593.png" alt="image-20220825190041541" /></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h5 id="函数指针与数组"><a class="anchor" href="#函数指针与数组">#</a> 函数指针与数组</h5>
-<ul>
-<li><strong>函数指针：指向函数的指针</strong></li>
-<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251906672.png" alt="image-20220825190619610" /></li>
-</ul>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251906693.png" alt="image-20220825190636643" /></p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251911666.png" alt="image-20220825191130615" /></p>
-<ul>
-<li>
-<p><strong>两种通过函数指针调用函数的方法</strong></p>
-<ul>
-<li>*<em> 函数指针取值 (<em>指针) 即为函数</em></em></li>
-<li><strong>第二种方法是一种可行的简写：直接将函数指针当做函数使用</strong></li>
-<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251911533.png" alt="image-20220825191159481" /></li>
-</ul>
-</li>
-<li>
-<p><strong>函数指针数组</strong></p>
-<ul>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251916565.png" alt="image-20220825191651510" /></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251917379.png" alt="image-20220825191725321" /></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251917996.png" alt="image-20220825191757943" /></p>
-</li>
-</ul>
-</li>
-</ul>
-<h5 id="字符串和字符指针"><a class="anchor" href="#字符串和字符指针">#</a> 字符串和字符指针</h5>
-<ul>
-<li>
-<p><strong>字符串结束的标志是 数值 0 而不是 字符 '0'</strong></p>
-</li>
-<li>
-<p><strong>为了不让 数值 0 和 字符 '0' 冲突，使用转义字符 \0 表示数值 0</strong></p>
-<ul>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251922338.png" alt="image-20220825192235261" /></p>
-</li>
-<li>
-<p><strong>字符串常量无法被修改</strong></p>
-</li>
-<li>
-<p><strong>数组中的值可以修改 ——&gt; 可以用字符数组来装载字符串，然后修改字符数组中的字符</strong></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251932522.png" alt="image-20220825193213458" /></p>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>能否正常结尾的字符串（字符串末尾自带结束符 \0）</strong></p>
-<ul>
-<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251928369.png" alt="image-20220825192807290" /></li>
-</ul>
-</li>
-<li>
-<p><strong>字符数组与指针</strong></p>
-<ul>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251933773.png" alt="image-20220825193300708" /></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251933065.png" alt="image-20220825193322003" /></p>
-</li>
-<li>
-<p><strong>指针 p 为一个移动的游标</strong></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251933327.png" alt="image-20220825193351258" /></p>
-</li>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251934539.png" alt="image-20220825193408468" /></p>
-</li>
-<li>
-<p><strong>错误的写法</strong></p>
-<ul>
-<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251936779.png" alt="image-20220825193637718" /></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>使用指针处理字符串 (字符数组)</strong></p>
-<ul>
-<li><strong>字符串反转：将字符串中首尾对应的元素两两交换</strong></li>
-<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251943399.png" alt="image-20220825194328346" /></li>
-<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251944049.png" alt="image-20220825194407984" /></li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>高级编程语言</category>
-      </categories>
-      <tags>
-        <tag>C语言</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>C语言基础一</title>
     <url>/2022/08/25/c-yu-yan-ji-chu-yi/</url>
     <content><![CDATA[<h1 id="c语言基础一"><a class="anchor" href="#c语言基础一">#</a> C 语言基础一</h1>
@@ -1126,47 +511,6 @@ int main()&#123;
       </categories>
       <tags>
         <tag>C语言</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>KNN算法</title>
-    <url>/2022/08/29/knn-suan-fa/</url>
-    <content><![CDATA[<h1 id="knn算法"><a class="anchor" href="#knn算法">#</a> KNN 算法</h1>
-<h2 id="物以类聚人以群分"><a class="anchor" href="#物以类聚人以群分">#</a> 物以类聚人以群分</h2>
-<ul>
-<li>看一个人怎么样，看他身边的朋友什么样即可</li>
-</ul>
-<ol>
-<li>
-<p>取所有样本 (行) 的部分特征 (data 列) 和类别标签 (label 列) 来绘制散点图<br />
- (不同类别标签的样本的颜色或形状不同)</p>
-</li>
-<li>
-<p>引进一个新的样本 (x = 特征 1，y = 特征 2，z = 特征 3，表示类别标签 color 或 symbol)</p>
-</li>
-<li>
-<p>计算所有样本点与新引入点的距离 (欧式距离或马氏距离等)</p>
-</li>
-<li>
-<p>对得到的所有欧式距离做升序排列，取前 k 个数据的 (取到了与我们新引进的样本点最近的 k 个数据的索引)</p>
-</li>
-<li>
-<p>对得到的前 k 个数据进行加权求平均 (尽管有 k 个离得近的样本，但是这 k 个距离不相同，距离越近的类别标签的权重越大，越远的类别标签权重越小)</p>
-</li>
-</ol>
-<p>欧式距离：欧几里得距离</p>
-<ul>
-<li>两个样本的欧式距离 = sqrt (∑相同特征相减取平方)</li>
-<li>二维情况下，每一个样本 (点) 只有 x 坐标和 y 坐标两个特征 ——&gt; 所以它们的欧式距离 = sqrt ((x1-x2)²＋(y1-y2)²)</li>
-</ul>
-<p>K 太大：欠拟合<br />
- K 太小：过拟合</p>
-]]></content>
-      <categories>
-        <category>统计学习方法</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -1771,6 +1115,47 @@ int func(int, int);		//编译器检测到有两个int类型的参数
       </tags>
   </entry>
   <entry>
+    <title>KNN算法</title>
+    <url>/2022/08/29/knn-suan-fa/</url>
+    <content><![CDATA[<h1 id="knn算法"><a class="anchor" href="#knn算法">#</a> KNN 算法</h1>
+<h2 id="物以类聚人以群分"><a class="anchor" href="#物以类聚人以群分">#</a> 物以类聚人以群分</h2>
+<ul>
+<li>看一个人怎么样，看他身边的朋友什么样即可</li>
+</ul>
+<ol>
+<li>
+<p>取所有样本 (行) 的部分特征 (data 列) 和类别标签 (label 列) 来绘制散点图<br />
+ (不同类别标签的样本的颜色或形状不同)</p>
+</li>
+<li>
+<p>引进一个新的样本 (x = 特征 1，y = 特征 2，z = 特征 3，表示类别标签 color 或 symbol)</p>
+</li>
+<li>
+<p>计算所有样本点与新引入点的距离 (欧式距离或马氏距离等)</p>
+</li>
+<li>
+<p>对得到的所有欧式距离做升序排列，取前 k 个数据的 (取到了与我们新引进的样本点最近的 k 个数据的索引)</p>
+</li>
+<li>
+<p>对得到的前 k 个数据进行加权求平均 (尽管有 k 个离得近的样本，但是这 k 个距离不相同，距离越近的类别标签的权重越大，越远的类别标签权重越小)</p>
+</li>
+</ol>
+<p>欧式距离：欧几里得距离</p>
+<ul>
+<li>两个样本的欧式距离 = sqrt (∑相同特征相减取平方)</li>
+<li>二维情况下，每一个样本 (点) 只有 x 坐标和 y 坐标两个特征 ——&gt; 所以它们的欧式距离 = sqrt ((x1-x2)²＋(y1-y2)²)</li>
+</ul>
+<p>K 太大：欠拟合<br />
+ K 太小：过拟合</p>
+]]></content>
+      <categories>
+        <category>统计学习方法</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2022/08/22/hello-world/</url>
     <content><![CDATA[<h1 id="hexo"><a class="anchor" href="#hexo">#</a> HEXO</h1>
@@ -1794,6 +1179,728 @@ int func(int, int);		//编译器检测到有两个int类型的参数
       </categories>
       <tags>
         <tag>Hello World</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C语言基础三</title>
+    <url>/2022/08/26/c-yu-yan-ji-chu-san/</url>
+    <content><![CDATA[<h2 id="c语言基础三"><a class="anchor" href="#c语言基础三">#</a> C 语言基础三</h2>
+<h4 id="指针"><a class="anchor" href="#指针">#</a> 指针</h4>
+<ul>
+<li><strong>大多数情况下：认为指针即地址即可</strong></li>
+<li><strong>指针本身不是地址，但指针所保存的值是一个地址，就像变量和数值的关系，变量不是一个数值，但变量保存的值是一个数字</strong></li>
+</ul>
+<h5 id="内存地址"><a class="anchor" href="#内存地址">#</a> 内存地址</h5>
+<ul>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250740748.png" alt="image-20220825074045588" /></p>
+</li>
+<li>
+<p><strong>数据通过数据总线在 CPU 和内存间进行传输</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250742081.png" alt="image-20220825074252982" /></p>
+</li>
+<li>
+<p><strong>将内存中的每个数据分别放到每个寄存器中</strong></p>
+</li>
+<li>
+<p><strong>激活算数逻辑单元</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250745019.png" alt="image-20220825074530924" /></p>
+</li>
+<li>
+<p><strong>用另一个寄存器来存放计算结果，然后将结果存放到内存中</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250746738.png" alt="image-20220825074645644" /></p>
+</li>
+<li>
+<p><strong>每块内存地址中都由八个晶体管开关，每块内存地址都有编号</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250750731.png" alt="image-20220825075034656" /></p>
+</li>
+<li>
+<p><strong>不同的数据类型占用存储空间大小不同</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250752470.png" alt="image-20220825075214402" /></p>
+</li>
+<li>
+<p><strong>内存地址总结</strong></p>
+</li>
+<li>
+<p><strong>记录一个数据对象在内存地址中的位置需要两个信息：</strong></p>
+<ul>
+<li><strong>首地址 + 存储空间大小 (数据对象所占字节数)</strong></li>
+</ul>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250755563.png" alt="image-20220825075521476" /></p>
+</li>
+</ul>
+<h5 id="指针数据类型"><a class="anchor" href="#指针数据类型">#</a> 指针数据类型</h5>
+<ul>
+<li>
+<p><strong>取地址运算符：&amp;</strong></p>
+<ul>
+<li>
+<p><strong>在数据对象左边加上地址符 &amp;，即可获取数据对象的内存地址 (首地址 + 存储空间大小)</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250802418.png" alt="image-20220825080242349" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250804744.png" alt="image-20220825080420683" /></p>
+</li>
+<li>
+<p><strong>声明指针变量时：空格位置不同都是正确的</strong></p>
+</li>
+<li>
+<p>int <em>p;		// 空格在</em>左边<br />
+ int* p;		// 空格在<em>右边<br />
+ int</em>p;		// 没有空格</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>指针值 = 对象首地址</strong></p>
+</li>
+<li>
+<p><strong>数据类型 ——&gt; 指针类型 ——&gt; 存储空间大小</strong></p>
+<ul>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250808035.png" alt="image-20220825080857964" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250810984.png" alt="image-20220825081044923" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250813062.png" alt="image-20220825081305997" /></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>取值运算符：</strong>*</p>
+<ul>
+<li>
+<p><em><em>在指针对象左边加上取值运算符</em>，即可根据内存地址 (首地址 + 空间大小) 找到数据对象</em> *</p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250829229.png" alt="image-20220825082906168" /></p>
+</li>
+<li>
+<p><strong>可以通过：对数据地址取值来访问数据对象</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250833689.png" alt="image-20220825083357629" /></p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="不同指针类型"><a class="anchor" href="#不同指针类型">#</a> 不同指针类型</h5>
+<ul>
+<li>
+<p><strong>不同指针类型所表示的数据对象的 (内存的存储空间大小) 不同 ——&gt; 不可以相互赋值</strong></p>
+</li>
+<li>
+<p><strong>不同指针类型所表示的数据对象的 (内存的存储空间大小不同)，但是指针本身所占用的空间大小可能相同</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250848272.png" alt="image-20220825084852196" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250849760.png" alt="image-20220825084933710" /></p>
+</li>
+</ul>
+<h5 id="强制转化指针类型"><a class="anchor" href="#强制转化指针类型">#</a> 强制转化指针类型</h5>
+<ul>
+<li>
+<p><strong>强制转换指针类型 ——&gt; 指针保存 (数据对象的首地址) 并不会变</strong></p>
+</li>
+<li>
+<p><strong>强制转换指针类型 ——&gt; 但是指针表示的 (数据对象的存储空间大小) 发生改变</strong></p>
+</li>
+<li>
+<p>*<em> 不同类型的指针在取值 (<em>指针) 时，从 (指针所保存的首地址) 开始向后取出 (指针类型所表示的存储空间大小) 的数据</em></em></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250901975.png" alt="image-20220825090139913" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250902780.png" alt="image-20220825090228704" /></p>
+</li>
+<li>
+<h5 id="指针小总结"><a class="anchor" href="#指针小总结">#</a> <strong>指针小总结</strong></h5>
+<ul>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250909957.png" alt="image-20220825090917903" /></li>
+<li><strong>指针保存了数据对象的首地址和存储空间大小</strong></li>
+<li><strong>指针值 = 数据对象首地址</strong></li>
+<li><strong>指针类型 ——&gt; 数据对象的存储空间大小</strong></li>
+<li>*<em> 不同类型指针在取值 (<em>指针) 时，从 (保存的首地址) 开始向后取出 (不同存储空间大小) 的数据</em></em></li>
+</ul>
+</li>
+</ul>
+<h4 id="指针运算"><a class="anchor" href="#指针运算">#</a> 指针运算</h4>
+<h5 id="指针类型与整形相加减"><a class="anchor" href="#指针类型与整形相加减">#</a> 指针类型与整形相加减</h5>
+<ul>
+<li>
+<p><strong>指针类型与整形相加减 ——&gt; 移动指针内保存的首地址</strong></p>
+</li>
+<li>
+<p><strong>无法将整形数据 赋给 指针类型</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250912423.png" alt="image-20220825091207365" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250911298.png" alt="image-20220825091142239" /></p>
+</li>
+<li>
+<p><strong>将数值强行转换为指针类型</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250916406.png" alt="image-20220825091645350" /></p>
+<ul>
+<li><strong>不同指针的首地址相同，但其所表示的空间大小不同</strong></li>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250919089.png" alt="image-20220825091947034" /></li>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250921388.png" alt="image-20220825092109330" /></li>
+<li><strong>不同类型指针所表示的连续的地址间隔不同（因为所保存的数据类型的存储空间不同）</strong></li>
+</ul>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250921296.png" alt="image-20220825092158225" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250924469.png" alt="image-20220825092429404" /></p>
+</li>
+</ul>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250924396.png" alt="image-20220825092451338" /></p>
+<h5 id="同类型指针减法运算"><a class="anchor" href="#同类型指针减法运算">#</a> 同类型指针减法运算</h5>
+<ul>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250932611.png" alt="image-20220825093228555" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250934550.png" alt="image-20220825093441483" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250938020.png" alt="image-20220825093848961" /></p>
+</li>
+</ul>
+<h5 id="指针运算总结"><a class="anchor" href="#指针运算总结">#</a> 指针运算总结</h5>
+<ul>
+<li>
+<p><strong>有实际意义的指针运算 ——&gt; 不会报错</strong></p>
+<ul>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250939984.png" alt="image-20220825093953935" /></li>
+</ul>
+</li>
+<li>
+<p><strong>没有实际意义的指针运算 ——&gt; 会报错</strong></p>
+<ul>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208250940393.png" alt="image-20220825094056340" /></li>
+</ul>
+</li>
+</ul>
+<h4 id="指针与数组"><a class="anchor" href="#指针与数组">#</a> 指针与数组</h4>
+<ul>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251023129.png" alt="image-20220825102329063" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251023798.png" alt="image-20220825102353739" /></p>
+</li>
+<li>
+<p><strong>数组首地址</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251025238.png" alt="image-20220825102530190" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251027554.png" alt="image-20220825102707495" /></p>
+</li>
+</ul>
+<h5 id="数组名与指针的关系"><a class="anchor" href="#数组名与指针的关系">#</a> 数组名与指针的关系</h5>
+<ul>
+<li>
+<p><strong>大多数情况下，数组名会转换成指向 (数组第一个元素的地址) 的指针</strong></p>
+</li>
+<li>
+<p><strong>对数组名使用 sizeof 和使用 地址符 &amp; 时：不会将数组名转换为指针</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251034291.png" alt="image-20220825103442228" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251035189.png" alt="image-20220825103552115" /></p>
+<ul>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251040824.png" alt="image-20220825104000774" /></li>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251040925.png" alt="image-20220825104025870" /></li>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251040973.png" alt="image-20220825104035911" /></li>
+</ul>
+</li>
+</ul>
+<h5 id="指针访问数组"><a class="anchor" href="#指针访问数组">#</a> 指针访问数组</h5>
+<ul>
+<li>
+<p><strong>访问数组元素的两种方法</strong></p>
+<ul>
+<li><strong><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251042276.png" alt="image-20220825104222214" /></strong></li>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251043172.png" alt="image-20220825104329125" /></li>
+</ul>
+</li>
+<li>
+<p><strong>下标运算符 [] 的优先级高于一切</strong></p>
+</li>
+<li>
+<p><strong>下标运算符最终会展开为指针的形式 ——&gt; 指针访问数组 = 下标访问数组</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251051468.png" alt="" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251048813.png" alt="image-20220825104800762" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251048756.png" alt="image-20220825104833697" /></p>
+</li>
+<li>
+<p>arr[2] ——&gt; *(arr+2)<br />
+[2]arr ——&gt; *(2+arr)</p>
+</li>
+</ul>
+<h5 id="指针作为参数传递"><a class="anchor" href="#指针作为参数传递">#</a> 指针作为参数传递</h5>
+<ul>
+<li>
+<p><strong>实参与形参相互独立（内存地址不同）</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251134932.png" alt="image-20220825113410866" /></p>
+</li>
+<li>
+<p><strong>形参和实参相互独立 ——&gt; 形参中的参数值，无论如何变化都不会影响实参中的参数值</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251136227.png" alt="image-20220825113619153" /></p>
+</li>
+<li>
+<p><strong>指针作为参数传递</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251316211.png" alt="image-20220825131640155" /></p>
+</li>
+<li>
+<p><strong>将指针传递到函数内部，函数就可以通过指针 (所指向的内存地址) 访问到数据对象，并对数据对象的值进行修改</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251321127.png" alt="image-20220825132121058" /></p>
+</li>
+<li>
+<p>*<em> 注意，是对指针所指向的 (数据对象的值)—(<em>指针) 进行修改，而不是对指针值 (数据对象的内存地址)—(指针) 进行修改</em></em></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251326487.png" alt="image-20220825132649418" /></p>
+</li>
+<li>
+<p><strong>scanf 函数无法直接修改 main 函数中的变量，而是通过指针 / 地址间接修改变量的值</strong></p>
+</li>
+<li>
+<p><strong>之所以在主函数 main 中调用 scanf 函数时，scanf 函数可以改变外部 (main 函数中) 的变量，是因为 scanf 函数中传递的参数是一个地址 / 指针（参数前需要地址符 &amp;）</strong></p>
+</li>
+<li>
+<p><strong>所以 scanf 输入函数会先读取从键盘中输入，转化后再将其存放到指针 / 地址所指向的数据对象（参数前需要地址符 &amp;）</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251334188.png" alt="image-20220825133434136" /></p>
+</li>
+</ul>
+<h5 id="void类型指针"><a class="anchor" href="#void类型指针">#</a> void * 类型指针</h5>
+<ul>
+<li>
+<p><strong>不同类型指针赋值会修改数据对象的类型 ——&gt; 不能相互赋值</strong></p>
+<ul>
+<li>
+<p><strong>因为指针包括了数据对象的首地址和数据对象的存储空间 ——&gt; 不同类型指针不能相互赋值</strong></p>
+</li>
+<li>
+<p><strong>首地址可以相同，但是存储空间不一致</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251342200.png" alt="image-20220825134239138" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251341313.png" alt="image-20220825134101255" /></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>void 类型指针没有类型 ——&gt; 仅仅保存数据对象的首地址，不保存存储空间大小</strong></p>
+</li>
+<li>
+<p><strong>因此任意类型的指针都可以直接赋值给 void 类型指针</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251348704.png" alt="image-20220825134815645" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251346184.png" alt="image-20220825134600114" /></p>
+</li>
+<li>
+<p><strong>由于 void 类型指针没有存储空间大小</strong></p>
+</li>
+<li>
+<p><strong>所以任何指针类型都可以直接将地址赋给 void 类型指</strong></p>
+</li>
+<li>
+<p><strong>但 void 类型指针要先强制转换后才能将地址赋给对应类型指针</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251357276.png" alt="image-20220825135717210" /></p>
+</li>
+<li>
+<pre class=" language-language-c"><code class="language-language-c"># include"stdio.h"
+int main()&#123;
+    int a = 8;
+    int *A = &a;
+    printf("%d\n", A);
+    printf("%d\n", *A);
+    void *B = A;
+    int *C = (int*)B;
+    printf("%d\n", B);
+    printf("%d\n", C);
+&#125;
+</code></pre>
+</li>
+<li>
+<p><strong>总结</strong></p>
+</li>
+<li>
+<p><strong>所有类型的指针都可以直接将其指向的地址赋值给 void 类型的指针</strong></p>
+</li>
+<li>
+<p><strong>但是 void 类型指针要先强制转换类型才能将地址赋给其他类型指针</strong></p>
+</li>
+<li>
+<p><strong>void 类型指针只能用于地址的传递，不能对地址取值 ——&gt; 只能打印 void 类型指针的地址 (数据对象地址)</strong></p>
+</li>
+<li>
+<p><strong>因为 void 类型指针没有类型 ——&gt; 不能打印地址的取值 (数据对象的值)</strong></p>
+</li>
+</ul>
+<h4 id="多级指针"><a class="anchor" href="#多级指针">#</a> 多级指针</h4>
+<ul>
+<li><strong>指针作为一个数据对象也有自己的存储位置 (地址)</strong></li>
+<li><strong>指向指针的指针 = 多级指针</strong></li>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251431358.png" alt="image-20220825143152294" /></li>
+<li><strong>二级指针的声明</strong>
+<ul>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251448678.png" alt="image-20220825144843604" /></li>
+</ul>
+</li>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251449877.png" alt="image-20220825144927815" /></li>
+</ul>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251450515.png" alt="image-20220825145007456" /></p>
+<ul>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251450778.png" alt="image-20220825145028720" /></li>
+</ul>
+<h5 id="指针数组"><a class="anchor" href="#指针数组">#</a> 指针数组</h5>
+<ul>
+<li>
+<p><strong>元素为指针的数组</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251455578.png" alt="image-20220825145507501" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251457339.png" alt="image-20220825145744263" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251455217.png" alt="image-20220825145542152" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251532143.png" alt="image-20220825153227051" /></p>
+</li>
+</ul>
+<h5 id="从函数中返回指针"><a class="anchor" href="#从函数中返回指针">#</a> 从函数中返回指针</h5>
+<ul>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251534443.png" alt="image-20220825153447378" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251535637.png" alt="image-20220825153549578" /></p>
+</li>
+<li>
+<p><strong>static 类似与 python 中的 global，使用 static 的变量将不会被系统回收</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251536530.png" alt="image-20220825153649469" /></p>
+</li>
+</ul>
+<h5 id="将二级指针作为函数参数"><a class="anchor" href="#将二级指针作为函数参数">#</a> 将二级指针作为函数参数</h5>
+<ul>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251540021.png" alt="image-20220825154050938" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251541135.png" alt="image-20220825154129081" /></p>
+</li>
+<li>
+<p><strong>将指针初始化为 NULL / 0 是一个非常好的习惯</strong><br />
+ int *a = NULL;<br />
+int *b = NULL;</p>
+</li>
+</ul>
+<h4 id="指针与多维数组"><a class="anchor" href="#指针与多维数组">#</a> 指针与多维数组</h4>
+<ul>
+<li><strong>在一维数组中：数组的元素是一个元素 (int,char...)——&gt; 指针 (普通指针) 指向一维数组第一个 (元素的地址)</strong></li>
+<li><strong>在二维数组中：数组的元素是一行一维数组 ——&gt; 指针 (数组指针) 指向二维数组中的第一个一维 (数组的地址)</strong></li>
+</ul>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251625278.png" alt="image-20220825162539217" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251627083.png" alt="image-20220825162700032" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251627494.png" alt="image-20220825162738443" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251628868.png" alt="image-20220825162812808" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251629173.png" alt="image-20220825162924110" /></p>
+<h5 id="注意区分指针数组和数组指针"><a class="anchor" href="#注意区分指针数组和数组指针">#</a> 注意区分指针数组和数组指针</h5>
+<ul>
+<li>
+<p><strong>指针数组：是一个元素为指针的数组</strong></p>
+</li>
+<li>
+<p><strong>数组指针：是一个指向数组的指针</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251712501.png" alt="" /></p>
+</li>
+<li>
+<p><strong>从这里要开始注意</strong></p>
+<ul>
+<li><strong>普通的指针指向数组时，指向的（数组的第一个元素）的地址</strong></li>
+<li><strong>而数组指针指向数组时，指向的是（一个数组）的地址</strong></li>
+</ul>
+<p>int* arr [20];	// 很明显这是一个指针数组 (指针类型的数组)<br />
+ int (*arr)[20];		// 这是一个数组指针，为了方便理解，可以看成：int<a href="*arr">20</a></p>
+</li>
+</ul>
+<h5 id="数组指针移动和取值"><a class="anchor" href="#数组指针移动和取值">#</a> 数组指针移动和取值</h5>
+<ul>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251722489.png" alt="image-20220825172205378" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251723805.png" alt="image-20220825172354700" /></p>
+</li>
+<li>
+<p><strong>指针本身不是地址，但是指针所保存的值是一个地址</strong></p>
+</li>
+<li>
+<p>*<em> 二维数组中的数组指针指向第一行一维数组的地址，对二维数组的第一行一维数组的地址取值 (<em>地址)——&gt; 得到了第一行一维数组</em></em></p>
+<ul>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251736352.png" alt="image-20220825173639300" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251737451.png" alt="image-20220825173701370" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251737557.png" alt="image-20220825173725454" /></p>
+</li>
+<li>
+<p>图中 pInt10 是一个数组指针：指向了第一行数组</p>
+</li>
+<li>
+<p>pInt 是一个普通指针：指向了第一行数组的第一个元素</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="指针访问与下标访问"><a class="anchor" href="#指针访问与下标访问">#</a> 指针访问与下标访问</h5>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251741802.png" alt="image-20220825174144745" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251745518.png" alt="image-20220825174525466" /></p>
+<ul>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208252300994.png" alt="image-20220825174344429" /></p>
+</li>
+<li></li>
+</ul>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251744510.png" alt="image-20220825174432457" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251748868.png" alt="image-20220825174800806" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251748942.png" alt="image-20220825174819884" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251749597.png" alt="image-20220825174942549" /></p>
+<ul>
+<li><strong>所以第二个不能将数组名转换为指向数组首个元素的做法：（&amp; 数组名）——&gt; 这样会取得整个数组的地址（也就是数组指针）</strong></li>
+<li><strong>指针与地址的关系 = 变量名与变量值的关系一样</strong></li>
+<li><strong>大多数情况：认为指针即地址即可</strong></li>
+</ul>
+<h5 id="指针与三位数组"><a class="anchor" href="#指针与三位数组">#</a> 指针与三位数组</h5>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251808826.png" alt="image-20220825180853744" /></p>
+<h5 id="声明器"><a class="anchor" href="#声明器">#</a> 声明器</h5>
+<ul>
+<li>
+<h6 id="数组标识符的声明"><a class="anchor" href="#数组标识符的声明">#</a> 数组标识符的声明</h6>
+</li>
+<li>
+<p><strong>声明与使用的形式一致</strong></p>
+<ul>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251826037.png" alt="image-20220825182605971" /></li>
+</ul>
+</li>
+<li>
+<p><strong>函数声明器</strong></p>
+<ul>
+<li>
+<p><strong>参数名可省略参数名</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251828620.png" alt="image-20220825182838567" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251829820.png" alt="image-20220825182914772" /></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>声明器的中优先级</strong></p>
+<ul>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251830367.png" alt="image-20220825183009287" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251831583.png" alt="image-20220825183111525" /></p>
+<ul>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251845415.png" alt="image-20220825184535364" /></li>
+<li><strong>指针数组：</strong>
+<ol>
+<li><strong>数组方括号优先级第一：——&gt; 首先是一个 (数组)</strong></li>
+<li><strong>指针 * 号优先级第二：——&gt; 这个 (数组) 的元素是 (指针)</strong></li>
+<li><strong>int 优先级第三：——&gt; 这个 (指针) 指向 (int) 类型</strong></li>
+</ol>
+</li>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251852604.png" alt="image-20220825185206553" /></li>
+<li><strong>数组指针：</strong>
+<ol>
+<li><strong>括号内的 * 号优先级第一：——&gt; 首先是一个 (指针)</strong></li>
+<li><strong>数组方括号优先级第二：——&gt; 这个 (指针) 指向 (数组)</strong></li>
+<li><strong>int 优先级第三：——&gt;(数组) 的元素为 (int)</strong></li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p>指针数组指针</p>
+<ul>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251858390.png" alt="image-20220825185821325" /></li>
+</ul>
+</li>
+<li>
+<p>函数指针数组</p>
+<ul>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251900593.png" alt="image-20220825190041541" /></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="函数指针与数组"><a class="anchor" href="#函数指针与数组">#</a> 函数指针与数组</h5>
+<ul>
+<li><strong>函数指针：指向函数的指针</strong></li>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251906672.png" alt="image-20220825190619610" /></li>
+</ul>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251906693.png" alt="image-20220825190636643" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251911666.png" alt="image-20220825191130615" /></p>
+<ul>
+<li>
+<p><strong>两种通过函数指针调用函数的方法</strong></p>
+<ul>
+<li>*<em> 函数指针取值 (<em>指针) 即为函数</em></em></li>
+<li><strong>第二种方法是一种可行的简写：直接将函数指针当做函数使用</strong></li>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251911533.png" alt="image-20220825191159481" /></li>
+</ul>
+</li>
+<li>
+<p><strong>函数指针数组</strong></p>
+<ul>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251916565.png" alt="image-20220825191651510" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251917379.png" alt="image-20220825191725321" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251917996.png" alt="image-20220825191757943" /></p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="字符串和字符指针"><a class="anchor" href="#字符串和字符指针">#</a> 字符串和字符指针</h5>
+<ul>
+<li>
+<p><strong>字符串结束的标志是 数值 0 而不是 字符 '0'</strong></p>
+</li>
+<li>
+<p><strong>为了不让 数值 0 和 字符 '0' 冲突，使用转义字符 \0 表示数值 0</strong></p>
+<ul>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251922338.png" alt="image-20220825192235261" /></p>
+</li>
+<li>
+<p><strong>字符串常量无法被修改</strong></p>
+</li>
+<li>
+<p><strong>数组中的值可以修改 ——&gt; 可以用字符数组来装载字符串，然后修改字符数组中的字符</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251932522.png" alt="image-20220825193213458" /></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>能否正常结尾的字符串（字符串末尾自带结束符 \0）</strong></p>
+<ul>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251928369.png" alt="image-20220825192807290" /></li>
+</ul>
+</li>
+<li>
+<p><strong>字符数组与指针</strong></p>
+<ul>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251933773.png" alt="image-20220825193300708" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251933065.png" alt="image-20220825193322003" /></p>
+</li>
+<li>
+<p><strong>指针 p 为一个移动的游标</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251933327.png" alt="image-20220825193351258" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251934539.png" alt="image-20220825193408468" /></p>
+</li>
+<li>
+<p><strong>错误的写法</strong></p>
+<ul>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251936779.png" alt="image-20220825193637718" /></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>使用指针处理字符串 (字符数组)</strong></p>
+<ul>
+<li><strong>字符串反转：将字符串中首尾对应的元素两两交换</strong></li>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251943399.png" alt="image-20220825194328346" /></li>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251944049.png" alt="image-20220825194407984" /></li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>高级编程语言</category>
+      </categories>
+      <tags>
+        <tag>C语言</tag>
       </tags>
   </entry>
   <entry>
@@ -1971,96 +2078,138 @@ int func(int, int);		//编译器检测到有两个int类型的参数
       </tags>
   </entry>
   <entry>
-    <title>梯度下降</title>
-    <url>/2022/08/29/ti-du-xia-jiang/</url>
-    <content><![CDATA[<h1 id="梯度下降"><a class="anchor" href="#梯度下降">#</a> 梯度下降</h1>
-<h2 id="梯度"><a class="anchor" href="#梯度">#</a> 梯度</h2>
-<ul>
-<li>沿某一点切线方向向上，梯度方向永远是一个上升的方向 (J (θ) 分别对各参数 θ0，θ1... 分别求偏导)</li>
-</ul>
-<h2 id="梯度下降-2"><a class="anchor" href="#梯度下降-2">#</a> 梯度下降</h2>
-<ul>
-<li>沿着梯度最陡的方向下降 = 沿着梯度方向的反方向移动</li>
-</ul>
-<h2 id="梯度下降法"><a class="anchor" href="#梯度下降法">#</a> 梯度下降法</h2>
-<ul>
-<li>沿着当前梯度方向的反方向移动一小步，再重修计算新的梯度，再沿新的梯度方向的反方向移动一小步，不断迭代，直至再最低点左右来回移动，达到饱和状态，损失值趋于稳定</li>
-</ul>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312111435.png" alt="image-20220831211058319" /></p>
-<p>注意这里引进了一个目标函数，与之前的 J (θ) 不一样</p>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312111993.png" alt="image-20220831211128952" /></p>
-<h2 id="批量梯度下降"><a class="anchor" href="#批量梯度下降">#</a> 批量梯度下降</h2>
-<ul>
-<li>θj 是我们初始值 (初始位置)，加上了梯度的反方向，右边是指方向<br />
-随机梯度下降不靠谱</li>
-</ul>
-<h2 id="小批量梯度下降"><a class="anchor" href="#小批量梯度下降">#</a> 小批量梯度下降</h2>
-<ul>
-<li>就是不再选择所有的样本进行计算，选择小部分数据来算，式子中右边依然指方向，但在方向前乘以了一个学习率 α，表示在梯度下降方向移动了那一小步</li>
-</ul>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312112712.png" alt="image-20220831211206666" /></p>
-<h2 id="损失函数loss-function"><a class="anchor" href="#损失函数loss-function">#</a> 损失函数（Loss Function ）</h2>
-<ul>
-<li>损失函数是定义在单个样本上的，算的是一个样本的误差</li>
-</ul>
-<h2 id="代价函数cost-function"><a class="anchor" href="#代价函数cost-function">#</a> 代价函数（Cost Function ）</h2>
-<ul>
-<li>代价函数是定义在整个训练集上的，是所有样本误差的平均，也就是损失函数的平均</li>
-</ul>
-<h2 id="目标函数object-function"><a class="anchor" href="#目标函数object-function">#</a> 目标函数（Object Function）</h2>
-<ul>
-<li>最终需要优化的函数。等于经验风险 + 结构风险（也就是 Cost Function + 正则化项）</li>
-</ul>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312113645.png" alt="image-20220831211331612" /></p>
-<h2 id="scikit-learn"><a class="anchor" href="#scikit-learn">#</a> scikit-learn</h2>
-<ul>
-<li>损失函数：Loss = 1/2 × np.dot (预测值 - 标签值，(预测值 - 标签值.T)）</li>
-<li>代价函数：computeCost (数据特征，数据标签，权重参数)，返回损失函数的平均值</li>
-</ul>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312115891.png" alt="image-20220831211507855" /></p>
+    <title>模型的训练</title>
+    <url>/2022/08/29/mo-xing-de-xun-lian/</url>
+    <content><![CDATA[<h1 id="模型训练"><a class="anchor" href="#模型训练">#</a> 模型训练</h1>
+<h2 id="数据预处理"><a class="anchor" href="#数据预处理">#</a> 数据预处理</h2>
 <ul>
 <li>
-<p>梯度下降函数📉：里面使用了代价函数，返回最后的权重参数 w，和每一次迭代产生的损失值组成的数组。损失函数图像：迭代次数为 x 坐标，损失值为 y 坐标</p>
+<p>初始文件为一个 csv 数据表</p>
 </li>
 <li>
-<p>导入 sklearn 模型：from sklearn.linear_model import Ridge/LinearRegression/Lasso</p>
+<p>每行一个样本，最后一列为标签 label，其它列为特征 data</p>
 </li>
 <li>
-<p>模型实例化：model = LinearRegressin ( )</p>
+<p>添加偏置项权重 w0 对应的 x0，x0 取 1，data.insert (列位置，列标签，数据)<br />
+data.insert(0,&quot;ones&quot;,1)</p>
 </li>
 <li>
-<p>训练模型：model.fit (x_train,y_train)</p>
-</li>
-<li>
-<p>x_train 和 y_train 都是数组或矩阵的类型，不能是 DataFrane</p>
-</li>
-<li>
-<p>DataFrame 转 array：df.values</p>
-</li>
-<li>
-<p>array 转 DataFrame：np.DataFrame (array)</p>
-</li>
-<li>
-<p>用训练好的模型预测 y_predict = model.predict (data_test)</p>
-</li>
-<li>
-<p>画回归图像</p>
+<p>将数据特征和数据标签划分开</p>
 <ul>
+<li>列数 cols = data.shape [1], 行数 row = data.shape [0]</li>
+<li>x = data.iloc[:,0:cols-1]</li>
+<li>y = data.iloc[:,-1:]</li>
+<li></li>
+</ul>
+<p>调用 sklearn 即可</p>
+</li>
+<li>
+<p>初始化权重参数：w = np.matrix (np.array ([w0,w1,w2...]))，全部取 0</p>
+</li>
+<li>
+<p>若要画损失函数：需要调用梯度下降函数，将 (x，y，w) 传入，且 x，y，w 必须是矩阵形式才能正常运算<br />
+ x.values,y.values<br />
+x 和 y 从数据表中分割出来的时候都是 DataFrame 类型，去 df.values 将其数组化<br />
+ x = np.matrix (x.values)<br />
+y = np.matrix(y.values)</p>
+</li>
+</ul>
+<h2 id="模型的训练与使用"><a class="anchor" href="#模型的训练与使用">#</a> 模型的训练与使用</h2>
+<ul>
+<li>
+<p>定义 学习率 α，迭代次数 iters</p>
+</li>
+<li>
+<p>初始化模型</p>
+<ul>
+<li>model = LinearRegression (训练数据特征 data，训练标签 label)</li>
+</ul>
+</li>
+<li>
+<p>预测函数</p>
+<ul>
+<li>model.predict = np.dot (。数据特征 data，初始权重参数 w)</li>
+</ul>
+</li>
+<li>
+<p>更新权重参数 (公式)</p>
+<ul>
+<li>w = w-α×(1 / 样本数量）× np.dot ((预测值 - 真实值).T, 数据特征 data）</li>
+</ul>
+</li>
+<li>
+<p>损失函数</p>
+<ul>
+<li>Loss = 1/2 × np.dot (预测值 - 标签值，(预测值 - 标签值.T)）</li>
+</ul>
+</li>
+<li>
+<p>梯度下降函数</p>
+<ul>
+<li>w , Loss = gradient_descent(α，iters)</li>
+</ul>
+</li>
+<li>
+<p>损失函数（Loss Function ）</p>
+<ul>
+<li>定义在单个样本上的，算的是一个样本的误差</li>
+</ul>
+</li>
+<li>
+<p>代价函数（Cost Function ）</p>
+<ul>
+<li>定义在整个训练集上的，是所有样本误差的平均，也就是损失函数的平均。</li>
+</ul>
+</li>
+<li>
+<p>目标函数（Object Function）</p>
+<ul>
+<li>定义为：最终需要优化的函数。等于经验风险 + 结构风险（也就是 Cost Function + 正则化项）</li>
+</ul>
+</li>
+<li>
+<p>损失函数：Loss = 1/2 × np.dot (预测值 - 标签值，(预测值 - 标签值.T)）</p>
+</li>
+<li>
+<p>代价函数：computeCost (数据特征，数据标签，权重参数)，返回损失函数平均值</p>
+<ul>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312252720.png" alt="" /></li>
+</ul>
+</li>
+<li>
+<p>梯度下降函数📉：里面使用了代价函数，返回最后的权重参数 w，和每一次迭代产生的损失值组成的数组</p>
+<ul>
+<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312252822.png" alt="image-20220831225226786" /></li>
+</ul>
+</li>
+<li>
+<p>损失函数图像：迭代次数为 x 坐标，损失值为 y 坐标</p>
+</li>
+</ul>
+<ol>
+<li>导入 sklearn 模型：from sklearn.linear_model import Ridge/LinearRegression/Lasso</li>
+<li>模型实例化：model = LinearRegressin ( )</li>
+<li>训练模型：model.fit (x_train,y_train)</li>
+</ol>
+<ul>
+<li><strong>模型只对数组或矩阵进行运算</strong></li>
+<li><strong>x_train 和 y_train 都是数组或矩阵的类型，不能是 DataFrane</strong></li>
+</ul>
+<ol start="4">
+<li>训练完之后，模型得到了一组新的权重参数，然后我们带入数据特征 (数组或矩阵形式) 就可对其进行预测标签🏷</li>
+</ol>
+<ul>
+<li><strong>DataFrame 转 array：df.values</strong></li>
+<li><strong>array 转 DataFrame：np.DataFrame (array)</strong></li>
+</ul>
+<ol start="5">
+<li>用训练好的模型预测 y_predict = model.predict (data_test)</li>
+<li>画回归图像</li>
 <li>设置 x 坐标 (一般是 data_test 数据特征的测试集)，可以取全部都数据特征 data</li>
 <li>设置 y 坐标 (y_predicr (刚刚设置的 x 坐标))</li>
-</ul>
-</li>
-<li>
-<p>画图<br />
- fig = plt.figure (figsize = (width,height))<br />
-ax = fig.add_subplot()<br />
- ax.scatter (第一列特征 x1，标签 y，label = 特征名 1)<br />
- ax.scatter (第二列特征 x2，标签 y，label = 特征名 2)<br />
- plt.plot (选取好的 x 坐标，预测好的 y 坐标，label = 预测函数)<br />
- plt.title/xlabel/ylabel (&quot;名称&quot;,fontsize= 20)<br />
- plt.legend (loc = (0–10 的数字表示图例不同位置),fontsize = 20)</p>
-</li>
-</ul>
+</ol>
+<h2 id="画图"><a class="anchor" href="#画图">#</a> 画图</h2>
+<p><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">fig = plt.figure(figsize = (width,height))</span><br><span class="line"></span><br><span class="line">ax = fig.add_subplot()</span><br><span class="line"></span><br><span class="line">ax.scatter(第一列特征x1，标签y，label = 特征名<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">ax.scatter(第二列特征x2，标签y，label = 特征名<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">plt.plot(选取好的x坐标，预测好的y坐标，label = 预测函数)</span><br><span class="line"></span><br><span class="line">plt.title/xlabel/ylabel(<span class="string">&quot;名称&quot;</span>,fontsize= <span class="number">20</span>)</span><br><span class="line"></span><br><span class="line">plt.legend(loc = (<span class="string">&quot;0–10的数字表示图例不同位置&quot;</span>),fontsize = <span class="number">20</span>)</span><br></pre></td></tr></table></figure></p>
 ]]></content>
       <categories>
         <category>统计学习方法</category>
@@ -2564,200 +2713,94 @@ ax = fig.add_subplot()<br />
       </tags>
   </entry>
   <entry>
-    <title>模型的训练</title>
-    <url>/2022/08/29/mo-xing-de-xun-lian/</url>
-    <content><![CDATA[<h1 id="模型训练"><a class="anchor" href="#模型训练">#</a> 模型训练</h1>
-<h2 id="数据预处理"><a class="anchor" href="#数据预处理">#</a> 数据预处理</h2>
+    <title>梯度下降</title>
+    <url>/2022/08/29/ti-du-xia-jiang/</url>
+    <content><![CDATA[<h1 id="梯度下降"><a class="anchor" href="#梯度下降">#</a> 梯度下降</h1>
+<h2 id="梯度"><a class="anchor" href="#梯度">#</a> 梯度</h2>
+<ul>
+<li>沿某一点切线方向向上，梯度方向永远是一个上升的方向 (J (θ) 分别对各参数 θ0，θ1... 分别求偏导)</li>
+</ul>
+<h2 id="梯度下降-2"><a class="anchor" href="#梯度下降-2">#</a> 梯度下降</h2>
+<ul>
+<li>沿着梯度最陡的方向下降 = 沿着梯度方向的反方向移动</li>
+</ul>
+<h2 id="梯度下降法"><a class="anchor" href="#梯度下降法">#</a> 梯度下降法</h2>
+<ul>
+<li>沿着当前梯度方向的反方向移动一小步，再重修计算新的梯度，再沿新的梯度方向的反方向移动一小步，不断迭代，直至再最低点左右来回移动，达到饱和状态，损失值趋于稳定</li>
+</ul>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312111435.png" alt="image-20220831211058319" /></p>
+<p>注意这里引进了一个目标函数，与之前的 J (θ) 不一样</p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312111993.png" alt="image-20220831211128952" /></p>
+<h2 id="批量梯度下降"><a class="anchor" href="#批量梯度下降">#</a> 批量梯度下降</h2>
+<ul>
+<li>θj 是我们初始值 (初始位置)，加上了梯度的反方向，右边是指方向<br />
+随机梯度下降不靠谱</li>
+</ul>
+<h2 id="小批量梯度下降"><a class="anchor" href="#小批量梯度下降">#</a> 小批量梯度下降</h2>
+<ul>
+<li>就是不再选择所有的样本进行计算，选择小部分数据来算，式子中右边依然指方向，但在方向前乘以了一个学习率 α，表示在梯度下降方向移动了那一小步</li>
+</ul>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312112712.png" alt="image-20220831211206666" /></p>
+<h2 id="损失函数loss-function"><a class="anchor" href="#损失函数loss-function">#</a> 损失函数（Loss Function ）</h2>
+<ul>
+<li>损失函数是定义在单个样本上的，算的是一个样本的误差</li>
+</ul>
+<h2 id="代价函数cost-function"><a class="anchor" href="#代价函数cost-function">#</a> 代价函数（Cost Function ）</h2>
+<ul>
+<li>代价函数是定义在整个训练集上的，是所有样本误差的平均，也就是损失函数的平均</li>
+</ul>
+<h2 id="目标函数object-function"><a class="anchor" href="#目标函数object-function">#</a> 目标函数（Object Function）</h2>
+<ul>
+<li>最终需要优化的函数。等于经验风险 + 结构风险（也就是 Cost Function + 正则化项）</li>
+</ul>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312113645.png" alt="image-20220831211331612" /></p>
+<h2 id="scikit-learn"><a class="anchor" href="#scikit-learn">#</a> scikit-learn</h2>
+<ul>
+<li>损失函数：Loss = 1/2 × np.dot (预测值 - 标签值，(预测值 - 标签值.T)）</li>
+<li>代价函数：computeCost (数据特征，数据标签，权重参数)，返回损失函数的平均值</li>
+</ul>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312115891.png" alt="image-20220831211507855" /></p>
 <ul>
 <li>
-<p>初始文件为一个 csv 数据表</p>
+<p>梯度下降函数📉：里面使用了代价函数，返回最后的权重参数 w，和每一次迭代产生的损失值组成的数组。损失函数图像：迭代次数为 x 坐标，损失值为 y 坐标</p>
 </li>
 <li>
-<p>每行一个样本，最后一列为标签 label，其它列为特征 data</p>
+<p>导入 sklearn 模型：from sklearn.linear_model import Ridge/LinearRegression/Lasso</p>
 </li>
 <li>
-<p>添加偏置项权重 w0 对应的 x0，x0 取 1，data.insert (列位置，列标签，数据)<br />
-data.insert(0,&quot;ones&quot;,1)</p>
+<p>模型实例化：model = LinearRegressin ( )</p>
 </li>
 <li>
-<p>将数据特征和数据标签划分开</p>
+<p>训练模型：model.fit (x_train,y_train)</p>
+</li>
+<li>
+<p>x_train 和 y_train 都是数组或矩阵的类型，不能是 DataFrane</p>
+</li>
+<li>
+<p>DataFrame 转 array：df.values</p>
+</li>
+<li>
+<p>array 转 DataFrame：np.DataFrame (array)</p>
+</li>
+<li>
+<p>用训练好的模型预测 y_predict = model.predict (data_test)</p>
+</li>
+<li>
+<p>画回归图像</p>
 <ul>
-<li>列数 cols = data.shape [1], 行数 row = data.shape [0]</li>
-<li>x = data.iloc[:,0:cols-1]</li>
-<li>y = data.iloc[:,-1:]</li>
-<li></li>
-</ul>
-<p>调用 sklearn 即可</p>
-</li>
-<li>
-<p>初始化权重参数：w = np.matrix (np.array ([w0,w1,w2...]))，全部取 0</p>
-</li>
-<li>
-<p>若要画损失函数：需要调用梯度下降函数，将 (x，y，w) 传入，且 x，y，w 必须是矩阵形式才能正常运算<br />
- x.values,y.values<br />
-x 和 y 从数据表中分割出来的时候都是 DataFrame 类型，去 df.values 将其数组化<br />
- x = np.matrix (x.values)<br />
-y = np.matrix(y.values)</p>
-</li>
-</ul>
-<h2 id="模型的训练与使用"><a class="anchor" href="#模型的训练与使用">#</a> 模型的训练与使用</h2>
-<ul>
-<li>
-<p>定义 学习率 α，迭代次数 iters</p>
-</li>
-<li>
-<p>初始化模型</p>
-<ul>
-<li>model = LinearRegression (训练数据特征 data，训练标签 label)</li>
-</ul>
-</li>
-<li>
-<p>预测函数</p>
-<ul>
-<li>model.predict = np.dot (。数据特征 data，初始权重参数 w)</li>
-</ul>
-</li>
-<li>
-<p>更新权重参数 (公式)</p>
-<ul>
-<li>w = w-α×(1 / 样本数量）× np.dot ((预测值 - 真实值).T, 数据特征 data）</li>
-</ul>
-</li>
-<li>
-<p>损失函数</p>
-<ul>
-<li>Loss = 1/2 × np.dot (预测值 - 标签值，(预测值 - 标签值.T)）</li>
-</ul>
-</li>
-<li>
-<p>梯度下降函数</p>
-<ul>
-<li>w , Loss = gradient_descent(α，iters)</li>
-</ul>
-</li>
-<li>
-<p>损失函数（Loss Function ）</p>
-<ul>
-<li>定义在单个样本上的，算的是一个样本的误差</li>
-</ul>
-</li>
-<li>
-<p>代价函数（Cost Function ）</p>
-<ul>
-<li>定义在整个训练集上的，是所有样本误差的平均，也就是损失函数的平均。</li>
-</ul>
-</li>
-<li>
-<p>目标函数（Object Function）</p>
-<ul>
-<li>定义为：最终需要优化的函数。等于经验风险 + 结构风险（也就是 Cost Function + 正则化项）</li>
-</ul>
-</li>
-<li>
-<p>损失函数：Loss = 1/2 × np.dot (预测值 - 标签值，(预测值 - 标签值.T)）</p>
-</li>
-<li>
-<p>代价函数：computeCost (数据特征，数据标签，权重参数)，返回损失函数平均值</p>
-<ul>
-<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312252720.png" alt="" /></li>
-</ul>
-</li>
-<li>
-<p>梯度下降函数📉：里面使用了代价函数，返回最后的权重参数 w，和每一次迭代产生的损失值组成的数组</p>
-<ul>
-<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202208312252822.png" alt="image-20220831225226786" /></li>
-</ul>
-</li>
-<li>
-<p>损失函数图像：迭代次数为 x 坐标，损失值为 y 坐标</p>
-</li>
-</ul>
-<ol>
-<li>导入 sklearn 模型：from sklearn.linear_model import Ridge/LinearRegression/Lasso</li>
-<li>模型实例化：model = LinearRegressin ( )</li>
-<li>训练模型：model.fit (x_train,y_train)</li>
-</ol>
-<ul>
-<li><strong>模型只对数组或矩阵进行运算</strong></li>
-<li><strong>x_train 和 y_train 都是数组或矩阵的类型，不能是 DataFrane</strong></li>
-</ul>
-<ol start="4">
-<li>训练完之后，模型得到了一组新的权重参数，然后我们带入数据特征 (数组或矩阵形式) 就可对其进行预测标签🏷</li>
-</ol>
-<ul>
-<li><strong>DataFrame 转 array：df.values</strong></li>
-<li><strong>array 转 DataFrame：np.DataFrame (array)</strong></li>
-</ul>
-<ol start="5">
-<li>用训练好的模型预测 y_predict = model.predict (data_test)</li>
-<li>画回归图像</li>
 <li>设置 x 坐标 (一般是 data_test 数据特征的测试集)，可以取全部都数据特征 data</li>
 <li>设置 y 坐标 (y_predicr (刚刚设置的 x 坐标))</li>
-</ol>
-<h2 id="画图"><a class="anchor" href="#画图">#</a> 画图</h2>
-<p><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">fig = plt.figure(figsize = (width,height))</span><br><span class="line"></span><br><span class="line">ax = fig.add_subplot()</span><br><span class="line"></span><br><span class="line">ax.scatter(第一列特征x1，标签y，label = 特征名<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">ax.scatter(第二列特征x2，标签y，label = 特征名<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">plt.plot(选取好的x坐标，预测好的y坐标，label = 预测函数)</span><br><span class="line"></span><br><span class="line">plt.title/xlabel/ylabel(<span class="string">&quot;名称&quot;</span>,fontsize= <span class="number">20</span>)</span><br><span class="line"></span><br><span class="line">plt.legend(loc = (<span class="string">&quot;0–10的数字表示图例不同位置&quot;</span>),fontsize = <span class="number">20</span>)</span><br></pre></td></tr></table></figure></p>
-]]></content>
-      <categories>
-        <category>统计学习方法</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>线性回归</title>
-    <url>/2022/08/29/xian-xing-hui-gui/</url>
-    <content><![CDATA[<h1 id="线性回归"><a class="anchor" href="#线性回归">#</a> 线性回归</h1>
-<ul>
-<li>数据：特征（x1,x2）一般是二维数据表 (矩阵) 中除了最后一列以外的所有列。</li>
-<li>目标：标签（y）一般是二维数据表 (矩阵) 中的最后一列。</li>
-<li>回归方程：y (x) = w1<em>x1+w2</em>x2</li>
-<li>核心目标：求解出什么样子的 w1，w2 最合适。</li>
 </ul>
-<ol>
-<li>我们的线性方程可能并不能拟合所有的数据点，则要尽可能满足多的数据点（找到最合适的一条线（平面）来最好地拟合数据点）</li>
-<li>添加一个偏置项 w0（w0 不是权重）</li>
-<li>拟合的平面：h (x) = w0+w1<em>x1+w2</em>x2</li>
-</ol>
-<ul>
-<li>
-<p>我们的操作都是对矩阵做操作，由于我们新构建了一个新的偏置项 w0，导致多余出来一项 ——&gt; 无法将其转换为矩阵的表达，所以我们要给数据列也新添加一列 x0，而且 x0 这一整列都为 1，所以 w0*x0 并不会改变偏置 项 w0。</p>
 </li>
 <li>
-<p>在数据中添加一列 1 (x0)，总而言之就是为了让数据转换成矩阵 ——&gt; 方便运算<br />
-整合之后 h (x) = 累加 (0~n)[w*x]<br />
- 误差 每个样本真实值和我们线性方程的预测值之间肯定会存在差异，切每个样本的差异并不相同，用 ε(i) 表示。</p>
-</li>
-<li>
-<p>y [真实值]=h (x)[线性方程]+ε(i)</p>
-</li>
-</ul>
-<h2 id="机器学习总结"><a class="anchor" href="#机器学习总结">#</a> 机器学习总结</h2>
-<ol>
-<li>给机器数据一堆 data</li>
-<li>告诉目标一个目标 (函数)</li>
-<li>让机器去学习什么样的参数能够最符合我们的目标，我们的目标 是希望误差 ε(i) 越小越好：预测值越接近真实值</li>
-</ol>
-<ul>
-<li><strong>误差 ε(i)</strong>
-<ul>
-<li>每个误差 (i=1，2，3...，n) 是独立同分布并且服从均值为 0 方差为 θ² 的高斯分布</li>
-</ul>
-</li>
-<li><strong>独立</strong>
-<ul>
-<li>每个样本的误差之间都没有关系 (所以拿到一组数据后首先要对其进行打乱 shuffer)</li>
-</ul>
-</li>
-<li><strong>同分布</strong>：
-<ul>
-<li>数据尽可能都来自相同的分布</li>
-</ul>
-</li>
-<li><strong>高斯分布 (正态分布)</strong>
-<ul>
-<li>有的多，有的少，均值为 0，且浮动不会太大，只有极小情况下有浮动过大</li>
-</ul>
+<p>画图<br />
+ fig = plt.figure (figsize = (width,height))<br />
+ax = fig.add_subplot()<br />
+ ax.scatter (第一列特征 x1，标签 y，label = 特征名 1)<br />
+ ax.scatter (第二列特征 x2，标签 y，label = 特征名 2)<br />
+ plt.plot (选取好的 x 坐标，预测好的 y 坐标，label = 预测函数)<br />
+ plt.title/xlabel/ylabel (&quot;名称&quot;,fontsize= 20)<br />
+ plt.legend (loc = (0–10 的数字表示图例不同位置),fontsize = 20)</p>
 </li>
 </ul>
 ]]></content>
@@ -3098,6 +3141,70 @@ i 帽和 j 帽一般为：i 帽 (1,0) T 和 j 帽 (0,1) T<br />
       </categories>
       <tags>
         <tag>线性代数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>线性回归</title>
+    <url>/2022/08/29/xian-xing-hui-gui/</url>
+    <content><![CDATA[<h1 id="线性回归"><a class="anchor" href="#线性回归">#</a> 线性回归</h1>
+<ul>
+<li>数据：特征（x1,x2）一般是二维数据表 (矩阵) 中除了最后一列以外的所有列。</li>
+<li>目标：标签（y）一般是二维数据表 (矩阵) 中的最后一列。</li>
+<li>回归方程：y (x) = w1<em>x1+w2</em>x2</li>
+<li>核心目标：求解出什么样子的 w1，w2 最合适。</li>
+</ul>
+<ol>
+<li>我们的线性方程可能并不能拟合所有的数据点，则要尽可能满足多的数据点（找到最合适的一条线（平面）来最好地拟合数据点）</li>
+<li>添加一个偏置项 w0（w0 不是权重）</li>
+<li>拟合的平面：h (x) = w0+w1<em>x1+w2</em>x2</li>
+</ol>
+<ul>
+<li>
+<p>我们的操作都是对矩阵做操作，由于我们新构建了一个新的偏置项 w0，导致多余出来一项 ——&gt; 无法将其转换为矩阵的表达，所以我们要给数据列也新添加一列 x0，而且 x0 这一整列都为 1，所以 w0*x0 并不会改变偏置 项 w0。</p>
+</li>
+<li>
+<p>在数据中添加一列 1 (x0)，总而言之就是为了让数据转换成矩阵 ——&gt; 方便运算<br />
+整合之后 h (x) = 累加 (0~n)[w*x]<br />
+ 误差 每个样本真实值和我们线性方程的预测值之间肯定会存在差异，切每个样本的差异并不相同，用 ε(i) 表示。</p>
+</li>
+<li>
+<p>y [真实值]=h (x)[线性方程]+ε(i)</p>
+</li>
+</ul>
+<h2 id="机器学习总结"><a class="anchor" href="#机器学习总结">#</a> 机器学习总结</h2>
+<ol>
+<li>给机器数据一堆 data</li>
+<li>告诉目标一个目标 (函数)</li>
+<li>让机器去学习什么样的参数能够最符合我们的目标，我们的目标 是希望误差 ε(i) 越小越好：预测值越接近真实值</li>
+</ol>
+<ul>
+<li><strong>误差 ε(i)</strong>
+<ul>
+<li>每个误差 (i=1，2，3...，n) 是独立同分布并且服从均值为 0 方差为 θ² 的高斯分布</li>
+</ul>
+</li>
+<li><strong>独立</strong>
+<ul>
+<li>每个样本的误差之间都没有关系 (所以拿到一组数据后首先要对其进行打乱 shuffer)</li>
+</ul>
+</li>
+<li><strong>同分布</strong>：
+<ul>
+<li>数据尽可能都来自相同的分布</li>
+</ul>
+</li>
+<li><strong>高斯分布 (正态分布)</strong>
+<ul>
+<li>有的多，有的少，均值为 0，且浮动不会太大，只有极小情况下有浮动过大</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>统计学习方法</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
