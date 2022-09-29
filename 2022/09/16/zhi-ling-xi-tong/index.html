@@ -27,12 +27,12 @@
   <meta name="keywords" content="Python" />
 
 
-<link rel="canonical" href="https://yn-xs.github.io/2022/08/30/python-ji-suan-ji-er-ji/">
+<link rel="canonical" href="https://yn-xs.github.io/2022/09/16/zhi-ling-xi-tong/">
 
 
 
   <title>
-计算机原理 - 计算机知识 |
+指令系统 - 计算机原理 |
 Tea House = 心释的茶社 = 欢迎来到心释的茶社</title>
 <meta name="generator" content="Hexo 6.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -53,16 +53,16 @@ Tea House = 心释的茶社 = 欢迎来到心释的茶社</title>
         <div id="brand">
           <div class="pjax">
           
-  <h1 itemprop="name headline">计算机原理
+  <h1 itemprop="name headline">指令系统
   </h1>
   
 <div class="meta">
-  <span class="item" title="创建时间：2022-08-30 10:26:36">
+  <span class="item" title="创建时间：2022-09-16 10:26:36">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
     <span class="text">发表于</span>
-    <time itemprop="dateCreated datePublished" datetime="2022-08-30T10:26:36+08:00">2022-08-30</time>
+    <time itemprop="dateCreated datePublished" datetime="2022-09-16T10:26:36+08:00">2022-09-16</time>
   </span>
 </div>
 
@@ -95,12 +95,12 @@ Tea House = 心释的茶社 = 欢迎来到心释的茶社</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giph4lm9i7j20zk0m84qp.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giciundwu5j20zk0m8n9e.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicitzannuj20zk0m8b29.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicm0n457cj20zk0m8e81.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclip4jbpj20zk0m87cv.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipeuibk9fj20zk0m8ay2.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipewf5l51j20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giciuv0socj20zk0m8qes.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipevuctzzj20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gicitcxhpij20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gicli9lfebj20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gicli3sbvtj20zk0m8x6p.jpg"></li>
         </ul>
       </div>
     
@@ -128,12 +128,12 @@ Tea House = 心释的茶社 = 欢迎来到心释的茶社</title>
 <div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
 <i class="ic i-home"></i>
 <span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
-<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/D/" itemprop="item" rel="index" title="分类于 计算机知识"><span itemprop="name">计算机知识</span></a>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/D/" itemprop="item" rel="index" title="分类于 计算机原理"><span itemprop="name">计算机原理</span></a>
 <meta itemprop="position" content="1" /></span>
 </div>
 
     <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
-  <link itemprop="mainEntityOfPage" href="https://yn-xs.github.io/2022/08/30/python-ji-suan-ji-er-ji/">
+  <link itemprop="mainEntityOfPage" href="https://yn-xs.github.io/2022/09/16/zhi-ling-xi-tong/">
 
   <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="image" content="/images/avatar.jpg">
@@ -148,7 +148,69 @@ Tea House = 心释的茶社 = 欢迎来到心释的茶社</title>
   <div class="body md" itemprop="articleBody">
     
 
-    
+    <h1 id="指令系统"><a class="anchor" href="#指令系统">#</a> 指令系统</h1>
+<h2 id="指令定义"><a class="anchor" href="#指令定义">#</a> 指令定义</h2>
+<ul>
+<li>指令又称机器指令</li>
+<li>指令是计算机执行某种操作的命令，是计算机运行的最小功能单位</li>
+<li>一台计算机中所有指令的集合构成了该机的指令系统，也称指令集</li>
+<li>高级语言与机器语言 (指令)
+<ul>
+<li>高级语言的语法相同，可以在不同计算机中使用。</li>
+<li>指令是机器语言，直接指导硬件进行工作，硬件在设计上往往不同</li>
+<li>所以一台计算机只能执行自己的指令系统的指令</li>
+</ul>
+</li>
+</ul>
+<h2 id="指令格式"><a class="anchor" href="#指令格式">#</a> 指令格式</h2>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/study_imgs/202209171704961.png" alt="image-20220917170436714" /></p>
+<h4 id="操作码指出指令中该指令应该执行什么性质的操作和具有何种功能"><a class="anchor" href="#操作码指出指令中该指令应该执行什么性质的操作和具有何种功能">#</a> 操作码：指出指令中该指令应该执行什么性质的操作和具有何种功能。</h4>
+<h4 id="地址码给出被操作的信息指令或数据的地址"><a class="anchor" href="#地址码给出被操作的信息指令或数据的地址">#</a> 地址码：给出被操作的信息（指令或数据）的地址。</h4>
+<p>每条指令的操作码绝对不可以重复</p>
+<ul>
+<li>每条指令对应不同的操作码（类似于 id 字段，不可重复，具有标识性）</li>
+</ul>
+<p>####　指令字长度 (指令字长)</p>
+<ul>
+<li>指令字长：一条指令中所包含的二进制数</li>
+<li>定长指令系统</li>
+<li>变长指令系统</li>
+<li>指令字长越长，地址码长度越长，可直接寻址的空间范围越大</li>
+<li>指令字长越长，占用空间越大，取指令越慢</li>
+</ul>
+<h4 id="指令地址码"><a class="anchor" href="#指令地址码">#</a> 指令地址码</h4>
+<ul>
+<li>三地址指令</li>
+<li>二地址指令</li>
+<li>单地址指令</li>
+<li>零地址指令</li>
+</ul>
+<h4 id="指令操作码"><a class="anchor" href="#指令操作码">#</a> 指令操作码</h4>
+<ul>
+<li>定长操作码</li>
+<li>变长操作码</li>
+</ul>
+<h3 id="总结"><a class="anchor" href="#总结">#</a> 总结</h3>
+<p>指令长度 &gt;= 操作码位数 + 总地址码位数</p>
+<ul>
+<li>指令条数 &lt;= pow (2, 操作码位数)
+<ul>
+<li>如 16 条指令，必须有四位操作码才能容纳，pow (2,4)=16，四位二进制码刚好有 16 种组合方式，用于表示 16 条指令</li>
+<li>因为每条指令的操作码都不能重复</li>
+</ul>
+</li>
+</ul>
+<p>扩展码</p>
+<ul>
+<li>三地址码，二地址码等。。。</li>
+<li>三地址码的操作码长度 &lt; 二地址码长度</li>
+<li>三地址码的操作码不能被二进制码所重复，只能用三地址码剩余的状态，若没有剩余状态，则无法设计二地址码（因为不能重复）</li>
+</ul>
+<h2 id="指令寻址方式"><a class="anchor" href="#指令寻址方式">#</a> 指令寻址方式</h2>
+<h2 id="指令的设计"><a class="anchor" href="#指令的设计">#</a> 指令的设计</h2>
+<h3 id="cisc"><a class="anchor" href="#cisc">#</a> CISC</h3>
+<h3 id="risc"><a class="anchor" href="#risc">#</a> RISC</h3>
+
       <div class="tags">
           <a href="/tags/Python/" rel="tag"><i class="ic i-tag"></i> Python</a>
       </div>
@@ -162,7 +224,7 @@ Tea House = 心释的茶社 = 欢迎来到心释的茶社</title>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2022-09-17 16:28:31" itemprop="dateModified" datetime="2022-09-17T16:28:31+08:00">2022-09-17</time>
+    <time title="修改时间：2022-09-17 20:56:19" itemprop="dateModified" datetime="2022-09-17T20:56:19+08:00">2022-09-17</time>
   </span>
 </div>
 
@@ -193,7 +255,7 @@ Tea House = 心释的茶社 = 欢迎来到心释的茶社</title>
   </li>
   <li class="link">
     <strong>本文链接：</strong>
-    <a href="https://yn-xs.github.io/2022/08/30/python-ji-suan-ji-er-ji/" title="计算机原理">https://yn-xs.github.io/2022/08/30/python-ji-suan-ji-er-ji/</a>
+    <a href="https://yn-xs.github.io/2022/09/16/zhi-ling-xi-tong/" title="指令系统">https://yn-xs.github.io/2022/09/16/zhi-ling-xi-tong/</a>
   </li>
   <li class="license">
     <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
@@ -212,7 +274,7 @@ Tea House = 心释的茶社 = 欢迎来到心释的茶社</title>
     <div class="item left">
       
 
-  <a href="/2022/08/29/mo-xing-de-xun-lian/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipexe4oykj20zk0m87ji.jpg" title="模型的训练">
+  <a href="/2022/08/29/mo-xing-de-xun-lian/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicm0n457cj20zk0m8e81.jpg" title="模型的训练">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> 统计学习方法</span>
   <h3>模型的训练</h3>
@@ -236,10 +298,11 @@ Tea House = 心释的茶社 = 欢迎来到心释的茶社</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.</span> <span class="toc-text"> 指令系统</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E5%AE%9A%E4%B9%89"><span class="toc-number">1.1.</span> <span class="toc-text"> 指令定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.2.</span> <span class="toc-text"> 指令格式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%A0%81%E6%8C%87%E5%87%BA%E6%8C%87%E4%BB%A4%E4%B8%AD%E8%AF%A5%E6%8C%87%E4%BB%A4%E5%BA%94%E8%AF%A5%E6%89%A7%E8%A1%8C%E4%BB%80%E4%B9%88%E6%80%A7%E8%B4%A8%E7%9A%84%E6%93%8D%E4%BD%9C%E5%92%8C%E5%85%B7%E6%9C%89%E4%BD%95%E7%A7%8D%E5%8A%9F%E8%83%BD"><span class="toc-number">1.2.0.1.</span> <span class="toc-text"> 操作码：指出指令中该指令应该执行什么性质的操作和具有何种功能。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%B0%E5%9D%80%E7%A0%81%E7%BB%99%E5%87%BA%E8%A2%AB%E6%93%8D%E4%BD%9C%E7%9A%84%E4%BF%A1%E6%81%AF%E6%8C%87%E4%BB%A4%E6%88%96%E6%95%B0%E6%8D%AE%E7%9A%84%E5%9C%B0%E5%9D%80"><span class="toc-number">1.2.0.2.</span> <span class="toc-text"> 地址码：给出被操作的信息（指令或数据）的地址。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E5%9C%B0%E5%9D%80%E7%A0%81"><span class="toc-number">1.2.0.3.</span> <span class="toc-text"> 指令地址码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E6%93%8D%E4%BD%9C%E7%A0%81"><span class="toc-number">1.2.0.4.</span> <span class="toc-text"> 指令操作码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F"><span class="toc-number">1.3.</span> <span class="toc-text"> 指令寻址方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.4.</span> <span class="toc-text"> 指令的设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#cisc"><span class="toc-number">1.4.1.</span> <span class="toc-text"> CISC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#risc"><span class="toc-number">1.4.2.</span> <span class="toc-text"> RISC</span></a></li></ol></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li class="active"><a href="/2022/08/30/python-ji-suan-ji-er-ji/" rel="bookmark" title="计算机原理">计算机原理</a></li>
+          <li class="active"><a href="/2022/09/16/zhi-ling-xi-tong/" rel="bookmark" title="指令系统">指令系统</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -349,80 +412,10 @@ Tea House = 心释的茶社 = 欢迎来到心释的茶社</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/C/" title="分类于 个人随笔">个人随笔</a>
-</div>
-
-    <span><a href="/2022/08/22/hello-world/" title="Hello World">Hello World</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/B/" title="分类于 高级编程语言">高级编程语言</a>
-</div>
-
-    <span><a href="/2022/08/26/c-yu-yan-ji-chu-er/" title="C语言基础二">C语言基础二</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 <a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
 </div>
 
-    <span><a href="/2022/08/29/bei-xie-si-suan-fa/" title="贝叶斯算法">贝叶斯算法</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/B/" title="分类于 高级编程语言">高级编程语言</a>
-</div>
-
-    <span><a href="/2022/08/25/c-yu-yan-ji-chu-yi/" title="C语言基础一">C语言基础一</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
-</div>
-
-    <span><a href="/2022/08/29/knn-suan-fa/" title="KNN算法">KNN算法</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
-</div>
-
-    <span><a href="/2022/08/27/xian-xing-dai-shu-ji-chu/" title="线性代数基础">线性代数基础</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
-</div>
-
-    <span><a href="/2022/08/29/xian-xing-hui-gui/" title="线性回归">线性回归</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
-</div>
-
-    <span><a href="/2022/08/28/xian-xing-dai-shu-jin-jie/" title="线性代数进阶">线性代数进阶</a></span>
+    <span><a href="/2022/08/29/ju-lei-suan-fa/" title="聚类算法">聚类算法</a></span>
   </li>
 
       
@@ -442,7 +435,77 @@ Tea House = 心释的茶社 = 欢迎来到心释的茶社</title>
 <a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
 </div>
 
+    <span><a href="/2022/08/29/ti-du-xia-jiang/" title="梯度下降">梯度下降</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
+</div>
+
+    <span><a href="/2022/08/28/xian-xing-dai-shu-jin-jie/" title="线性代数进阶">线性代数进阶</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
+</div>
+
     <span><a href="/2022/08/29/jue-ce-shu-suan-fa/" title="决策树算法">决策树算法</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/B/" title="分类于 高级编程语言">高级编程语言</a>
+</div>
+
+    <span><a href="/2022/08/26/c-yu-yan-ji-chu-er/" title="C语言基础二">C语言基础二</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
+</div>
+
+    <span><a href="/2022/08/29/knn-suan-fa/" title="KNN算法">KNN算法</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
+</div>
+
+    <span><a href="/2022/08/29/bei-xie-si-suan-fa/" title="贝叶斯算法">贝叶斯算法</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
+</div>
+
+    <span><a href="/2022/08/29/xian-xing-hui-gui/" title="线性回归">线性回归</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
+</div>
+
+    <span><a href="/2022/08/27/xian-xing-dai-shu-ji-chu/" title="线性代数基础">线性代数基础</a></span>
   </li>
 
   </ul>
@@ -473,7 +536,7 @@ Tea House = 心释的茶社 = 欢迎来到心释的茶社</title>
   </div>
 <script data-config type="text/javascript">
   var LOCAL = {
-    path: '2022/08/30/python-ji-suan-ji-er-ji/',
+    path: '2022/09/16/zhi-ling-xi-tong/',
     favicon: {
       show: "(๑ᵔ⌔ᵔ๑)：正在进入茶社",
       hide: "(๑‾᷅^‾᷅๑)：记得回到茶社"
