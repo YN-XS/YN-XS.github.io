@@ -287,92 +287,111 @@
 <p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251048756.png" alt="image-20220825104833697" /></p>
 </li>
 <li>
-<pre class=" language-language-c"><code class="language-language-c">arr[2] ——> *(arr+2)
-[2]arr ——> *(2+arr)
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">##### 指针作为参数传递</span></span><br><span class="line"></span><br><span class="line">- **实参与形参相互独立（内存地址不同）**</span><br><span class="line">- ![image-<span class="number">20220825113410866</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251134932</span>.png)</span><br><span class="line"></span><br><span class="line">- **形参和实参相互独立——>形参中的参数值，无论如何变化都不会影响实参中的参数值**</span><br><span class="line">- ![image-<span class="number">20220825113619153</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251136227</span>.png)</span><br><span class="line"></span><br><span class="line">- **指针作为参数传递**</span><br><span class="line">- ![image-<span class="number">20220825131640155</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251316211</span>.png)</span><br><span class="line"></span><br><span class="line">- **将指针传递到函数内部，函数就可以通过指针(所指向的内存地址)访问到数据对象，并对数据对象的值进行修改**</span><br><span class="line">- ![image-<span class="number">20220825132121058</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251321127</span>.png)</span><br><span class="line"></span><br><span class="line">- **注意，是对指针所指向的(数据对象的值)—(*指针)进行修改，而不是对指针值(数据对象的内存地址)—(指针)进行修改**</span><br><span class="line">- ![image-<span class="number">20220825132649418</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251326487</span>.png)</span><br><span class="line"></span><br><span class="line">- **scanf函数无法直接修改main函数中的变量，而是通过指针/地址间接修改变量的值**</span><br><span class="line">- **之所以在主函数main中调用scanf函数时，scanf函数可以改变外部(main函数中)的变量，是因为scanf函数中传递的参数是一个地址/指针（参数前需要地址符&）**</span><br><span class="line">- **所以scanf输入函数会先读取从键盘中输入，转化后再将其存放到指针/地址所指向的数据对象（参数前需要地址符&）**</span><br><span class="line">- ![image-<span class="number">20220825133434136</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251334188</span>.png)</span><br><span class="line"></span><br><span class="line"><span class="comment">##### void*类型指针</span></span><br><span class="line"></span><br><span class="line">- **不同类型指针赋值会修改数据对象的类型——>不能相互赋值**</span><br><span class="line"></span><br><span class="line">  - **因为指针包括了数据对象的首地址和数据对象的存储空间——>不同类型指针不能相互赋值**</span><br><span class="line">  - **首地址可以相同，但是存储空间不一致**</span><br><span class="line">  - ![image-<span class="number">20220825134239138</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251342200</span>.png)</span><br><span class="line"></span><br><span class="line">  - ![image-<span class="number">20220825134101255</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251341313</span>.png)</span><br><span class="line"></span><br><span class="line">- **void类型指针没有类型——>仅仅保存数据对象的首地址，不保存存储空间大小**</span><br><span class="line"></span><br><span class="line">- **因此任意类型的指针都可以直接赋值给void类型指针**</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825134815645</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251348704</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825134600114</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251346184</span>.png)</span><br><span class="line"></span><br><span class="line">- **由于void类型指针没有存储空间大小**</span><br><span class="line"></span><br><span class="line">- **所以任何指针类型都可以直接将地址赋给void类型指**</span><br><span class="line"></span><br><span class="line">- **但void类型指针要先强制转换后才能将地址赋给对应类型指针**</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825135717210</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251357276</span>.png)</span><br><span class="line"></span><br><span class="line">- ```c</span><br><span class="line">  <span class="comment"># include"stdio.h"</span></span><br><span class="line">  int main()&#123;</span><br><span class="line">      int a = <span class="number">8</span>;</span><br><span class="line">      int *A = &a;</span><br><span class="line">      printf(<span class="string">"%d\n"</span>, A);</span><br><span class="line">      printf(<span class="string">"%d\n"</span>, *A);</span><br><span class="line">      void *B = A;</span><br><span class="line">      int *C = (int*)B;</span><br><span class="line">      printf(<span class="string">"%d\n"</span>, B);</span><br><span class="line">      printf(<span class="string">"%d\n"</span>, C);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-</code></pre>
-</li>
-<li>
-<p><strong>总结</strong></p>
-</li>
-<li>
-<p><strong>所有类型的指针都可以直接将其指向的地址赋值给 void 类型的指针</strong></p>
-</li>
-<li>
-<p><strong>但是 void 类型指针要先强制转换类型才能将地址赋给其他类型指针</strong></p>
-</li>
-<li>
-<p><strong>void 类型指针只能用于地址的传递，不能对地址取值 ——&gt; 只能打印 void 类型指针的地址 (数据对象地址)</strong></p>
-</li>
-<li>
-<p><strong>因为 void 类型指针没有类型 ——&gt; 不能打印地址的取值 (数据对象的值)</strong></p>
+<p>arr[2] ——&gt; *(arr+2)<br />
+[2]arr ——&gt; *(2+arr)</p>
 </li>
 </ul>
-<h4 id="多级指针"><a class="anchor" href="#多级指针">#</a> 多级指针</h4>
-<ul>
-<li><strong>指针作为一个数据对象也有自己的存储位置 (地址)</strong></li>
-<li><strong>指向指针的指针 = 多级指针</strong></li>
-<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251431358.png" alt="image-20220825143152294" /></li>
-<li><strong>二级指针的声明</strong>
-<ul>
-<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251448678.png" alt="image-20220825144843604" /></li>
-</ul>
-</li>
-<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251449877.png" alt="image-20220825144927815" /></li>
-</ul>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251450515.png" alt="image-20220825145007456" /></p>
-<ul>
-<li><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251450778.png" alt="image-20220825145028720" /></li>
-</ul>
-<h5 id="指针数组"><a class="anchor" href="#指针数组">#</a> 指针数组</h5>
+<h5 id="指针作为参数传递"><a class="anchor" href="#指针作为参数传递">#</a> 指针作为参数传递</h5>
 <ul>
 <li>
-<p><strong>元素为指针的数组</strong></p>
+<p><strong>实参与形参相互独立（内存地址不同）</strong></p>
 </li>
 <li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251455578.png" alt="image-20220825145507501" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251134932.png" alt="image-20220825113410866" /></p>
 </li>
 <li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251457339.png" alt="image-20220825145744263" /></p>
+<p><strong>形参和实参相互独立 ——&gt; 形参中的参数值，无论如何变化都不会影响实参中的参数值</strong></p>
 </li>
 <li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251455217.png" alt="image-20220825145542152" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251136227.png" alt="image-20220825113619153" /></p>
 </li>
 <li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251532143.png" alt="image-20220825153227051" /></p>
-</li>
-</ul>
-<h5 id="从函数中返回指针"><a class="anchor" href="#从函数中返回指针">#</a> 从函数中返回指针</h5>
-<ul>
-<li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251534443.png" alt="image-20220825153447378" /></p>
+<p><strong>指针作为参数传递</strong></p>
 </li>
 <li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251535637.png" alt="image-20220825153549578" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251316211.png" alt="image-20220825131640155" /></p>
 </li>
 <li>
-<p><strong>static 类似与 python 中的 global，使用 static 的变量将不会被系统回收</strong></p>
+<p><strong>将指针传递到函数内部，函数就可以通过指针 (所指向的内存地址) 访问到数据对象，并对数据对象的值进行修改</strong></p>
 </li>
 <li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251536530.png" alt="image-20220825153649469" /></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251321127.png" alt="image-20220825132121058" /></p>
+</li>
+<li>
+<p>*<em> 注意，是对指针所指向的 (数据对象的值)—(<em>指针) 进行修改，而不是对指针值 (数据对象的内存地址)—(指针) 进行修改</em></em></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251326487.png" alt="image-20220825132649418" /></p>
+</li>
+<li>
+<p><strong>scanf 函数无法直接修改 main 函数中的变量，而是通过指针 / 地址间接修改变量的值</strong></p>
+</li>
+<li>
+<p><strong>之所以在主函数 main 中调用 scanf 函数时，scanf 函数可以改变外部 (main 函数中) 的变量，是因为 scanf 函数中传递的参数是一个地址 / 指针（参数前需要地址符 &amp;）</strong></p>
+</li>
+<li>
+<p><strong>所以 scanf 输入函数会先读取从键盘中输入，转化后再将其存放到指针 / 地址所指向的数据对象（参数前需要地址符 &amp;）</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251334188.png" alt="image-20220825133434136" /></p>
 </li>
 </ul>
-<h5 id="将二级指针作为函数参数"><a class="anchor" href="#将二级指针作为函数参数">#</a> 将二级指针作为函数参数</h5>
+<h5 id="void类型指针"><a class="anchor" href="#void类型指针">#</a> void * 类型指针</h5>
 <ul>
 <li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251540021.png" alt="image-20220825154050938" /></p>
+<p><strong>不同类型指针赋值会修改数据对象的类型 ——&gt; 不能相互赋值</strong></p>
+<ul>
+<li>
+<p><strong>因为指针包括了数据对象的首地址和数据对象的存储空间 ——&gt; 不同类型指针不能相互赋值</strong></p>
 </li>
 <li>
-<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251541135.png" alt="image-20220825154129081" /></p>
+<p><strong>首地址可以相同，但是存储空间不一致</strong></p>
 </li>
 <li>
-<p><strong>将指针初始化为 NULL / 0 是一个非常好的习惯</strong></p>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251342200.png" alt="image-20220825134239138" /></p>
 </li>
 <li>
-<pre class=" language-language-C"><code class="language-language-C">int *a = NULL;
-int *b = NULL;
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">#### 指针与多维数组</span></span><br><span class="line"></span><br><span class="line">- **在一维数组中：数组的元素是一个元素(int,char...)——>指针(普通指针)指向一维数组第一个(元素的地址)**</span><br><span class="line">- **在二维数组中：数组的元素是一行一维数组——>指针(数组指针)指向二维数组中的第一个一维(数组的地址)**</span><br><span class="line"></span><br><span class="line">![image-<span class="number">20220825162539217</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251625278</span>.png)</span><br><span class="line"></span><br><span class="line">![image-<span class="number">20220825162700032</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251627083</span>.png)</span><br><span class="line"></span><br><span class="line">![image-<span class="number">20220825162738443</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251627494</span>.png)</span><br><span class="line"></span><br><span class="line">![image-<span class="number">20220825162812808</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251628868</span>.png)</span><br><span class="line"></span><br><span class="line">![image-<span class="number">20220825162924110</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251629173</span>.png)</span><br><span class="line"></span><br><span class="line"><span class="comment">##### 注意区分指针数组和数组指针</span></span><br><span class="line"></span><br><span class="line">- **指针数组：是一个元素为指针的数组**</span><br><span class="line">- **数组指针：是一个指向数组的指针**</span><br><span class="line">- ![](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251712501</span>.png)</span><br><span class="line">- **从这里要开始注意**</span><br><span class="line">  - **普通的指针指向数组时，指向的（数组的第一个元素）的地址**</span><br><span class="line">  - **而数组指针指向数组时，指向的是（一个数组）的地址**</span><br><span class="line"></span><br><span class="line">```c</span><br><span class="line">int* arr[<span class="number">20</span>];	<span class="regexp">//</span>很明显这是一个指针数组(指针类型的数组)</span><br><span class="line">int (*arr)[<span class="number">20</span>];		<span class="regexp">//</span>这是一个数组指针，为了方便理解，可以看成：int[<span class="number">20</span>](*arr)</span><br></pre></td></tr></table></figure>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251341313.png" alt="image-20220825134101255" /></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>void 类型指针没有类型 ——&gt; 仅仅保存数据对象的首地址，不保存存储空间大小</strong></p>
+</li>
+<li>
+<p><strong>因此任意类型的指针都可以直接赋值给 void 类型指针</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251348704.png" alt="image-20220825134815645" /></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251346184.png" alt="image-20220825134600114" /></p>
+</li>
+<li>
+<p><strong>由于 void 类型指针没有存储空间大小</strong></p>
+</li>
+<li>
+<p><strong>所以任何指针类型都可以直接将地址赋给 void 类型指</strong></p>
+</li>
+<li>
+<p><strong>但 void 类型指针要先强制转换后才能将地址赋给对应类型指针</strong></p>
+</li>
+<li>
+<p><img data-src="https://raw.githubusercontent.com/YN-XS/images/master/202208251357276.png" alt="image-20220825135717210" /></p>
+</li>
+<li>
+<pre class=" language-language-c"><code class="language-language-c"># include"stdio.h"
+int main()&#123;
+    int a = 8;
+    int *A = &a;
+    printf("%d\n", A);
+    printf("%d\n", *A);
+    void *B = A;
+    int *C = (int*)B;
+    printf("%d\n", B);
+    printf("%d\n", C);
+&#125;
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">- **总结**</span><br><span class="line"></span><br><span class="line">- **所有类型的指针都可以直接将其指向的地址赋值给void类型的指针**</span><br><span class="line"></span><br><span class="line">- **但是void类型指针要先强制转换类型才能将地址赋给其他类型指针**</span><br><span class="line"></span><br><span class="line">- **void类型指针只能用于地址的传递，不能对地址取值——>只能打印void类型指针的地址(数据对象地址)**</span><br><span class="line"></span><br><span class="line">- **因为void类型指针没有类型——>不能打印地址的取值(数据对象的值)**</span><br><span class="line"></span><br><span class="line"><span class="comment">#### 多级指针</span></span><br><span class="line"></span><br><span class="line">- **指针作为一个数据对象也有自己的存储位置(地址)**</span><br><span class="line">- **指向指针的指针 = 多级指针**</span><br><span class="line">- ![image-<span class="number">20220825143152294</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251431358</span>.png)</span><br><span class="line">- **二级指针的声明**</span><br><span class="line">  - ![image-<span class="number">20220825144843604</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251448678</span>.png)</span><br><span class="line">- ![image-<span class="number">20220825144927815</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251449877</span>.png)</span><br><span class="line"></span><br><span class="line">![image-<span class="number">20220825145007456</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251450515</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825145028720</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251450778</span>.png)</span><br><span class="line"></span><br><span class="line"><span class="comment">##### 指针数组</span></span><br><span class="line"></span><br><span class="line">- **元素为指针的数组**</span><br><span class="line">- ![image-<span class="number">20220825145507501</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251455578</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825145744263</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251457339</span>.png)</span><br><span class="line">- ![image-<span class="number">20220825145542152</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251455217</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825153227051</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251532143</span>.png)</span><br><span class="line"></span><br><span class="line"><span class="comment">##### 从函数中返回指针</span></span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825153447378</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251534443</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825153549578</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251535637</span>.png)</span><br><span class="line"></span><br><span class="line">- **static类似与python中的global，使用static的变量将不会被系统回收**</span><br><span class="line">- ![image-<span class="number">20220825153649469</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251536530</span>.png)</span><br><span class="line"></span><br><span class="line"><span class="comment">##### 将二级指针作为函数参数</span></span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825154050938</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251540021</span>.png)</span><br><span class="line"></span><br><span class="line">- ![image-<span class="number">20220825154129081</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251541135</span>.png)</span><br><span class="line"></span><br><span class="line">- **将指针初始化为 NULL / <span class="number">0</span> 是一个非常好的习惯**</span><br><span class="line"></span><br><span class="line">- </span><br><span class="line">  int *a = NULL;</span><br><span class="line">  int *b = NULL;</span><br><span class="line"></span><br><span class="line"><span class="comment">#### 指针与多维数组</span></span><br><span class="line"></span><br><span class="line">- **在一维数组中：数组的元素是一个元素(int,char...)——>指针(普通指针)指向一维数组第一个(元素的地址)**</span><br><span class="line">- **在二维数组中：数组的元素是一行一维数组——>指针(数组指针)指向二维数组中的第一个一维(数组的地址)**</span><br><span class="line"></span><br><span class="line">![image-<span class="number">20220825162539217</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251625278</span>.png)</span><br><span class="line"></span><br><span class="line">![image-<span class="number">20220825162700032</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251627083</span>.png)</span><br><span class="line"></span><br><span class="line">![image-<span class="number">20220825162738443</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251627494</span>.png)</span><br><span class="line"></span><br><span class="line">![image-<span class="number">20220825162812808</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251628868</span>.png)</span><br><span class="line"></span><br><span class="line">![image-<span class="number">20220825162924110</span>](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251629173</span>.png)</span><br><span class="line"></span><br><span class="line"><span class="comment">##### 注意区分指针数组和数组指针</span></span><br><span class="line"></span><br><span class="line">- **指针数组：是一个元素为指针的数组**</span><br><span class="line">- **数组指针：是一个指向数组的指针**</span><br><span class="line">- ![](https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/YN-XS/im</span>ages<span class="regexp">/master/</span><span class="number">202208251712501</span>.png)</span><br><span class="line">- **从这里要开始注意**</span><br><span class="line">  - **普通的指针指向数组时，指向的（数组的第一个元素）的地址**</span><br><span class="line">  - **而数组指针指向数组时，指向的是（一个数组）的地址**</span><br><span class="line"></span><br><span class="line">```c</span><br><span class="line">int* arr[<span class="number">20</span>];	<span class="regexp">//</span>很明显这是一个指针数组(指针类型的数组)</span><br><span class="line">int (*arr)[<span class="number">20</span>];		<span class="regexp">//</span>这是一个数组指针，为了方便理解，可以看成：int[<span class="number">20</span>](*arr)</span><br></pre></td></tr></table></figure>
 
 </code></pre>
 </li>
