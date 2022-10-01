@@ -95,12 +95,12 @@ Tea House = 心释的茶社 = 欢迎来到心释的茶社</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclhtuo6nj20zk0m8ttm.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giph4fomxoj20zk0m8axp.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclhfehz7j20zk0m8u0x.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclwrdwyaj20zk0m8are.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclga70tsj20zk0m84mr.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipeyonbf9j20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicli3sbvtj20zk0m8x6p.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipexoj0moj20zk0m8kgu.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicm0n457cj20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicljgocqbj20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclimtf7dj20zk0m8qav.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giph4wqtg4j20zk0m8x6p.jpg"></li>
         </ul>
       </div>
     
@@ -148,7 +148,9 @@ Tea House = 心释的茶社 = 欢迎来到心释的茶社</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h3 id="c基础"><a class="anchor" href="#c基础">#</a> C++ 基础</h3>
+    <ul>
+<li>
+<h3 id="c基础"><a class="anchor" href="#c基础">#</a> C++ 基础</h3>
 <h4 id="基础语法"><a class="anchor" href="#基础语法">#</a> 基础语法</h4>
 <p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># <span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span>  <span class="comment">// 输入输出流</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;  <span class="comment">// 命名空间</span></span><br></pre></td></tr></table></figure></p>
 <p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 输入输出</span></span><br><span class="line"><span class="type">int</span> a;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%d\n&quot;</span>, &amp;a);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, a);</span><br><span class="line"></span><br><span class="line">cin &gt;&gt; a;</span><br><span class="line">cout &lt;&lt; a &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line"><span class="built_in">getline</span>(cin, str); <span class="comment">// 获取一整行的输入（cin无法将空格连接的输入全部接收）</span></span><br></pre></td></tr></table></figure></p>
@@ -180,34 +182,19 @@ Tea House = 心释的茶社 = 欢迎来到心释的茶社</title>
 <li>
 <p>arr.begin () 和 arr.end () 都是一个【地址】，而不是元素本身</p>
 </li>
-<li>
-<pre class=" language-language-c++"><code class="language-language-c++">for (auto p = arr2.begin(); p != arr2.end(); p++)
-&#123;
-	cout << *p << " ";
-&#125;
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">####<span class="meta"># set</span></span><br><span class="line"></span><br><span class="line">```c++</span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">"iostream"</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">"set"</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br></pre></td></tr></table></figure>
-
-</code></pre>
+</ul>
+<p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> p = arr2.<span class="built_in">begin</span>(); p != arr2.<span class="built_in">end</span>(); p++)</span><br><span class="line">&#123;</span><br><span class="line">	cout &lt;&lt; *p &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 </li>
 </ul>
-</li>
-</ul>
+<h5 id="set"><a class="anchor" href="#set">#</a> set</h5>
+<p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;iostream&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;set&quot;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br></pre></td></tr></table></figure></p>
 <p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">set&lt;<span class="type">int</span>&gt; set1;</span><br><span class="line"><span class="comment">// 集合不需要初始化</span></span><br><span class="line"><span class="comment">// 集合中的元素不重复，且集合中的元素会(从小到大)自动排序</span></span><br></pre></td></tr></table></figure></p>
 <p>插入</p>
-<ul>
-<li>
 <p>set.insert(data)</p>
-</li>
-<li>
-<pre class=" language-language-c++"><code class="language-language-c++">set1.insert(2);
-set1.insert(0);
-set1.insert(1);
-// 集合中的元素不重复，且集合中的元素会(从小到大)自动排序
-<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">删除</span><br><span class="line"></span><br><span class="line">- <span class="built_in">set</span>.<span class="built_in">erase</span>(data)</span><br><span class="line"></span><br><span class="line">- ```c++</span><br><span class="line">  set1.<span class="built_in">erase</span>(<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
-
-</code></pre>
-</li>
-</ul>
+<p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">set1.<span class="built_in">insert</span>(<span class="number">2</span>);</span><br><span class="line">set1.<span class="built_in">insert</span>(<span class="number">0</span>);</span><br><span class="line">set1.<span class="built_in">insert</span>(<span class="number">1</span>);</span><br><span class="line"><span class="comment">// 集合中的元素不重复，且集合中的元素会(从小到大)自动排序</span></span><br></pre></td></tr></table></figure></p>
+<p>删除</p>
+<p>set.erase(data)</p>
+<p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set1.<span class="built_in">erase</span>(<span class="number">1</span>);</span><br></pre></td></tr></table></figure></p>
 <p>查找</p>
 <ul>
 <li>
@@ -222,14 +209,21 @@ set1.insert(1);
 <li>
 <p>查找整个集合直到末尾元素的下一个地址 set.end () 也没找到则退出</p>
 </li>
+</ul>
+<p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cout &lt;&lt; (set1.<span class="built_in">find</span>(<span class="number">1</span>) != set1.<span class="built_in">end</span>()) &lt;&lt; endl;</span><br><span class="line">cout &lt;&lt; (set1.<span class="built_in">find</span>(<span class="number">3</span>) != set1.<span class="built_in">end</span>()) &lt;&lt; endl;</span><br></pre></td></tr></table></figure></p>
+<p>遍历</p>
+<ul>
 <li>
-<pre class=" language-language-c++"><code class="language-language-c++">cout << (set1.find(1) != set1.end()) << endl;
-cout << (set1.find(3) != set1.end()) << endl;
-<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">遍历</span><br><span class="line"></span><br><span class="line">- 迭代器</span><br><span class="line"></span><br><span class="line">- <span class="keyword">set</span>.<span class="keyword">begin</span>()是第一个元素的【地址】</span><br><span class="line"></span><br><span class="line">- <span class="keyword">set</span>.<span class="keyword">end</span>()是末尾元素的下一个元素的【地址】</span><br><span class="line"></span><br><span class="line">- ```c++</span><br><span class="line">  <span class="keyword">for</span> (auto p = set1.<span class="keyword">begin</span>(); p != set1.<span class="keyword">end</span>(); p++)</span><br><span class="line">  &#123;</span><br><span class="line">  	cout << *p << " ";</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-</code></pre>
+<p>迭代器</p>
+</li>
+<li>
+<p>set.begin () 是第一个元素的【地址】</p>
+</li>
+<li>
+<p>set.end () 是末尾元素的下一个元素的【地址】</p>
 </li>
 </ul>
+<p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> p = set1.<span class="built_in">begin</span>(); p != set1.<span class="built_in">end</span>(); p++)</span><br><span class="line">&#123;</span><br><span class="line">	cout &lt;&lt; *p &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h5 id="map"><a class="anchor" href="#map">#</a> map</h5>
 <p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># <span class="keyword">include</span> <span class="string">&quot;iostream&quot;</span></span></span><br><span class="line"><span class="meta"># <span class="keyword">include</span> <span class="string">&quot;map&quot;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br></pre></td></tr></table></figure></p>
 <ul>
@@ -242,13 +236,12 @@ cout << (set1.find(3) != set1.end()) << endl;
 <li>
 <p>map 中的键值对会按照依次根据【键】和【值】的 ASCII 码进行排序</p>
 </li>
-<li>
-<pre class=" language-language-c++"><code class="language-language-c++">map<string, int> map1;
-<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 添加键值对</span><br><span class="line"></span><br><span class="line">  ```c++</span><br><span class="line">  map1[<span class="string">"学号"</span>] = <span class="number">39</span><span class="comment">;</span></span><br><span class="line">  map1[<span class="string">"年龄"</span>] = <span class="number">21</span><span class="comment">;</span></span><br><span class="line">  map1[<span class="string">"性别"</span>] = <span class="number">1</span><span class="comment">;</span></span><br></pre></td></tr></table></figure>
-
-</code></pre>
-</li>
 </ul>
+<p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">map&lt;string, <span class="type">int</span>&gt; map1;</span><br></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>添加键值对</p>
+<p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">map1[<span class="string">&quot;学号&quot;</span>] = <span class="number">39</span>;</span><br><span class="line">map1[<span class="string">&quot;年龄&quot;</span>] = <span class="number">21</span>;</span><br><span class="line">map1[<span class="string">&quot;性别&quot;</span>] = <span class="number">1</span>;</span><br></pre></td></tr></table></figure></p>
 </li>
 <li>
 <p>访问</p>
@@ -259,14 +252,26 @@ cout << (set1.find(3) != set1.end()) << endl;
 <li>
 <p>访问的键值对不存在：则立即创建该键值对，且值为 0</p>
 </li>
+</ul>
+<p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cout &lt;&lt; <span class="string">&quot;学号：&quot;</span> &lt;&lt; map1[<span class="string">&quot;学号&quot;</span>] &lt;&lt; endl;<span class="comment">// 存在，打印值：39</span></span><br><span class="line">cout &lt;&lt; <span class="string">&quot;姓名：&quot;</span> &lt;&lt; map1[<span class="string">&quot;姓名&quot;</span>] &lt;&lt; endl;<span class="comment">// 不存在，创建并打印值：0</span></span><br></pre></td></tr></table></figure></p>
+</li>
 <li>
-<pre class=" language-language-c++"><code class="language-language-c++">cout << "学号：" << map1["学号"] << endl;// 存在，打印值：39
-cout << "姓名：" << map1["姓名"] << endl;// 不存在，创建并打印值：0
-<figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 遍历</span><br><span class="line"></span><br><span class="line">  - 迭代器遍历：从第一个键值对遍历到最后一个键值对的下一个地址后结束</span><br><span class="line"></span><br><span class="line">  - map键值对相当于一个包含了【键】和【值】两个成员的结构体</span><br><span class="line"></span><br><span class="line">  - 键值对的第一个元素是键：p-><span class="built_in">first</span></span><br><span class="line"></span><br><span class="line">  - 键值对的第二个元素是值：p->second</span><br><span class="line"></span><br><span class="line">  - ```c++</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">auto</span> p = map1.begin(); p != map1.<span class="keyword">end</span>(); p++)</span><br><span class="line">    &#123;</span><br><span class="line">    	cout << p-><span class="built_in">first</span> << <span class="string">":"</span> << p->second << <span class="string">" "</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-</code></pre>
+<p>遍历</p>
+<ul>
+<li>
+<p>迭代器遍历：从第一个键值对遍历到最后一个键值对的下一个地址后结束</p>
+</li>
+<li>
+<p>map 键值对相当于一个包含了【键】和【值】两个成员的结构体</p>
+</li>
+<li>
+<p>键值对的第一个元素是键：p-&gt;first</p>
+</li>
+<li>
+<p>键值对的第二个元素是值：p-&gt;second</p>
 </li>
 </ul>
+<p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> p = map1.<span class="built_in">begin</span>(); p != map1.<span class="built_in">end</span>(); p++)</span><br><span class="line">&#123;</span><br><span class="line">	cout &lt;&lt; p-&gt;first &lt;&lt; <span class="string">&quot;:&quot;</span> &lt;&lt; p-&gt;second &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 </li>
 </ul>
 <h5 id="stack"><a class="anchor" href="#stack">#</a> stack</h5>
@@ -282,17 +287,13 @@ cout << "姓名：" << map1["姓名"] << endl;// 不存在，创建并打印值�
 </li>
 <li>
 <p>访问栈顶元素</p>
-<ul>
-<li>
 <p>stack.top()</p>
+<p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cout &lt;&lt; <span class="string">&quot;栈顶元素为：&quot;</span> &lt;&lt; stack1.<span class="built_in">top</span>() &lt;&lt; endl;</span><br></pre></td></tr></table></figure></p>
 </li>
 <li>
-<pre class=" language-language-c++"><code class="language-language-c++">cout << "栈顶元素为：" << stack1.top() << endl;
-<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 出栈</span><br><span class="line"></span><br><span class="line">  - stack.pop()</span><br><span class="line"></span><br><span class="line">  - ```c++</span><br><span class="line">    stack1.pop()<span class="comment">;</span></span><br><span class="line">    cout << <span class="string">"栈顶元素为："</span> << stack1.top() << endl<span class="comment">;</span></span><br></pre></td></tr></table></figure>
-
-</code></pre>
-</li>
-</ul>
+<p>出栈</p>
+<p>stack.pop()</p>
+<p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">stack1.<span class="built_in">pop</span>();</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;栈顶元素为：&quot;</span> &lt;&lt; stack1.<span class="built_in">top</span>() &lt;&lt; endl;</span><br></pre></td></tr></table></figure></p>
 </li>
 </ul>
 <h5 id="queue"><a class="anchor" href="#queue">#</a> queue</h5>
@@ -318,16 +319,16 @@ cout << "姓名：" << map1["姓名"] << endl;// 不存在，创建并打印值�
 <li>
 <p>队尾元素：queue1.back ()</p>
 </li>
-<li>
-<pre class=" language-language-c++"><code class="language-language-c++">cout << "队首元素为：" << queue1.front() << endl;
-cout << "队尾元素为：" << queue1.back() << endl;
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">##### unordered_map & unordered_set</span><br><span class="line"></span><br><span class="line">- 直接创建的map和set都会自动进行排序</span><br><span class="line">- 使用排序的容器，会增加时间复杂度</span><br><span class="line"></span><br><span class="line">```c++</span><br><span class="line"><span class="meta"># <span class="keyword">include</span> <span class="string">"iostream"</span></span></span><br><span class="line"><span class="meta"># <span class="keyword">include</span> <span class="string">"unordered_map"</span></span></span><br><span class="line"><span class="meta"># <span class="keyword">include</span> <span class="string">"unordered_set"</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br></pre></td></tr></table></figure>
-
-</code></pre>
+</ul>
+<p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cout &lt;&lt; <span class="string">&quot;队首元素为：&quot;</span> &lt;&lt; queue1.<span class="built_in">front</span>() &lt;&lt; endl;</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;队尾元素为：&quot;</span> &lt;&lt; queue1.<span class="built_in">back</span>() &lt;&lt; endl;</span><br></pre></td></tr></table></figure></p>
 </li>
 </ul>
-</li>
+<h5 id="unordered_map-unordered_set"><a class="anchor" href="#unordered_map-unordered_set">#</a> unordered_map &amp; unordered_set</h5>
+<ul>
+<li>直接创建的 map 和 set 都会自动进行排序</li>
+<li>使用排序的容器，会增加时间复杂度</li>
 </ul>
+<p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># <span class="keyword">include</span> <span class="string">&quot;iostream&quot;</span></span></span><br><span class="line"><span class="meta"># <span class="keyword">include</span> <span class="string">&quot;unordered_map&quot;</span></span></span><br><span class="line"><span class="meta"># <span class="keyword">include</span> <span class="string">&quot;unordered_set&quot;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br></pre></td></tr></table></figure></p>
 <p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">unordered_map &lt;string, <span class="type">int</span>&gt; map1;</span><br><span class="line">unordered_set&lt;<span class="type">int</span>&gt; set1;</span><br></pre></td></tr></table></figure></p>
 <h5 id="bitset"><a class="anchor" href="#bitset">#</a> bitset</h5>
 <ul>
@@ -356,16 +357,13 @@ cout << "队尾元素为：" << queue1.back() << endl;
 <li>
 <p>end () 是数组末尾元素的下一位地址</p>
 <ul>
-<li>
-<p>默认排序</p>
-</li>
-<li>
-<pre class=" language-language-c++"><code class="language-language-c++">sort(arr.begin(), arr.end());
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 根据规则排序</span><br><span class="line"></span><br><span class="line">- ```c++</span><br><span class="line">  <span class="comment">// 从大到小排序 ：></span></span><br><span class="line">  <span class="function"><span class="type">bool</span> <span class="title">cmp1</span><span class="params">(<span class="type">int</span> i, <span class="type">int</span> j)</span></span>&#123;</span><br><span class="line">      <span class="keyword">return</span> i > j;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 从小到大排序 ：<</span></span><br><span class="line">  <span class="function"><span class="type">bool</span> <span class="title">cmp2</span><span class="params">(<span class="type">int</span> i, <span class="type">int</span> j)</span></span>&#123;</span><br><span class="line">      <span class="keyword">return</span> i < j;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="built_in">sort</span>(arr.<span class="built_in">begin</span>(),arr.<span class="built_in">end</span>(),cmp1);</span><br></pre></td></tr></table></figure>
-
-</code></pre>
-</li>
+<li>默认排序</li>
 </ul>
+<p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sort</span>(arr.<span class="built_in">begin</span>(), arr.<span class="built_in">end</span>());</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>根据规则排序</li>
+</ul>
+<p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 从大到小排序 ：&gt;</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">cmp1</span><span class="params">(<span class="type">int</span> i, <span class="type">int</span> j)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> i &gt; j;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 从小到大排序 ：&lt;</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">cmp2</span><span class="params">(<span class="type">int</span> i, <span class="type">int</span> j)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> i &lt; j;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">sort</span>(arr.<span class="built_in">begin</span>(),arr.<span class="built_in">end</span>(),cmp1);</span><br></pre></td></tr></table></figure></p>
 </li>
 </ul>
 </li>
@@ -373,28 +371,16 @@ cout << "队尾元素为：" << queue1.back() << endl;
 <h5 id="ctype"><a class="anchor" href="#ctype">#</a> ctype</h5>
 <p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># <span class="keyword">include</span> <span class="string">&quot;iostream&quot;</span></span></span><br><span class="line"><span class="meta"># <span class="keyword">include</span> <span class="string">&quot;cctype&quot;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br></pre></td></tr></table></figure></p>
 <ul>
-<li>
-<p>判断函数</p>
-</li>
-<li>
-<p>返回值全为 bool 值 0/1</p>
-</li>
-<li>
-<pre class=" language-language-c++"><code class="language-language-c++">// 判断是否为字母、数字
-isalpha(alpha)
-isalnum(alpha)
-
-// 判断是否为空白字符：" "、\n、\r、\t 等空白字符
-isspace(alpha)
-
-// 判断大小写
-isupper(alpha)
-islower(alpha)
-<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 转换函数</span><br><span class="line"></span><br><span class="line">- <span class="title function_">tolower</span>(<span class="type">char</span>) 和 <span class="title function_">toupper</span>(<span class="type">char</span>) 返回的是转换后的【ASCII码】</span><br><span class="line"></span><br><span class="line">- 需要将【ASCII】码以【<span class="type">char</span>】字符类型打印才能是字母</span><br><span class="line"></span><br><span class="line">- ```c++</span><br><span class="line">  cout << <span class="built_in">alpha</span> << <span class="string">" 转换为小写字母："</span> << <span class="title function_">tolower</span>(<span class="built_in">alpha</span>) << <span class="string">&#x27;-&#x27;</span> << <span class="built_in">char</span>(<span class="built_in">alpha</span>) << endl;</span><br><span class="line">  </span><br><span class="line">  cout << <span class="built_in">alpha</span> << <span class="string">" 转换为大写字母："</span> << <span class="title function_">toupper</span>(<span class="built_in">alpha</span>) << <span class="string">&#x27;-&#x27;</span> << <span class="built_in">char</span>(<span class="built_in">alpha</span>) << endl;</span><br></pre></td></tr></table></figure>
-
-</code></pre>
-</li>
+<li>判断函数</li>
 </ul>
+<p>返回值全为 bool 值 0/1</p>
+<p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 判断是否为字母、数字</span></span><br><span class="line"><span class="built_in">isalpha</span>(alpha)</span><br><span class="line"><span class="built_in">isalnum</span>(alpha)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 判断是否为空白字符：&quot; &quot;、\n、\r、\t 等空白字符</span></span><br><span class="line"><span class="built_in">isspace</span>(alpha)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 判断大小写</span></span><br><span class="line"><span class="built_in">isupper</span>(alpha)</span><br><span class="line"><span class="built_in">islower</span>(alpha)</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>转换函数</li>
+</ul>
+<p>tolower (char) 和 toupper (char) 返回的是转换后的【ASCII 码】</p>
+<p>需要将【ASCII】码以【char】字符类型打印才能是字母</p>
+<p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cout &lt;&lt; alpha &lt;&lt; <span class="string">&quot; 转换为小写字母：&quot;</span> &lt;&lt; <span class="built_in">tolower</span>(alpha) &lt;&lt; <span class="string">&#x27;-&#x27;</span> &lt;&lt; <span class="built_in">char</span>(alpha) &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">cout &lt;&lt; alpha &lt;&lt; <span class="string">&quot; 转换为大写字母：&quot;</span> &lt;&lt; <span class="built_in">toupper</span>(alpha) &lt;&lt; <span class="string">&#x27;-&#x27;</span> &lt;&lt; <span class="built_in">char</span>(alpha) &lt;&lt; endl;</span><br></pre></td></tr></table></figure></p>
 <h5 id="auto"><a class="anchor" href="#auto">#</a> auto</h5>
 <ul>
 <li>
@@ -403,30 +389,14 @@ islower(alpha)
 <li>
 <p>使用 auto 声明变量时必须做初始化</p>
 </li>
-<li>
-<pre class=" language-language-c++"><code class="language-language-c++">auto num = 100;
-auto name = "姜子俊";
-auto high = 173.5;
-
-auto a = 0;  // 初始化auto匹配为int类型
-cin >> a;	 // a为int类型，输入int类型给变量a
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">####<span class="meta"># string</span></span><br><span class="line"></span><br><span class="line">```c++</span><br><span class="line"><span class="meta"># <span class="keyword">include</span> <span class="string">"iostream"</span></span></span><br><span class="line"><span class="meta"># <span class="keyword">include</span> <span class="string">"string"</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br></pre></td></tr></table></figure>
-
-</code></pre>
-</li>
-<li>
+</ul>
+<p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">auto</span> num = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">auto</span> name = <span class="string">&quot;姜子俊&quot;</span>;</span><br><span class="line"><span class="keyword">auto</span> high = <span class="number">173.5</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">auto</span> a = <span class="number">0</span>;  <span class="comment">// 初始化auto匹配为int类型</span></span><br><span class="line">cin &gt;&gt; a;	 <span class="comment">// a为int类型，输入int类型给变量a</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="string"><a class="anchor" href="#string">#</a> string</h5>
+<p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># <span class="keyword">include</span> <span class="string">&quot;iostream&quot;</span></span></span><br><span class="line"><span class="meta"># <span class="keyword">include</span> <span class="string">&quot;string&quot;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br></pre></td></tr></table></figure></p>
 <p>将其他格式转换为字符串格式</p>
-</li>
-<li>
-<pre class=" language-language-c++"><code class="language-language-c++">string s = to_string(3.14);
-
-cout << s << endl;
-
-// 使用printf打印转换过来的字符串需要使用str.c_str()方法
-printf("%s\n", s.c_str());
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 将字符串格式转换为其他格式</span><br><span class="line"></span><br><span class="line">- ```c++</span><br><span class="line">  <span class="type">int</span> a = <span class="built_in">stoi</span>(<span class="string">"110"</span>);</span><br><span class="line">  <span class="type">float</span> b = <span class="built_in">stof</span>(<span class="string">"11.2"</span>);</span><br><span class="line">  <span class="type">double</span> c = <span class="built_in">stod</span>(<span class="string">"3.1415926"</span>);</span><br><span class="line">  <span class="type">long</span> <span class="type">long</span> d = <span class="built_in">stoll</span>(<span class="string">"3.1415926"</span>);</span><br><span class="line">  <span class="type">unsigned</span> <span class="type">long</span> e = <span class="built_in">stoul</span>(<span class="string">"3.1415926"</span>);</span><br></pre></td></tr></table></figure>
-
-</code></pre>
+<p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">string s = <span class="built_in">to_string</span>(<span class="number">3.14</span>);</span><br><span class="line"></span><br><span class="line">cout &lt;&lt; s &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用printf打印转换过来的字符串需要使用str.c_str()方法</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>, s.<span class="built_in">c_str</span>());</span><br></pre></td></tr></table></figure></p>
+<p>将字符串格式转换为其他格式</p>
+<p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="built_in">stoi</span>(<span class="string">&quot;110&quot;</span>);</span><br><span class="line"><span class="type">float</span> b = <span class="built_in">stof</span>(<span class="string">&quot;11.2&quot;</span>);</span><br><span class="line"><span class="type">double</span> c = <span class="built_in">stod</span>(<span class="string">&quot;3.1415926&quot;</span>);</span><br><span class="line"><span class="type">long</span> <span class="type">long</span> d = <span class="built_in">stoll</span>(<span class="string">&quot;3.1415926&quot;</span>);</span><br><span class="line"><span class="type">unsigned</span> <span class="type">long</span> e = <span class="built_in">stoul</span>(<span class="string">&quot;3.1415926&quot;</span>);</span><br></pre></td></tr></table></figure></p>
 </li>
 </ul>
 
@@ -443,7 +413,7 @@ printf("%s\n", s.c_str());
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2022-10-01 17:20:42" itemprop="dateModified" datetime="2022-10-01T17:20:42+08:00">2022-10-01</time>
+    <time title="修改时间：2022-10-01 17:29:28" itemprop="dateModified" datetime="2022-10-01T17:29:28+08:00">2022-10-01</time>
   </span>
 </div>
 
@@ -493,10 +463,10 @@ printf("%s\n", s.c_str());
     <div class="item left">
       
 
-  <a href="/2022/10/01/c/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giciuv0socj20zk0m8qes.jpg" title="C++基础">
+  <a href="/2022/09/16/zhi-ling-xi-tong/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclx6phq6j20zk0m8e36.jpg" title="指令系统">
   <span class="type">上一篇</span>
-  <span class="category"><i class="ic i-flag"></i> 高级编程语言</span>
-  <h3>C++基础</h3>
+  <span class="category"><i class="ic i-flag"></i> 计算机原理</span>
+  <h3>指令系统</h3>
   </a>
 
     </div>
@@ -517,11 +487,11 @@ printf("%s\n", s.c_str());
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#c%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text"> C++ 基础</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="toc-number">1.1.</span> <span class="toc-text"> 基础语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#stl%E5%AE%B9%E5%99%A8"><span class="toc-number">1.2.</span> <span class="toc-text"> STL 容器</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#vector"><span class="toc-number">1.2.1.</span> <span class="toc-text"> vector</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#map"><span class="toc-number">1.2.2.</span> <span class="toc-text"> map</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#stack"><span class="toc-number">1.2.3.</span> <span class="toc-text"> stack</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#queue"><span class="toc-number">1.2.4.</span> <span class="toc-text"> queue</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#bitset"><span class="toc-number">1.2.5.</span> <span class="toc-text"> bitset</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#sort"><span class="toc-number">1.2.6.</span> <span class="toc-text"> sort</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ctype"><span class="toc-number">1.2.7.</span> <span class="toc-text"> ctype</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#auto"><span class="toc-number">1.2.8.</span> <span class="toc-text"> auto</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#c%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text"> C++ 基础</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="toc-number">1.1.</span> <span class="toc-text"> 基础语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#stl%E5%AE%B9%E5%99%A8"><span class="toc-number">1.2.</span> <span class="toc-text"> STL 容器</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#vector"><span class="toc-number">1.2.1.</span> <span class="toc-text"> vector</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#set"><span class="toc-number">1.2.2.</span> <span class="toc-text"> set</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#map"><span class="toc-number">1.2.3.</span> <span class="toc-text"> map</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#stack"><span class="toc-number">1.2.4.</span> <span class="toc-text"> stack</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#queue"><span class="toc-number">1.2.5.</span> <span class="toc-text"> queue</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#unordered_map-unordered_set"><span class="toc-number">1.2.6.</span> <span class="toc-text"> unordered_map &amp; unordered_set</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#bitset"><span class="toc-number">1.2.7.</span> <span class="toc-text"> bitset</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#sort"><span class="toc-number">1.2.8.</span> <span class="toc-text"> sort</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ctype"><span class="toc-number">1.2.9.</span> <span class="toc-text"> ctype</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#auto"><span class="toc-number">1.2.10.</span> <span class="toc-text"> auto</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#string"><span class="toc-number">1.2.11.</span> <span class="toc-text"> string</span></a></li></ol></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li><a href="/2022/08/25/c-yu-yan-ji-chu-yi/" rel="bookmark" title="C语言基础一">C语言基础一</a></li><li><a href="/2022/08/26/c-yu-yan-ji-chu-er/" rel="bookmark" title="C语言基础二">C语言基础二</a></li><li><a href="/2022/08/26/c-yu-yan-ji-chu-san/" rel="bookmark" title="C语言基础三">C语言基础三</a></li><li><a href="/2022/10/01/c/" rel="bookmark" title="C++基础">C++基础</a></li><li class="active"><a href="/2022/10/01/c-ji-chu/" rel="bookmark" title="C++基础">C++基础</a></li>
+          <li><a href="/2022/08/25/c-yu-yan-ji-chu-yi/" rel="bookmark" title="C语言基础一">C语言基础一</a></li><li><a href="/2022/08/26/c-yu-yan-ji-chu-er/" rel="bookmark" title="C语言基础二">C语言基础二</a></li><li><a href="/2022/08/26/c-yu-yan-ji-chu-san/" rel="bookmark" title="C语言基础三">C语言基础三</a></li><li class="active"><a href="/2022/10/01/c-ji-chu/" rel="bookmark" title="C++基础">C++基础</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -535,7 +505,7 @@ printf("%s\n", s.c_str());
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">16</span>
+        <span class="count">15</span>
         <span class="name">文章</span>
       </a>
     </div>
@@ -634,37 +604,7 @@ printf("%s\n", s.c_str());
 <a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
 </div>
 
-    <span><a href="/2022/08/29/jue-ce-shu-suan-fa/" title="决策树算法">决策树算法</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
-</div>
-
-    <span><a href="/2022/08/29/knn-suan-fa/" title="KNN算法">KNN算法</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
-</div>
-
-    <span><a href="/2022/08/29/ti-du-xia-jiang/" title="梯度下降">梯度下降</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
-</div>
-
-    <span><a href="/2022/08/29/mo-xing-de-xun-lian/" title="模型的训练">模型的训练</a></span>
+    <span><a href="/2022/08/29/xian-xing-hui-gui/" title="线性回归">线性回归</a></span>
   </li>
 
       
@@ -674,17 +614,17 @@ printf("%s\n", s.c_str());
 <a href="/categories/B/" title="分类于 高级编程语言">高级编程语言</a>
 </div>
 
-    <span><a href="/2022/08/26/c-yu-yan-ji-chu-er/" title="C语言基础二">C语言基础二</a></span>
+    <span><a href="/2022/08/26/c-yu-yan-ji-chu-san/" title="C语言基础三">C语言基础三</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
+<a href="/categories/B/" title="分类于 高级编程语言">高级编程语言</a>
 </div>
 
-    <span><a href="/2022/08/29/xian-xing-hui-gui/" title="线性回归">线性回归</a></span>
+    <span><a href="/2022/10/01/c-ji-chu/" title="C++基础">C++基础</a></span>
   </li>
 
       
@@ -704,6 +644,26 @@ printf("%s\n", s.c_str());
 <a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
 </div>
 
+    <span><a href="/2022/08/29/jue-ce-shu-suan-fa/" title="决策树算法">决策树算法</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/B/" title="分类于 高级编程语言">高级编程语言</a>
+</div>
+
+    <span><a href="/2022/08/26/c-yu-yan-ji-chu-er/" title="C语言基础二">C语言基础二</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
+</div>
+
     <span><a href="/2022/08/28/xian-xing-dai-shu-jin-jie/" title="线性代数进阶">线性代数进阶</a></span>
   </li>
 
@@ -711,20 +671,30 @@ printf("%s\n", s.c_str());
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/B/" title="分类于 高级编程语言">高级编程语言</a>
+<a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
 </div>
 
-    <span><a href="/2022/10/01/c-ji-chu/" title="C++基础">C++基础</a></span>
+    <span><a href="/2022/08/29/mo-xing-de-xun-lian/" title="模型的训练">模型的训练</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/B/" title="分类于 高级编程语言">高级编程语言</a>
+<a href="/categories/A/" title="分类于 统计学习方法">统计学习方法</a>
 </div>
 
-    <span><a href="/2022/10/01/c/" title="C++基础">C++基础</a></span>
+    <span><a href="/2022/08/29/ju-lei-suan-fa/" title="聚类算法">聚类算法</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/D/" title="分类于 计算机原理">计算机原理</a>
+</div>
+
+    <span><a href="/2022/09/16/zhi-ling-xi-tong/" title="指令系统">指令系统</a></span>
   </li>
 
   </ul>
